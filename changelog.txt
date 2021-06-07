@@ -1,3 +1,5 @@
+[B]0.0.3[/B]
+• Updated old Estuary xml files, fonts, colours and Media files
 [B]0.0.2[/B]
 • Updated addon.xml and changelog files
 
