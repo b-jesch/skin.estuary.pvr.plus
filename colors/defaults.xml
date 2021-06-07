@@ -17,8 +17,4 @@
 	<color name="disabled">40FFFFFF</color>
 	<color name="selected">FF11E7B1</color>
 	<color name="invalid">FFFF0000</color>
-	<color name="epg_button_nofocus">FF0E597E</color>
-	<color name="epg_button_focus">FF12A0C7</color>
-	<color name="osdbanner">FF0E597E</color>
-	<color name="0_Genre">FF0E597E</color>
 </colors>
