@@ -13,6 +13,6 @@
 	<color name="epg_button_nofocus">ff363636</color>
 	<color name="epg_button_focus">FFFDA700</color>
 	<color name="selected">FF11E7B1</color>
-	<color name="osdbanner">FF000000</color>
+	<color name="osdpanel">FF000000</color>
 	<color name="0_Genre">ff363636</color>
 </colors>

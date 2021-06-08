@@ -8,6 +8,6 @@
 	<color name="epg_button_nofocus">FF3D69BA</color>
 	<color name="epg_button_focus">FFFDA700</color>
 	<color name="selected">FFFFF100</color>
-	<color name="osdbanner">FF181DA4</color>
+	<color name="osdpanel">FF181DA4</color>
 	<color name="0_Genre">FF3D69BA</color>
 </colors>

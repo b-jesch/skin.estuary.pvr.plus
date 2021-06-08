@@ -4,5 +4,9 @@
 	<color name="secondary_background">33BDAE12</color>
 	<color name="dialog_tint">FF2B2621</color>
 	<color name="button_focus">FFFF9800</color>
+	<color name="epg_button_nofocus">FFA74012</color>
+	<color name="epg_button_focus">FFFF9800</color>
 	<color name="selected">FFFFF100</color>
+	<color name="osdpanel">FFA74012</color>
+	<color name="0_Genre">FFA74012</color>
 </colors>
