@@ -288,44 +288,43 @@
 					<label>$INFO[PVR.TimeshiftProgressStartTime]</label>
 				</control>
 				<control type="label">
-					<top>22</top>
-					<left>20</left>
-					<right>20</right>
+					<centerleft>40%</centerleft>
+					<top>205</top>
 					<height>50</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>font13</font>
-					<label>[B]$LOCALIZE[31026][/B] $INFO[PVR.TimeshiftCur] (-$INFO[PVR.TimeshiftOffset])</label>
+					<font>font12</font>
+					<label>[B][COLOR button_focus]$LOCALIZE[31026][/COLOR][/B][COLOR grey] $INFO[PVR.TimeshiftCur] (-$INFO[PVR.TimeshiftOffset])[/COLOR]</label>
 					<visible>PVR.IsTimeShift</visible>
 				</control>
 			</control>
 			<control type="group">
 				<visible>VideoPlayer.HasEPG</visible>
 				<control type="progress">
-					<left>0</left>
+					<left>425</left>
 					<top>$PARAM[epg_bar_top]</top>
-					<width>100%</width>
+					<width>720</width>
 					<height>$PARAM[epg_bar_height]</height>
 					<info2>PVR.TimeshiftProgressEpgStart</info2>
 					<info>PVR.TimeshiftProgressPlayPos</info>
 					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
-					<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
+					<midtexture colordiffuse="button_focus">windows/pvr/osd-genre/osd_genre.png</midtexture>
 				</control>
 				<control type="progress">
-					<left>0</left>
+					<left>425</left>
 					<top>$PARAM[epg_bar_top]</top>
-					<width>100%</width>
+					<width>720</width>
 					<height>$PARAM[epg_bar_height]</height>
 					<info2>PVR.TimeshiftProgressPlayPos</info2>
 					<info>PVR.TimeshiftProgressEpgEnd</info>
-					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
-					<midtexture>colors/white50.png</midtexture>
+					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg> 
+					
 				</control>
 			</control>
 			<control type="progress">
-				<left>0</left>
+				<left>425</left>
 				<top>$PARAM[ts_bar_top]</top>
-				<width>100%</width>
+				<width>720</width>
 				<height>$PARAM[ts_bar_height]</height>
 				<info2>PVR.TimeshiftProgressBufferStart</info2>
 				<info>PVR.TimeshiftProgressBufferEnd</info>
@@ -338,10 +337,10 @@
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<visible>Player.ChannelPreviewActive</visible>
 			<control type="progress">
-				<left>0</left>
-				<top>70</top>
-				<width>100%</width>
-				<height>16</height>
+				<left>425</left>
+				<top>195</top>
+				<width>40%</width>
+				<height>4</height>
 				<info>PVR.EpgEventProgress</info>
 				<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
 				<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
