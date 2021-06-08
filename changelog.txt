@@ -1,3 +1,9 @@
+[B]0.0.5[/B]
+• Initial Layout changes to OSD panel.
+• Support added for Colourised OSD panel.
+• Media flags updated to colourised files.
+• New Live TV Recording Button.
+
 [B]0.0.4[/B]
 • Added additional media folders and media files to main media folder.
 [B]0.0.3[/B]
