@@ -1,3 +1,14 @@
+[B]0.0.6[/B]
+• 3 New skin colour themes created (Black, Claret and Cobalt)
+• Show Info code on DialogSeekBar.xml disbaled in favour of new Custom Player Plot/Info Dialog.xml
+• New layout of Live TV OSD Buttons created.
+• New last channel button added to LiveTV OSD
+• New layout for LiveTV OSD Completed.
+• New button layout for video file OSD added.
+• New layout for DialogPlayerProcessInfo.xml created.
+• New layout for VideoOSDBookmarks.xml created.
+• New layout for DialogPVRChannelsOSD.xml created.
+
 [B]0.0.5[/B]
 • Initial Layout changes to OSD panel.
 • Support added for Colourised OSD panel.
@@ -6,8 +17,10 @@
 
 [B]0.0.4[/B]
 • Added additional media folders and media files to main media folder.
+
 [B]0.0.3[/B]
 • Updated old Estuary xml files, fonts, colours and Media files
+
 [B]0.0.2[/B]
 • Updated addon.xml and changelog files
 
