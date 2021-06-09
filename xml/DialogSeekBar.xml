@@ -62,21 +62,22 @@
 					<orientation>horizontal</orientation>
 					<itemgap>10</itemgap>
 					<visible>[Player.ShowInfo | Window.IsActive(fullscreeninfo)] + !Player.ChannelPreviewActive + Window.IsActive(fullscreenvideo)</visible>
+					<visible>false</visible>
 					<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
 					<include content="MediaFlag">
-					<param name="texture" value="$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]" />
+					<param name="texture" value="$INFO[VideoPlayer.VideoResolution,flags/videoresolution/,.png]" />
 					</include>
 					<include content="MediaFlag">
-					<param name="texture" value="$INFO[VideoPlayer.VideoResolution,flags/videoresolution/,.png]" />
+						<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
 					</include>
 					<include content="MediaFlag">
 						<param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]" />
 					</include>
 					<include content="MediaFlag">
-						<param name="texture" value="$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]" />
+					<param name="texture" value="$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]" />
 					</include>
 					<include content="MediaFlag">
-						<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
+						<param name="texture" value="$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]" />
 					</include>
 				</control>
 				<control type="grouplist">
@@ -161,15 +162,29 @@
 				<visible>false</visible>
 			</control>
 			<control type="label" id="40000">
-				<centerleft>50%</centerleft>
-				<centertop>175</centertop>
+				<left>715</left>
+				<top>95</top>
 				<width>50%</width>
-				<height>50</height>
-				<align>center</align>
-				<aligny>top</aligny>
+				<height>45</height>
+				<font>font12</font>
+				<textcolor>red</textcolor>
+				<aligny>center</aligny>
 				<label>$VAR[SeekLabel]</label>
-				<font>font13</font>
 				<shadowcolor>black</shadowcolor>
+				<visible>VideoPlayer.Content(LiveTV)</visible>
+			</control>
+			<control type="label" id="40000">
+				<centerleft>58%</centerleft>
+				<top>140</top>
+				<width>50%</width>
+				<height>45</height>
+				<font>font12</font>
+				<textcolor>red</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$VAR[SeekLabel]</label>
+				<shadowcolor>black</shadowcolor>
+				<visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="group">
 				<visible>VideoPlayer.Content(LiveTV)</visible>
@@ -265,11 +280,11 @@
 			<control type="image">
 				<depth>DepthOSD+</depth>
 				<left>20</left>
-				<top>-380</top>
+				<top>-285</top>
 				<width>400</width>
 				<height>600</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayingPVRPosterVar]</texture>
+				<texture fallback="defaultpvrposter.png" background="true">$VAR[NowPlayingPVRPosterVar]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 				<include>OpenClose_Left</include>
@@ -294,7 +309,7 @@
 			</control>
 			<control type="label">
 				<left>545</left>
-				<top>20</top>
+				<top>15</top>
 				<right>80</right>
 				<height>290</height>
 				<width>805</width>
@@ -309,7 +324,7 @@
 			</control>
 			<control type="label">
 				<left>430</left>
-				<top>130</top>
+				<top>125</top>
 				<right>80</right>
 				<height>290</height>
 				<width>715</width>
@@ -324,7 +339,7 @@
 			</control>
 			<control type="label">
 				<left>430</left>
-				<top>50</top>
+				<top>45</top>
 				<right>80</right>
 				<font>font12</font>
 				<aligny>center</aligny>
@@ -335,7 +350,7 @@
 			</control>
 			<control type="label">
 				<left>1170</left>
-				<top>130</top>
+				<top>125</top>
 				<right>80</right>
 				<height>290</height>
 				<width>715</width>
@@ -350,13 +365,69 @@
 			</control>
 			<control type="label">
 				<left>1170</left>
-				<top>50</top>
+				<top>45</top>
 				<font>font12</font>
 				<aligny>center</aligny>
 				<label>[COLOR white70]$INFO[VideoPlayer.NextStartTime,, - ]$INFO[VideoPlayer.NextEndTime,,Hrs][/COLOR]</label>
 				<shadowcolor>black</shadowcolor>
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
+			<control type="label">
+				<left>780</left>
+				<top>65</top>
+				<right>80</right>
+				<height>290</height>
+				<width>700</width>
+				<font>font12</font>
+				<label>[B][COLOR button_focus]Genre: [/COLOR]$INFO[VideoPlayer.PlotOutline][/B]</label> 
+				<align>left</align>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
+			<control type="image"> 
+				<left>545</left>
+				<top>65</top>
+				<width>150</width>
+				<height>50</height>
+				<aspectratio>keep</aspectratio>
+				<texture>ratings/imdb/imdb.png</texture>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
+			<control type="image">
+				<left>630</left>
+				<top>70</top>
+				<width>120</width>
+				<height>30</height>
+				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
+			<control type="grouplist">
+					<right>20</right>
+					<centertop>75</centertop>
+					<width>800</width>
+					<height>50</height>
+					<align>right</align>
+					<include>Animation_BottomSlide</include>
+					<orientation>horizontal</orientation>
+					<itemgap>5</itemgap>
+					<visible>!Player.ChannelPreviewActive + !Player.HasAudio</visible>
+					<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+					<include content="MediaFlag">
+					<param name="texture" value="$INFO[VideoPlayer.VideoResolution,flags/videoresolution/,.png]" />
+					</include>
+					<include content="MediaFlag">
+						<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
+					</include>
+					<include content="MediaFlag">
+						<param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]" />
+					</include>
+					<include content="MediaFlag">
+					<param name="texture" value="$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]" />
+					</include>
 			</control>
 		</control>
 		<control type="group">
@@ -440,6 +511,7 @@
 				<label>[COLOR grey]$LOCALIZE[14304]: [/COLOR]$INFO[RDS.GetLine(0)]</label>
 				<visible>RDS.HasRadioText</visible>
 			</control>
+			<visible>false</visible>
 		</control> 
 		<control type="group">
 			<visible>!Window.IsVisible(playerprocessinfo)</visible>
@@ -490,6 +562,7 @@
 					<visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
 				</control>
 			</control>
+			<visible>false</visible>
 		</control>
 	</controls>
 </window>

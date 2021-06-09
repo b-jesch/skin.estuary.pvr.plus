@@ -1570,7 +1570,7 @@
 					<label>$INFO[ListItem.Label]</label>
 					<align>center</align>
 				</control>
-			</control>
+			</control> 
 		</focusedlayout>
 	</include>
 </includes>

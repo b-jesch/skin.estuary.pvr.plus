@@ -276,6 +276,7 @@
 					<aligny>center</aligny>
 					<font>font13</font>
 					<label>$INFO[PVR.TimeshiftProgressEndTime]</label>
+					<visible>false</visible>
 				</control>
 				<control type="label">
 					<top>22</top>
@@ -286,10 +287,11 @@
 					<aligny>center</aligny>
 					<font>font13</font>
 					<label>$INFO[PVR.TimeshiftProgressStartTime]</label>
+					<visible>false</visible>
 				</control>
 				<control type="label">
 					<centerleft>40%</centerleft>
-					<top>205</top>
+					<top>210</top>
 					<height>50</height>
 					<align>center</align>
 					<aligny>center</aligny>
