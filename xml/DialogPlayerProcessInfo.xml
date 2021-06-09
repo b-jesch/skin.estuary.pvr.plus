@@ -7,18 +7,21 @@
 	<controls>
 		<control type="group">
 			<bottom>0</bottom>
-			<height>250</height>
-			<animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
+			<height>325</height>
+			<animation effect="slide" end="0,-80" time="150" condition="PVR.IsTimeShift">conditional</animation>
 			<control type="image">
-				<left>30</left>
-				<top>-220</top>
-				<right>30</right>
-				<height>330</height>
-				<texture border="40">dialogs/dialog-bg-nobo.png</texture>
+				<left>1</left>
+				<top>1</top>
+				<width>99.9%</width>
+				<height>325</height>
+				<texture>osd/osdpanel.png</texture>
+				<colordiffuse>osdpanel</colordiffuse>
+				<bordertexture colordiffuse="silver" border="8">osd/osdborder.png</bordertexture>
+				<bordersize>9</bordersize>
 			</control>
 			<control type="grouplist">
 				<left>52</left>
-				<top>-204</top>
+				<top>10</top>
 				<visible>Control.HasFocus(5551)</visible>
 				<control type="label">
 					<width>1200</width>
@@ -71,7 +74,7 @@
 			</control>
 			<control type="grouplist">
 				<left>1250</left>
-				<top>-204</top>
+				<top>10</top>
 				<visible>Control.HasFocus(5551)</visible>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="label">
@@ -130,7 +133,7 @@
 			</control>
 			<control type="grouplist">
 				<left>52</left>
-				<top>-204</top>
+				<top>10</top>
 				<visible>Control.HasFocus(5552)</visible>
 				<control type="label">
 					<width>1600</width>
@@ -183,21 +186,11 @@
 					<label>$INFO[System.Memory(used.percent),[COLOR button_focus]$LOCALIZE[31030]:[/COLOR] ,       ]$INFO[System.CpuUsage,[COLOR button_focus]$LOCALIZE[13271][/COLOR] ]</label>
 					<font>font14</font>
 					<shadowcolor>black</shadowcolor>
-					<visible>System.SupportsCPUUsage</visible>
-				</control>
-				<control type="label">
-					<width>1600</width>
-					<height>50</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[System.Memory(used.percent),[COLOR button_focus]$LOCALIZE[31030]:[/COLOR] ]</label>
-					<font>font14</font>
-					<shadowcolor>black</shadowcolor>
-					<visible>!System.SupportsCPUUsage</visible>
 				</control>
 			</control>
 			<control type="grouplist" id="5550">
 				<right>15</right>
-				<top>-310</top>
+				<top>-80</top>
 				<width>1000</width>
 				<height>100</height>
 				<align>right</align>

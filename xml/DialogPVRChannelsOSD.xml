@@ -2,72 +2,280 @@
 <window>
 	<defaultcontrol always="true">11</defaultcontrol>
 	<controls>
+		<include>PVRChannelNumberInput</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<control type="group">
 				<depth>DepthOSD</depth>
 				<include>OpenClose_Left</include>
-				<include content="ContentPanel">
-					<param name="width" value="1042" />
-				</include>
-				<control type="fixedlist" id="11">
-					<left>0</left>
-					<top>100</top>
-					<width>970</width>
-					<bottom>0</bottom>
-					<onleft>PreviousChannelGroup</onleft>
-					<onright>60</onright>
-					<onup>11</onup>
-					<ondown>11</ondown>
-					<movement>4</movement>
-					<focusposition>4</focusposition>
-					<pagecontrol>60</pagecontrol>
-					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<include content="PVRListItemLayouts">
-						<param name="list_id" value="11" />
-						<param name="label1" value="$INFO[ListItem.Label]" />
-						<param name="has_status_icon" value="true" />
-					</include>
-				</control>
-				<control type="scrollbar" id="60">
-					<left>970</left>
-					<top>100</top>
-					<width>12</width>
-					<bottom>0</bottom>
-					<onleft>11</onleft>
-					<onright>NextChannelGroup</onright>
-					<texturesliderbackground />
-					<animation effect="zoom" start="100,100" end="50,100" center="982,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
-				</control>
 				<control type="image">
 					<left>0</left>
 					<bottom>0</bottom>
-					<width>970</width>
-					<height>115</height>
-					<texture flipy="true">frame/InfoBar.png</texture>
+					<width>100%</width>
+					<height>34.4%</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
 				</control>
+				<control type="label">
+					<left>1200</left>
+					<bottom>265</bottom>
+					<height>90</height>
+					<align>center</align>
+					<font>font14</font>
+					<label>$INFO[ListItem.Title]</label>
+					<textcolor>button_focus</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>false</visible>
+				</control>
+				<control type="textbox">
+						<left>1240</left>
+						<bottom>0</bottom>
+						<width>675</width>
+						<height>363</height>
+						<align>center</align>
+						<label fallback="19055">[B][COLOR button_focus]$INFO[ListItem.Title][/COLOR][/B][CR]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime] Hrs[B]  •  [/B]Duration: $VAR[DurationVar]</label>
+						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+						
+				</control>
+				<control type="image">
+					<left>1455</left>
+					<bottom>260</bottom>
+					<width>150</width>
+					<height>50</height>
+					<texture>ratings/imdb/imdb.png</texture>
+					<visible>false</visible>
+				</control>
+				<control type="image">
+					<left>1550</left>
+					<bottom>270</bottom>
+					<width>120</width>
+					<height>35</height>
+					<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating),ratings/imdb/,.png]</texture>
+					<visible>false</visible>
+				</control>
+				<control type="textbox">
+					<bottom>-25</bottom>
+					<left>1225</left>
+					<width>675</width>
+					<height>290</height>
+					<font>font27</font>
+					<align>center</align>
+					<textcolor>80FFFFFF</textcolor>
+					<label>[B]$INFO[ListItem.EpisodeName,,[CR]][/B]$INFO[ListItem.Plot]</label>
+					
+				</control>
+				<control type="image">
+					<depth>DepthOSD+</depth>
+					<left>5</left>
+					<bottom>0</bottom>
+					<width>400</width>
+					<height>600</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture fallback="DefaultPVRPoster.png">$VAR[NowPVRPoster_Local_Artwork_Var]</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<include>OpenClose_Left</include>
+					<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+					
+				</control>
+				<control type="fixedlist" id="11">
+					<bottom>15</bottom>
+					<left>400</left>
+					<width>775</width>
+					<height>33%</height>
+					<onleft>PreviousChannelGroup</onleft>
+					<onright>NextChannelGroup</onright>
+					<onup>11</onup>
+					<ondown>11</ondown>
+					<pagecontrol>60</pagecontrol>
+					<movement>4</movement>
+					<focusposition>5</focusposition>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<focusedlayout height="90" width="775">
+						<control type="image">
+							<left>0</left>
+							<right>0</right>
+							<bottom>0</bottom>
+							<texture colordiffuse="button_focus">lists/focus.png</texture>
+							<visible>Control.hasFocus(11)</visible>
+						</control>
+						<control type="image">
+							<left>75</left>
+							<top>11</top>
+							<width>80</width>
+							<height>70</height>
+							<aspectratio align="right">keep</aspectratio>
+							<texture>$INFO[listitem.icon]</texture>
+						</control>
+						<control type="image"> 
+							<right>20</right>
+							<top>18</top>
+							<width>35</width>
+							<height>27</height>
+							<texture fallback="flags/videoresolution/sd.png">$VAR[PVR_HD_Var,flags/videoresolution/,.png]</texture>
+						</control>
+						<control type="image"> 
+							<right>65</right>
+							<top>15</top>
+							<top>55</top>
+							<width>30</width>
+							<height>30</height>
+							<texture>$VAR[PVR_MovieGenreOSDVar,flags/genre/,.png]</texture>
+						</control>
+						<control type="progress">
+							<right>20</right>
+							<top>58</top>
+							<width>80</width>
+							<height>12</height>
+							<midtexture border="3">progress/texturebg_white.png</midtexture>
+							<visible>ListItem.HasEpg</visible>
+							<info>ListItem.Progress</info>
+						</control> 
+						<control type="image">
+							<right>100</right>
+							<top>45</top>
+							<width>40</width>
+							<height>40</height>
+							<texture>$VAR[PVRStatusImageVar]</texture>
+						</control>
+						<control type="label">
+							<left>180</left>
+							<top>6</top>
+							<height>90</height>
+							<right>120</right>
+							<aligny>top</aligny>
+							<font>font14</font>
+							<animation effect="slide" start="0,0" end="0,14" time="0" condition="String.IsEmpty(ListItem.Title)">Conditional</animation>
+							<label>$INFO[ListItem.Label]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+						<control type="label">
+							<left>180</left>
+							<top>44</top>
+							<height>90</height>
+							<right>120</right>
+							<aligny>top</aligny>
+							<font>font12</font>
+							<label>$INFO[ListItem.Title]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+						<control type="label">
+							<left>5</left>
+							<top>0</top>
+							<height>90</height>
+							<width>75</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font32_title</font>
+							<label>$INFO[ListItem.ChannelNumberLabel]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+					</focusedlayout>
+					<itemlayout height="90" width="775">
+						<control type="image">
+							<left>75</left>
+							<top>11</top>
+							<width>80</width>
+							<height>70</height>
+							<aspectratio align="right">keep</aspectratio>
+							<texture>$INFO[listitem.icon]</texture>
+						</control>
+						<control type="progress">
+							<right>20</right>
+							<top>58</top>
+							<width>50</width>
+							<height>12</height>
+							<colordiffuse>88FFFFFF</colordiffuse>
+							<visible>ListItem.HasEpg</visible>
+							<info>ListItem.Progress</info>
+						</control>
+						<control type="image">
+							<right>70</right>
+							<top>43</top>
+							<width>40</width>
+							<height>40</height>
+							<texture>$VAR[PVRStatusImageVar]</texture>
+						</control>
+						<control type="label">
+							<left>180</left>
+							<top>6</top>
+							<height>90</height>
+							<right>120</right>
+							<aligny>top</aligny>
+							<font>font14</font>
+							<label>$INFO[ListItem.Label]</label>
+							<animation effect="slide" start="0,0" end="0,14" time="0" condition="String.IsEmpty(ListItem.Title)">Conditional</animation>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+						<control type="label">
+							<left>180</left>
+							<top>44</top>
+							<height>90</height>
+							<right>120</right>
+							<aligny>top</aligny>
+							<font>font12</font>
+							<label>$INFO[ListItem.Title]</label>
+							<shadowcolor>text_shadow</shadowcolor>
+							<textcolor>grey</textcolor>
+						</control>
+						<control type="label">
+							<left>5</left>
+							<top>0</top>
+							<height>90</height>
+							<width>75</width>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font32_title</font>
+							<label>$INFO[ListItem.ChannelNumberLabel]</label>
+							<textcolor>grey</textcolor>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+					</itemlayout>
+				</control>
+				<control type="scrollbar" id="60">
+					<left>1475</left>
+					<bottom>15</bottom>
+					<width>15</width>
+					<height>33%</height>
+					<onleft>11</onleft>
+					<texturesliderbackground />
+					<onright>NextChannelGroup</onright>
+					<ondown>61</ondown>
+					<onup>61</onup>
+					<animation effect="zoom" start="100,100" end="50,100" center="881,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+					<orientation>vertical</orientation>
+				</control>
+				
 			</control>
 			<control type="group">
 				<depth>DepthOSD</depth>
 				<include>Animation_TopSlide</include>
 				<control type="image">
 					<left>0</left>
-					<width>970</width>
+					<width>880</width>
 					<height>110</height>
 					<texture>frame/InfoBar.png</texture>
 				</control>
 				<control type="label" id="2">
 					<description>header label</description>
 					<textoffsetx>40</textoffsetx>
-					<width>970</width>
+					<top>20</top>
+					<width>830</width>
 					<height>70</height>
 					<font>font45</font>
-					<aligny>center</aligny>
-					<label>$VAR[BreadcrumbsPVRChannelsOSDVar]</label>
+					<label>Now Playing: $INFO[VideoPlayer.Title]</label>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label" id="2">
+					<description>header label</description>
+					<textoffsetx>40</textoffsetx>
+					<top>80</top>
+					<width>830</width>
+					<height>70</height>
+					<font>font27</font>
+					<label>$INFO[VideoPlayer.ChannelName]  &lt; [COLOR button_focus]$INFO[VideoPlayer.ChannelGroup][/COLOR] &gt;</label>
 					<shadowcolor>black</shadowcolor>
 				</control>
 			</control>
 		</control>
-		<include>PVRChannelNumberInput</include>
 	</controls>
 </window>
