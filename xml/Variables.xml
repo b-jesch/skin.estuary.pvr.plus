@@ -586,4 +586,30 @@
 		<value condition="!String.IsEmpty(Listitem.EpgEventIcon)">$INFO[ListItem.EpgEventIcon]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
+	<!-- New EstuaryPVR+ variables added to this skin -->
+	<variable name="NowPlayingDurationVar">
+		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Duration(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Duration(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.Duration(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventDuration(hh:mm),, Hrs/mins]</value>
+		<value condition="Player.HasAudio">$INFO[Player.Duration(hh:mm),, Mins]</value>
+		<value condition="Player.HasVideo">$INFO[VideoPlayer.Duration(hh:mm),, Hrs/mins]</value>
+	</variable>
+	<variable name="NowPlayingElapsedTimeVar">
+		<value condition="VideoPlayer.Content(movies)">$INFO[Player.Time(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[Player.Time(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[Player.Time(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventElapsedTime(hh:mm),, Hrs/mins]</value>
+		<value condition="Player.HasAudio">$INFO[Player.Time(hh:mm),,mins]</value>
+		<value>$INFO[Player.Time]</value>
+	</variable>
+	<variable name="NowPlayingTimeRemainingVar">
+		<value condition="VideoPlayer.Content(movies)">$INFO[Player.TimeRemaining(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[Player.TimeRemaining(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[Player.TimeRemaining(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventRemainingTime(hh:mm),, Hrs/mins]</value>
+		<value condition="Player.HasAudio">$INFO[Player.TimeRemaining(hh:mm),, mins]</value>
+		<value condition="Player.HasVideo">$INFO[Player.TimeRemaining(hh:mm),, Hrs/mins]</value>
+	</variable>
+	
 </includes>

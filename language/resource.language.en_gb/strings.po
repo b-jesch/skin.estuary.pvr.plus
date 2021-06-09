@@ -792,3 +792,107 @@ msgstr ""
 msgctxt "#31169"
 msgid "Artwork related settings."
 msgstr ""
+
+msgctxt "#31170"
+msgid "Genre"
+msgstr ""
+
+msgctxt "#31171"
+msgid "Elapsed"
+msgstr ""
+
+msgctxt "#31172"
+msgid "Remaining"
+msgstr ""
+
+msgctxt "#31173"
+msgid "Duration"
+msgstr ""
+
+msgctxt "#31174
+msgid "Airing Now"
+msgstr ""
+
+msgctxt "#31175"
+msgid "Up Next" 
+msgstr ""
+
+msgctxt "#31176"
+msgid "Recorded On"
+msgstr ""
+
+msgctxt "#31177"
+msgid "Recording Time"
+msgstr ""
+
+msgctxt "#31178"
+msgid "Parental Guidance Rating"
+msgstr ""
+
+msgctxt "#31179"
+msgid "Recording Space Available"
+msgstr ""
+
+msgctxt "#31180"
+msgid "Premiered"
+msgstr ""
+
+msgctxt "#31181"
+msgid "Current View"
+msgstr ""
+
+msgctxt "#31182"
+msgid "PVR Artwork On"
+msgstr ""
+
+msgctxt "#31183"
+msgid "Enable Next Up for Live TV"
+msgstr ""
+
+msgctxt "#31184"
+msgid "Track"
+msgstr ""
+
+msgctxt "#31185"
+msgid "Album"
+msgstr ""
+
+msgctxt "#31186"
+msgid "Latest Movies"
+msgstr ""
+
+msgctxt "#31187"
+msgid "Latest Episodes"
+msgstr ""
+
+msgctxt "#31188"
+msgid "TV Box Sets"
+msgstr ""
+
+msgctxt "#31189"
+msgid "Amazon Instant"
+msgstr ""
+
+msgctxt "#31190"
+msgid "Netflix"
+msgstr ""
+
+msgctxt "#31191"
+msgid "Plex"
+msgstr ""
+
+msgctxt "#31192"
+msgid "USTV Now"
+msgstr ""
+
+msgctxt "#31193"
+msgid "iplayer"
+msgstr ""
+
+msgctxt "#31194"
+msgid "Show Plot"
+msgstr ""
+
+msgctxt "#31195"
+msgid "Show Cast"
+msgstr ""

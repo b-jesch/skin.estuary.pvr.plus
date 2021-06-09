@@ -92,7 +92,7 @@
 					<height>290</height>
 					<width>620</width>
 					<font>font12</font>
-					<label>[B][COLOR button_focus]Genre: [/COLOR]$INFO[VideoPlayer.PlotOutline][/B]</label> 
+					<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.PlotOutline][/B]</label> 
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 					<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
