@@ -25,14 +25,14 @@
 			<control type="label">
 				<animation effect="slide" end="0,-20" time="150" condition="VideoPlayer.Content(LiveTV)">conditional</animation>
 				<right>50</right>
-				<bottom>255</bottom>
+				<bottom>230</bottom>
 				<align>right</align>
 				<aligny>bottom</aligny>
 				<font>font20_title</font>
 				<textcolor>limegreen</textcolor>
 				<height>30</height>
-				<width>320</width>
-				<label>$VAR[OSDHelpTextVar]</label>
+				<width>480</width>
+				<label>$VAR[PVR_OSDHelpTextVar]</label>
 			</control>
 			
 				<include>Animation_BottomSlide</include>
@@ -49,7 +49,7 @@
 					<ondown>Action(close)</ondown>
 					<onleft>200</onleft>
 					<onright>200</onright>
-					<control type="radiobutton" id="70041">
+					<control type="radiobutton" id="900">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/guide.png"/>
 						</include>
@@ -57,7 +57,7 @@
 						<onclick>ActivateWindow(pvrchannelguide)</onclick>
 						<visible>VideoPlayer.Content(livetv) + VideoPlayer.HasEPG</visible>
 					</control>
-					<control type="radiobutton" id="70040">
+					<control type="radiobutton" id="901">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/channels.png"/>
 						</include>
@@ -65,7 +65,7 @@
 						<onclick>ActivateWindow(PVROSDChannels)</onclick>
 						<visible>VideoPlayer.Content(livetv)</visible>
 					</control>
-					<control type="radiobutton" id="70049">
+					<control type="radiobutton" id="902">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/last-channel-played.png"/>
 					</include>
@@ -73,7 +73,7 @@
 					<onclick>close</onclick>
 					<visible>VideoPlayer.Content(livetv)</visible>
 					</control>
-					<control type="radiobutton" id="608">
+					<control type="radiobutton" id="903">
 						<textureradioonfocus colordiffuse="white">osd/fullscreen/buttons/record-white.png</textureradioonfocus>
 						<textureradioonnofocus>osd/fullscreen/buttons/record-white.png</textureradioonnofocus>
 						<textureradioofffocus colordiffuse="white">osd/fullscreen/buttons/record.png</textureradioofffocus>
@@ -93,7 +93,7 @@
 						<visible>PVR.CanRecordPlayingChannel</visible>
 						<visible>VideoPlayer.Content(livetv)</visible>
 					</control>
-					<control type="radiobutton" id="70043">
+					<control type="radiobutton" id="904">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/information.png"/>
 						</include>
@@ -114,8 +114,8 @@
 							<font></font>
 							<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/button-fo.png</texturefocus>
 							<texturenofocus />
-							<onleft>70043</onleft>
-							<onright>603</onright>
+							<onleft>904</onleft>
+							<onright>906</onright>
 							<onup>87</onup>
 							<ondown>noop</ondown>
 							<onclick>PlayerControl(Play)</onclick>
@@ -129,34 +129,34 @@
 							<texture colordiffuse="white">$VAR[PlayerControlsPlayImageVar]</texture>
 						</control>
 					</control>
-					<control type="radiobutton" id="603">
+					<control type="radiobutton" id="906">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/stop.png"/>
 						</include>
 						<onclick>PlayerControl(Stop)</onclick>
 					</control>
-					<control type="radiobutton" id="606">
+					<control type="radiobutton" id="907">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/forward.png"/>
 						</include>
 						<onclick>PlayerControl(Forward)</onclick>
 						<visible>Player.SeekEnabled + !VideoPlayer.Content(livetv)</visible>
 					</control>
-					<control type="radiobutton" id="804">
+					<control type="radiobutton" id="908">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/home.png"/>
 						</include>
 						<onclick>PlayerControl(ShowVideoMenu)</onclick>
 						<visible>VideoPlayer.HasMenu</visible>
 					</control>
-					<control type="radiobutton" id="70046">
+					<control type="radiobutton" id="909">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/settings-subtitle.png"/>
 						</include>
 						<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
 						<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
 					</control>
-					<control type="radiobutton" id="70045">
+					<control type="radiobutton" id="910">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/teletext.png"/>
 						</include>
@@ -164,14 +164,14 @@
 						<onclick>ActivateWindow(Teletext)</onclick>
 						<visible>VideoPlayer.HasTeletext</visible>
 					</control>
-					<control type="radiobutton" id="70011">
+					<control type="radiobutton" id="911">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/processinfo.png"/>
 					</include>
 					
 					<onclick>ActivateWindow(playerprocessinfo)</onclick>
 					</control>
-					<control type="radiobutton" id="70047">
+					<control type="radiobutton" id="912">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/stereoscopic.png"/>
 						</include>
@@ -180,7 +180,7 @@
 						<onclick>SetProperty(settingslist_header,$LOCALIZE[36501],home)</onclick>
 						<onclick>ActivateWindow(1101)</onclick>
 					</control>
-					<control type="radiobutton" id="70048">
+					<control type="radiobutton" id="913">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/settings.png"/>
 						</include>
@@ -257,21 +257,23 @@
 			<visible>!VideoPlayer.Content(livetv)</visible>
 			<control type="label">
 				<animation effect="slide" end="0,-20" time="150" condition="!VideoPlayer.Content(LiveTV)">conditional</animation>
-				<right>50</right>
-				<bottom>75</bottom>
+				<centerleft>58%</centerleft>
+				<align>center</align>
+				<aligny>center</aligny>
+				<bottom>-9</bottom>
 				<align>right</align>
 				<aligny>bottom</aligny>
 				<font>font20_title</font>
 				<textcolor>limegreen</textcolor>
 				<height>30</height>
-				<width>320</width>
+				<width>500</width>
 				<label>$VAR[OSDHelpTextVar]</label>
 			</control>
 			
 				<include>Animation_BottomSlide</include>
 				<control type="grouplist" id="202">
 					<left>685</left>
-					<bottom>15</bottom>
+					<bottom>35</bottom>
 					<width>100%</width>
 					<height>60</height>
 					<itemgap>20</itemgap>

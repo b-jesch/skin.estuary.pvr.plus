@@ -251,6 +251,18 @@
 						<visible>Player.Muted</visible>
 					</control>
 				</control>
+					<control type="label">
+						<right>24</right>
+						<top>105</top>
+						<align>right</align>
+						<itemgap>5</itemgap>
+						<orientation>horizontal</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<label>$INFO[System.Date]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<height>100</height>
+						<width>500</width>
+					</control>
 			</control>
 		</control>
 	</controls>

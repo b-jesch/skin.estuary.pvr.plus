@@ -37,7 +37,7 @@
 		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="String.IsEmpty(Player.Icon) + VideoPlayer.Content(livetv)">DefaultTVShows.png</value>
-		<value>$INFO[Player.Icon]</value>
+		<value>$INFO[Player.Icon]</value> 
 	</variable>
 	<variable name="ShiftThumbVar">
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>
@@ -218,8 +218,7 @@
 	</variable>
 	<variable name="BannerLabel2Var">
 		<value condition="String.IsEqual(Listitem.DBType,tvshow)">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
-		<!-- <value>$INFO[ListItem.Year]</value>
-		 -->
+		<!-- <value>$INFO[ListItem.Year]</value> -->
 	</variable>
 	<variable name="VideoPlayerForwardRewindVar">
 		<value condition="Player.Forwarding2x | Player.Rewinding2x">2x</value>
@@ -261,11 +260,27 @@
 		<value condition="Control.HasFocus(87) + !Player.Paused">$LOCALIZE[31054]</value>
 		<value condition="Control.HasFocus(87) + [Player.Paused + Window.IsVisible(videoosd)]">$LOCALIZE[31055]</value>
 		<value condition="Control.HasFocus(608)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
+		<value condition="Control.HasFocus(602)">$LOCALIZE[31211]</value>
 		<value condition="Control.HasFocus(608)">$LOCALIZE[264]</value>
+		<value condition="Control.HasFocus(6600)">Skip Back</value>
+		<value condition="Control.HasFocus(6011)">Skip Back</value>
+		<value condition="Control.HasFocus(6601)">Rewind</value>
+		<value condition="Control.HasFocus(603)">Stop Playback</value>
+		<value condition="Control.HasFocus(606)">Fast Forward</value>
+		<value condition="Control.HasFocus(6604)">Fast Forward</value>
+		<value condition="Control.HasFocus(6051)">Skip Forward</value>
+		<value condition="Control.HasFocus(6605)">Skip Forward</value>
+		<value condition="Control.HasFocus(60014)">$LOCALIZE[31212]</value>
+		<value condition="Control.HasFocus(6700)">$LOCALIZE[31213]</value>
+		<value condition="Control.HasFocus(6704)">$LOCALIZE[31205]</value>
+		<value condition="Control.HasFocus(60011)">$LOCALIZE[31207]</value>
+		<value condition="Control.HasFocus(6255)">$LOCALIZE[31208]</value>
+		<value condition="Control.HasFocus(60043)">$LOCALIZE[31209]</value>
+		
 		<value condition="Control.HasFocus(70040)">$LOCALIZE[19019]</value>
 		<value condition="Control.HasFocus(70041)">$LOCALIZE[19069]</value>
 		<value condition="Control.HasFocus(70042)">$LOCALIZE[31065]</value>
-		<value condition="Control.HasFocus(70043)">$LOCALIZE[19033]</value>
+		<value condition="Control.HasFocus(70043)">$LOCALIZE[31210]</value> 
 		<value condition="Control.HasFocus(70044)">$LOCALIZE[298]</value>
 		<value condition="Control.HasFocus(70045)">$LOCALIZE[31106]</value>
 		<value condition="Control.HasFocus(70046)">$LOCALIZE[24012]</value>
@@ -588,28 +603,142 @@
 	</variable>
 	<!-- New EstuaryPVR+ variables added to this skin -->
 	<variable name="NowPlayingDurationVar">
-		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Duration(hh:mm),, Hrs/mins]</value>
-		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Duration(hh:mm),, Hrs/mins]</value>
-		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.Duration(hh:mm),, Hrs/mins]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration) + VideoPlayer.Content(movies)">$INFO[VideoPlayer.Duration,, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.Duration,, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.Duration,, Hrs/mins]</value>
 		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventDuration(hh:mm),, Hrs/mins]</value>
 		<value condition="Player.HasAudio">$INFO[Player.Duration(hh:mm),, Mins]</value>
 		<value condition="Player.HasVideo">$INFO[VideoPlayer.Duration(hh:mm),, Hrs/mins]</value>
 	</variable>
 	<variable name="NowPlayingElapsedTimeVar">
-		<value condition="VideoPlayer.Content(movies)">$INFO[Player.Time(hh:mm),, Hrs/mins]</value>
-		<value condition="VideoPlayer.Content(episodes)">$INFO[Player.Time(hh:mm),, Hrs/mins]</value>
-		<value condition="VideoPlayer.Content(musicvideos)">$INFO[Player.Time(hh:mm),, Hrs/mins]</value>
-		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventElapsedTime(hh:mm),, Hrs/mins]</value>
-		<value condition="Player.HasAudio">$INFO[Player.Time(hh:mm),,mins]</value>
+		<value condition="VideoPlayer.Content(movies)">$INFO[Player.Time]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[Player.Time]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[Player.Time]</value>
+		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventElapsedTime]</value>
+		<value condition="Player.HasAudio">$INFO[Player.Time]</value>
 		<value>$INFO[Player.Time]</value>
 	</variable>
 	<variable name="NowPlayingTimeRemainingVar">
-		<value condition="VideoPlayer.Content(movies)">$INFO[Player.TimeRemaining(hh:mm),, Hrs/mins]</value>
-		<value condition="VideoPlayer.Content(episodes)">$INFO[Player.TimeRemaining(hh:mm),, Hrs/mins]</value>
-		<value condition="VideoPlayer.Content(musicvideos)">$INFO[Player.TimeRemaining(hh:mm),, Hrs/mins]</value>
-		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventRemainingTime(hh:mm),, Hrs/mins]</value>
-		<value condition="Player.HasAudio">$INFO[Player.TimeRemaining(hh:mm),, mins]</value>
-		<value condition="Player.HasVideo">$INFO[Player.TimeRemaining(hh:mm),, Hrs/mins]</value>
+		<value condition="VideoPlayer.Content(movies)">$INFO[Player.TimeRemaining]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[Player.TimeRemaining]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$INFO[Player.TimeRemaining]</value>
+		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventRemainingTime]</value>
+		<value condition="Player.HasAudio">$INFO[Player.TimeRemaining]</value>
+		<value condition="Player.HasVideo">$INFO[Player.TimeRemaining]</value>
 	</variable>
+	<variable name="Mpaa_flags_Var">
+		<value condition="String.IsEqual(ListItem.Mpaa,UK:U)">BBFC_U_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,UK:PG)">BBFC_PG_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,UK:12)">BBFC_12_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,UK:12A)">BBFC_12A_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,UK:15)">BBFC_15_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,Rated UK:15)">BBFC_15_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,UK:18)">BBFC_18_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,Rated UK:18)">BBFC_18_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,TV-PG)">TV-PG</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,TV-14)">TV-14</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,TV-G)">TV-G</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,TV-MA)">TV-MA</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,TV-PA)">TV-PA</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,TV-Y)">TV-Y</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,TV-Y7)">TV-Y7</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,BBFC-12)">BBFC_12_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,BBFC-12A)">BBFC_12A_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,BBFC-15)">BBFC_15_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,U)">BBFC_U_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,PG)">BBFC_PG_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,12)">BBFC_12_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,12A)">BBFC_12A_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,15)">BBFC_15_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,18)">BBFC_18_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,Guidance)">Guidance</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,Mature)">Mature</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,Teen)">Teen</value>
+		
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,UK:U)">BBFC_U_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,UK:PG)">BBFC_PG_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,UK:12)">BBFC_12_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,UK:12A)">BBFC_12A_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,UK:15)">BBFC_15_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,Rated UK:15)">BBFC_15_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,UK:18)">BBFC_18_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,Rated UK:18)">BBFC_18_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,TV-PG)">TV-PG</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,TV-14)">TV-14</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,TV-G)">TV-G</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,TV-MA)">TV-MA</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,TV-PA)">TV-PA</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,TV-Y)">TV-Y</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,TV-Y7)">TV-Y7</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,BBFC-12)">BBFC_12_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,BBFC-12A)">BBFC_12A_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,BBFC-15)">BBFC_15_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,U)">BBFC_U_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,PG)">BBFC_PG_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,12)">BBFC_12_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,12A)">BBFC_12A_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,15)">BBFC_15_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,18)">BBFC_18_Certificate_UK</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,Guidance)">Guidance</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,Mature)">Mature</value>
+		<value condition="String.IsEqual(VideoPlayer.Mpaa,Teen)">Teen</value>
+	</variable>
+	<variable name="NowPlayingMPAAVar">
+		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.MPAA]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.MPAA]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(VideoPlayer.MPAA))">Not Listed</value>
+	</variable>
+	<variable name="Addon_Name_Var">
+		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/addon/Netflix.png</value>
+		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/addon/Amazon.png</value>
+		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/addon/iplayer.png</value>
+		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/addon/youtube.png</value>
+		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/addon/emby.png</value>
+		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/addon/netflix.png</value>
+		<value condition="string.Contains(ListItem.Path,amazon)">primevid.png</value>
+		<value condition="string.Contains(ListItem.Path,emby)">icons/source/addon/emby.png</value>
+		<value condition="string.Contains(ListItem.Path,recordings)">tv-rec1.png</value>
 	
+		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/addon/kodilogo.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/addon/kodilogo.png</value>
+	
+	</variable>
+	<variable name="Kodi_Library_Type_Var">
+		<value condition="VideoPlayer.Content(movies)">icons/source/addon/kodilogo.png</value>
+		<value condition="VideoPlayer.Content(episodes)">icons/source/addon/kodilogo.png</value>
+	</variable>
+	<variable name="Content_Type_Var">
+		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/content_type/strm.png</value>
+		<value condition="VideoPlayer.Content(movies)">icons/source/content_type/Local_Library.png</value>
+		<value condition="VideoPlayer.Content(episodes)">icons/source/content_type/Local_Library.png</value>
+		<value condition="string.Contains(ListItem.Path,netflix)">strm.png</value>
+		<value condition="string.Contains(ListItem.Path,amazon)">strm.png</value>
+		<value condition="string.Contains(ListItem.Path,emby)">strm.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,movie)">local.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,tvshow)">local.png</value>
+	</variable>
+	<variable name="PVR_OSDHelpTextVar">
+		<value condition="Control.HasFocus(87) + !Player.Paused">$LOCALIZE[31054]</value>
+		<value condition="Control.HasFocus(87) + [Player.Paused + Window.IsVisible(videoosd)]">$LOCALIZE[31055]</value>
+		<value condition="Control.HasFocus(602)">$LOCALIZE[19070]</value>
+		<value condition="Control.HasFocus(900)">$LOCALIZE[31197]</value>
+		<value condition="Control.HasFocus(901)">$LOCALIZE[31198]</value>
+		<value condition="Control.HasFocus(902)">$LOCALIZE[31199]</value>
+		<value condition="Control.HasFocus(903)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
+		<value condition="Control.HasFocus(903)">$LOCALIZE[31200]</value>
+		<value condition="Control.HasFocus(904)">$LOCALIZE[31201]</value>
+		
+		<value condition="Control.HasFocus(906)">$LOCALIZE[31202]</value>
+		<value condition="Control.HasFocus(907)">$LOCALIZE[31203]</value>
+		<value condition="Control.HasFocus(908)">$LOCALIZE[31204]</value>
+		<value condition="Control.HasFocus(909)">$LOCALIZE[31205]</value>
+		<value condition="Control.HasFocus(910)">$LOCALIZE[31206]</value>
+		<value condition="Control.HasFocus(911)">$LOCALIZE[31207]</value>
+		<value condition="Control.HasFocus(912)">$LOCALIZE[31208]</value>
+		<value condition="Control.HasFocus(913)">$LOCALIZE[31209]</value>
+	</variable>
 </includes>

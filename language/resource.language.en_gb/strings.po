@@ -896,3 +896,75 @@ msgstr ""
 msgctxt "#31195"
 msgid "Show Cast"
 msgstr ""
+
+msgctxt "#31196"
+msgid "Show Cast"
+msgstr ""
+
+msgctxt "#31197"
+msgid "Display OSD Guide"
+msgstr ""
+
+msgctxt "#31198"
+msgid "Display OSD Channel Guide"
+msgstr ""
+
+msgctxt "#31199"
+msgid "Switch Back to Last Channel"
+msgstr ""
+
+msgctxt "#31200"
+msgid "Press OK to start instant record"
+msgstr ""
+
+msgctxt "#31201"
+msgid "Display Programme Information"
+msgstr ""
+
+msgctxt "#31202"
+msgid "Stop Playback"
+msgstr ""
+
+msgctxt "#31203"
+msgid "Fast Forward"
+msgstr ""
+
+msgctxt "#31204"
+msgid "Home Menu"
+msgstr ""
+
+msgctxt "#31205"
+msgid "Enable Subtitles"
+msgstr ""
+
+msgctxt "#31206"
+msgid "Teletext"
+msgstr ""
+
+msgctxt "#31207"
+msgid "Display Processinfo"
+msgstr ""
+
+msgctxt "#31208"
+msgid "Enable Stereoscopic Mode"
+msgstr ""
+
+msgctxt "#31209"
+msgid "Enable Settings"
+msgstr ""
+
+msgctxt "#31210"
+msgid "Display Plot Information"
+msgstr ""
+
+msgctxt "#31211"
+msgid "Pause/Play"
+msgstr ""
+
+msgctxt "#31212"
+msgid "Display Actors"
+msgstr ""
+
+msgctxt "#31213"
+msgid "Display Bookmarks"
+msgstr ""

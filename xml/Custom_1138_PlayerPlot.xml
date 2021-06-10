@@ -178,7 +178,7 @@
 					<height>290</height>
 					<width>620</width>
 					<font>font12</font>
-					<label>[B][COLOR button_focus]Genre: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label>
+					<label>[B][COLOR button_focus]$LOCALIZE[31170]:: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
@@ -216,15 +216,6 @@
 					<texture fallback="flags/mpaa/rated1.png">$VAR[Mpaa_flags_Var,flags/mpaa/,.png]</texture>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 				</control>
-				<control type="image">
-					<top>-75</top>
-					<right>195</right>
-					<width>45</width>
-					<height>45</height>
-					<texture>icons/pvr/time-icon.png</texture>
-					<visible>!VideoPlayer.Content(livetv)</visible>
-					<visible>false</visible>
-				</control>
 				<control type="label">
 					<top>-70</top>
 					<right>175</right>
@@ -232,7 +223,7 @@
 					<width>450</width>
 					<font>font_flag</font>
 					<textcolor>white</textcolor>
-					<label>[B]Duration:[/B]</label>
+					<label>[B]$LOCALIZE[31173]:[/B]</label>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 					<visible>true</visible>
 				</control>
@@ -243,29 +234,9 @@
 					<width>450</width>
 					<font>font_flag</font>
 					<textcolor>white</textcolor>
-					<label>[B][COLOR button_focus] $VAR[VideoPlayerDurationVar][/COLOR][/B]</label>
+					<label>[B][COLOR button_focus] $VAR[NowPlayingDurationVar][/COLOR][/B]</label>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 					<visible>true</visible>
-				</control>
-				<control type="image">
-					<top>-70</top>
-					<right>340</right>
-					<width>35</width>
-					<height>32</height>
-					<texture>icons/pvr/mpaa.png</texture>
-					<visible>!VideoPlayer.Content(livetv)</visible>
-					<visible>false</visible>
-				</control>
-				<control type="label">
-					<top>-70</top>
-					<right>185</right>
-					<align>left</align>
-					<width>150</width>
-					<font>font12</font>
-					<textcolor>button_focus</textcolor>
-					<label>[B]$INFO[VideoPlayer.MPAA][/B]</label>
-					<visible>!VideoPlayer.Content(livetv)</visible>
-					<visible>false</visible>
 				</control>
 			<!-- OSD Settings For LiveTV Recordings -->
 				<control type="image">
@@ -318,7 +289,7 @@
 					<height>290</height>
 					<width>620</width>
 					<font>font12</font>
-					<label>[B][COLOR button_focus]$LOCALIZE[31164]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
+					<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
@@ -358,7 +329,7 @@
 				<height>1</height>
 				<onfocus>Action(Close)</onfocus>
 				<onfocus>ActivateWindow(videoosd)</onfocus>
-				<onfocus>SetFocus(70043)</onfocus>
+				
 			</control>
 			<control type="grouplist" id="9001">
 				<orientation>horizontal</orientation>
