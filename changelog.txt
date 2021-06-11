@@ -1,3 +1,17 @@
+[B]0.0.7[/B]
+• New runtime and endtime flags added.
+• New Premiered flag added.
+• New Variables added to variable.xml
+• New strings added to English language
+• Text Help Labels updated for Live TV and Video file OSD.
+• Text Help Labels updated for Music OSD.
+• New layout for Music OSD completed.
+• New Artist Biography button and Dialog added to Music OSD.
+• New Custom Artist Biography.xml created.
+• New Actor Button and Dialog on Movie and TV Show OSD completed.
+• New Custom ActorList.xml created.
+• Support for New OSD flags for Local Library, Netflix, Amazon Prime, iplayer, Youtube and Emby added.
+
 [B]0.0.6[/B]
 • 3 New skin colour themes created (Black, Claret and Cobalt)
 • Show Info code on DialogSeekBar.xml disbaled in favour of new Custom Player Plot/Info Dialog.xml
