@@ -52,74 +52,6 @@
 						<label>[COLOR red][B]$LOCALIZE[19158][/B][/COLOR]</label>
 					</control>
 				</control>
-				
-				<control type="grouplist">
-					<right>20</right>
-					<centertop>125</centertop>
-					<width>800</width>
-					<height>50</height>
-					<align>right</align>
-					<include>Animation_BottomSlide</include>
-					<orientation>horizontal</orientation>
-					<itemgap>10</itemgap>
-					<visible>Player.ShowInfo + !Player.ChannelPreviewActive + Window.IsActive(visualisation)</visible>
-					<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
-					<include content="MediaFlag">
-						<param name="texture" value="flags/rds/rds.png" />
-						<param name="visible" value="RDS.HasRDS" />
-					</include>
-					<include content="MediaFlag">
-						<param name="texture" value="$INFO[MusicPlayer.Codec,flags/audiocodec/,.png]" />
-					</include>
-					<include content="MediaFlag">
-						<param name="texture" value="$INFO[MusicPlayer.Channels,flags/audiochannel/,.png]" />
-					</include>
-					<control type="group">
-						<visible>!String.IsEmpty(MusicPlayer.SampleRate)</visible>
-						<width>115</width>
-						<control type="label">
-							<width>115</width>
-							<height>60</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[MusicPlayer.SampleRate, ,kHz]</label>
-							<font>font_flag</font>
-						</control>
-						<include content="MediaFlag">
-							<param name="texture" value="flags/flag.png" />
-						</include>
-					</control>
-					<control type="group">
-						<visible>!String.IsEmpty(MusicPlayer.BitRate)</visible>
-						<width>115</width>
-						<control type="label">
-							<width>115</width>
-							<height>60</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[MusicPlayer.BitRate, ,kbps ]</label>
-							<font>font_flag</font>
-						</control>
-						<include content="MediaFlag">
-							<param name="texture" value="flags/flag.png" />
-						</include>
-					</control>
-					<control type="group">
-						<visible>!String.IsEmpty(MusicPlayer.BitsPerSample)</visible>
-						<width>115</width>
-						<control type="label">
-							<width>115</width>
-							<height>60</height>
-							<align>center</align>
-							<aligny>center</aligny>
-							<label>$INFO[MusicPlayer.BitsPerSample, ,bit]</label>
-							<font>font_flag</font>
-						</control>
-						<include content="MediaFlag">
-							<param name="texture" value="flags/flag.png" />
-						</include>
-					</control>
-				</control>
 			</control>
 			<control type="label">
 				<centerleft>50%</centerleft>
@@ -293,7 +225,68 @@
 				<righttexture>colors/white.png</righttexture>
 				<info>Player.Chapters</info>
 			</control>
-	<!-- Video OSD Settings For Live TV -->		
+		<!-- CD Art and Fake CD Disc for Music -->	
+			<control type="group">
+					<left>43</left>
+					<bottom>220</bottom>
+					<width>345</width>
+					<height>345</height> 
+					<visible>Window.IsVisible(MusicVisualisation.xml) + !Skin.HasSetting(show_disc) + !Window.IsVisible(1139)</visible>
+					<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
+				<control type="image" id="88888">
+					<left>0</left>
+					<bottom>0</bottom>
+					<width>345</width>
+					<height>345</height>
+					<aligny>top</aligny>
+					<aspectratio align="left">keep</aspectratio>
+					<fadetime>300</fadetime>
+					<texture background="true" fallback="cd/cd2.png">$VAR[PlayerInfoDiscArtVar]</texture>
+				</control>
+				<control type="image">
+					<left>70</left>
+					<bottom>246</bottom>
+					<width>185</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font-Disc</font>
+					<texture>$INFO[Player.Art(artist.clearlogo)]</texture>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+					<visible>String.IsEqual(Control.GetLabel(88888),cd/cd2.png)</visible>
+				</control>
+				<control type="label">
+					<left>70</left>
+					<bottom>246</bottom>
+					<width>185</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font-Disc</font>
+					<label>$VAR[MusicPlayerDiscTitleVar]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+					<visible>String.IsEqual(Control.GetLabel(88888),cd/cd2.png)</visible>
+					<visible>String.IsEmpty(Player.Art(artist.clearlogo))</visible>
+				</control>
+				<control type="label">
+					<left>70</left>
+					<bottom>51</bottom>
+					<width>218</width>
+					<height>33</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font10</font>
+					<label>$VAR[MusicPlayerDiscAlbumVar]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+					<visible>String.IsEqual(Control.GetLabel(88888),cd/cd2.png)</visible>
+				</control>
+					<visible>true</visible>
+			</control>
+
+		<!-- Video OSD Settings For Live TV -->		
 			<control type="image">
 				<depth>DepthOSD+</depth>
 				<left>20</left>
@@ -425,7 +418,7 @@
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
-	<!-- Video OSD Settings For Movies and Tv Shows -->
+		<!-- Video OSD Settings For Movies and Tv Shows -->
 		<control type="group"> 
 			<bottom>0</bottom>
 			<height>230</height>
@@ -545,7 +538,7 @@
 					<visible>player.chaptercount</visible>
 					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
 				</control>
-	<!-- OSD Settings For Streamed Content, Music Videos and LiveTV Recordings -->
+		<!-- OSD Settings For Streamed Content, Music Videos and LiveTV Recordings -->
 					<control type="image">
 						<depth>DepthOSD+</depth>
 						<left>10</left>
@@ -602,6 +595,197 @@
 						<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 						<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>
 					</control>
+		<!--Skin Settings for Content Type on OSD (Amazon, Netflix, Emby, iplayer, you tube and Kodi)-->
+				<control type="image">
+					<top>-70</top>
+					<right>135</right>
+					<width>100</width>
+					<height>35</height>
+					<texture>$VAR[Addon_Name_Var]</texture>
+					<visible>true</visible>
+				</control>
+				<control type="image">
+					<top>-75</top>
+					<right>130</right>
+					<width>40</width>
+					<height>40</height>
+					<texture colordiffuse="button_focus">$VAR[Kodi_Library_Type_Var]</texture>
+					<visible>!VideoPlayer.Content(livetv) + !Player.IsInternetStream</visible>
+				</control>
+				<control type="image">
+					<top>-70</top>
+					<right>50</right>
+					<width>70</width>
+					<height>32</height>
+					<texture>$VAR[Content_Type_Var]</texture>
+					<visible>!VideoPlayer.Content(livetv)</visible>
+				</control>
+		<!-- OSD Settings For Music -->		
+				<control type="label"> 
+					<left>475</left>
+					<top>-77</top>
+					<right>80</right>
+					<height>290</height>
+					<width>1000</width>
+					<font>font37</font>
+					<label>[B][COLOR grey]$INFO[MusicPlayer.Artist , ]  •[/COLOR][COLOR button_focus]  $INFO[MusicPlayer.Title  , ][/COLOR][/B]</label>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>	
+				</control>
+				<control type="image">
+					<left>480</left>
+					<top>-22</top>
+					<aligny>top</aligny>
+					<width>auto</width>
+					<height>35</height>
+					<texture fallback="flags/starrating/0.png" colordiffuse="yellow">$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+				</control>
+				<control type="label">
+					<left>420</left>
+					<top>-22</top>
+					<right>80</right>
+					<height>290</height>
+					<width>1040</width>
+					<font>font12</font>
+					<label>[B][COLOR grey]Rating:[/COLOR][/B]</label>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>	
+					<visible>true</visible>
+				</control>
+				<control type="label">
+					<left>665</left>
+					<top>-22</top>
+					<right>80</right>
+					<height>290</height>
+					<width>1040</width>
+					<font>font12</font>
+					<label>[B][COLOR grey]Album:[/COLOR][COLOR button_focus] $INFO[MusicPlayer.Album, ] $INFO[MusicPlayer.Year,(,)][/COLOR][/B]</label>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>	
+					<visible>true</visible>
+				</control>
+				<control type="multiimage">
+                	<left>425</left>
+					<top>-70</top>
+                	<imagepath colordiffuse="$VAR[SkinColorVar]">icons/equalizer</imagepath>
+                	<width>40</width>
+                	<height>23</height>
+                	<fadetime>50</fadetime>
+                	<timeperimage>50</timeperimage>
+                	<randomize>true</randomize>
+                	<visible>Player.HasAudio + !Player.Caching + !VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+                	<visible>!Player.Caching</visible>
+				</control>
+				<control type="image">
+					<left>423</left>
+					<top>-46</top>
+                	<width>44</width>
+                	<height>20</height>
+					<texture colordiffuse="button_focus">flags/playback/Playing.png</texture>
+					<visible>Player.HasAudio + !VideoPlayer.Content(livetv) + !Player.IsInternetStream + Player.Playing</visible>
+				</control>
+				<control type="image">
+					<left>423</left>
+					<top>-46</top>
+                	<width>44</width>
+                	<height>20</height>
+					<texture colordiffuse="white70">flags/playback/Paused.png</texture>
+					<visible>Player.HasAudio + !VideoPlayer.Content(livetv) + !Player.IsInternetStream + Player.Paused</visible>
+				</control>
+				<control type="label">
+					<top>120</top>
+					<right>50</right>
+					<width>580</width>
+					<align>right</align>
+					<height>40</height>
+					<font>font12</font>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(1).Artist,[COLOR white][B]Next Up:[/B][/COLOR]  ][/COLOR][COLOR grey]$INFO[MusicPlayer.offset(1).Title,  •  ][/COLOR]</label>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(MusicPlayer.offset(1).Artist) + Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+				</control>
+				<control type="label">
+					<top>150</top>
+					<right>50</right>
+					<width>580</width>
+					<align>right</align>
+					<height>40</height>
+					<font>font12</font>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(2).Artist,,  •  ][/COLOR][COLOR grey]$INFO[MusicPlayer.offset(2).Title][/COLOR]</label>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(MusicPlayer.offset(2).Artist) + Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+				</control>
+				<control type="label">
+					<top>180</top>
+					<right>50</right>
+					<width>580</width>
+					<align>right</align>
+					<height>40</height>
+					<font>font12</font>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(3).Artist,,  •  ][/COLOR][COLOR grey]$INFO[MusicPlayer.offset(3).Title][/COLOR]</label>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(MusicPlayer.offset(3).Artist) + Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+				</control>
+					
+			<control type="grouplist">
+					<right>40</right>
+					<top>-80</top>
+					<width>1000</width>
+					<height>120</height>
+					<align>right</align>
+					<include>Animation_BottomSlide</include>
+					<orientation>horizontal</orientation>
+					<itemgap>10</itemgap>
+					<visible>Player.ShowInfo + !Player.ChannelPreviewActive + Window.IsActive(visualisation)</visible>
+					<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+					<control type="group">
+						<visible>!String.IsEmpty(MusicPlayer.BitRate)</visible>
+						<width>125</width>
+						<control type="label">
+							<top>-8</top>
+							<left>10</left>
+							<width>120</width>
+							<height>60</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[MusicPlayer.BitRate]</label>
+							<font>font_flag</font>
+						</control>
+						<include content="MediaFlag">
+							<param name="texture" value="flags/cadre/bitrate.png" />
+						</include>
+				</control>
+				<control type="group">
+						<visible>!String.IsEmpty(MusicPlayer.SampleRate)</visible>
+						<width>125</width>
+						<control type="label">
+							<top>-8</top>
+							<left>10</left>
+							<width>120</width>
+							<height>60</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>$INFO[MusicPlayer.SampleRate]</label>
+							<font>font_flag</font>
+						</control>
+						<include content="MediaFlag">
+							<param name="texture" value="flags/Hertz/hz.png" />
+						</include>
+				</control>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[MusicPlayer.Codec,flags/audiocodec/,.png]" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
+				</include>
+			</control>		
 			<control type="grouplist">
 					<right>40</right>
 					<top>-30</top>
@@ -610,7 +794,7 @@
 					<align>right</align>
 					<include>Animation_BottomSlide</include>
 					<orientation>horizontal</orientation>
-					<itemgap>5</itemgap>
+					<itemgap>10</itemgap>
 					<visible>!Player.ChannelPreviewActive + !Player.HasAudio</visible>
 					<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
 					<include content="MediaFlag">

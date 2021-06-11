@@ -968,3 +968,11 @@ msgstr ""
 msgctxt "#31213"
 msgid "Display Bookmarks"
 msgstr ""
+
+msgctxt "#31214"
+msgid "Display Artist Biography and Info"
+msgstr ""
+
+msgctxt "#31215"
+msgid "Enlarge Bio"
+msgstr ""

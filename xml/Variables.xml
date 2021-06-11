@@ -260,13 +260,17 @@
 		<value condition="Control.HasFocus(87) + !Player.Paused">$LOCALIZE[31054]</value>
 		<value condition="Control.HasFocus(87) + [Player.Paused + Window.IsVisible(videoosd)]">$LOCALIZE[31055]</value>
 		<value condition="Control.HasFocus(608)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
+		<value condition="Control.HasFocus(600)">Skip Back</value>
+		<value condition="Control.HasFocus(601)">Rewind</value>
 		<value condition="Control.HasFocus(602)">$LOCALIZE[31211]</value>
+		<value condition="Control.HasFocus(603)">Stop Playback</value>
+		<value condition="Control.HasFocus(606)">Fast Forward</value>
+		<value condition="Control.HasFocus(607)">Fast Forward</value>
 		<value condition="Control.HasFocus(608)">$LOCALIZE[264]</value>
+		<value condition="Control.HasFocus(705)">$LOCALIZE[31214]</value>
 		<value condition="Control.HasFocus(6600)">Skip Back</value>
 		<value condition="Control.HasFocus(6011)">Skip Back</value>
 		<value condition="Control.HasFocus(6601)">Rewind</value>
-		<value condition="Control.HasFocus(603)">Stop Playback</value>
-		<value condition="Control.HasFocus(606)">Fast Forward</value>
 		<value condition="Control.HasFocus(6604)">Fast Forward</value>
 		<value condition="Control.HasFocus(6051)">Skip Forward</value>
 		<value condition="Control.HasFocus(6605)">Skip Forward</value>
@@ -698,10 +702,8 @@
 		<value condition="string.Contains(ListItem.Path,amazon)">primevid.png</value>
 		<value condition="string.Contains(ListItem.Path,emby)">icons/source/addon/emby.png</value>
 		<value condition="string.Contains(ListItem.Path,recordings)">tv-rec1.png</value>
-	
 		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/addon/kodilogo.png</value>
 		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/addon/kodilogo.png</value>
-	
 	</variable>
 	<variable name="Kodi_Library_Type_Var">
 		<value condition="VideoPlayer.Content(movies)">icons/source/addon/kodilogo.png</value>
@@ -740,5 +742,68 @@
 		<value condition="Control.HasFocus(911)">$LOCALIZE[31207]</value>
 		<value condition="Control.HasFocus(912)">$LOCALIZE[31208]</value>
 		<value condition="Control.HasFocus(913)">$LOCALIZE[31209]</value>
+	</variable>
+	<variable name="PlayerInfoDiscArtVar">
+        <value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
+        <value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>
+    </variable>
+	<variable name="MusicPlayerDiscTitleVar">
+		<value condition="Pvr.IsPlayingRadio">$INFO[VideoPlayer.ChannelName]</value>
+		<value condition="Player.IsInternetStream">$INFO[MusicPlayer.Title]</value>
+		<value condition="!String.IsEmpty(MusicPlayer.Artist)">$INFO[MusicPlayer.Artist]</value>
+		<value>$INFO[MusicPlayer.Title]</value>
+	</variable>
+	<variable name="MusicPlayerDiscAlbumVar">
+		<value condition="Pvr.IsPlayingRadio">$INFO[MusicPlayer.Title]</value>
+		<value condition="Player.IsInternetStream">$INFO[Window(Home).Property(SkinHelper.Player.Album)]</value>
+		<value>$INFO[MusicPlayer.Album]</value>
+	</variable>
+	<variable name="OSDCastVar">
+		<value condition="!String.IsEmpty(Window(home).Property(NextUpNotification.NowPlaying.Type)) + String.IsEqual(Window(home).Property(NextUpNotification.NowPlaying.Type),movie) + Integer.IsGreater(Window(home).Property(NextUpNotification.NowPlaying.DBID),-1)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[Window(home).Property(NextUpNotification.NowPlaying.DBID)]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(NextUpNotification.NowPlaying.Type)) + String.IsEqual(Window(home).Property(NextUpNotification.NowPlaying.Type),episode) + Integer.IsGreater(Window(home).Property(NextUpNotification.NowPlaying.DBID),-1)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[Window(home).Property(NextUpNotification.NowPlaying.DBID)]</value>
+		<value condition="VideoPlayer.Content(movies)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(episodes)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[VideoPlayer.TvShowTitle]</value>
+		<value condition="VideoPlayer.Content(livetv)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[VideoPlayer.Title]</value>
+	</variable>
+	<variable name="Addon_Name_Var">
+		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/addon/Netflix.png</value>
+		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/addon/Amazon.png</value>
+		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/addon/iplayer.png</value>
+		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/addon/youtube.png</value>
+		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/addon/emby.png</value>
+		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/addon/netflix.png</value>
+		<value condition="string.Contains(ListItem.Path,amazon)">primevid.png</value>
+		<value condition="string.Contains(ListItem.Path,emby)">icons/source/addon/emby.png</value>
+		<value condition="string.Contains(ListItem.Path,recordings)">tv-rec1.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/addon/kodilogo.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/addon/kodilogo.png</value>
+	</variable>
+		<variable name="Kodi_Library_Type_Var">
+		<value condition="VideoPlayer.Content(movies)">icons/source/addon/kodilogo.png</value>
+		<value condition="VideoPlayer.Content(episodes)">icons/source/addon/kodilogo.png</value>
+	</variable>
+	<variable name="Content_Type_Var">
+		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/content_type/strm.png</value>
+		<value condition="VideoPlayer.Content(movies)">icons/source/content_type/Local_Library.png</value>
+		<value condition="VideoPlayer.Content(episodes)">icons/source/content_type/Local_Library.png</value>
+		<value condition="string.Contains(ListItem.Path,netflix)">strm.png</value>
+		<value condition="string.Contains(ListItem.Path,amazon)">strm.png</value>
+		<value condition="string.Contains(ListItem.Path,emby)">strm.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,movie)">local.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,tvshow)">local.png</value>
+	</variable>
+	<variable name="PVR_Timer_ActiveRecording_Comment_Var">
+		<value condition="String.IsEqual(ListItem.Comment,Recording active)">Recording_active</value>
+	</variable>
+	<variable name="PVR_Timer_Enabled_Comment_Var">
+		<value condition="String.IsEqual(ListItem.Comment,Enabled)">Enabled</value>	
+	</variable>
+	
+	<variable name="MusicPlayerCover">
+		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 	</variable>
 </includes>
