@@ -21,7 +21,7 @@
 			<left>470</left>
 			<include>OpenClose_Right</include>
 			<control type="grouplist" id="700">
-				<top>133</top>
+				<top>160</top>
 				<left>0</left>
 				<right>0</right>
 				<bottom>140</bottom>
@@ -29,7 +29,7 @@
 				<onright>60</onright>
 				<onup>700</onup>
 				<ondown>700</ondown>
-				<visible>Container(9000).HasFocus(1)</visible>
+				<visible>Container(9000).HasFocus(2)</visible>
 				<control type="radiobutton" id="701">
 					<label>$LOCALIZE[31095]</label>
 					<include>DefaultSettingButton</include>
@@ -61,21 +61,86 @@
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
 				</control>
-				<control type="button" id="706">
-					<label>$LOCALIZE[31024]</label>
+				<control type="radiobutton" id="706">
+					<label>$LOCALIZE[31218]</label>
 					<include>DefaultSettingButton</include>
-					<onclick>Skin.SelectBool(31024, 38018|circle_userrating, 563|circle_rating, 16018|circle_none)</onclick>
-					<label2>$VAR[RatingSettingLabel2Var]</label2>
+					<onclick>Skin.ToggleSetting(show_mediaendtimeflag)</onclick>
+					<selected>!Skin.HasSetting(show_mediaendtimeflag)</selected>
 				</control>
 				<control type="button" id="707">
-					<label>$LOCALIZE[31164]</label>
+					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
-					<onclick>Skin.SelectBool(31164, 31165|show_profilename, 31166|show_profileavatar, 16018|show_none)</onclick>
-					<label2>$VAR[ProfileIdentificationLabel2Var]</label2>
+					<onclick>Skin.SelectBool($LOCALIZE[31024], 38018|circle_userrating, 563|circle_rating, 16018|)</onclick>
+					<label2>$VAR[RatingSettingLabel2Var]</label2>
 				</control>
 			</control>
+			
+			<control type="grouplist" id="800">
+				<top>160</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>800</onup>
+				<ondown>800</ondown>
+				<visible>Container(9000).HasFocus(4)</visible>
+				<control type="radiobutton" id="801">
+					<include>DefaultSettingButton</include>
+					<label>$VAR[Backend_PVR_Artwork_var]</label>
+					<selected>Skin.HasSetting(Backend.PVR.Artwork)</selected> 
+					<onclick>Skin.ToggleSetting(Backend.PVR.Artwork)</onclick>
+				</control>
+				<control type="radiobutton" id="802">
+					<include>DefaultSettingButton</include>
+					<label>$VAR[PVR_Artwork_Switch_Label_Var]</label>
+					<selected>Skin.HasSetting(SkinHelper.EnablePVRThumbs)</selected>
+					<onclick>Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onclick>
+				</control>
+				<control type="radiobutton" id="803">
+					<include>DefaultSettingButton</include>
+					<label>$VAR[Local_PVR_Artwork_Var]</label>
+					<selected>Skin.HasSetting(Enable.Local.PVR.Artwork)</selected>
+					<onclick>Skin.ToggleSetting(Enable.Local.PVR.Artwork)</onclick>
+				</control>
+				
+				<control type="button" id="804">
+					<label>Set Path For Local PVR Artwork</label>
+					<label2>$VAR[PVR_Local_path]</label2>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(Local.PVR.Artwork)</selected>
+					<onclick>Skin.SetPath(Local.PVR.Artwork)</onclick>
+				</control>
+				<control type="radiobutton" id="805">
+					<include>DefaultSettingButton</include>
+					<label>$VAR[PVR_Show_ChannelGroup_Label_Var]</label>
+					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
+					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
+				</control>
+				<control type="radiobutton" id="806">
+					<include>DefaultSettingButton</include>
+					<label>$VAR[Enable_Standard_PVR_Genre_Label_Var]</label>
+					<selected>!Skin.HasSetting(Enable_standard_PVRGenres)</selected>
+					<onclick>Skin.ToggleSetting(Enable_standard_PVRGenres)</onclick>
+				</control>
+				<control type="radiobutton" id="807">
+					<include>DefaultSettingButton</include>
+					<label>$VAR[Enable_PVR_Strip_Genres_Label_Var]</label>
+					<selected>!Skin.HasSetting(Enable_PVR_Strip_Genres)</selected>
+					<onclick>Skin.ToggleSetting(Enable_PVR_Strip_Genres)</onclick>
+				</control>
+				<control type="radiobutton" id="808">
+					<include>DefaultSettingButton</include>
+					<label>$VAR[PVR_Next-Up_TV_Label_Var]</label>
+					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
+					<onclick>Skin.ToggleSetting(disable_PVRNextUp)</onclick>
+				</control>
+				
+				
+			</control>
+			
 			<control type="grouplist" id="600">
-				<top>133</top>
+				<top>160</top>
 				<left>0</left>
 				<right>0</right>
 				<bottom>140</bottom>
@@ -94,7 +159,8 @@
 					<label>$LOCALIZE[31156]</label>
 					<label2>$VAR[BackgroundOverlayTypeVar]</label2>
 					<include>DefaultSettingButton</include>
-					<onclick condition="String.IsEqual(Skin.String(background_overlay),7)">Skin.SetString(background_overlay,0)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),8)">Skin.SetString(background_overlay,0)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),7)">Skin.SetString(background_overlay,8)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),6)">Skin.SetString(background_overlay,7)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),5)">Skin.SetString(background_overlay,6)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(background_overlay),4)">Skin.SetString(background_overlay,5)</onclick>
@@ -107,8 +173,7 @@
 					<label>$LOCALIZE[31131]</label>
 					<label2>$INFO[Skin.String(HomeFanart.name)]</label2>
 					<include>DefaultSettingButton</include>
-					<onclick condition="System.AddonIsEnabled(script.image.resource.select)">RunScript(script.image.resource.select,property=HomeFanart&amp;type=resource.images.skinbackgrounds)</onclick>
-					<onclick condition="System.HasAddon(script.image.resource.select) + !System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
+					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=HomeFanart&amp;type=resource.images.skinbackgrounds)</onclick>
 					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<enable>!Skin.HasSetting(no_fanart)</enable>
 				</control>
@@ -116,8 +181,7 @@
 					<label>$LOCALIZE[31062]</label>
 					<label2>$INFO[Skin.String(WeatherFanart.name)]</label2>
 					<include>DefaultSettingButton</include>
-					<onclick condition="System.AddonIsEnabled(script.image.resource.select)">RunScript(script.image.resource.select,property=WeatherFanart&amp;type=resource.images.weatherfanart)</onclick>
-					<onclick condition="System.HasAddon(script.image.resource.select) + !System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
+					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=WeatherFanart&amp;type=resource.images.weatherfanart)</onclick>
 					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 					<enable>!Skin.HasSetting(no_fanart)</enable>
 				</control>
@@ -125,9 +189,8 @@
 					<label>$LOCALIZE[31149]</label>
 					<label2>$INFO[Skin.String(MovieGenreFanart.Name)]</label2>
 					<include>DefaultSettingButton</include>
-					<onclick condition="System.AddonIsEnabled(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreFanart&amp;type=resource.images.moviegenrefanart)</onclick>
-					<onclick condition="System.HasAddon(script.image.resource.select) + !System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
 					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
+					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreFanart&amp;type=resource.images.moviegenrefanart)</onclick>
 				</control>
 				<control type="radiobutton" id="6067">
 					<label>$LOCALIZE[31168]</label>
@@ -137,7 +200,7 @@
 				</control>
 			</control>
 			<control type="grouplist" id="610">
-				<top>133</top>
+				<top>160</top>
 				<left>0</left>
 				<right>0</right>
 				<bottom>140</bottom>
@@ -146,7 +209,7 @@
 				<onup>610</onup>
 				<pagecontrol>60</pagecontrol>
 				<ondown>610</ondown>
-				<visible>Container(9000).HasFocus(2)</visible>
+				<visible>Container(9000).HasFocus(1)</visible>
 				<control type="radiobutton" id="621">
 					<label>$LOCALIZE[31008]</label>
 					<include>DefaultSettingButton</include>
@@ -162,8 +225,7 @@
 				<control type="button" id="6110">
 					<label>- $LOCALIZE[31157]</label>
 					<include>DefaultSettingButton</include>
-					<onclick condition="System.AddonIsEnabled(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
-					<onclick condition="System.HasAddon(plugin.library.node.editor) + !System.AddonIsEnabled(plugin.library.node.editor)">EnableAddon(plugin.library.node.editor)</onclick>
+					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
 					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
 					<enable>!Skin.HasSetting(HomeMenuNoMovieButton)</enable>
 				</control>
@@ -176,11 +238,13 @@
 				<control type="button" id="6120">
 					<label>- $LOCALIZE[31157]</label>
 					<include>DefaultSettingButton</include>
-					<onclick condition="System.AddonIsEnabled(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
-					<onclick condition="System.HasAddon(plugin.library.node.editor) + !System.AddonIsEnabled(plugin.library.node.editor)">EnableAddon(plugin.library.node.editor)</onclick>
+					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
 					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
 					<enable>!Skin.HasSetting(HomeMenuNoTVShowButton)</enable>
 				</control>
+				
+				
+				
 				<control type="radiobutton" id="613">
 					<label>$LOCALIZE[2]</label>
 					<include>DefaultSettingButton</include>
@@ -190,16 +254,9 @@
 				<control type="button" id="6130">
 					<label>- $LOCALIZE[31157]</label>
 					<include>DefaultSettingButton</include>
-					<onclick condition="System.AddonIsEnabled(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
-					<onclick condition="System.HasAddon(plugin.library.node.editor) + !System.AddonIsEnabled(plugin.library.node.editor)">EnableAddon(plugin.library.node.editor)</onclick>
+					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=music,return)</onclick>
 					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
 					<enable>!Skin.HasSetting(HomeMenuNoMusicButton)</enable>
-				</control>
-				<control type="radiobutton" id="6131">
-					<label>$LOCALIZE[20389]</label>
-					<include>DefaultSettingButton</include>
-					<selected>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</selected>
-					<onclick>Skin.ToggleSetting(HomeMenuNoMusicVideoButton)</onclick>
 				</control>
 				<control type="radiobutton" id="618">
 					<label>$LOCALIZE[19020]</label>
@@ -212,6 +269,12 @@
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(HomeMenuNoRadioButton)</selected>
 					<onclick>Skin.ToggleSetting(HomeMenuNoRadioButton)</onclick>
+				</control>
+				<control type="radiobutton" id="6131">
+					<label>$LOCALIZE[20389]</label>
+					<include>DefaultSettingButton</include>
+					<selected>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</selected>
+					<onclick>Skin.ToggleSetting(HomeMenuNoMusicVideoButton)</onclick>
 				</control>
 				<control type="radiobutton" id="614">
 					<label>$LOCALIZE[24001]</label>
@@ -254,7 +317,7 @@
 			<control type="image">
 				<description>Dialog Header image</description>
 				<left>0</left>
-				<top>130</top>
+				<top>160</top>
 				<right>0</right>
 				<height>3</height>
 				<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
@@ -278,34 +341,34 @@
 			<control type="list" id="9000">
 				<description>button area</description>
 				<left>0</left>
-				<top>130</top>
+				<top>160</top>
 				<width>470</width>
 				<height>700</height>
 				<onleft>10000</onleft>
 				<onright>10000</onright>
 				<onup>9000</onup>
 				<ondown>9000</ondown>
-				<itemlayout height="85" width="470">
+				<itemlayout height="90" width="470">
 					<control type="label">
 						<textoffsetx>30</textoffsetx>
 						<width>470</width>
-						<height>85</height>
+						<height>90</height>
 						<label>$INFO[ListItem.Label]</label>
 						<font>font37</font>
 						<aligny>center</aligny>
 					</control>
 				</itemlayout>
-				<focusedlayout height="85" width="470">
+				<focusedlayout height="90" width="470">
 					<control type="image">
 						<width>470</width>
-						<height>85</height>
+						<height>90</height>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
 						<animation effect="fade" start="100" end="50" time="40" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
 					<control type="label">
 						<textoffsetx>30</textoffsetx>
 						<width>470</width>
-						<height>85</height>
+						<height>90</height>
 						<font>font37</font>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
@@ -313,15 +376,19 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<label>$LOCALIZE[128]</label>
+						<label>$LOCALIZE[31061]</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
-						<label>$LOCALIZE[31061]</label>
+						<label>$LOCALIZE[128]</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="3">
 						<label>$LOCALIZE[31159]</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="4">
+						<label>PVR Settings</label>
 						<onclick>noop</onclick>
 					</item>
 				</content>
@@ -329,7 +396,7 @@
 		</control>
 		<control type="group">
 			<right>0</right>
-			<top>133</top>
+			<top>163</top>
 			<bottom>137</bottom>
 			<width>60</width>
 			<control type="scrollbar" id="60">
@@ -340,8 +407,8 @@
 				<orientation>vertical</orientation>
 				<texturesliderbackground />
 				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
-				<onleft>610</onleft>
-				<onright>610</onright>
+				<onleft>5</onleft>
+				<onright>5</onright>
 				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>

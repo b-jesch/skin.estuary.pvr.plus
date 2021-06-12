@@ -91,6 +91,28 @@
 							<param name="icon_height" value="70"/>
 						</include>
 						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/4k_Movies.xsp"/>
+							<param name="sortorder" value="random"/>
+							<param name="widget_header" value="4K Movies"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5304"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/Movie Watchlist.xsp"/> 
+							<param name="sortorder" value="random"/>
+							<param name="widget_header" value="My Watchlist"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5305"/>
+						</include>
+						<include content="WidgetListCustomCategories" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/decades/"/>
+							<param name="widget_header" value="Decade"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="22200"/>
+							<param name="icon" value="special://skin/extras/icons/movie.png"/>
+							<param name="icon_height" value="55"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
 							<param name="content_path" value="videodb://movies/sets/"/>
 							<param name="widget_header" value="$LOCALIZE[31075]"/>
 							<param name="widget_target" value="videos"/>
@@ -406,14 +428,7 @@
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="12900"/>
 						</include>
-						<include content="WidgetListChannels" condition="System.HasPVRAddon">
-							<param name="content_path" value="pvr://channels/tv/*?view=lastplayed"/>
-							<param name="sortby" value="lastplayed"/>
-							<param name="sortorder" value="descending"/>
-							<param name="widget_header" value="$LOCALIZE[31016]"/>
-							<param name="list_id" value="12200"/>
-						</include>
-						<include content="WidgetListChannels" condition="System.HasPVRAddon">
+						<include content="WidgetPVRRecordings" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://recordings/tv/active?view=flat"/>
 							<param name="sortby" value="date"/>
 							<param name="sortorder" value="descending"/>
@@ -429,6 +444,14 @@
 							<param name="list_id" value="12400"/>
 							<param name="item_treshold" value="1"/>
 						</include>
+						<include content="WidgetListChannels" condition="System.HasPVRAddon">
+							<param name="content_path" value="pvr://channels/tv/*?view=lastplayed"/>
+							<param name="sortby" value="lastplayed"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$LOCALIZE[31016]"/>
+							<param name="list_id" value="12200"/>
+						</include>
+						
 					</control>
 					<include content="ImageWidget" condition="!System.HasPVRAddon">
 						<param name="text_label" value="$LOCALIZE[31143]" />

@@ -111,7 +111,7 @@
 			</control>
 			<control type="label" id="40000">
 				<left>715</left>
-				<top>110</top>
+				<top>95</top>
 				<width>50%</width>
 				<height>45</height>
 				<font>font12</font>
@@ -307,7 +307,7 @@
 				<width>104</width>
 				<height>104</height>
 				<aspectratio aligny="center">keep</aspectratio> 
-				<texture>$INFO[Player.Art(icon)]</texture>
+				<texture fallback="defaulttvlogo.png">$INFO[Player.Art(icon)]</texture>
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
@@ -467,7 +467,7 @@
 					<top>-20</top>
 					<right>80</right>
 					<height>290</height>
-					<width>620</width>
+					<width>700</width>
 					<font>font12</font>
 					<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label>
 					<align>left</align>
@@ -545,7 +545,7 @@
 						<top>-380</top>
 						<width>415</width>
 						<height>600</height>
-						<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayingPosterVar]</texture>  
+						<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayingPVRRecordingPosterVar]</texture>  
 						<bordertexture border="21">overlays/shadow.png</bordertexture>
 						<bordersize>20</bordersize>
 						<include>OpenClose_Left</include>
@@ -587,7 +587,7 @@
 						<top>-19</top>
 						<right>80</right>
 						<height>290</height>
-						<width>600</width>
+						<width>700</width>
 						<font>font12</font>
 						<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label>
 						<shadowcolor>black</shadowcolor>

@@ -976,3 +976,16 @@ msgstr ""
 msgctxt "#31215"
 msgid "Enlarge Bio"
 msgstr ""
+
+msgctxt "#31216"
+msgid "PVR Settings"
+msgstr ""
+
+msgctxt "#31217"
+msgid "PVR Artwork and additional LiveTV settings exclusive to the EstuaryPVR+ Skin"
+msgstr ""
+
+msgctxt "#31218"
+msgid "Show end time media flag"
+msgstr ""
+
