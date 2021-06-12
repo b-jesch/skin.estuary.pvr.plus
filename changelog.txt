@@ -1,3 +1,13 @@
+[B]0.0.8[/B]
+• New background texture added.
+• New OSD layout for Live TV recordings completed.
+• New 4K and My Watchlist widgets added to Movie Home Menu.
+• New additional PVR settings added to EstuaryPVR+ skin settings.
+• Support for local PVR artwork added. Now functional on all Live TV OSD's.
+• Recent Recordings widget on main Live TV home menu now supports local landscape image.
+• More new variables added to variable.xml file.
+• More 'EN' language strings added.
+
 [B]0.0.7[/B]
 • New runtime and endtime flags added.
 • New Premiered flag added.
