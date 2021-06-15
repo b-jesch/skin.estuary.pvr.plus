@@ -1,3 +1,8 @@
+[B]0.0.9[/B]
+• When using Local PVR Artwork option, skin will now detect any missing artwork and use the Skin Helper Script to fill the gaps if the SHS option is also enabled in the PVR skin settings.
+• New layout created for the PVR Info Dialog that resembles the the current Video Info Dialog for Movies/TV Shows.
+• Additional New variables added to the variable.xml file.
+
 [B]0.0.8[/B]
 • New background texture added.
 • New OSD layout for Live TV recordings completed.
