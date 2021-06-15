@@ -287,18 +287,32 @@
 			</control>
 
 		<!-- Video OSD Settings For Live TV -->		
-			<control type="image">
+			<control type="image" id="9876">
 				<depth>DepthOSD+</depth>
 				<left>20</left>
 				<top>-285</top>
 				<width>400</width>
 				<height>600</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture fallback="defaultpvrposter.png" background="true">$VAR[NowPlayingPVRPosterVar]</texture>
+				<texture background="true">$VAR[NowPlaying_PVRPoster_Local_Artwork_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 				<include>OpenClose_Left</include>
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
+			<control type="image" id="9877">
+				<depth>DepthOSD+</depth>
+				<left>20</left>
+				<top>-285</top>
+				<width>400</width>
+				<height>600</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture fallback="defaultpvrposter.png" background="true">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<include>OpenClose_Left</include>
+				 <visible>[VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio] + String.IsEmpty(Control.GetLabel(9876))</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
 			<control type="image">
@@ -387,8 +401,8 @@
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
 			<control type="label">
-				<left>780</left>
-				<top>65</top>
+				<left>770</left>
+				<top>75</top>
 				<right>80</right>
 				<height>290</height>
 				<width>700</width>
@@ -401,7 +415,7 @@
 			</control>
 			<control type="image"> 
 				<left>545</left>
-				<top>65</top>
+				<top>70</top>
 				<width>150</width>
 				<height>50</height>
 				<aspectratio>keep</aspectratio>
@@ -411,7 +425,7 @@
 			</control>
 			<control type="image">
 				<left>630</left>
-				<top>70</top>
+				<top>80</top>
 				<width>120</width>
 				<height>30</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>

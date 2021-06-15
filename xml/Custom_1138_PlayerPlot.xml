@@ -23,20 +23,34 @@
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<control type="group">
 				<animation effect="slide" end="0,-80" time="150" condition="PVR.IsTimeShift">conditional</animation>
-				<control type="image">
-					<depth>DepthOSD+</depth>
-					<left>20</left>
-					<top>-380</top>
-					<width>400</width>
-					<height>600</height>
-					<aspectratio aligny="bottom">keep</aspectratio>
-					<texture fallback="defaultpvrposter.png" background="true">$VAR[NowPlayingPVRPosterVar]</texture>
-					<bordertexture border="21">overlays/shadow.png</bordertexture>
-					<bordersize>20</bordersize>
-					<include>OpenClose_Left</include>
-					<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
-					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
-				</control>
+				<control type="image" id="9876">
+				<depth>DepthOSD+</depth>
+				<left>20</left>
+				<top>-380</top>
+				<width>400</width>
+				<height>600</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture background="true">$VAR[NowPlaying_PVRPoster_Local_Artwork_Var]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<include>OpenClose_Left</include>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
+			<control type="image" id="9877">
+				<depth>DepthOSD+</depth>
+				<left>20</left>
+				<top>-380</top>
+				<width>400</width>
+				<height>600</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture fallback="defaultpvrposter.png" background="true">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<include>OpenClose_Left</include>
+				 <visible>[VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio] + String.IsEmpty(Control.GetLabel(9876))</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
 			<control type="group">
 				<include>OpenClose_Right</include>
 				<control type="image">
@@ -101,7 +115,7 @@
 				<control type="image">
 					<left>545</left>
 					<top>-25</top>
-					<width>150</width>
+					<width>150</width> 
 					<height>50</height>
 					<aspectratio>keep</aspectratio>
 					<texture>ratings/imdb/imdb.png</texture>

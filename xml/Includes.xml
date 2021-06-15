@@ -402,7 +402,6 @@
 					<visible>!Skin.HasSetting(show_mediaendtimeflag)</visible>
 					<include content="MediaFlag">
 						<param name="texture" value="flags/runtime/finishtime.png" />
-						
 					</include>
 					<control type="label">
 						<width>145</width>
