@@ -1,3 +1,9 @@
+[B]0.1.0[/B]
+• New 'Live' and 'New' LiveTV flags added.
+• Seek-Bar at the top of screen fixed for Live TV.
+• Plot alignment fixed on Player Plot Dialog when Timeshift has been activated.
+• Live TV OSD Button height position adjusted slightly.
+
 [B]0.0.9[/B]
 • When using Local PVR Artwork option, skin will now detect any missing artwork and use the Skin Helper Script to fill the gaps if the SHS option is also enabled in the PVR skin settings.
 • New layout created for the PVR Info Dialog that resembles the the current Video Info Dialog for Movies/TV Shows.
