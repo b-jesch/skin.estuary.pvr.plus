@@ -39,7 +39,7 @@
 				<control type="grouplist" id="200">
 					<left>200</left>
 					<align>center</align>
-					<bottom>15</bottom>
+					<bottom>12</bottom>
 					<width>100%</width>
 					<height>60</height>
 					<itemgap>20</itemgap>

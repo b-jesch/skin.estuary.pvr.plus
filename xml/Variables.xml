@@ -874,10 +874,13 @@
 	<variable name="PVRBanner_ListItem_SkinHelper_Var">
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Banner)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Banner)]</value>
     </variable>
-	
 	<variable name="NowPlayingPVRRecordingPosterVar">
 		<value condition="!String.IsEmpty(PVR.EpgEventIcon) + VideoPlayer.Content(livetv)">$INFO[PVR.EpgEventIcon]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Title)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
+	</variable>
+	<variable name="PremieredFlags">
+		<value condition="ListItem.IsLive">icons/pvr/live.png</value>
+		<value condition="ListItem.IsNew">icons/pvr/new.png</value>
 	</variable>
 	<variable name="MusicPlayerCover">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>

@@ -91,7 +91,7 @@
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 				<control type="group">
 					<visible>Player.SeekEnabled + VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress">
+					<include content="PVRProgressTopSeek">
 						<param name="ts_bar_top" value="55"/>
 						<param name="epg_bar_top" value="63"/>
 						<param name="ts_bar_height" value="8"/>
@@ -100,14 +100,14 @@
 				</control>
 				<control type="group">
 					<visible>Player.SeekEnabled + !VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress">
+					<include content="PVRProgressTopSeek">
 						<param name="ts_bar_top" value="55"/>
 						<param name="ts_bar_height" value="16"/>
 					</include>
 				</control>
 				<control type="group">
 					<visible>!Player.SeekEnabled + VideoPlayer.HasEPG</visible>
-					<include content="PVRProgress">
+					<include content="PVRProgressTopSeek">
 						<param name="epg_bar_top" value="55"/>
 						<param name="epg_bar_height" value="16"/>
 					</include>
@@ -216,9 +216,21 @@
 					<align>right</align>
 					<label>$INFO[System.Time]</label>
 				</control>
+				<control type="label">
+						<right>24</right>
+						<top>74</top>
+						<align>right</align>
+						<itemgap>5</itemgap>
+						<orientation>horizontal</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<label>$INFO[System.Date]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<height>100</height>
+						<width>500</width>
+				</control>
 				<control type="grouplist">
 					<right>24</right>
-					<top>74</top>
+					<top>105</top>
 					<width>800</width>
 					<height>100</height>
 					<align>right</align>
@@ -251,18 +263,6 @@
 						<visible>Player.Muted</visible>
 					</control>
 				</control>
-					<control type="label">
-						<right>24</right>
-						<top>105</top>
-						<align>right</align>
-						<itemgap>5</itemgap>
-						<orientation>horizontal</orientation>
-						<usecontrolcoords>true</usecontrolcoords>
-						<label>$INFO[System.Date]</label>
-						<shadowcolor>text_shadow</shadowcolor>
-						<height>100</height>
-						<width>500</width>
-					</control>
 			</control>
 		</control>
 	</controls>
