@@ -208,10 +208,17 @@
 					<label>$PARAM[label2]</label>
 				</control>
 			</control>
+			<control type="image"> 
+					<left>175</left>
+					<top>41</top>
+					<width>30</width>
+					<height>22</height>
+					<texture fallback="flags/videoresolution/sd.png">$VAR[PVR_HDTV_Var,flags/hdtv/,.png]</texture>
+			</control>
 			<control type="group">
 				<visible>!$PARAM[only_label_condition]</visible>
 				<control type="label">
-					<left>170</left>
+					<left>215</left>
 					<top>33</top>
 					<height>30</height>
 					<font>font12</font>
@@ -808,8 +815,8 @@
 			</control>
 		</control>
 	</include>
+	
 	<include name="BigListContentPanel">
-		<visible>Control.IsVisible(50)</visible>
 		<control type="group">
 			<left>0</left>
 			<top>202</top>
@@ -904,20 +911,20 @@
 				<bordertexture border="23">overlays/shadow.png</bordertexture>
 				<bordersize>22</bordersize>
 			</control>
-			<control type="image" id="9876">
+			<control type="image" id="9880">
 				<left>-5</left>
 				<top>260</top>
 				<width>245</width>
 				<height>345</height>
-				<texture background="true">$VAR[PVRPoster_Listitem_Local_Artwork_Var]</texture>
+				<texture>$VAR[PVRPoster_ListItem_Local_Artwork_Var]</texture>
 			</control>
-			<control type="image" id="9877">
+			<control type="image" id="9881">
 				<left>-5</left>
 				<top>260</top>
 				<width>245</width>
 				<height>345</height>
 				<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
-				 <visible>String.IsEmpty(Control.GetLabel(9876))</visible>
+				 <visible>String.IsEmpty(Control.GetLabel(9880))</visible>
 			</control>
 			<control type="textbox">
 				<top>305</top>
@@ -962,45 +969,43 @@
 			<control type="label">
 				<top>560</top>
 				<left>580</left>
-				<width>150</width>
+				<width>190</width>
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$VAR[DurationVar][/B]</label>
+				<label>[B]$INFO[ListItem.Duration(hh:mm),, Hrs][/B]</label>
 			</control>
 			<control type="image">
-				<left>700</left>
-				<top>560</top>
-				<width>120</width>
-				<height>40</height>
+				<left>750</left>
+				<top>564</top>
+				<width>40</width>
+				<height>28</height>
 				<texture fallback="flags/hdtv/sdtv.png">$VAR[PVR_HDTV_Var,flags/hdtv/,.png]</texture>
-			<visible>true</visible>
-			</control>
-			<control type="image">
-				<left>650</left>
-				<top>500</top>
-				<width>37</width>
-				<height>37</height>
-				<texture>icons/pvr/mpaa.png</texture>
 			<visible>false</visible>
-			</control>
-			<control type="label">
-				<top>500</top>
-				<left>695</left>
-				<width>185</width>
-				<font>font27</font>
-				<textcolor>button_focus</textcolor>
-				<label>[B]$VAR[Label_PVR_MPAA][/B]</label>
-				<visible>false</visible>
 			</control>
 			<control type="image">
 				<top>620</top>
+				<left>-5</left>
+				<width>50</width>
+				<height>50</height>
+				<texture>icons/pvr/tvschedule.png</texture>
+			</control>
+			<control type="label">
+				<top>625</top>
+				<left>60</left>
+				<width>300</width>
+				<height>35</height>
+				<font>font27</font>
+				<label>$VAR[FlagLabel]</label>
+			</control>
+			<control type="image">
+				<top>655</top>
 				<left>-1</left>
 				<width>45</width>
 				<height>45</height>
 				<texture>icons/pvr/genre.png</texture>
 			</control>
 			<control type="label">
-				<top>620</top>
+				<top>655</top>
 				<left>60</left>
 				<height>40</height>
 				<width>780</width>
@@ -1010,13 +1015,13 @@
 			<label fallback="Genre not listed">[COLOR grey]$INFO[ListItem.PlotOutline][/COLOR]</label> 
 			</control>
 			<control type="image">
-				<top>655</top>
+				<top>690</top>
 				<width>45</width>
 				<height>45</height>
 				<texture>icons/pvr/director.png</texture>
 			</control>
 			<control type="label">
-				<top>655</top>
+				<top>689</top>
 				<left>60</left>
 				<height>40</height>
 				<width>780</width>
@@ -1025,13 +1030,13 @@
 				<label fallback="Director not listed">$INFO[Window(Home).Property(SkinHelper.ListItem.Director)]</label>
 			</control>
 			<control type="image">
-				<top>690</top>
+				<top>720</top>
 				<width>45</width>
 				<height>45</height>
 				<texture>icons/pvr/writer.png</texture>
 			</control>
 			<control type="label">
-                <top>690</top>
+                <top>722</top>
 				<left>60</left>
                 <width>780</width>
                 <height>85</height>
@@ -1069,7 +1074,6 @@
 	</include>
 	
 	<include name="PVR+Now-NextContentPanel">
-	<visible>Control.IsVisible(51)</visible>
 		<control type="group">
 			<left>0</left>
 			<top>270</top>
@@ -1155,7 +1159,6 @@
 				<textcolor>grey</textcolor>
 				<label>[B]$INFO[ListItem.EpgEventTitle,,[CR]][/B]</label>
 			</control>
-		
 			<control type="image">
 				<top>-20</top>
 				<left>-25</left>
@@ -1170,17 +1173,16 @@
 				<top>0</top>
 				<width>245</width>
 				<height>345</height>
-				<texture background="true">$VAR[PVRPoster_Listitem_Local_Artwork_Var]</texture>
+				<texture>$VAR[PVRPoster_ListItem_Local_Artwork_Var]</texture>
 			</control>
 			<control type="image" id="9877"> 
 				<left>-5</left>
 				<top>0</top>
 				<width>245</width>
 				<height>345</height>
-				<texture fallback="defaultpvrposter2.png">$VAR[PVRPoster_Listitem_SkinHelper_Var]</texture>
-				<visible>String.IsEmpty(Control.GetLabel(9876))</visible>	
+				<texture fallback="defaultpvrposter.png">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
+				 <visible>String.IsEmpty(Control.GetLabel(9876))</visible>
 			</control> 
-						
 			<control type="textbox">
 				<top>50</top>
 				<left>270</left>
@@ -1192,11 +1194,12 @@
 			</control>
 			<control type="textbox">
 				<top>70</top>
-				<left>380</left>
+				<left>270</left>
 				<width>575</width>
 				<height>210</height>
 				<bottom>114</bottom>
 				<font>font27</font>
+				<align>center</align>
 				<textcolor>80FFFFFF</textcolor>
 				<label>$LOCALIZE[19055]</label>
 				<visible>String.IsEmpty(Listitem.Plot)</visible>
@@ -1228,7 +1231,7 @@
 				<width>150</width>
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$VAR[DurationVar][/B]</label>
+				<label>[B]$INFO[ListItem.Duration(hh:mm),, Hrs/mins][/B]</label>
 			</control>
 			<control type="image">
 				<left>700</left>
@@ -1236,24 +1239,87 @@
 				<width>120</width>
 				<height>40</height>
 				<texture fallback="flags/hdtv/sdtv.png">$VAR[PVR_HDTV_Var,flags/hdtv/,.png]</texture>
-			<visible>true</visible>
-			</control>
-			<control type="image">
-				<left>650</left>
-				<top>500</top>
-				<width>37</width>
-				<height>37</height>
-				<texture>icons/pvr/mpaa.png</texture>
 			<visible>false</visible>
 			</control>
+		
+			
 			<control type="label">
-				<top>500</top>
-				<left>695</left>
-				<width>185</width>
+				<top>430</top>
+				<left>270</left>
+				<width>560</width>
+				<height>262</height>
+				<align>center</align>
+				<label>$INFO[ListItem.NextStartTime,, - ]$INFO[ListItem.NextEndTime,,Hrs]</label>
+			</control>
+			<control type="label">
+				<top>360</top>
+				<width>150</width>
+				<height>625</height>
+				<label>[B]Next:[/B]</label>
+			</control>
+			<control type="image">
+				<top>365</top>
+				<left>90</left>
+				<width>20</width>
+				<height>30</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture colordiffuse="button_focus">icons/keyboard/arrowright.png</texture>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="label">
+				<top>360</top>
+				<left>120</left>
+				<width>540</width>
+				<height>625</height>
+				<textcolor>grey</textcolor>
+				<label>[B]$INFO[Container(51).ListItem.NextTitle,,[CR]][/B]</label>
+			</control>
+			<control type="image">
+				<top>400</top>
+				<left>-25</left>
+				<width>285</width>
+				<height>385</height>
+				<texture>colors/black.png</texture>
+				<bordertexture border="23">overlays/shadow.png</bordertexture>
+				<bordersize>22</bordersize>
+			</control>
+			<control type="image">
+				<left>-5</left>
+				<top>420</top>
+				<width>245</width>
+				<height>345</height>
+				<texture fallback="defaultpvrposter.png">$VAR[NextPVRPoster_Local_Artwork_Var]</texture>
+			</control>
+			<control type="textbox">
+				<top>470</top>
+				<left>270</left>
+				<width>575</width>
+				<height>250</height>
+				<bottom>114</bottom>
+				<align>center</align>
+				<label>[B]$INFO[ListItem.NextEpisodeName,,[CR]][/B]$INFO[ListItem.NextPlot]</label>
+			</control>
+			<control type="textbox">
+				<top>510</top>
+				<left>270</left>
+				<width>575</width>
+				<height>210</height>
+				<bottom>114</bottom>
 				<font>font27</font>
+				<align>center</align>
+				<textcolor>80FFFFFF</textcolor>
+				<label>$LOCALIZE[19055]</label>
+				<visible>String.IsEmpty(Listitem.NextPlot)</visible>
+			</control>
+			<control type="label">
+				<top>310</top>
+				<left>380</left>
+				<width>150</width>
+				<font>font27</font>
+				<align>center</align>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$VAR[Label_PVR_MPAA][/B]</label>
-				<visible>false</visible>
+				<label>[B]$VAR[NextDurationVar][/B]</label>
+				<visible>String.IsEmpty(Listitem.Plot)</visible>
 			</control>
 		</control>
 	</include>

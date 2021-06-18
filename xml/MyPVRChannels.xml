@@ -23,7 +23,7 @@
 					<focusposition>4</focusposition>
 					<pagecontrol>73</pagecontrol>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<viewtype label="Big List">Big list</viewtype>
+					<viewtype label="PVR+ Big List">PVR+ Big list</viewtype>
 					<include content="TVChannelsItemLayouts">
 						<param name="list_id" value="50" />
 						<param name="label1" value="$INFO[ListItem.Label]" />
@@ -53,6 +53,7 @@
 				</control>
 				<include>BigListContentPanel</include>			
 				</control>
+				<visible>Control.IsVisible(50)</visible>
 			</control>
 			
 			<control type="group">
@@ -198,7 +199,8 @@
 					<orientation>vertical</orientation>
 					<animation effect="zoom" start="100,100" end="50,100" center="-50,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
 				</control>
-				<include>PVR+Now-NextContentPanel</include>			
+				<include>PVR+Now-NextContentPanel</include>	
+				<visible>Control.IsVisible(51)</visible>				
 				</control>
 			</control>
 			

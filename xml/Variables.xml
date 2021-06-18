@@ -542,10 +542,11 @@
 		<value>$INFO[ListItem.Premiered,[COLOR grey]$LOCALIZE[20416]:[/COLOR] ,[CR]]</value>
 	</variable>
 	<variable name="FlagLabel">
-		<value condition="ListItem.IsPremiere">[B][COLOR button_focus]$LOCALIZE[838][/COLOR][/B]</value>
+		<value condition="ListItem.IsPremiere">[B][COLOR pink]$LOCALIZE[838][/COLOR][/B]</value>
 		<value condition="ListItem.IsFinale">[B][COLOR button_focus]$LOCALIZE[849][/COLOR][/B]</value>
 		<value condition="ListItem.IsLive">[B][COLOR button_focus]$LOCALIZE[839][/COLOR][/B]</value>
-		<value condition="ListItem.IsNew">[B][COLOR button_focus]$LOCALIZE[842][/COLOR][/B]</value>
+		<value condition="ListItem.IsNew">[B][COLOR green]$LOCALIZE[842][/COLOR][/B]</value>
+		<value>[B][COLOR green]Scheduled[/COLOR] [COLOR button_focus]TV[/COLOR][/B]</value>
 	</variable>
 	<variable name="FlagDashLabel">
 		<value condition="ListItem.IsPremiere + String.IsEmpty(ListItem.Season) + String.IsEmpty(ListItem.Episode) + String.IsEmpty(ListItem.EpisodeName)">[B][COLOR button_focus]$LOCALIZE[838][/COLOR][/B]</value>
@@ -797,6 +798,12 @@
 		<value condition="String.IsEqual(ListItem.DbType,movie)">local.png</value>
 		<value condition="String.IsEqual(ListItem.DbType,tvshow)">local.png</value>
 	</variable>
+	<variable name="PVR_HDTV_Var">
+		<value condition="String.EndsWith(ListItem.ChannelName,UHD)">uhd</value>
+		<value condition="String.EndsWith(ListItem.ChannelName,HD)">hdtv</value>
+		<value condition="String.EndsWith(ListItem.ChannelName,FHD)">hdtv</value>
+		<value condition="String.EndsWith(ListItem.ChannelName,4k)">4k</value>
+	</variable>
 	<variable name="PVR_Timer_ActiveRecording_Comment_Var">
 		<value condition="String.IsEqual(ListItem.Comment,Recording active)">Recording_active</value>
 	</variable>
@@ -846,15 +853,14 @@
     <value condition="!String.IsEmpty(Skin.String(Local.PVR.Artwork))">$INFO[Skin.String(Local.PVR.Artwork)]</value>
     <value>special://skin/PVR_Artwork/</value>
 	</variable>
-	<variable name="PVRPoster_Listitem_Local_Artwork_Var">
+	<variable name="PVRPoster_ListItem_Local_Artwork_Var">
 		<value condition="!String.IsEmpty(ListItem.EpgEventTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.EpgEventTitle,,/poster.jpg]</value>
 	</variable>
 	<variable name="PVRPoster_ListItem_SkinHelper_Var">
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Poster)]</value>
     </variable>
 	<variable name="NowPlaying_PVRPoster_Local_Artwork_Var">
-    <value condition="!String.IsEmpty(PVR.EpgEventIcon)">$INFO[PVR.EpgEventIcon]</value>
-	<value condition="!String.IsEmpty(VideoPlayer.Title)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
+   	<value condition="!String.IsEmpty(VideoPlayer.Title)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
 	</variable> 
 	<variable name="NowPlayling_PVRPoster_SkinHelper_Var">
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.Player.Art.Poster)]</value>
