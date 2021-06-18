@@ -159,6 +159,257 @@
 			</focusedlayout>
 		</definition>
 	</include>
+	<include name="TVChannelsItemLayout">
+		<definition>
+			<control type="label">
+				<left>30</left>
+				<top>0</top>
+				<right>30</right>
+				<font>font36_title</font>
+				<aligny>center</aligny>
+				<visible>$PARAM[only_label_condition]</visible>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="group">
+				<visible>!$PARAM[only_label_condition]</visible>
+				<animation effect="slide" start="0,0" end="0,16" time="0" condition="!$EXP[listitem_has_epg_event_info]">Conditional</animation>
+				<control type="image">
+					<left>29</left>
+					<top>17</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>$PARAM[has_info_icon]</visible>
+					<texture>$PARAM[info_icon]</texture>
+				</control>
+				<control type="label">
+					<left>12</left>
+					<top>0</top>
+					<width>90</width>
+					<height>90</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font32_title</font>
+					<visible>!$PARAM[has_info_icon]</visible>
+					<label>$PARAM[label0]</label>
+				</control>
+				<control type="label">
+					<left>170</left>
+					<top>0</top>
+					<height>30</height>
+					<aligny>top</aligny>
+					<label>$PARAM[label1]</label>
+				</control>
+				<control type="label">
+					<left>170</left>
+					<top>0</top>
+					<height>30</height>
+					<aligny>top</aligny>
+					<label>$PARAM[label2]</label>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!$PARAM[only_label_condition]</visible>
+				<control type="label">
+					<left>170</left>
+					<top>33</top>
+					<height>30</height>
+					<font>font12</font>
+					<aligny>top</aligny>
+					<label>$PARAM[label3]</label>
+				</control>
+				<control type="label">
+					<left>170</left>
+					<top>33</top>
+					<height>30</height>
+					<font>font12</font>
+					<aligny>top</aligny>
+					<label>$PARAM[label4]</label>
+				</control>
+			</control>
+			<control type="image">
+				<right>30</right>
+				<top>0</top>
+				<width>32</width>
+				<aligny>center</aligny>
+				<aspectratio align="center">keep</aspectratio>
+				<texture>$VAR[PVRStatusImageVar]</texture>
+				<visible>$PARAM[has_status_icon]</visible>
+			</control>
+			<control type="image">
+				<left>75</left>
+				<top>10</top>
+				<width>90</width>
+				<height>80</height>
+				<aligny>center</aligny>
+				<aspectratio align="center">keep</aspectratio>
+				<visible>!$PARAM[only_label_condition] | ListItem.IsParentFolder</visible>
+				<texture>$INFO[ListItem.ActualIcon]</texture>
+			</control>
+		</definition>
+	</include>
+	<include name="TVChannelsItemLayouts">
+		<param name="only_label_condition">false</param>
+		<param name="has_info_icon">false</param>
+		<param name="has_status_icon">false</param>
+		<definition>
+			<itemlayout height="100">
+				<control type="group">
+					<control type="label">
+						<left>170</left>
+						<top>62</top>
+						<width>200</width>
+						<height>90</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.StartTime]</label>
+						<visible>String.Contains(ListItem.StartTime,AM) | String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+					<control type="progress">
+						<left>300</left>
+						<top>75</top>
+						<width>200</width>
+						<height>12</height>
+						<midtexture border="3">progress/texturebg_white.png</midtexture>
+						<visible>ListItem.HasEpg + !$PARAM[has_info_icon]</visible>
+						<info>ListItem.Progress</info>
+						<visible>String.Contains(ListItem.StartTime,AM) | String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+					<control type="label">
+						<left>520</left>
+						<top>62</top>
+						<width>200</width>
+						<height>90</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.EndTime]</label>
+						<visible>String.Contains(ListItem.StartTime,AM) | String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<control type="label">
+						<left>170</left>
+						<top>62</top>
+						<width>200</width>
+						<height>90</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.StartTime]</label>
+						<visible>!String.Contains(ListItem.StartTime,AM) + !String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+					<control type="progress">
+						<left>250</left>
+						<top>75</top>
+						<width>200</width>
+						<height>12</height>
+						<midtexture border="3">progress/texturebg_white.png</midtexture>
+						<visible>ListItem.HasEpg</visible>
+						<info>ListItem.Progress</info>
+						<visible>!String.Contains(ListItem.StartTime,AM) + !String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+					<control type="label">
+						<left>470</left>
+						<top>62</top>
+						<width>200</width>
+						<height>90</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.EndTime]</label>
+						<visible>!String.Contains(ListItem.StartTime,AM) + !String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+				</control>
+				<include content="TVChannelsItemLayout">
+					<param name="only_label_condition" value="$PARAM[only_label_condition]" />
+					<param name="info_icon" value="$PARAM[info_icon]" />
+					<param name="has_info_icon" value="$PARAM[has_info_icon]" />
+					<param name="has_status_icon" value="$PARAM[has_status_icon]" />
+					<param name="label0" value="[COLOR grey]$INFO[ListItem.ChannelNumberLabel][/COLOR]" />
+					<param name="label1" value="$PARAM[label1]" />
+					<param name="label2" value="$PARAM[label2]" />
+					<param name="label3" value="$VAR[PVRListItemSubLabel]" />
+					<param name="label4" value="[COLOR grey]$INFO[ListItem.Comment][/COLOR]" />
+				</include>
+			</itemlayout>
+			<focusedlayout height="100">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<right>0</right>
+					<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+					<texture colordiffuse="button_focus">lists/focus.png</texture>
+					<visible>Control.HasFocus($PARAM[list_id])</visible>
+				</control>
+				<control type="group">
+					<control type="label">
+						<left>170</left>
+						<top>62</top>
+						<width>200</width>
+						<height>90</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.StartTime]</label>
+						<visible>String.Contains(ListItem.StartTime,AM) | String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+					<control type="progress">
+						<left>300</left>
+						<top>75</top>
+						<width>200</width>
+						<height>12</height>
+						<midtexture border="3">progress/texturebg_white.png</midtexture>
+						<visible>ListItem.HasEpg + !$PARAM[has_info_icon]</visible>
+						<info>ListItem.Progress</info>
+						<visible>String.Contains(ListItem.StartTime,AM) | String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+					<control type="label">
+						<left>520</left>
+						<top>62</top>
+						<width>200</width>
+						<height>90</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.EndTime]</label>
+						<visible>String.Contains(ListItem.StartTime,AM) | String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<control type="label">
+						<left>170</left>
+						<top>62</top>
+						<width>200</width>
+						<height>90</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.StartTime]</label>
+						<visible>!String.Contains(ListItem.StartTime,AM) + !String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+					<control type="progress">
+						<left>250</left>
+						<top>75</top>
+						<width>200</width>
+						<height>12</height>
+						<midtexture border="3">progress/texturebg_white.png</midtexture>
+						<visible>ListItem.HasEpg</visible>
+						<info>ListItem.Progress</info>
+						<visible>!String.Contains(ListItem.StartTime,AM) + !String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+					<control type="label">
+						<left>470</left>
+						<top>62</top>
+						<width>200</width>
+						<height>90</height>
+						<font>font12</font>
+						<label>$INFO[ListItem.EndTime]</label>
+						<visible>!String.Contains(ListItem.StartTime,AM) + !String.Contains(ListItem.StartTime,PM)</visible>
+					</control>
+				</control>
+				
+				<include content="TVChannelsItemLayout">
+					<param name="only_label_condition" value="$PARAM[only_label_condition]" />
+					<param name="info_icon" value="$PARAM[info_icon]" />
+					<param name="has_info_icon" value="$PARAM[has_info_icon]" />
+					<param name="has_status_icon" value="$PARAM[has_status_icon]" />
+					<param name="label0" value="$INFO[ListItem.ChannelNumberLabel]" />
+					<param name="label1" value="$PARAM[label1]" />
+					<param name="label2" value="$PARAM[label2]" />
+					<param name="label3" value="$VAR[PVRListItemSubLabelFocused]" />
+					<param name="label4" value="$INFO[ListItem.Comment]" />
+				</include>
+			</focusedlayout>
+		</definition>
+	</include>
 	<include name="ChannelManagerList">
 		<control type="grouplist">
 			<orientation>horizontal</orientation>
@@ -557,6 +808,456 @@
 			</control>
 		</control>
 	</include>
+	<include name="BigListContentPanel">
+		<visible>Control.IsVisible(50)</visible>
+		<control type="group">
+			<left>0</left>
+			<top>202</top>
+			<control type="progress">
+				<top>70</top>
+				<left>405</left>
+				<width>250</width>
+				<height>22</height>
+				<colordiffuse>88FFFFFF</colordiffuse>
+				<visible>ListItem.HasEpg</visible>
+				<info>ListItem.Progress</info>
+			</control>
+			<control type="label">
+				<top>57</top>
+				<right>480</right>
+				<align>right</align>
+				<width>560</width>
+				<height>262</height>
+				<label>$INFO[ListItem.StartTime]</label>
+				<visible>String.Contains(ListItem.StartTime,AM) | String.Contains(ListItem.StartTime,PM)</visible>
+			</control>
+			<control type="label">
+				<top>57</top>
+				<left>315</left>
+				<width>560</width>
+				<height>262</height>
+				<label>$INFO[ListItem.StartTime]</label>
+				<visible>!String.Contains(ListItem.StartTime,AM) + !String.Contains(ListItem.StartTime,PM)</visible>
+			</control>
+			<control type="label">
+				<top>57</top>
+				<left>670</left>
+				<width>520</width>
+				<height>262</height>
+				<label>$INFO[ListItem.EndTime]</label>
+			</control>
+			<control type="image">
+				<top>-130</top>
+				<width>95</width>
+				<height>100</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture fallback="DefaultTVShows.png">$INFO[Listitem.Icon]</texture>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="label">
+				<top>-125</top>
+				<left>115</left>
+				<width>540</width>
+				<height>262</height>
+				<font>font27</font>
+				<label>Ch: $INFO[ListItem.ChannelNumberLabel]</label>
+				<visible>true</visible>
+			</control>
+			<control type="label">
+				<top>-95</top>
+				<left>115</left>
+				<width>540</width>
+				<height>262</height>
+				<font>font45</font>
+				<label>$INFO[ListItem.ChannelName]</label>
+				<visible>true</visible>
+			</control>
+			<control type="label">
+				<top>-20</top>
+				<width>280</width>
+				<height>625</height>
+				<label>[B]Watch Now:[/B]</label>
+			</control>
+			<control type="image">
+				<top>-12</top>
+				<left>190</left>
+				<width>20</width>
+				<height>30</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture colordiffuse="button_focus">icons/keyboard/arrowright.png</texture>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="label">
+				<top>-20</top>
+				<left>220</left>				
+				<width>540</width>
+				<height>625</height>
+				<label>[B]$INFO[ListItem.EpgEventTitle,,[CR]][/B]</label>
+			</control>
+		</control>
+			<control type="image">
+				<top>240</top>
+				<left>-25</left>
+				<width>285</width>
+				<height>385</height>
+				<texture>colors/black.png</texture>
+				<bordertexture border="23">overlays/shadow.png</bordertexture>
+				<bordersize>22</bordersize>
+			</control>
+			<control type="image" id="9876">
+				<left>-5</left>
+				<top>260</top>
+				<width>245</width>
+				<height>345</height>
+				<texture background="true">$VAR[PVRPoster_Listitem_Local_Artwork_Var]</texture>
+			</control>
+			<control type="image" id="9877">
+				<left>-5</left>
+				<top>260</top>
+				<width>245</width>
+				<height>345</height>
+				<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
+				 <visible>String.IsEmpty(Control.GetLabel(9876))</visible>
+			</control>
+			<control type="textbox">
+				<top>305</top>
+				<left>270</left>
+				<width>575</width>
+				<height>210</height>
+				<bottom>114</bottom>
+				<label>[B]$INFO[ListItem.EpisodeName,,[CR]][/B]$INFO[ListItem.Plot]</label>
+			</control>
+			<control type="textbox">
+				<top>335</top>
+				<left>380</left>
+				<width>575</width>
+				<height>210</height>
+				<bottom>114</bottom>
+				<font>font27</font>
+				<textcolor>80FFFFFF</textcolor>
+				<label>$LOCALIZE[19055]</label>
+				<visible>String.IsEmpty(Listitem.Plot)</visible>
+			</control>
+			<control type="image">
+				<left>300</left>
+				<top>555</top>
+				<width>150</width>
+				<height>50</height>
+				<texture>ratings/imdb/imdb.png</texture>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>560</top>
+				<width>120</width>
+				<height>35</height>
+				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating),ratings/imdb/,.png]</texture>
+			</control>
+			<control type="image">
+				<left>525</left>
+				<top>550</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/pvr/time-icon.png</texture>
+			</control>
+			<control type="label">
+				<top>560</top>
+				<left>580</left>
+				<width>150</width>
+				<font>font27</font>
+				<textcolor>button_focus</textcolor>
+				<label>[B]$VAR[DurationVar][/B]</label>
+			</control>
+			<control type="image">
+				<left>700</left>
+				<top>560</top>
+				<width>120</width>
+				<height>40</height>
+				<texture fallback="flags/hdtv/sdtv.png">$VAR[PVR_HDTV_Var,flags/hdtv/,.png]</texture>
+			<visible>true</visible>
+			</control>
+			<control type="image">
+				<left>650</left>
+				<top>500</top>
+				<width>37</width>
+				<height>37</height>
+				<texture>icons/pvr/mpaa.png</texture>
+			<visible>false</visible>
+			</control>
+			<control type="label">
+				<top>500</top>
+				<left>695</left>
+				<width>185</width>
+				<font>font27</font>
+				<textcolor>button_focus</textcolor>
+				<label>[B]$VAR[Label_PVR_MPAA][/B]</label>
+				<visible>false</visible>
+			</control>
+			<control type="image">
+				<top>620</top>
+				<left>-1</left>
+				<width>45</width>
+				<height>45</height>
+				<texture>icons/pvr/genre.png</texture>
+			</control>
+			<control type="label">
+				<top>620</top>
+				<left>60</left>
+				<height>40</height>
+				<width>780</width>
+				<align>left</align>
+				<font>font27</font>
+				<textcolor>grey</textcolor>
+			<label fallback="Genre not listed">[COLOR grey]$INFO[ListItem.PlotOutline][/COLOR]</label> 
+			</control>
+			<control type="image">
+				<top>655</top>
+				<width>45</width>
+				<height>45</height>
+				<texture>icons/pvr/director.png</texture>
+			</control>
+			<control type="label">
+				<top>655</top>
+				<left>60</left>
+				<height>40</height>
+				<width>780</width>
+				<font>font27</font>
+				<textcolor>grey</textcolor>
+				<label fallback="Director not listed">$INFO[Window(Home).Property(SkinHelper.ListItem.Director)]</label>
+			</control>
+			<control type="image">
+				<top>690</top>
+				<width>45</width>
+				<height>45</height>
+				<texture>icons/pvr/writer.png</texture>
+			</control>
+			<control type="label">
+                <top>690</top>
+				<left>60</left>
+                <width>780</width>
+                <height>85</height>
+                <label fallback="Writer not listed">$INFO[Window(Home).Property(SkinHelper.ListItem.Writer)]</label>
+                <font>font27</font>
+                <textcolor>grey</textcolor>
+            </control>
+			<control type="button" id="85">
+				<top>810</top>
+				<left>10</left>
+				<width>175</width>
+				<height>80</height>
+				<align>center</align>
+				<label>TV Later</label>
+				<font>Font_Reg25</font>
+				<textcolor>grey</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texture colordiffuse="epg_button_focus" border="20">epgtopbutton/button-fo.png</texture>
+				<texture colordiffuse="epg_button_nofocus" border="20">epgtopbutton/button-nofo.png</texture>
+				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(1133)</onclick>
+                <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(1133)</onclick>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<visible>false</visible>
+			</control>
+			<control type="label">
+                <top>990</top>
+				<left>0</left>
+                <width>780</width>
+                <height>85</height>
+                <label>[B]Next:[/B][CR][B][COLOR white]$INFO[Container(50).ListItem.NextTitle,,[/COLOR]][/B]</label>
+                <font>font27</font>
+                <textcolor>button_focus</textcolor>
+            </control>
+	</include>
+	
+	<include name="PVR+Now-NextContentPanel">
+	<visible>Control.IsVisible(51)</visible>
+		<control type="group">
+			<left>0</left>
+			<top>270</top>
+			<control type="progress">
+				<top>10</top>
+				<left>425</left>
+				<width>250</width>
+				<height>22</height>
+				<colordiffuse>88FFFFFF</colordiffuse>
+				<visible>ListItem.HasEpg</visible>
+				<info>ListItem.Progress</info>
+			</control>
+			<control type="label">
+				<top>-3</top>
+				<right>460</right>
+				<align>right</align>
+				<width>560</width>
+				<height>262</height>
+				<label>$INFO[ListItem.StartTime]</label>
+				<visible>String.Contains(ListItem.StartTime,AM) | String.Contains(ListItem.StartTime,PM)</visible>
+			</control>
+			<control type="label">
+				<top>-3</top>
+				<left>335</left>
+				<width>560</width>
+				<height>262</height>
+				<label>$INFO[ListItem.StartTime]</label>
+				<visible>!String.Contains(ListItem.StartTime,AM) + !String.Contains(ListItem.StartTime,PM)</visible>
+			</control>
+			<control type="label">
+				<top>-3</top>
+				<left>690</left>
+				<width>520</width>
+				<height>262</height>
+				<label>$INFO[ListItem.EndTime]</label>
+			</control>
+			<control type="image">
+				<top>-180</top>
+				<width>95</width>
+				<height>100</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture fallback="DefaultTVShows.png">$INFO[Listitem.Icon]</texture>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="label">
+				<top>-175</top>
+				<left>115</left>
+				<width>540</width>
+				<height>262</height>
+				<font>font27</font>
+				<label>Ch: $INFO[ListItem.ChannelNumberLabel]</label>
+				<visible>true</visible>
+			</control>
+			<control type="label">
+				<top>-145</top>
+				<left>115</left>
+				<width>540</width>
+				<height>262</height>
+				<font>font45</font>
+				<label>$INFO[ListItem.ChannelName]</label>
+				<visible>true</visible>
+			</control>
+			<control type="label">
+				<top>-65</top>
+				<width>280</width>
+				<height>625</height>
+				<label>[B]Watch Now:[/B]</label>
+			</control>
+			<control type="image">
+				<top>-57</top>
+				<left>190</left>
+				<width>20</width>
+				<height>30</height>
+				<aspectratio align="left">keep</aspectratio>
+				<texture colordiffuse="button_focus">icons/keyboard/arrowright.png</texture>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="label">
+				<top>-65</top>
+				<left>220</left>				
+				<width>540</width>
+				<height>625</height>
+				<textcolor>grey</textcolor>
+				<label>[B]$INFO[ListItem.EpgEventTitle,,[CR]][/B]</label>
+			</control>
+		
+			<control type="image">
+				<top>-20</top>
+				<left>-25</left>
+				<width>285</width>
+				<height>385</height>
+				<texture>colors/black.png</texture>
+				<bordertexture border="23">overlays/shadow.png</bordertexture>
+				<bordersize>22</bordersize>
+			</control>
+			<control type="image" id="9876"> 
+				<left>-5</left>
+				<top>0</top>
+				<width>245</width>
+				<height>345</height>
+				<texture background="true">$VAR[PVRPoster_Listitem_Local_Artwork_Var]</texture>
+			</control>
+			<control type="image" id="9877"> 
+				<left>-5</left>
+				<top>0</top>
+				<width>245</width>
+				<height>345</height>
+				<texture fallback="defaultpvrposter2.png">$VAR[PVRPoster_Listitem_SkinHelper_Var]</texture>
+				<visible>String.IsEmpty(Control.GetLabel(9876))</visible>	
+			</control> 
+						
+			<control type="textbox">
+				<top>50</top>
+				<left>270</left>
+				<height>210</height>
+				<width>575</width>
+				<bottom>114</bottom>
+				<align>center</align>
+				<label>$INFO[ListItem.Plot]</label>
+			</control>
+			<control type="textbox">
+				<top>70</top>
+				<left>380</left>
+				<width>575</width>
+				<height>210</height>
+				<bottom>114</bottom>
+				<font>font27</font>
+				<textcolor>80FFFFFF</textcolor>
+				<label>$LOCALIZE[19055]</label>
+				<visible>String.IsEmpty(Listitem.Plot)</visible>
+			</control>
+			<control type="image">
+				<left>300</left>
+				<top>305</top>
+				<width>150</width>
+				<height>50</height>
+				<texture>ratings/imdb/imdb.png</texture>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>310</top>
+				<width>120</width>
+				<height>35</height>
+				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating),ratings/imdb/,.png]</texture>
+			</control>
+			<control type="image">
+				<left>525</left>
+				<top>300</top>
+				<width>55</width>
+				<height>55</height>
+				<texture>icons/pvr/time-icon.png</texture>
+			</control>
+			<control type="label">
+				<top>310</top>
+				<left>580</left>
+				<width>150</width>
+				<font>font27</font>
+				<textcolor>button_focus</textcolor>
+				<label>[B]$VAR[DurationVar][/B]</label>
+			</control>
+			<control type="image">
+				<left>700</left>
+				<top>310</top>
+				<width>120</width>
+				<height>40</height>
+				<texture fallback="flags/hdtv/sdtv.png">$VAR[PVR_HDTV_Var,flags/hdtv/,.png]</texture>
+			<visible>true</visible>
+			</control>
+			<control type="image">
+				<left>650</left>
+				<top>500</top>
+				<width>37</width>
+				<height>37</height>
+				<texture>icons/pvr/mpaa.png</texture>
+			<visible>false</visible>
+			</control>
+			<control type="label">
+				<top>500</top>
+				<left>695</left>
+				<width>185</width>
+				<font>font27</font>
+				<textcolor>button_focus</textcolor>
+				<label>[B]$VAR[Label_PVR_MPAA][/B]</label>
+				<visible>false</visible>
+			</control>
+		</control>
+	</include>
+	
 	<include name="RDSInfoLine">
 		<control type="grouplist">
 			<visible>!String.IsEmpty($PARAM[value])</visible>

@@ -23,13 +23,40 @@
 					<focusposition>4</focusposition>
 					<pagecontrol>73</pagecontrol>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
-					<viewtype label="535">list</viewtype>
-					<include content="PVRListItemLayouts">
+					<viewtype label="Big List">Big list</viewtype>
+					<include content="TVChannelsItemLayouts">
 						<param name="list_id" value="50" />
 						<param name="label1" value="$INFO[ListItem.Label]" />
 						<param name="has_status_icon" value="true" />
 					</include>
 				</control>
+				<control type="group">
+				<depth>DepthContentPanel</depth>
+				<include>OpenClose_Right</include>
+				<width>870</width>
+				<right>0</right>
+				<include content="ContentPanel">
+					<param name="left" value="-72" />
+					<param name="width" value="970" />
+					<param name="top" value="-20" />
+					<param name="flipx" value="true" />
+				</include>
+				<control type="scrollbar" id="73">
+					<left>-50</left>
+					<top>100</top>
+					<width>12</width>
+					<bottom>80</bottom>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<orientation>vertical</orientation>
+					<animation effect="zoom" start="100,100" end="50,100" center="-50,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
+				</control>
+				<include>BigListContentPanel</include>			
+				</control>
+			</control>
+			
+			<control type="group">
+				<include>OpenClose_Left</include>
 				<control type="fixedlist" id="51">
 					<left>0</left>
 					<top>100</top>
@@ -42,7 +69,7 @@
 					<onright>73</onright>
 					<onup>51</onup>
 					<ondown>51</ondown>
-					<viewtype label="535">list</viewtype>
+					<viewtype label="PVR+ Now-Next">PVR+ Now-Next</viewtype>
 					<pagecontrol>73</pagecontrol>
 					<itemlayout height="70">
 						<control type="progress">
@@ -150,8 +177,7 @@
 						</control>
 					</focusedlayout>
 				</control>
-			</control>
-			<control type="group">
+				<control type="group">
 				<depth>DepthContentPanel</depth>
 				<include>OpenClose_Right</include>
 				<width>870</width>
@@ -172,8 +198,10 @@
 					<orientation>vertical</orientation>
 					<animation effect="zoom" start="100,100" end="50,100" center="-50,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
 				</control>
-				<include>PVRInfoPanel</include>
+				<include>PVR+Now-NextContentPanel</include>			
+				</control>
 			</control>
+			
 			<include content="TopBar">
 				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRChannelsVar]" />
 			</include>
@@ -192,6 +220,7 @@
 				<aligny>center</aligny>
 				<wrapmultiline>true</wrapmultiline>
 				<font>font27</font>
+				<visible>false</visible>
 			</control>
 			<include>PVRChannelNumberInput</include>
 			<include>MediaMenuMouseOverlay</include>
