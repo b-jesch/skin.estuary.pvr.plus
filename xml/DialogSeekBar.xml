@@ -728,7 +728,7 @@
 				<control type="label">
 					<top>150</top>
 					<right>50</right>
-					<width>580</width>
+					<width>500</width>
 					<align>right</align>
 					<height>40</height>
 					<font>font12</font>
@@ -739,7 +739,7 @@
 				<control type="label">
 					<top>180</top>
 					<right>50</right>
-					<width>580</width>
+					<width>500</width>
 					<align>right</align>
 					<height>40</height>
 					<font>font12</font>
