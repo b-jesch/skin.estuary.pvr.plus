@@ -911,6 +911,8 @@
 					<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
 					<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 					<animation effect="slide" end="70,0" time="200" reversible="true" condition="Control.IsVisible(799)">Conditional</animation>
+					<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)]</visible>
+					<visible>!Control.IsVisible(52)</visible>
 				</control>
 				<control type="grouplist">
 					<top>0</top>
@@ -925,6 +927,7 @@
 					<control type="group">
 						<width>600</width>
 						<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)]</visible>
 						<animation effect="fade" time="200">VisibleChange</animation>
 						<control type="grouplist">
 							<left>-75</left>
@@ -995,6 +998,8 @@
 						<width>auto</width>
 						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 						<label>$INFO[System.Time]</label>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + ![Window.IsVisible(DialogButtonMenu.xml) + Skin.HasSetting(powermenu_list)]</visible>
+						<visible>!Control.IsVisible(52)</visible>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -1013,6 +1018,7 @@
 						<textoffsetx>-8</textoffsetx>
 						<label>$INFO[System.AlarmPos]</label>
 						<visible>System.HasAlarm(shutdowntimer)</visible>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + ![Window.IsVisible(DialogButtonMenu.xml) + Skin.HasSetting(powermenu_list)]</visible>
 					</control>
 					<control type="image">
 						<top>16</top>
@@ -1022,6 +1028,7 @@
 						<aspectratio aligny="center" align="left">keep</aspectratio>
 						<texture>icons/power.png</texture>
 						<visible>System.HasAlarm(shutdowntimer)</visible>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + ![Window.IsVisible(DialogButtonMenu.xml) + Skin.HasSetting(powermenu_list)]</visible>
 					</control>
 					<control type="label">
 						<height>50</height>
@@ -1029,6 +1036,8 @@
 						<aligny>center</aligny>
 						<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]</label>
 						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + ![Window.IsVisible(DialogButtonMenu.xml) + Skin.HasSetting(powermenu_list)]</visible>
+						<visible>!Control.IsVisible(52)</visible>
 					</control>
 					<control type="image">
 						<top>1</top>
@@ -1038,6 +1047,8 @@
 						<aspectratio aligny="center" align="left">keep</aspectratio>
 						<texture>$INFO[Weather.FanartCode,weather/small/,.png]</texture>
 						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + ![Window.IsVisible(DialogButtonMenu.xml) + Skin.HasSetting(powermenu_list)]</visible>
+						<visible>!Control.IsVisible(52)</visible>
 					</control>
 					<control type="image">
 						<top>8</top>
@@ -1080,6 +1091,7 @@
 		<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 		<animation effect="slide" end="0,16" time="200" reversible="true" condition="String.IsEmpty(Control.GetLabel(18900))">Conditional</animation>
 		<animation effect="slide" end="70,0" time="200" reversible="true" condition="Control.IsVisible(799)">Conditional</animation>
+		<visible>![[Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + !Window.IsVisible(script-script.extendedinfo-YoutubeList.xml)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons) + ![Window.IsVisible(MyPVRChannels.xml) + !Container.Content(addons)]]</visible>
 		<control type="label">
 			<label>$PARAM[breadcrumbs_label]</label>
 			<include>BreadcrumbsLabel</include>
@@ -1094,22 +1106,26 @@
 			<include>BreadcrumbsLabel</include>
 			<visible>![Container.Content() + Window.IsActive(videos)]</visible>
 			<visible>![Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml)]</visible>
+			<visible>!Control.IsVisible(52)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[Container.PluginCategory, / ]</label>
 			<include>BreadcrumbsLabel</include>
 			<visible>!String.isempty(Container.PluginCategory)</visible>
+			<visible>!Control.IsVisible(52)</visible>
 		</control>
 		<control type="label">
 			<label>$INFO[Control.GetLabel(10),: ]</label>
 			<include>BreadcrumbsLabel</include>
 			<visible>!String.IsEqual(Control.GetLabel(10),$LOCALIZE[16100]) + Window.IsActive(videos)</visible>
+			<visible>!Control.IsVisible(52)</visible>
 		</control>
 		<control type="label">
 			<left>10</left>
 			<label>($LOCALIZE[31052])</label>
 			<include>BreadcrumbsLabel</include>
 			<visible>Container.Filtered</visible>
+			<visible>!Control.IsVisible(52)</visible>
 		</control>
 	</include>
 	<include name="BreadcrumbsLabel">
