@@ -30,7 +30,7 @@
 					<width>526</width>
 					<height>801</height>
 					<aspectratio>scale</aspectratio>
-					<texture>$VAR[PVRPoster_Listitem_Local_Artwork_Var]</texture>
+					<texture>$VAR[PVRPoster(ListItem-Title)Local_ArtworkVar]</texture>
 				</control>
 				<control type="image" id="9877">
 					<depth>DepthContentPopout</depth>

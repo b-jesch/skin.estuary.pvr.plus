@@ -545,8 +545,8 @@
 		<value condition="ListItem.IsPremiere">[B][COLOR pink]$LOCALIZE[838][/COLOR][/B]</value>
 		<value condition="ListItem.IsFinale">[B][COLOR button_focus]$LOCALIZE[849][/COLOR][/B]</value>
 		<value condition="ListItem.IsLive">[B][COLOR button_focus]$LOCALIZE[839][/COLOR][/B]</value>
-		<value condition="ListItem.IsNew">[B][COLOR green]$LOCALIZE[842][/COLOR][/B]</value>
-		<value>[B][COLOR green]Scheduled[/COLOR] [COLOR button_focus]TV[/COLOR][/B]</value>
+		<value condition="ListItem.IsNew">[B][COLOR yellow]$LOCALIZE[842][/COLOR][/B]</value>
+		<value>[B][COLOR green]Scheduled[/COLOR] [COLOR FFFDA700]TV[/COLOR][/B]</value>
 	</variable>
 	<variable name="FlagDashLabel">
 		<value condition="ListItem.IsPremiere + String.IsEmpty(ListItem.Season) + String.IsEmpty(ListItem.Episode) + String.IsEmpty(ListItem.EpisodeName)">[B][COLOR button_focus]$LOCALIZE[838][/COLOR][/B]</value>
@@ -866,6 +866,9 @@
 	<variable name="PVRPoster_ListItem_Local_Artwork_Var">
 		<value condition="!String.IsEmpty(ListItem.EpgEventTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.EpgEventTitle,,/poster.jpg]</value>
 	</variable>
+	<variable name="PVRPoster(ListItem-Title)Local_ArtworkVar"> 
+		<value condition="!String.IsEmpty(ListItem.Title)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.jpg]</value>
+	</variable>
 	<variable name="PVRPoster_ListItem_SkinHelper_Var">
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Poster)]</value>
     </variable>
@@ -881,7 +884,7 @@
 	<variable name="PVRLandscapeArtworkVar"> 
 		<value condition="!String.IsEmpty(ListItem.Title)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/landscape.jpg]</value>
 	</variable>
-	<variable name="PVRRecordingArtworkVar"> 
+	<variable name="PVRRecording_Timer_ArtworkVar"> 
 		<value condition="!String.IsEmpty(ListItem.Title)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.jpg]</value>
 	</variable>
 	<variable name="PVR_NextUP_Banner_Artwork_Var"> 
