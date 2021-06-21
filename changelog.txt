@@ -1,3 +1,10 @@
+[B]0.1.1[/B]
+• 3 new skin views added (Flix Large, Flix Wide and Flix Landscape)
+• Position of 'Now Playing' breadcrumb labels changed on TV channels, Recordings and Timer windows.
+• New Layouts for TV Channels Window (Pvr+Big List and PVR+ Now-Next)
+• New Layouts for PVR Recordings and Timer Windows.
+• New options added to Music OSD settings (Disable Discart, Enable Artist Clearlogo, Enable Scrolling Text)....Thanks to Guilouz.
+
 [B]0.1.0[/B]
 • New 'Live' and 'New' LiveTV flags added.
 • Seek-Bar at the top of screen fixed for Live TV.
@@ -29,8 +36,8 @@
 • New layout for Music OSD completed.
 • New Artist Biography button and Dialog added to Music OSD.
 • New Custom Artist Biography.xml created.
-• New Actor Button and Dialog on Movie and TV Show OSD completed.
-• New Custom ActorList.xml created.
+• New Actor Button and Dialog on Movie and TV Show OSD completed. (Thanks Guilouz)
+• New Custom ActorList.xml created. (Thanks Guilouz)
 • Support for New OSD flags for Local Library, Netflix, Amazon Prime, iplayer, Youtube and Emby added.
 
 [B]0.0.6[/B]
