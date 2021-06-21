@@ -18,6 +18,9 @@
 	<include file="View_500_Wall.xml" />
 	<include file="View_501_Banner.xml" />
 	<include file="View_502_FanArt.xml" />
+	<include file="View_508_Flix_Wide.xml"/>
+	<include file="View_510_Flix_Large.xml"/>	
+	<include file="View_509_Flix_Landscape.xml"/>
 	<include file="Variables.xml" />
 	<constant name="DepthDialog">0.50</constant>
 	<constant name="DepthDialog+">0.52</constant>
@@ -927,7 +930,7 @@
 					<control type="group">
 						<width>600</width>
 						<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
-						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)]</visible>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + !Window.IsVisible(MyPVRChannels.xml) + !Window.IsVisible(MyPVRRecordings.xml) + !Window.IsVisible(MyPVRTimers.xml)</visible>
 						<animation effect="fade" time="200">VisibleChange</animation>
 						<control type="grouplist">
 							<left>-75</left>
@@ -963,6 +966,48 @@
 							<height>25</height>
 							<width>630</width>
 							<align>right</align>
+							<scroll>true</scroll>
+						</control>
+					</control>
+					<control type="group">
+						<width>600</width>
+						<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + Window.IsVisible(MyPVRChannels.xml)</visible>
+						<animation effect="fade" time="200">VisibleChange</animation>
+						<control type="grouplist">
+							<left>-110</left>
+							<orientation>horizontal</orientation>
+							<height>38</height>
+							<top>14</top>
+							
+							<width>660</width>
+							<itemgap>5</itemgap>
+							<usecontrolcoords>true</usecontrolcoords>
+							<control type="image">
+								<top>4</top>
+								<width>32</width>
+								<height>32</height>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="button_focus">$VAR[NowPlayingIconVar]</texture>
+							</control>
+							<control type="label">
+								<label>$INFO[Player.Title]</label>
+								<font>font27</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<height>35</height>
+								<width min="1" max="602">auto</width>
+							</control>
+						</control>
+						<control type="label" id="7700">
+							<label>$VAR[NowPlayingSublabelVar]</label>
+							<left>-74</left>
+							<top>44</top>
+							<font>font12</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>text_shadow</shadowcolor>
+							<height>25</height>
+							<width>630</width>
+							
 							<scroll>true</scroll>
 						</control>
 					</control>

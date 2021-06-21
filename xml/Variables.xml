@@ -904,6 +904,11 @@
 		<value condition="ListItem.IsLive">icons/pvr/live.png</value>
 		<value condition="ListItem.IsNew">icons/pvr/new.png</value>
 	</variable>
+	<variable name="WidgetThumbViewVar">
+		<value condition="!String.IsEmpty(Listitem.Art(season.landscape))">$INFO[Listitem.Art(season.landscape)]</value>
+		<value condition="!String.IsEmpty(Listitem.Art(tvshow.landscape))">$INFO[Listitem.Art(tvshow.landscape)]</value>
+		<value condition="!String.IsEmpty(Listitem.Art(landscape))">$INFO[Listitem.Art(landscape)]</value>
+	</variable>
 	<variable name="MusicPlayerCover">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 	</variable>
