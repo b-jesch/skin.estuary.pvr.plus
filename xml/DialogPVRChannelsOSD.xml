@@ -63,19 +63,33 @@
 					<label>[B]$INFO[ListItem.EpisodeName,,[CR]][/B]$INFO[ListItem.Plot]</label>
 					
 				</control>
-				<control type="image">
+				<control type="image" id="9876">
 					<depth>DepthOSD+</depth>
 					<left>5</left>
 					<bottom>0</bottom>
 					<width>400</width>
 					<height>600</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<texture fallback="DefaultPVRPoster.png">$VAR[NowPVRPoster_Local_Artwork_Var]</texture>
+					<texture background="true">$VAR[PVRPoster_ListItem_Local_Artwork_Var]</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<include>OpenClose_Left</include>
 					<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
-					
+					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+				</control>
+				<control type="image" id="9877">
+					<depth>DepthOSD+</depth>
+					<left>5</left>
+					<bottom>0</bottom>
+					<width>400</width>
+					<height>600</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
+					<bordertexture border="21">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<include>OpenClose_Left</include>
+					<visible>[VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio] + String.IsEmpty(Control.GetLabel(9876))</visible>
+					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 				</control>
 				<control type="fixedlist" id="11">
 					<bottom>15</bottom>

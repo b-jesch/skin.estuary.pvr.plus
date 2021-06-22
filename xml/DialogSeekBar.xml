@@ -287,7 +287,7 @@
 			</control>
 
 		<!-- Video OSD Settings For Live TV -->		
-			<control type="image" id="9876">
+			<control type="image" id="9876"> 
 				<depth>DepthOSD+</depth>
 				<left>20</left>
 				<top>-285</top>
@@ -447,7 +447,7 @@
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<include>OpenClose_Left</include>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio</visible>
 					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 				</control>
 				<control type="label">
@@ -634,7 +634,18 @@
 					<texture>$VAR[Content_Type_Var]</texture>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 				</control>
-		<!-- OSD Settings For Music -->		
+		<!-- OSD Settings For Music -->	
+				<control type="image">
+					<depth>DepthOSD+</depth>
+					<left>15</left>
+					<bottom>5</bottom>
+					<width>405</width>
+					<height>405</height>
+					<aspectratio aligny="bottom" align="center">keep</aspectratio>
+					<texture background="true" fallback="DefaultAudio.png">$VAR[MusicPlayerCover]</texture> 
+					<bordersize>20</bordersize>
+					<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+				</control>
 				<control type="label"> 
 					<left>475</left>
 					<top>-77</top>
