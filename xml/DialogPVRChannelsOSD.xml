@@ -32,25 +32,9 @@
 						<width>675</width>
 						<height>363</height>
 						<align>center</align>
-						<label fallback="19055">[B][COLOR button_focus]$INFO[ListItem.Title][/COLOR][/B][CR]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime] Hrs[B]  •  [/B]Duration: $VAR[DurationVar]</label>
+						<label fallback="19055">[B][COLOR button_focus]$INFO[ListItem.Title][/COLOR][/B][CR]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime] Hrs[B]  •  [/B]Duration: $INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m]</label>
 						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 						
-				</control>
-				<control type="image">
-					<left>1455</left>
-					<bottom>260</bottom>
-					<width>150</width>
-					<height>50</height>
-					<texture>ratings/imdb/imdb.png</texture>
-					<visible>false</visible>
-				</control>
-				<control type="image">
-					<left>1550</left>
-					<bottom>270</bottom>
-					<width>120</width>
-					<height>35</height>
-					<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating),ratings/imdb/,.png]</texture>
-					<visible>false</visible>
 				</control>
 				<control type="textbox">
 					<bottom>-25</bottom>
@@ -125,7 +109,7 @@
 							<top>18</top>
 							<width>35</width>
 							<height>27</height>
-							<texture fallback="flags/videoresolution/sd.png">$VAR[PVR_HD_Var,flags/videoresolution/,.png]</texture>
+							<texture fallback="flags/videoresolution/sd.png">$VAR[PVR_HDTV_Var,flags/hdtv/,.png]</texture>
 						</control>
 						<control type="image"> 
 							<right>65</right>
