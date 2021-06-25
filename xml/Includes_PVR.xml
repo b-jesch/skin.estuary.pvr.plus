@@ -1573,11 +1573,17 @@
 					<control type="image" id="2">
 						<width>58</width>
 						<height>58</height>
-						<texture border="3" fallback="windows/pvr/epg-genres/0.png">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</texture>
+						<texture border="3" fallback="windows/pvr/epg-genres/0_Genre.png">$INFO[ListItem.PlotOutline,windows/pvr/epg-genres/0_Genre.png]</texture>
+						<colordiffuse>0_Genre</colordiffuse>
+					</control>
+					<control type="image" id="2">
+						<width>58</width>
+						<height>63</height>
+						<texture border="3">$VAR[Enable_Strip_Genre_Colours_Var]</texture>
 					</control>
 					<control type="label" id="1">
 						<left>6</left>
-						<top>0</top>
+						<top>-3</top>
 						<height>36</height>
 						<aligny>center</aligny>
 						<font>font13</font>
@@ -1586,19 +1592,19 @@
 					<control type="image">
 						<visible>ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive</visible>
 						<left>6</left>
-						<top>35</top>
-						<width>16</width>
-						<height>16</height>
+						<top>32</top>
+						<width>20</width>
+						<height>20</height>
 						<aspectratio>keep</aspectratio>
 						<texture colordiffuse="button_focus">icons/pvr/premiere.png</texture>
 					</control>
 					<control type="image">
 						<left>6</left>
-						<top>35</top>
-						<width>16</width>
-						<height>16</height>
+						<top>32</top>
+						<width>19</width>
+						<height>19</height>
 						<texture>$VAR[PVRTimerIcon]</texture>
-						<animation effect="slide" start="0,0" end="19,0" condition="ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive">Conditional</animation>
+						<animation effect="slide" start="0,0" end="22,0" condition="ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive">Conditional</animation>
 					</control>
 				</itemlayout>
 				<focusedlayout height="62" width="60">
@@ -1619,12 +1625,23 @@
 						<width>58</width>
 						<height>58</height>
 						<top>0</top>
-						<texture border="3" fallback="windows/pvr/epg-genres/0.png">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</texture>
+						<texture border="3" fallback="windows/pvr/epg-genres/0_Genre.png">$INFO[ListItem.PlotOutline,windows/pvr/epg-genres/0_Genre.png]</texture>
+						<colordiffuse>0_Genre</colordiffuse>
+						<visible>!Control.HasFocus($PARAM[control_id])</visible>
+					</control>
+					<control type="image" id="2"> 
+						<width>58</width>
+						<height>63</height>
+						<top>0</top>
+						<animation type="Focus"> 
+							<effect type="zoom" start="100" end="112" time="200" tween="sine" easing="inout" center="150,10" />
+						</animation>
+						<texture border="3">$VAR[Enable_Strip_Genre_Colours_Var]</texture>
 						<visible>!Control.HasFocus($PARAM[control_id])</visible>
 					</control>
 					<control type="label" id="1">
 						<left>6</left>
-						<top>0</top>
+						<top>-3</top>
 						<height>36</height>
 						<aligny>center</aligny>
 						<font>font13</font>
@@ -1633,19 +1650,19 @@
 					<control type="image">
 						<visible>ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive</visible>
 						<left>6</left>
-						<top>35</top>
-						<width>16</width>
-						<height>16</height>
+						<top>31</top>
+						<width>20</width>
+						<height>20</height>
 						<aspectratio>keep</aspectratio>
-						<texture colordiffuse="button_focus">icons/pvr/premiere.png</texture>
+						<texture colordiffuse="white70">icons/pvr/premiere.png</texture>
 					</control>
 					<control type="image">
 						<left>6</left>
-						<top>35</top>
-						<width>16</width>
-						<height>16</height>
+						<top>32</top>
+						<width>19</width>
+						<height>19</height>
 						<texture>$VAR[PVRTimerIcon]</texture>
-						<animation effect="slide" start="0,0" end="19,0" condition="ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive">Conditional</animation>
+						<animation effect="slide" start="0,0" end="22,0" condition="ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive">Conditional</animation>
 					</control>
 				</focusedlayout>
 			</control>
@@ -1653,7 +1670,7 @@
 				<right>0</right>
 				<top>$PARAM[scrollbar_top]</top>
 				<width>12</width>
-				<bottom>340</bottom>
+				<height>550</height>
 				<onleft>10</onleft>
 				<onright>10</onright>
 				<orientation>vertical</orientation>

@@ -542,7 +542,7 @@
 	</variable>
 	<variable name="FlagLabel">
 		<value condition="ListItem.IsPremiere">[B][COLOR pink]$LOCALIZE[838][/COLOR][/B]</value>
-		<value condition="ListItem.IsFinale">[B][COLOR button_focus]$LOCALIZE[849][/COLOR][/B]</value>
+		<value condition="ListItem.IsFinale">[B][COLOR red]$LOCALIZE[849][/COLOR][/B]</value>
 		<value condition="ListItem.IsLive">[B][COLOR button_focus]$LOCALIZE[839][/COLOR][/B]</value>
 		<value condition="ListItem.IsNew">[B][COLOR yellow]$LOCALIZE[842][/COLOR][/B]</value>
 		<value>[B][COLOR green]Scheduled[/COLOR] [COLOR FFFDA700]TV[/COLOR][/B]</value>
@@ -848,8 +848,8 @@
 		<value condition="Skin.HasSetting(Enable_PVR_Strip_Genres)">Disable PVR+ Genres [B][COLOR red](OFF)[/COLOR][/B]</value>
 	</variable>
 	<variable name="Enable_Strip_Genre_Colours_Var">
-		<value condition="!Skin.HasSetting(Enable_PVR_Strip_Genres)">$INFO[ListItem.PlotOutline,windows/pvr/epg-genres/radio/,.png]</value>
-		<value>$INFO[ListItem.PlotOutline,windows/pvr/epg-genres/radio/0_Genre.png]</value> 
+		<value condition="!Skin.HasSetting(Enable_PVR_Strip_Genres)">$INFO[ListItem.PlotOutline,windows/pvr/strip_genre/,.png]</value>
+		<value>$INFO[ListItem.PlotOutline,windows/pvr/strip_genre/0_Genre.png]</value> 
 	</variable>
 	<variable name="NowPlayingPVRPosterVar">
 		<value condition="!String.IsEmpty(PVR.EpgEventIcon) + VideoPlayer.Content(livetv) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[PVR.EpgEventIcon]</value>
@@ -901,8 +901,8 @@
 		
 	</variable>
 	<variable name="PremieredFlags">
-		<value condition="ListItem.IsLive">icons/pvr/live.png</value>
-		<value condition="ListItem.IsNew">icons/pvr/new.png</value>
+		<value condition="ListItem.IsLive">live</value>
+		<value condition="ListItem.IsNew">new</value>
 	</variable>
 	<variable name="WidgetThumbViewVar">
 		<value condition="!String.IsEmpty(Listitem.Art(season.landscape))">$INFO[Listitem.Art(season.landscape)]</value>

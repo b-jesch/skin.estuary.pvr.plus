@@ -98,7 +98,7 @@
 								<width>306</width>
 								<height>80</height>
 								<texture colordiffuse="epg_button_focus" border="20">epgtopbutton/button-fo.png</texture>
-								<animation effect="fade" end="30" condition="true">Conditional</animation>
+								
 								<visible>!Control.HasFocus(11)</visible>
 							</control>
 							<control type="label">
@@ -211,7 +211,6 @@
 						<height>30</height>
 						<textcolor>button_focus</textcolor>
 						<label>Duration: [COLOR grey]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/COLOR]</label>
-						<visible>!String.IsEmpty(Listitem.Duration(h))</visible>
 					</control>
 					<control type="label">
 						<top>46</top>
