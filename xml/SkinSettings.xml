@@ -119,17 +119,12 @@
 				</control>
 				<control type="radiobutton" id="806">
 					<include>DefaultSettingButton</include>
-					<label>$VAR[Enable_Standard_PVR_Genre_Label_Var]</label>
-					<selected>!Skin.HasSetting(Enable_standard_PVRGenres)</selected>
-					<onclick>Skin.ToggleSetting(Enable_standard_PVRGenres)</onclick>
+					<label>$VAR[Enable_Kodi_PVR_Genre_Label_Var]</label>
+					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
+					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
 				</control>
+				
 				<control type="radiobutton" id="807">
-					<include>DefaultSettingButton</include>
-					<label>$VAR[Enable_PVR_Strip_Genres_Label_Var]</label>
-					<selected>!Skin.HasSetting(Enable_PVR_Strip_Genres)</selected>
-					<onclick>Skin.ToggleSetting(Enable_PVR_Strip_Genres)</onclick>
-				</control>
-				<control type="radiobutton" id="808">
 					<include>DefaultSettingButton</include>
 					<label>$VAR[PVR_Next-Up_TV_Label_Var]</label>
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>

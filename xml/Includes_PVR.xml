@@ -705,7 +705,7 @@
 				<height>100</height>
 				<aspectratio align="left">keep</aspectratio>
 				<texture fallback="DefaultTVShows.png">$INFO[Listitem.Icon]</texture>
-				<visible>!String.IsEmpty(ListItem.ChannelName)</visible>
+				<visible>!String.IsEmpty(ListItem.ChannelName) + !Window.IsVisible(MyPVRRecordings.xml)</visible>
 				<fadetime>200</fadetime>
 			</control>
 			<control type="group">
@@ -717,6 +717,14 @@
 					<height>262</height>
 					<font>font45</font>
 					<label>$INFO[ListItem.ChannelName]</label>
+					<visible>!Window.IsVisible(MyPVRRecordings.xml)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<height>262</height>
+					<font>font45</font>
+					<label>$INFO[ListItem.ChannelName]</label>
+					<visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
 				</control>
 				<control type="label">
 					<top>55</top>
@@ -727,6 +735,18 @@
 					<label>[COLOR button_focus]$INFO[ListItem.Title][/COLOR] $INFO[ListItem.Year,([COLOR grey],[/COLOR])]</label>
 					<scroll>true</scroll>
 					<visible>!ListItem.HasEpg</visible>
+					<visible>!Window.IsVisible(MyPVRRecordings.xml)</visible>
+				</control>
+				<control type="label">
+					<top>55</top>
+					<left>0</left>
+					<width>830</width>
+					<height>262</height>
+					<font>font36_title</font>
+					<label>[COLOR button_focus]$INFO[ListItem.Title][/COLOR] $INFO[ListItem.Year,([COLOR grey],[/COLOR])]</label>
+					<scroll>true</scroll>
+					<visible>!ListItem.HasEpg</visible>
+					<visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
 				</control>
 				<control type="label">
 					<top>55</top>
@@ -832,7 +852,7 @@
 				<width>150</width>
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$INFO[ListItem.Duration(hh:mm),, Hrs][/B]</label>
+				<label>[B]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/B]</label>
 				
 			</control>
 			<control type="image">
@@ -1063,6 +1083,13 @@
 				<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
 				<visible>String.IsEmpty(Control.GetLabel(9880))</visible>
 			</control>
+			<control type="image"> 
+				<left>-5</left>
+				<top>0</top>
+				<width>245</width>
+				<height>345</height>
+				<texture>$VAR[NowPVRPoster_Backend_Var]</texture>
+			</control>
 			<control type="textbox">
 				<top>50</top>
 				<left>270</left>
@@ -1111,7 +1138,7 @@
 				<width>150</width>
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$INFO[ListItem.Duration(hh:mm),, Hrs][/B]</label>
+				<label>[B]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/B]</label>
 			</control>
 			<control type="image">
 				<top>370</top>
@@ -1143,7 +1170,7 @@
 				<align>left</align>
 				<font>font27</font>
 				<textcolor>grey</textcolor>
-			<label fallback="Genre not listed">[COLOR grey]$INFO[ListItem.PlotOutline][/COLOR]</label> 
+			<label fallback="Genre not listed">[COLOR grey]$INFO[ListItem.Genre][/COLOR]</label> 
 			</control>
 			<control type="image">
 				<top>440</top>
@@ -1315,6 +1342,13 @@
 				<texture fallback="defaultpvrposter.png">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
 				 <visible>String.IsEmpty(Control.GetLabel(9876))</visible>
 			</control> 
+			<control type="image"> 
+				<left>-5</left>
+				<top>0</top>
+				<width>245</width>
+				<height>345</height>
+				<texture>$VAR[NowPVRPoster_Backend_Var]</texture>
+			</control>
 			<control type="textbox">
 				<top>50</top>
 				<left>270</left>
@@ -1363,11 +1397,10 @@
 				<width>150</width>
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$INFO[ListItem.Duration(hh:mm),, Hrs][/B]</label>
+				<label>[B]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/B]</label>
 			</control>
 			
 		
-			
 			<control type="label">
 				<top>430</top>
 				<left>270</left>
@@ -1573,13 +1606,13 @@
 					<control type="image" id="2">
 						<width>58</width>
 						<height>58</height>
-						<texture border="3" fallback="windows/pvr/epg-genres/0_Genre.png">$INFO[ListItem.PlotOutline,windows/pvr/epg-genres/0_Genre.png]</texture>
+						<texture border="3" fallback="windows/pvr/kodi_epg_strip_genre/0_Genre.png">$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/0_Genre.png]</texture>
 						<colordiffuse>0_Genre</colordiffuse>
 					</control>
 					<control type="image" id="2">
 						<width>58</width>
 						<height>63</height>
-						<texture border="3">$VAR[Enable_Strip_Genre_Colours_Var]</texture>
+						<texture border="3">$VAR[Enable_Kodi_PVR_Genre_Colours_Var]</texture>
 					</control>
 					<control type="label" id="1">
 						<left>6</left>
@@ -1625,7 +1658,7 @@
 						<width>58</width>
 						<height>58</height>
 						<top>0</top>
-						<texture border="3" fallback="windows/pvr/epg-genres/0_Genre.png">$INFO[ListItem.PlotOutline,windows/pvr/epg-genres/0_Genre.png]</texture>
+						<texture border="3" fallback="windows/pvr/kodi_epg_strip_genre/0_Genre.png">$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/0_Genre.png]</texture>
 						<colordiffuse>0_Genre</colordiffuse>
 						<visible>!Control.HasFocus($PARAM[control_id])</visible>
 					</control>
@@ -1636,7 +1669,7 @@
 						<animation type="Focus"> 
 							<effect type="zoom" start="100" end="112" time="200" tween="sine" easing="inout" center="150,10" />
 						</animation>
-						<texture border="3">$VAR[Enable_Strip_Genre_Colours_Var]</texture>
+						<texture border="3">$VAR[Enable_Kodi_PVR_Genre_Colours_Var]</texture>
 						<visible>!Control.HasFocus($PARAM[control_id])</visible>
 					</control>
 					<control type="label" id="1">

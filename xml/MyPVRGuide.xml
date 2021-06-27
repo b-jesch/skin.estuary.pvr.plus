@@ -133,6 +133,7 @@
 				<control type="group">
 					<top>75</top>
 					<height>300</height>
+					
 					<control type="image" id="9885">
 						<top>-15</top>
 						<left>70</left>
@@ -147,6 +148,13 @@
 						<height>245</height>
 						<texture fallback="defaultpvrposter.png">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
 						<visible>String.IsEmpty(Control.GetLabel(9885))</visible>
+					</control> 
+					<control type="image"> 
+						<top>-15</top>
+						<left>70</left>
+						<width>170</width>
+						<height>245</height>
+						<texture>$VAR[NowPVRPoster_Backend_Var]</texture>
 					</control> 
 					<control type="image">
 						<top>0</top>
@@ -207,19 +215,35 @@
 					<control type="label">
 						<top>46</top>
 						<left>675</left>
-						
 						<height>30</height>
 						<textcolor>button_focus</textcolor>
 						<label>Duration: [COLOR grey]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/COLOR]</label>
 					</control>
+					<control type="image"> 
+						<left>1045</left>
+						<top>48</top>
+						<width>38</width>
+						<height>38</height>
+						<texture >$VAR[EPG_Genre_Icon,flags/epggenreicons/,.png]</texture> 
+						<visible>true</visible>
+					</control>
 					<control type="label">
 						<top>46</top>
 						<left>945</left>
+						<width>150</width>
 						<height>30</height>
 						<textcolor>button_focus</textcolor>
-						<label>$LOCALIZE[515]: [COLOR grey]$INFO[ListItem.PlotOutline][/COLOR]</label>
+						<label>$LOCALIZE[515]:</label>
 					</control>
-					
+					<control type="label">
+						<top>46</top>
+						<left>1045</left>
+						<width>800</width>
+						<height>30</height>
+						<textcolor>button_focus</textcolor>
+						<label>[COLOR grey]$INFO[ListItem.Genre][/COLOR]</label>
+						<animation effect="slide" start="0,0" end="47,0" condition="String.StartsWith(ListItem.Genre,Movie)">Conditional</animation>
+					</control>
 					<control type="textbox">
 						<left>270</left>
 						<top>100</top>

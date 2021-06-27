@@ -428,7 +428,7 @@
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="12900"/>
 						</include>
-						<include content="WidgetPVRRecordings" condition="System.HasPVRAddon">
+						<include content="WidgetPVRRecordingsLandscape" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://recordings/tv/active?view=flat"/>
 							<param name="sortby" value="date"/>
 							<param name="sortorder" value="descending"/>

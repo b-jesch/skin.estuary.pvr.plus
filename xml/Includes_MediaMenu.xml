@@ -125,9 +125,9 @@
 				<control type="button" id="6051">
 					<include>MediaMenuItemsCommon</include>
 					<label>View:</label>
-					<label2>[B]$INFO[Container.Viewmode][/B]</label2>
+					<label2>[B]$INFO[Container.Viewmode][/B]</label2> 
 					<onclick>Container.NextViewMode</onclick>
-					<visible>Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml)</visible>
+					<visible>Window.IsActive(MyPVRChannels.xml) | !Window.IsActive(MyPVRGuide.xml)</visible>
 				</control>
 				<control type="button" id="6054">
 					<include>MediaMenuItemsCommon</include>
@@ -136,7 +136,51 @@
 					<onclick>SendClick(28)</onclick>
 					<visible>Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml)</visible>
 				</control>
-				
+				<control type="radiobutton" id="6064">
+					<include>MediaMenuItemsCommon</include>
+					<font>font12</font>
+					<label>$VAR[Backend_PVR_Artwork_var]</label>
+					<selected>Skin.HasSetting(Backend.PVR.Artwork)</selected>
+					<onclick>Skin.ToggleSetting(Backend.PVR.Artwork)</onclick>
+				</control>
+				<control type="radiobutton" id="9231">
+					<include>MediaMenuItemsCommon</include>
+					<font>font12</font>
+					<label>$VAR[PVR_Artwork_Switch_Label_Var]</label>
+					<selected>Skin.HasSetting(SkinHelper.EnablePVRThumbs)</selected>
+					<onclick>Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onclick>
+				</control>
+				<control type="radiobutton" id="6065">
+					<include>MediaMenuItemsCommon</include>
+					<font>font12</font>
+					<label>$VAR[Local_PVR_Artwork_Var]</label>
+					<selected>Skin.HasSetting(Enable.Local.PVR.Artwork)</selected>
+					<onclick>Skin.ToggleSetting(Enable.Local.PVR.Artwork)</onclick>
+				</control>
+				<control type="radiobutton" id="6063">
+					<include>MediaMenuItemsCommon</include>
+					<font>font12</font>
+					<label>$VAR[PVR_Show_ChannelGroup_Label_Var]</label>
+					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
+					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
+					<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+				</control>
+				<control type="radiobutton" id="6060">
+					<include>MediaMenuItemsCommon</include>
+					<font>font12</font>
+					<label>$VAR[Enable_Kodi_PVR_Genre_Label_Var]</label>
+					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
+					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
+					<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+				</control>
+				<control type="radiobutton" id="6062">
+					<include>MediaMenuItemsCommon</include>
+					<font>font12</font>
+					<label>$VAR[PVR_Next-Up_TV_Label_Var]</label>
+					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
+					<onclick>Skin.ToggleSetting(disable_PVRNextUp)</onclick>
+					<visible>Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml)</visible>
+				</control>
 				<control type="button" id="6053">
 					<include>MediaMenuItemsCommon</include>
 					<label>$LOCALIZE[31022]</label>
@@ -148,6 +192,7 @@
 					<label>$LOCALIZE[31032]</label>
 					<label2>[B]$INFO[Container.SortOrder][/B]</label2>
 					<onclick>Container.SetSortDirection</onclick>
+					<visible>!Window.IsActive(MyPVRGuide.xml)</visible>
 				</control>
 				<control type="button" id="10">
 					<description>Watched Toggle</description>
@@ -160,6 +205,7 @@
 					<label>$LOCALIZE[31021]</label>
 					<include>MediaMenuLabelCommon</include>
 					<visible>Control.IsVisible(31) | Control.IsVisible(5) | Control.IsVisible(6) | Control.IsVisible(7) | Control.IsVisible(8)</visible>
+					<visible>Window.IsActive(MyPVRChannels.xml) | !Window.IsActive(MyPVRRecordings.xml) | !Window.IsActive(MyPVRTimers.xml)</visible>
 				</control>
 				<control type="radiobutton" id="31">
 					<include>MediaMenuItemsCommon</include>

@@ -543,7 +543,7 @@
 	<variable name="FlagLabel">
 		<value condition="ListItem.IsPremiere">[B][COLOR pink]$LOCALIZE[838][/COLOR][/B]</value>
 		<value condition="ListItem.IsFinale">[B][COLOR red]$LOCALIZE[849][/COLOR][/B]</value>
-		<value condition="ListItem.IsLive">[B][COLOR button_focus]$LOCALIZE[839][/COLOR][/B]</value>
+		<value condition="ListItem.IsLive">[B][COLOR FFFDA700]$LOCALIZE[839][/COLOR][/B]</value>
 		<value condition="ListItem.IsNew">[B][COLOR yellow]$LOCALIZE[842][/COLOR][/B]</value>
 		<value>[B][COLOR green]Scheduled[/COLOR] [COLOR FFFDA700]TV[/COLOR][/B]</value>
 	</variable>
@@ -839,28 +839,25 @@
 		<value condition="!Skin.HasSetting(disable_PVRNextUp)">Enable Next Up TV [B][COLOR limegreen](ON)[/COLOR][/B]</value>
 		<value condition="Skin.HasSetting(disable_PVRNextUp)">Disable Next Up TV [B][COLOR red](OFF)[/COLOR][/B]</value>
 	</variable>
-	<variable name="Enable_Standard_PVR_Genre_Label_Var">
-		<value condition="!Skin.HasSetting(Enable_standard_PVRGenres)">Use Standard Genres [B][COLOR limegreen](ON)[/COLOR][/B]</value>
-		<value condition="Skin.HasSetting(Enable_standard_PVRGenres)">Disable Standard Genres [B][COLOR red](OFF)[/COLOR][/B]</value>
+	<variable name="Enable_Kodi_PVR_Genre_Label_Var">
+		<value condition="!Skin.HasSetting(Enable_Kodi_PVR_Genres)">Enable PVR Genres [B][COLOR limegreen](ON)[/COLOR][/B]</value>
+		<value condition="Skin.HasSetting(Enable_Kodi_PVR_Genres)">Disable PVR Genres [B][COLOR red](OFF)[/COLOR][/B]</value>
 	</variable>
-	<variable name="Enable_PVR_Strip_Genres_Label_Var">
-		<value condition="!Skin.HasSetting(Enable_PVR_Strip_Genres)">Use PVR+ Genres [B][COLOR limegreen](ON)[/COLOR][/B]</value>
-		<value condition="Skin.HasSetting(Enable_PVR_Strip_Genres)">Disable PVR+ Genres [B][COLOR red](OFF)[/COLOR][/B]</value>
+	<variable name="Enable_Kodi_PVR_Genre_Colours_Var">
+		<value condition="!Skin.HasSetting(Enable_Kodi_PVR_Genres)">$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/,.png]</value>
+		<value>$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/0_Genre.png]</value>  
 	</variable>
-	<variable name="Enable_Strip_Genre_Colours_Var">
-		<value condition="!Skin.HasSetting(Enable_PVR_Strip_Genres)">$INFO[ListItem.PlotOutline,windows/pvr/strip_genre/,.png]</value>
-		<value>$INFO[ListItem.PlotOutline,windows/pvr/strip_genre/0_Genre.png]</value> 
-	</variable>
-	<variable name="NowPlayingPVRPosterVar">
-		<value condition="!String.IsEmpty(PVR.EpgEventIcon) + VideoPlayer.Content(livetv) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[PVR.EpgEventIcon]</value>
-		<value condition="!String.IsEmpty(VideoPlayer.Title) + VideoPlayer.Content(livetv) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
-	</variable>
-	<variable name="NowPVRPosterVar"> 
-		<value condition="!String.IsEmpty(Listitem.EpgEventIcon) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[ListItem.EpgEventIcon]</value> 
-	</variable>
+	
+	
+	
+	
 	<variable name="PVR_Local_path">
     <value condition="!String.IsEmpty(Skin.String(Local.PVR.Artwork)) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$INFO[Skin.String(Local.PVR.Artwork)]</value>
     <value>special://skin/PVR_Artwork/</value>
+	</variable>
+	<variable name="NowPVRPoster_Backend_Var"> 
+		<value condition="!String.IsEmpty(Listitem.EpgEventIcon) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[ListItem.EpgEventIcon]</value> 
+		<value condition="!String.IsEmpty(Listitem.Art(Icon) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[ListItem.Art(Icon)]</value> 
 	</variable>
 	<variable name="PVRPoster_ListItem_Local_Artwork_Var">
 		<value condition="!String.IsEmpty(ListItem.EpgEventTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.EpgEventTitle,,/poster.jpg]</value>
@@ -871,24 +868,38 @@
 	<variable name="PVRPoster_ListItem_SkinHelper_Var">
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Poster)]</value>
     </variable>
+	
+	<variable name="NowPlayingPVRPoster_Backend_Var">
+		<value condition="!String.IsEmpty(PVR.EpgEventIcon) + VideoPlayer.Content(livetv) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[PVR.EpgEventIcon]</value>
+	</variable>
 	<variable name="NowPlaying_PVRPoster_Local_Artwork_Var">
    	<value condition="!String.IsEmpty(VideoPlayer.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
 	</variable> 
 	<variable name="NowPlayling_PVRPoster_SkinHelper_Var">
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.Player.Art.Poster)]</value>
     </variable>
+	
+	<variable name="PVRRecording_Timer_ArtworkVar"> 
+		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.jpg]</value>
+	</variable>
+	<variable name="NowPlayingPVRRecordingPosterVar">
+		<value condition="!String.IsEmpty(PVR.EpgEventIcon) + VideoPlayer.Content(livetv) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[PVR.EpgEventIcon]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
+	</variable>
+	
 	<variable name="NextPVRPoster_Local_Artwork_Var"> 
 		<value condition="!String.IsEmpty(ListItem.NextTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.NextTitle,,/poster.jpg]</value>
 	</variable>
 	<variable name="PVRLandscapeArtworkVar"> 
 		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/landscape.jpg]</value>
 	</variable>
-	<variable name="PVRRecording_Timer_ArtworkVar"> 
-		<value condition="!String.IsEmpty(ListItem.Title)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.jpg]</value>
+		
+	<variable name="PVR_NextUP_Local_Banner_Artwork_Var"> 
+		<value condition="!String.IsEmpty(VideoPlayer.NextTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$INFO[VideoPlayer.NextTitle,E:\PVR (New) Art\,\banner.jpg]</value>
 	</variable>
-	<variable name="PVR_NextUP_Banner_Artwork_Var"> 
-		<value condition="!String.IsEmpty(VideoPlayer.NextTitle)">$INFO[VideoPlayer.NextTitle,E:\PVR (New) Art\,\banner.jpg]</value>
-	</variable>
+	<variable name="PVR_NextUP_Banner_SkinHelper_Var">
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Banner)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.Player.Art.Banner)]</value>
+    </variable>
 	<variable name="PVRBanner_Listitem_Local_Artwork_Var">
 		<value condition="!String.IsEmpty(ListItem.EpgEventTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.EpgEventTitle,,/banner.jpg]</value>
 	</variable>
@@ -900,20 +911,24 @@
 		<value condition="!String.IsEmpty(VideoPlayer.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
 		
 	</variable>
-	<variable name="PremieredFlags">
-		<value condition="ListItem.IsLive">live</value>
-		<value condition="ListItem.IsNew">new</value>
-	</variable>
 	<variable name="WidgetThumbViewVar">
 		<value condition="!String.IsEmpty(Listitem.Art(season.landscape))">$INFO[Listitem.Art(season.landscape)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(tvshow.landscape))">$INFO[Listitem.Art(tvshow.landscape)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(landscape))">$INFO[Listitem.Art(landscape)]</value>
 	</variable>
+	<variable name="PremieredFlags">
+		<value condition="ListItem.IsLive">live</value>
+		<value condition="ListItem.IsNew">new</value>
+	</variable>
 	<variable name="FlagLabel_TVGuide">
 		<value condition="ListItem.IsPremiere">[B][COLOR pink][$LOCALIZE[838]] [/COLOR][/B]</value>
 		<value condition="ListItem.IsFinale">[B][COLOR button_focus][$LOCALIZE[849]] [/COLOR][/B]</value>
-		<value condition="ListItem.IsLive">[B][COLOR button_focus][$LOCALIZE[839]] [/COLOR][/B]</value>
-		<value condition="ListItem.IsNew">[B][COLOR green][$LOCALIZE[842]][/COLOR] [/B]</value>
+		<value condition="ListItem.IsLive">[B][COLOR FFFDA700][$LOCALIZE[839]] [/COLOR][/B]</value>
+		<value condition="ListItem.IsNew">[B][COLOR yellow][$LOCALIZE[842]][/COLOR] [/B]</value>
+	</variable>
+	<variable name="EPG_Genre_Icon">
+		<value condition="String.StartsWith(ListItem.Genre,Movie)">Movie</value>
+		<value condition="String.StartsWith(ListItem.Genre,Film)">Movie</value>
 	</variable>
 	<variable name="MusicPlayerCover">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>

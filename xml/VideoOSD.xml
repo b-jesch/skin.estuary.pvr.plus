@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<onload condition="!Player.PauseEnabled">SetFocus(603)</onload>
+	<onload condition="!Player.PauseEnabled + VideoPlayer.Content(livetv)">SetFocus(906)</onload>
+	<onload condition="!Player.PauseEnabled + !VideoPlayer.Content(livetv)">SetFocus(603)</onload>
 	<defaultcontrol always="true">602</defaultcontrol>
 	<depth>DepthOSD</depth>
 	<controls>

@@ -88,7 +88,7 @@
 				<align>center</align>
 				<aligny>bottom</aligny>
 				<animation delay="0" effect="slide" time="120" start="0,0" end="0,-20" tween="sine" easing="inout" condition="!String.IsEmpty(Control.GetLabel(40000))">Conditional</animation>
-				<label>[COLOR button_focus]$LOCALIZE[31173]:[/COLOR] $VAR[NowPlayingDurationVar]</label>
+				<label>[COLOR button_focus]$LOCALIZE[31173]:[/COLOR] $INFO[VideoPlayer.Duration(h),,h] $INFO[VideoPlayer.Duration(mm),,m]</label>
 				<font>font12</font>
 				<shadowcolor>black</shadowcolor>
 				<visible>!Player.ChannelPreviewActive</visible>
@@ -286,7 +286,7 @@
 					<visible>true</visible>
 			</control>
 
-		<!-- Video OSD Settings For Live TV -->		
+		<!-- Video OSD Settings For Live TV -->
 			<control type="image" id="9876"> 
 				<depth>DepthOSD+</depth>
 				<left>20</left>
@@ -315,13 +315,27 @@
 				 <visible>[VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio] + String.IsEmpty(Control.GetLabel(9876))</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
+			<control type="image"> 
+				<depth>DepthOSD+</depth>
+				<left>20</left>
+				<top>-285</top>
+				<width>400</width>
+				<height>600</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
+				<texture background="true">$VAR[NowPlayingPVRPoster_Backend_Var]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<include>OpenClose_Left</include>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
 			<control type="image">
 				<left>420</left>
 				<top>20</top>
 				<width>104</width>
 				<height>104</height>
 				<aspectratio aligny="center">keep</aspectratio> 
-				<texture fallback="defaulttvlogo.png">$INFO[Player.Art(icon)]</texture>
+				<texture fallback="DefaultTVShows.png">$INFO[Player.Art(icon)]</texture>
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
@@ -405,9 +419,9 @@
 				<top>75</top>
 				<right>80</right>
 				<height>290</height>
-				<width>700</width>
+				<width>620</width>
 				<font>font12</font>
-				<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.PlotOutline][/B]</label> 
+				<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
 				<align>left</align>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
@@ -481,7 +495,7 @@
 					<top>-20</top>
 					<right>80</right>
 					<height>290</height>
-					<width>700</width>
+					<width>620</width>
 					<font>font12</font>
 					<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label>
 					<align>left</align>
@@ -601,7 +615,7 @@
 						<top>-19</top>
 						<right>80</right>
 						<height>290</height>
-						<width>700</width>
+						<width>620</width>
 						<font>font12</font>
 						<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label>
 						<shadowcolor>black</shadowcolor>
