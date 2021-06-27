@@ -1,7 +1,13 @@
+[B]0.1.2[/B]
+• New EPG Layout changes completed.
+• New sidebar options added to PVR windows.
+• Support for New 'Next-UP' dialog for Live TV programmes added (Thanks to Guilouz)
+• Duration info labels corrected to right format.
+
 [B]0.1.1[/B]
 • 3 new skin views added (Flix Large, Flix Wide and Flix Landscape)
 • Position of 'Now Playing' breadcrumb labels changed on TV channels, Recordings and Timer windows.
-• New Layouts for TV Channels Window (Pvr+Big List and PVR+ Now-Next)
+• New Layouts for TV Channels Window (PVR+ Big List and PVR+ Now-Next)
 • New Layouts for PVR Recordings and Timer Windows.
 • New options added to Music OSD settings (Disable Discart, Enable Artist Clearlogo, Enable Scrolling Text)....Thanks to Guilouz.
 
