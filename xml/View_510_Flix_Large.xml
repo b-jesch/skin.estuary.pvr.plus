@@ -91,8 +91,8 @@
 				
 			</control>
 			<control type="label">
-				<left>270</left>
-				<top>240</top>
+				<left>265</left>
+				<top>237</top>
 				<width>1200</width>
 				<height>60</height>
 				<font>fontSubMenu</font>
@@ -115,7 +115,7 @@
 			</control>
 			<control type="label">
 				<left>410</left>
-				<top>240</top>
+				<top>237</top>
 				<width>1200</width>
 				<height>60</height>
 				<font>fontSubMenu</font>
@@ -123,14 +123,14 @@
 				
 			</control>
 			<control type="image">
-				<left>430</left>
+				<left>435</left> 
 				<top>238</top>
 				<width>40</width>
 				<height>37</height>
 				<texture>icons/pvr/mpaa.png</texture>
 			</control>
 			<control type="image">
-				<left>476</left>
+				<left>481</left>
 				<top>232</top>
 				<width>50</width>
 				<height>50</height>
@@ -138,7 +138,7 @@
 				<visible>Container.Content(tvshows)</visible>
 			</control>
 			<control type="image">
-				<left>476</left>
+				<left>481</left>
 				<top>232</top>
 				<width>50</width>
 				<height>50</height>
@@ -147,7 +147,7 @@
 			</control>
 			<control type="label">
 				<left>535</left>
-				<top>240</top>
+				<top>237</top>
 				<width>1200</width>
 				<height>60</height>
 				<font>fontSubMenu</font>
@@ -163,12 +163,12 @@
 				<visible>false</visible>
 			</control>
 			<control type="label">
-				<left>555</left>
+				<left>560</left>
 				<top>243</top>
 				<width>1200</width>
 				<height>60</height>
 				<font>font27</font>
-				<label>Duration: $VAR[DurationVar]</label>
+				<label>Duration: $INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m]</label>
 				<visible>Container.Content(movies)</visible>
 			</control>
 			<control type="textbox">
@@ -181,17 +181,7 @@
 				<autoscroll delay="6000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 			</control>
-			<control type="textbox">
-				<left>50</left>
-				<top>290</top>
-				<width>900</width>
-				<height>150</height>
-				<font>font27</font>
-				<label>$INFO[ListItem.Plot][CR]</label> 
-				<autoscroll delay="6000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
-				<animation effect="fade" start="0" end="500" time="500" condition="Control.HasFocus(510) ">Conditional</animation>
-				<visible>!ListItem.IsCollection + !ListItem.IsParentFolder</visible>
-			</control>
+		
 
 <!--Visible All  -->
 			 <control type="textbox">

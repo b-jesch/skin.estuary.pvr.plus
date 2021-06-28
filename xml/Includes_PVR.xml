@@ -815,11 +815,12 @@
 				<label>[I]$VAR[SeasonEpisodeLabel]$INFO[ListItem.EpisodeName][/I]</label>
 			</control>
 			<control type="textbox">
-				<top>220</top>
+				<top>260</top>
 				<left>270</left>
 				<width>550</width>
+				<height>255</height>
 				<align>center</align>
-				<label>$INFO[ListItem.Plot,[CR]]</label>
+				<label>$INFO[ListItem.Plot]</label>
 				<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 			</control>
 			<control type="image">
@@ -1098,6 +1099,7 @@
 				<bottom>114</bottom>
 				<align>center</align>
 				<label>$INFO[ListItem.Plot]</label>
+				<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 			</control>
 			<control type="textbox">
 				<top>70</top>
@@ -1357,6 +1359,7 @@
 				<bottom>114</bottom>
 				<align>center</align>
 				<label>$INFO[ListItem.Plot]</label>
+				<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 			</control>
 			<control type="textbox">
 				<top>70</top>
@@ -1456,6 +1459,7 @@
 				<bottom>114</bottom>
 				<align>center</align>
 				<label>[B]$INFO[ListItem.NextEpisodeName,,[CR]][/B]$INFO[ListItem.NextPlot]</label>
+				<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 			</control>
 			<control type="textbox">
 				<top>510</top>

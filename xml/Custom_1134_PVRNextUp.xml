@@ -33,7 +33,7 @@
 				<height>140</height>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<texture fallback="defaultpvrbanner.png">$VAR[PVR_NextUP_Banner_SkinHelper_Var]</texture>
-				<visible>String.IsEmpty(Control.GetLabel(6991))</visible>
+				<visible>String.IsEmpty(Control.GetLabel(6990))</visible>
 			</control>
 			<control type="image">
 				<top>30</top>

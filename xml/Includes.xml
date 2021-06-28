@@ -323,9 +323,10 @@
 				<texture colordiffuse="white">$PARAM[icon]</texture>
 			</control>
 			<control type="label">
-				<left>75</left>
+				<left>53</left>
 				<width>150</width>
 				<height>72</height>
+				<align>center</align>
 				<aligny>center</aligny>
 				<font>font_flag</font>
 				<label>$PARAM[label]</label>

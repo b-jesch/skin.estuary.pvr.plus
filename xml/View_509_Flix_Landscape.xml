@@ -86,14 +86,14 @@
 			</control>
 			<control type="image">
 				<left>50</left>
-				<top>235</top>
+				<top>238</top>
 				<width>150</width>
 				<height>50</height>
 				<texture>ratings/imdb/imdb.png</texture>
 			</control>
 			<control type="image"> 
-				<left>140</left>
-				<top>240</top>
+				<left>143</left>
+				<top>243</top>
 				<width>120</width>
 				<height>35</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[ListItem.Rating,ratings/imdb/,.png]</texture>
@@ -109,14 +109,14 @@
 				
 			</control>
 			<control type="image">
-				<left>300</left>
+				<left>305</left>
 				<top>240</top>
 				<width>40</width>
 				<height>40</height>
 				<texture>ratings/metacritic/metacritic.png</texture>
 			</control>
 			<control type="image">
-				<left>360</left>
+				<left>365</left>
 				<top>241</top>
 				<width>37</width>
 				<height>37</height>
@@ -132,14 +132,14 @@
 				
 			</control>
 			<control type="image">
-				<left>430</left>
+				<left>435</left>
 				<top>238</top>
 				<width>40</width>
 				<height>37</height>
 				<texture>icons/pvr/mpaa.png</texture>
 			</control>
 			<control type="image">
-				<left>476</left>
+				<left>481</left>
 				<top>232</top>
 				<width>50</width>
 				<height>50</height>
@@ -147,7 +147,7 @@
 				<visible>Container.Content(tvshows)</visible>
 			</control>
 			<control type="image">
-				<left>476</left>
+				<left>481</left>
 				<top>232</top>
 				<width>50</width>
 				<height>50</height>
@@ -164,16 +164,8 @@
 				
 			</control>
 			<control type="image">
-				<left>555</left>
-				<top>232</top>
-				<width>55</width>
-				<height>55</height>
-				<texture>icons/infodialogs/timer.png</texture>
-				<visible>false</visible>
-			</control>
-			<control type="image">
 				<left>559</left>
-				<top>241</top>
+				<top>245</top>
 				<width>57</width>
 				<height>32</height>
 				<texture>$VAR[Addon_Name_Var]</texture>
@@ -181,7 +173,7 @@
 			</control>
 			<control type="image">
 				<left>625</left>
-				<top>230</top>
+				<top>234</top>
 				<width>70</width>
 				<height>55</height>
 				<texture>$VAR[Content_Type_Var]</texture>
@@ -190,7 +182,7 @@
 			
 			<control type="image">
 				<left>625</left>
-				<top>230</top>
+				<top>234</top>
 				<width>70</width>
 				<height>55</height>
 				<texture>$VAR[Content_Type_Var]</texture>
@@ -205,12 +197,12 @@
 				<label> | </label>
 			</control>
 			<control type="label">
-				<left>715</left>
-				<top>241</top>
+				<left>725</left>
+				<top>245</top>
 				<width>1200</width>
 				<height>60</height>
 				<font>font27</font>
-				<label>$VAR[DurationVar]</label>
+				<label>$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m]</label>
 				<visible>Container.Content(movies)</visible> 
 				
 			</control>

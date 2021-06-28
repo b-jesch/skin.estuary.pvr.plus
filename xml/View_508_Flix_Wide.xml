@@ -81,21 +81,21 @@
 			</control>
 			<control type="image">
 				<left>50</left>
-				<top>195</top>
+				<top>198</top>
 				<width>150</width>
 				<height>50</height>
 				<texture>ratings/imdb/imdb.png</texture>
 			</control>
 			<control type="image"> 
-				<left>140</left>
-				<top>200</top>
+				<left>143</left>
+				<top>203</top>
 				<width>120</width>
 				<height>35</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[ListItem.Rating,ratings/imdb/,.png]</texture>
 				
 			</control>
 			<control type="label">
-				<left>270</left>
+				<left>266</left>
 				<top>200</top>
 				<width>1200</width>
 				<height>60</height>
@@ -104,14 +104,14 @@
 				
 			</control>
 			<control type="image">
-				<left>300</left>
+				<left>304</left>
 				<top>200</top>
 				<width>40</width>
 				<height>40</height>
 				<texture>ratings/metacritic/metacritic.png</texture>
 			</control>
 			<control type="image">
-				<left>360</left>
+				<left>364</left>
 				<top>201</top>
 				<width>37</width>
 				<height>37</height>
@@ -127,23 +127,23 @@
 				
 			</control>
 			<control type="image">
-				<left>430</left>
-				<top>198</top>
+				<left>435</left>
+				<top>200</top>
 				<width>40</width>
 				<height>37</height>
 				<texture>icons/pvr/mpaa.png</texture>
 			</control>
 			<control type="image">
-				<left>476</left>
-				<top>192</top>
+				<left>481</left>
+				<top>194</top>
 				<width>50</width>
 				<height>50</height>
 				<texture fallback="flags/mpaa/rated2.png">$VAR[Mpaa_flags_Var,flags/mpaa/,.png]</texture>
 				<visible>Container.Content(tvshows)</visible>
 			</control>
 			<control type="image">
-				<left>476</left>
-				<top>192</top>
+				<left>481</left>
+				<top>194</top>
 				<width>50</width>
 				<height>50</height>
 				<texture fallback="flags/mpaa/rated2.png">$VAR[Mpaa_flags_Var,flags/mpaa/,.png]</texture>
@@ -158,21 +158,13 @@
 				<label> | </label>
 				
 			</control>
-			<control type="image">
-				<left>555</left>
-				<top>192</top>
-				<width>55</width>
-				<height>55</height>
-				<texture>icons/infodialogs/timer.png</texture>
-				<visible>false</visible>
-			</control>
 			<control type="label">
-				<left>555</left>
+				<left>560</left>
 				<top>203</top>
 				<width>1200</width>
 				<height>60</height>
 				<font>font27</font>
-				<label>Duration: $VAR[DurationVar]</label>
+				<label>Duration: $INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m]</label>
 				<visible>Container.Content(movies)</visible>
 			</control>
 			<control type="textbox">

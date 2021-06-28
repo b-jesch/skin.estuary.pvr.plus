@@ -42,7 +42,15 @@
 					<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
 					 <visible>String.IsEmpty(Control.GetLabel(9876))</visible>
 				</control>
-				
+				<control type="image">
+					<depth>DepthContentPopout</depth>
+					<left>4</left>
+					<top>4</top>
+					<width>526</width>
+					<height>801</height>
+					<aspectratio>scale</aspectratio>
+					<texture>$VAR[NowPVRPoster_Backend_Var]</texture>
+				</control>
 			</control>
 			<control type="group">
 				<include>OpenClose_Right</include>
@@ -113,7 +121,7 @@
 						<width>670</width>
 						<height>363</height>
 						<align>center</align>
-						<label fallback="19055">[B][COLOR button_focus]$INFO[ListItem.ChannelName][/COLOR][/B][CR]$VAR[VideoInfoMainLabelVar][CR]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime] Hrs[B]  •  [/B]$INFO[ListItem.Duration,[COLOR white]$LOCALIZE[180]: [/COLOR]]</label>
+						<label fallback="19055">[B][COLOR button_focus]$INFO[ListItem.ChannelName][/COLOR][/B][CR]$VAR[VideoInfoMainLabelVar][CR]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime] Hrs[B]  •  [/B]$INFO[ListItem.Duration(h),,h,] $INFO[ListItem.Duration(mm),,m,]</label>
 						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 						<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
 				</control>

@@ -720,13 +720,13 @@
 		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/content_type/strm.png</value>
-		<value condition="VideoPlayer.Content(movies)">icons/source/content_type/Local_Library.png</value>
-		<value condition="VideoPlayer.Content(episodes)">icons/source/content_type/Local_Library.png</value>
-		<value condition="string.Contains(ListItem.Path,netflix)">strm.png</value>
-		<value condition="string.Contains(ListItem.Path,amazon)">strm.png</value>
-		<value condition="string.Contains(ListItem.Path,emby)">strm.png</value>
-		<value condition="String.IsEqual(ListItem.DbType,movie)">local.png</value>
-		<value condition="String.IsEqual(ListItem.DbType,tvshow)">local.png</value>
+		<value condition="VideoPlayer.Content(movies)">icons/source/content_type/Local.png</value>
+		<value condition="VideoPlayer.Content(episodes)">icons/source/content_type/Local.png</value>
+		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(ListItem.Path,amazon)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(ListItem.Path,emby)">icons/source/content_type/strm.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/content_type/Local.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/content_type/Local.png</value>
 	</variable>
 	<variable name="PVR_OSDHelpTextVar">
 		<value condition="Control.HasFocus(87) + !Player.Paused">$LOCALIZE[31054]</value>
@@ -898,7 +898,7 @@
 		<value condition="!String.IsEmpty(VideoPlayer.NextTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$INFO[VideoPlayer.NextTitle,E:\PVR (New) Art\,\banner.jpg]</value>
 	</variable>
 	<variable name="PVR_NextUP_Banner_SkinHelper_Var">
-        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Banner)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.Player.Art.Banner)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.NextPlayer.Art.Banner)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.NextPlayer.Art.Banner)]</value>
     </variable>
 	<variable name="PVRBanner_Listitem_Local_Artwork_Var">
 		<value condition="!String.IsEmpty(ListItem.EpgEventTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.EpgEventTitle,,/banner.jpg]</value>
