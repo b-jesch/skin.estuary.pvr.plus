@@ -1,5 +1,0 @@
-<node order="170" type="folder">
-	<label>1038</label>
-	<icon>DefaultAddonMusic.png</icon>
-	<path>addons://sources/audio/</path>
-</node>

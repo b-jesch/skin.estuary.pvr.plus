@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<node order="40" type="folder">
-	<label>Trending Now</label>
-	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.netflix.for.estuary\extras\netflix\netflix_trending_now.png</icon>
-	<path>plugin://plugin.video.netflix/directory/video_list/currentTitles/trendingNow/?genre_id=None/</path>
-</node>

@@ -171,7 +171,7 @@
 						<right>60</right>
 						<height>30</height>
 						<textcolor>button_focus</textcolor>
-						<label>[B][COLOR white]$INFO[ListItem.EpgEventTitle]  •  [/COLOR][/B]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime,,Hrs]</label>
+						<label>[B][COLOR white]$INFO[ListItem.EpgEventTitle]  •  [/COLOR][/B]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime,,]</label>
 					</control>
 					<control type="image"> 
 						<left>470</left>

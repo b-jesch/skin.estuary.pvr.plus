@@ -1,5 +1,0 @@
-<node order="50" type="folder">
-	<label>New to Netflix</label>
-	<path>plugin://plugin.video.netflix/directory/video_list_sorted/newRelease/newRelease/?genre_id=None</path>
-	<icon>C:\Users\Mini-Pc\AppData\Roaming\Kodi\addons\skin.estuary.pvr.plus\extras\netflix\Netflixrecentlyaddedmovies.png</icon>
-</node>

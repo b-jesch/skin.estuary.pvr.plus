@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<node order="20" type="folder">
-	<label>Movies in Kodi</label>
-	<path>videodb://movies/titles/?pluginid=plugin.video.netflix=</path>
-	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.emby.for.estuary\extras\netflix\mynetflixmovies1.png</icon>
-</node>

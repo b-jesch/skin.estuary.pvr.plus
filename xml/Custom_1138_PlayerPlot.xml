@@ -110,7 +110,7 @@
 					<font>font12</font>
 					<align>right</align>
 					<aligny>center</aligny>
-					<label>[COLOR grey]Airing Now: $INFO[VideoPlayer.StartTime]-$INFO[VideoPlayer.EndTime]Hrs[/COLOR]</label>
+					<label>[COLOR grey]Airing Now: $INFO[VideoPlayer.StartTime]-$INFO[VideoPlayer.EndTime][/COLOR]</label>
 					<visible>VideoPlayer.HasEpg</visible>
 				</control>
 				<control type="label">

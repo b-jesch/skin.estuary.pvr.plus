@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<node order="60" type="folder">
-	<label>Sets</label>
-	<path>plugin://plugin.video.embycon/?url=%7Bserver%7D/emby/Users/%7Buserid%7D/Items%3FRecursive%3Dtrue%26Fields%3D%7Bfield_filters%7D%26IncludeItemTypes%3DBoxSet%26ImageTypeLimit%3D1%26SortBy%3DName%26SortOrder%3DAscending%26format%3Djson&amp;mode=GET_CONTENT&amp;media_type=BoxSets/</path>
-	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.emby.for.estuary\extras\emby\Icons\defaultsets.png</icon>
-</node>

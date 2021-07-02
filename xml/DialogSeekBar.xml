@@ -384,7 +384,7 @@
 				<right>80</right>
 				<font>font12</font>
 				<aligny>center</aligny>
-				<label>[COLOR white70]$INFO[VideoPlayer.StartTime,, - ]$INFO[VideoPlayer.EndTime,,Hrs][/COLOR]</label>
+				<label>[COLOR white70]$INFO[VideoPlayer.StartTime,, - ]$INFO[VideoPlayer.EndTime,,][/COLOR]</label>
 				<shadowcolor>black</shadowcolor>
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
@@ -409,7 +409,7 @@
 				<top>45</top>
 				<font>font12</font>
 				<aligny>center</aligny>
-				<label>[COLOR white70]$INFO[VideoPlayer.NextStartTime,, - ]$INFO[VideoPlayer.NextEndTime,,Hrs][/COLOR]</label>
+				<label>[COLOR white70]$INFO[VideoPlayer.NextStartTime,, - ]$INFO[VideoPlayer.NextEndTime,,][/COLOR]</label>
 				<shadowcolor>black</shadowcolor>
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>

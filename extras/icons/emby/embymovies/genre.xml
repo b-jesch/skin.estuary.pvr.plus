@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<node order="40" type="folder">
-	<label>Genre</label>
-	<path>plugin://plugin.video.embycon/?mode=GENRES&amp;item_type=movie</path>
-	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.emby.for.estuary\extras\emby\Icons\defaultgenre.png</icon>
-</node>

@@ -1,5 +1,0 @@
-<node order="150" type="folder">
-	<label>39031</label>
-	<icon>DefaultMusicSources.png</icon>
-	<path>musicdb://sources</path>
-</node>

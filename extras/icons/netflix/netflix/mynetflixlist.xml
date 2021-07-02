@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<node order="10" type="folder">
-	<label>My List</label>
-	<path>plugin://plugin.video.netflix/directory/video_list_sorted/myList/queue/?genre_id=None/</path>
-	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.netflix.for.estuary\extras\netflix\netflix_my_list.png</icon>
-</node>

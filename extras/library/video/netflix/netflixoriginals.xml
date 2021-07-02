@@ -1,5 +1,0 @@
-<node order="60" type="folder">
-	<label>Netflix Originals</label>
-	<path>plugin://plugin.video.netflix/directory/video_list_sorted/netflixOriginals/839338/netflixOriginals/?genre_id=None</path>
-	<icon>C:\Users\Mini-Pc\AppData\Roaming\Kodi\addons\skin.estuary.pvr.plus\extras\netflix\netflixoriginals.png</icon>
-</node>

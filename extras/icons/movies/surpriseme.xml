@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<node type="filter">
-	<label>Surprise Me!</label>
-	<icon>DefaultSurpriseme1.png</icon>
-	<content>movies</content>
-	<limit>1</limit>
-	<order direction="ascending">random</order>
-</node>
