@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node order="10" type="folder">
+	<label>Search</label>
+	<path>plugin://plugin.video.amazon-test/?url=&amp;opt=&amp;cat=Browse&amp;mode=Search&amp;page=1/</path>
+	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.netflix.for.estuary\extras\Amazon\search.png</icon>
+</node>

@@ -1,0 +1,10 @@
+<node order="30" type="filter">
+	<label>TV Shows in Kodi</label>
+	<content>tvshows</content>
+	<path>special://videoplaylists/</path>
+	<icon>C:\Users\Mini-Pc\AppData\Roaming\Kodi\addons\skin.estuary.pvr.plus\extras\netflix\mynetflixTVShows.png</icon>
+	<rule field="path" operator="startswith">
+		<value>C:\Users\Mini-Pc\AppData\Roaming\Kodi\userdata\addon_data\plugin.video.netflix\shows\</value>
+	</rule>
+	<order direction="descending">dateadded</order>
+</node>

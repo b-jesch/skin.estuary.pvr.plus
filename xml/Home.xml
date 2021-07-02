@@ -70,18 +70,6 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="5200"/>
 						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="special://skin/playlists/unwatched_movies.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31007]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5300"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="special://skin/playlists/random_movies.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31006]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="5400"/>
-						</include>
 						<include content="WidgetListCategories" condition="Library.HasContent(movies)">
 							<param name="content_path" value="videodb://movies/genres/"/>
 							<param name="widget_header" value="$LOCALIZE[135]"/>
@@ -111,6 +99,18 @@
 							<param name="list_id" value="22200"/>
 							<param name="icon" value="special://skin/extras/icons/movie.png"/>
 							<param name="icon_height" value="55"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/unwatched_movies.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[31007]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5300"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
+							<param name="content_path" value="special://skin/playlists/random_movies.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[31006]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5400"/>
 						</include>
 						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
 							<param name="content_path" value="videodb://movies/sets/"/>

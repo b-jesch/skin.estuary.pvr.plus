@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node order="40" type="folder">
+	<label>Amazon Library</label>
+	<path>plugin://plugin.video.amazon-test/?url=library&amp;opt=&amp;cat=Browse&amp;mode=getListMenu&amp;page=1/</path>
+	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.netflix.for.estuary\extras\Amazon\MyPrimeLibrary.png</icon>
+</node>

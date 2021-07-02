@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node order="20" type="folder">
+	<label>Recently Added</label>
+	<path>plugin://plugin.video.embycon/?url=%7Bserver%7D/emby/Users/%7Buserid%7D/Items%3FParentId%3Df137a2dd21bbc1b99aa5c0f6bf02a805%26IncludeItemTypes%3DMovie%26CollapseBoxSetItems%3Dfalse%26GroupItemsIntoCollections%3Dfalse%26Recursive%3Dtrue%26Limit%3D%7BItemLimit%7D%26IsVirtualUnaired%3Dfalse%26IsMissing%3DFalse%26Fields%3D%7Bfield_filters%7D%26SortBy%3DDateCreated%26SortOrder%3DDescending%26Filters%3DIsUnplayed%2CIsNotFolder%26IsPlayed%3Dfalse%26ImageTypeLimit%3D1%26format%3Djson&amp;mode=GET_CONTENT&amp;media_type=movies&amp;use_cache=false/</path>
+	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.emby.for.estuary\extras\emby\Icons\defaultrecentlyaddedmusicvideos.png</icon>
+</node>

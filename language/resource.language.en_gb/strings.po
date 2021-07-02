@@ -997,3 +997,27 @@ msgctxt "#31220"
 msgid "Writer"
 msgstr ""
 
+msgctxt "#31221"
+msgid "Hrs"
+msgstr ""
+
+msgctxt "#31222"
+msgid "mins"
+msgstr ""
+
+msgctxt "#31223"
+msgid "Hr"
+msgstr ""
+
+msgctxt "#31224"
+msgid "h"
+msgstr ""
+
+msgctxt "#31225"
+msgid "m"
+msgstr ""
+
+msgctxt "#31226"
+msgid "00"
+msgstr ""
+

@@ -1,0 +1,8 @@
+<node order="20" type="filter">
+	<label>Amazon Movies</label>
+	<content>movies</content>
+	<rule field="path" operator="contains">
+		<value>addon_data\plugin.video.amazon-test\</value>
+	</rule>
+	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.netflix.for.estuary\extras\Amazon\MyExportedPrimeMovies.png</icon>
+</node>

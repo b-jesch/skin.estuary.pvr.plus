@@ -217,7 +217,7 @@
 						<left>675</left>
 						<height>30</height>
 						<textcolor>button_focus</textcolor>
-						<label>Duration: [COLOR grey]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/COLOR]</label>
+						<label>$LOCALIZE[31173]: [COLOR grey]$VAR[ItemDurationVar][/COLOR]</label>
 					</control>
 					<control type="image"> 
 						<left>1045</left>

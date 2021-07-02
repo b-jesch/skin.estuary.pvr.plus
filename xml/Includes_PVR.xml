@@ -697,7 +697,7 @@
 	</include>
 	<include name="PVRInfoPanel">
 		<control type="group">
-			<visible>!ListItem.IsFolder</visible>
+			<visible>!ListItem.IsFolder + !String.IsEmpty(ListItem.Label) + !String.Contains(ListItem.Label,...)</visible>
 			<control type="image">
 				<top>95</top>
 				<left>0</left>
@@ -829,7 +829,7 @@
 				<width>150</width>
 				<height>50</height>
 				<texture>ratings/imdb/imdb.png</texture>
-				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating))</visible>
+				
 			</control>
 			<control type="image">
 				<left>420</left>
@@ -837,10 +837,10 @@
 				<width>120</width>
 				<height>35</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating),ratings/imdb/,.png]</texture>
-				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating))</visible>
+				
 			</control>
 			<control type="image">
-				<left>570</left>
+				<left>595</left>
 				<top>520</top>
 				<width>55</width>
 				<height>55</height>
@@ -849,11 +849,11 @@
 			</control>
 			<control type="label">
 				<top>530</top>
-				<left>630</left>
+				<left>655</left>
 				<width>150</width>
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/B]</label>
+				<label>[B]$VAR[ItemDurationVar][/B]</label>
 				
 			</control>
 			<control type="image">
@@ -1114,21 +1114,21 @@
 				<visible>String.IsEmpty(Listitem.Plot)</visible>
 			</control>
 			<control type="image">
-				<left>330</left>
+				<left>340</left>
 				<top>305</top>
 				<width>150</width>
 				<height>50</height>
 				<texture>ratings/imdb/imdb.png</texture>
 			</control>
 			<control type="image">
-				<left>420</left>
+				<left>430</left>
 				<top>310</top>
 				<width>120</width>
 				<height>35</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating),ratings/imdb/,.png]</texture>
 			</control>
 			<control type="image">
-				<left>570</left>
+				<left>595</left>
 				<top>300</top>
 				<width>55</width>
 				<height>55</height>
@@ -1136,11 +1136,11 @@
 			</control>
 			<control type="label">
 				<top>310</top>
-				<left>630</left>
-				<width>150</width>
+				<left>655</left>
+				<width>350</width>
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/B]</label>
+				<label>[B]$VAR[ItemDurationVar][/B]</label>
 			</control>
 			<control type="image">
 				<top>370</top>
@@ -1374,21 +1374,21 @@
 				<visible>String.IsEmpty(Listitem.Plot)</visible>
 			</control>
 			<control type="image">
-				<left>330</left>
+				<left>340</left>
 				<top>305</top>
 				<width>150</width>
 				<height>50</height>
 				<texture>ratings/imdb/imdb.png</texture>
 			</control>
 			<control type="image">
-				<left>420</left>
+				<left>430</left>
 				<top>310</top>
 				<width>120</width>
 				<height>35</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating),ratings/imdb/,.png]</texture>
 			</control>
 			<control type="image">
-				<left>570</left>
+				<left>595</left>
 				<top>300</top>
 				<width>55</width>
 				<height>55</height>
@@ -1396,11 +1396,11 @@
 			</control>
 			<control type="label">
 				<top>310</top>
-				<left>630</left>
+				<left>655</left>
 				<width>150</width>
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
-				<label>[B]$INFO[ListItem.Duration(h),,h] $INFO[ListItem.Duration(mm),,m][/B]</label>
+				<label>[B]$VAR[ItemDurationVar][/B]</label>
 			</control>
 			
 		

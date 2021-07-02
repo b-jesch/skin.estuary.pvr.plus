@@ -262,9 +262,10 @@
 					<width>450</width>
 					<font>font_flag</font>
 					<textcolor>white</textcolor>
-					<label>[B][COLOR button_focus] $VAR[NowPlayingDurationVar][/COLOR][/B]</label>
+					<label>[B][COLOR button_focus] $INFO[VideoPlayer.Duration(h),,h,] $INFO[VideoPlayer.Duration(mm),,m,][/COLOR][/B]</label>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 					<visible>true</visible>
+				
 				</control>
 			<!-- OSD Settings For Streamed Content, Music Videos and LiveTV Recordings -->
 				<control type="image">

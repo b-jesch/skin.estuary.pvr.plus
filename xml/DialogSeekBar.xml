@@ -641,10 +641,10 @@
 					<visible>!VideoPlayer.Content(livetv) + !Player.IsInternetStream</visible>
 				</control>
 				<control type="image">
-					<top>-70</top>
+					<top>-80</top>
 					<right>50</right>
 					<width>70</width>
-					<height>32</height>
+					<height>55</height>
 					<texture>$VAR[Content_Type_Var]</texture>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 				</control>

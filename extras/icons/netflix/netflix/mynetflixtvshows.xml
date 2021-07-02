@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node order="30" type="folder">
+	<label>TV Shows in Kodi</label>
+	<path>videodb://tvshows/titles/</path>
+	<icon>C:\Users\USER1\AppData\Roaming\Kodi\addons\skin.emby.for.estuary\extras\netflix\mynetflixTVShows.png</icon>
+</node>

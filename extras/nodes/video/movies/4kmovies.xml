@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<node order="20" type="filter">
+	<label>4K Movies</label>
+	<content>movies</content>
+	<rule field="videoresolution" operator="greaterthan">
+		<value>1080</value>
+	</rule>
+	<order direction="ascending">sorttitle</order>
+	<icon>C:/Users/Mini-Pc/AppData/Roaming/Kodi/addons/skin.netflix.for.estuary/media/4K.png</icon>
+</node>
