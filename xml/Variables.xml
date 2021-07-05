@@ -934,7 +934,7 @@
 	<variable name="ItemDurationVar">
         <value condition="Integer.IsGreater(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0) + Integer.IsGreater(ListItem.Duration(ss),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31221]], $INFO[ListItem.Duration(ss),, $LOCALIZE[32047]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0) + Integer.IsGreater(ListItem.Duration(ss),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31221]], $INFO[ListItem.Duration(ss),, $LOCALIZE[32047]]</value>
-        <value condition="Integer.IsEqual(ListItem.Duration(mins),60)">$INFO[ListItem.Duration(hours),,$LOCALIZE[31223]]</value>
+        <value condition="Integer.IsEqual(ListItem.Duration(mins),60)">$INFO[ListItem.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(mins),120) | Integer.IsEqual(ListItem.Duration(mins),180) | Integer.IsEqual(ListItem.Duration(mins),240) | Integer.IsEqual(ListItem.Duration(mins),300) | Integer.IsEqual(ListItem.Duration(mins),360) | Integer.IsEqual(ListItem.Duration(mins),420) | Integer.IsEqual(ListItem.Duration(mins),480) | Integer.IsEqual(ListItem.Duration(mins),540) | Integer.IsEqual(ListItem.Duration(mins),600)">$INFO[ListItem.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
         <value condition="Integer.Isequal(ListItem.Duration(mins),1)">$INFO[ListItem.Duration(m),, $LOCALIZE[31222]]</value>
         <value condition="Integer.IsLess(ListItem.Duration(mins),60) + Integer.IsGreater(ListItem.Duration(mins),1)">$INFO[ListItem.Duration(m),,$LOCALIZE[31222]]</value>

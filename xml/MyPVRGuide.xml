@@ -214,7 +214,7 @@
 					
 					<control type="label">
 						<top>46</top>
-						<left>675</left>
+						<left>680</left>
 						<height>30</height>
 						<textcolor>button_focus</textcolor>
 						<label>$LOCALIZE[31173]: [COLOR grey]$VAR[ItemDurationVar][/COLOR]</label>

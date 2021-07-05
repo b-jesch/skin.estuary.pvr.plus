@@ -121,7 +121,7 @@
 						<width>670</width>
 						<height>363</height>
 						<align>center</align>
-						<label fallback="19055">[B][COLOR button_focus]$INFO[ListItem.ChannelName][/COLOR][/B][CR]$VAR[VideoInfoMainLabelVar][CR]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime] Hrs[B]  •  [/B]$INFO[ListItem.Duration(h),,h,] $INFO[ListItem.Duration(mm),,m,]</label>
+						<label fallback="19055">[B][COLOR button_focus]$INFO[ListItem.ChannelName][/COLOR][/B][CR]$VAR[VideoInfoMainLabelVar][CR]$INFO[ListItem.StartTime,, - ]$INFO[ListItem.EndTime] Hrs[B]  •  [/B]$VAR[ItemDurationVar]</label>
 						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 						<visible>Integer.IsGreater(Container(4000).NumItems,0)</visible>
 				</control>

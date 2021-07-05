@@ -304,7 +304,7 @@
 		</definition>
 	</include>
 	<include name="WidgetListCategories">
-		<param name="item_limit">20</param>
+		<param name="item_limit">30</param>
 		<param name="icon">$INFO[ListItem.Icon]</param>
 		<param name="icon_height">120</param>
 		<param name="additional_movie_items">false</param>
