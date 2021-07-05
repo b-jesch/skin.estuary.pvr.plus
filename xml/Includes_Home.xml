@@ -76,20 +76,20 @@
 				<top>115</top>
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
 				<right>0</right>
-				<height>503</height>
+				<height>403</height> 
 				<include content="WidgetListCommon">
 					<param name="list_id" value="$PARAM[list_id]"/>
 				</include>
-				<itemlayout width="310" height="486">
+				<itemlayout width="230" height="386">
 					<control type="group">
 						<left>68</left>
 						<top>10</top>
-						<include content="InfoWallMovieLayout">
+						<include content="HomeScreenPosterLayout">
 							<param name="focused" value="false" />
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout width="310" height="486">
+				<focusedlayout width="230" height="386">
 					<control type="group">
 						<depth>DepthContentPopout</depth>
 						<left>68</left>
@@ -100,7 +100,7 @@
 						<animation type="Unfocus">
 							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="230,130" />
 						</animation>
-						<include content="InfoWallMovieLayout">
+						<include content="HomeScreenPosterLayout">
 							<param name="focused" value="true" />
 						</include>
 					</control>
@@ -304,7 +304,7 @@
 		</definition>
 	</include>
 	<include name="WidgetListCategories">
-		<param name="item_limit">30</param>
+		<param name="item_limit">20</param>
 		<param name="icon">$INFO[ListItem.Icon]</param>
 		<param name="icon_height">120</param>
 		<param name="additional_movie_items">false</param>

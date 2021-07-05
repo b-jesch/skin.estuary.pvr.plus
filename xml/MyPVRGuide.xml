@@ -34,15 +34,7 @@
 					</control>
 					<control type="group">
 						<visible>Control.IsVisible(50)</visible>
-						<control type="image">
-							<left>42</left>
-							<top>-75</top>
-							<width>306</width>
-							<height>80</height>
-							
-							<texture colordiffuse="epg_button_focus" border="20">epgtopbutton/button-fo.png</texture>
-							<visible>Control.HasFocus(11)</visible>
-						</control>
+						
 						<control type="image">
 							<left>10</left>
 							<top>-50</top>
@@ -60,7 +52,7 @@
 							<visible>!Skin.HasSetting(ShowPVRGroups)</visible>
 						</control>
 					</control>
-					<control type="fixedlist" id="11">
+					<control type="list" id="11">
 						<top>-75</top>
 						<left>40</left>
 						<right>40</right>
@@ -99,7 +91,7 @@
 								<height>80</height>
 								<texture colordiffuse="epg_button_focus" border="20">epgtopbutton/button-fo.png</texture>
 								
-								<visible>!Control.HasFocus(11)</visible>
+								
 							</control>
 							<control type="label">
 								<top>17</top>
@@ -214,7 +206,7 @@
 					
 					<control type="label">
 						<top>46</top>
-						<left>680</left>
+						<left>680</left>	
 						<height>30</height>
 						<textcolor>button_focus</textcolor>
 						<label>$LOCALIZE[31173]: [COLOR grey]$VAR[ItemDurationVar][/COLOR]</label>
