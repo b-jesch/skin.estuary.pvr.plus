@@ -43,6 +43,7 @@
 						<include>DialogSettingButton</include>
 						<selected>!Skin.HasSetting(show_disc)</selected>
 						<onclick>Skin.ToggleSetting(show_disc)</onclick>
+						<visible>!Pvr.IsPlayingRadio</visible>
 					</control>
 					<control type="radiobutton" id="50012">
 						<width>800</width>
@@ -50,6 +51,7 @@
 						<include>DialogSettingButton</include>
 						<selected>!Skin.HasSetting(enable_clearlogo)</selected>
 						<onclick>Skin.ToggleSetting(enable_clearlogo)</onclick>
+						<visible>!Pvr.IsPlayingRadio</visible>
 					</control>
 					<control type="radiobutton" id="50014">
 						<width>800</width>
@@ -85,6 +87,7 @@
 						<label>$LOCALIZE[31082]</label>
 						<label2>[B]$INFO[Skin.String(LyricScript_Path)][/B]</label2>
 						<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+						<visible>!Pvr.IsPlayingRadio</visible>
 					</control>
 					<control type="button" id="5008">
 						<width>800</width>
@@ -92,6 +95,7 @@
 						<label>$LOCALIZE[31083]</label>
 						<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
 						<visible>!String.IsEmpty(Skin.String(LyricScript_Path))</visible>
+						<visible>!Pvr.IsPlayingRadio</visible>
 					</control>
 				</control>
 			</control>
