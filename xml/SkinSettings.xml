@@ -67,7 +67,13 @@
 					<onclick>Skin.ToggleSetting(show_mediaendtimeflag)</onclick>
 					<selected>!Skin.HasSetting(show_mediaendtimeflag)</selected>
 				</control>
-				<control type="button" id="707">
+				<control type="radiobutton" id="707">
+					<label>Use coloured equalizer on music OSD</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
+					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
+				</control>
+				<control type="button" id="708">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool($LOCALIZE[31024], 38018|circle_userrating, 563|circle_rating, 16018|)</onclick>
@@ -87,19 +93,19 @@
 				<visible>Container(9000).HasFocus(4)</visible>
 				<control type="radiobutton" id="801">
 					<include>DefaultSettingButton</include>
-					<label>$VAR[Backend_PVR_Artwork_var]</label>
+					<label>Use 'Backend' for PVR Artwork</label>
 					<selected>Skin.HasSetting(Backend.PVR.Artwork)</selected> 
 					<onclick>Skin.ToggleSetting(Backend.PVR.Artwork)</onclick>
 				</control>
 				<control type="radiobutton" id="802">
 					<include>DefaultSettingButton</include>
-					<label>$VAR[PVR_Artwork_Switch_Label_Var]</label>
+					<label>Use Skin Helper Script to help find any missing PVR Artwork</label>
 					<selected>Skin.HasSetting(SkinHelper.EnablePVRThumbs)</selected>
 					<onclick>Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onclick>
 				</control>
 				<control type="radiobutton" id="803">
 					<include>DefaultSettingButton</include>
-					<label>$VAR[Local_PVR_Artwork_Var]</label>
+					<label>Use Local PVR Artwork</label>
 					<selected>Skin.HasSetting(Enable.Local.PVR.Artwork)</selected>
 					<onclick>Skin.ToggleSetting(Enable.Local.PVR.Artwork)</onclick>
 				</control>
@@ -113,20 +119,20 @@
 				</control>
 				<control type="radiobutton" id="805">
 					<include>DefaultSettingButton</include>
-					<label>$VAR[PVR_Show_ChannelGroup_Label_Var]</label>
+					<label>Display Channel Groups on EPG Screen</label>
 					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
 					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
 				</control>
 				<control type="radiobutton" id="806">
 					<include>DefaultSettingButton</include>
-					<label>$VAR[Enable_Kodi_PVR_Genre_Label_Var]</label>
+					<label>Display Genre Colours on EPG Screen</label>
 					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
 				</control>
 				
 				<control type="radiobutton" id="807">
 					<include>DefaultSettingButton</include>
-					<label>$VAR[PVR_Next-Up_TV_Label_Var]</label>
+					<label>Enable 'Next-Up' Dialog when current programme is about to end</label>
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
 					<onclick>Skin.ToggleSetting(disable_PVRNextUp)</onclick>
 				</control>

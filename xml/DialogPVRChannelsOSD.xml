@@ -27,7 +27,7 @@
 					<visible>false</visible>
 				</control>
 				<control type="textbox">
-					<left>1240</left>
+					<left>1210</left>
 					<bottom>0</bottom>
 					<width>675</width>
 					<height>363</height>
@@ -116,6 +116,15 @@
 							<height>70</height>
 							<aspectratio align="right">keep</aspectratio>
 							<texture>$INFO[listitem.icon]</texture>
+						</control>
+						<control type="image"> 
+							<right>65</right>
+							<top>12</top>
+							<width>35</width>
+							<height>34</height>
+							<align>right</align>
+							<texture >$VAR[EPG_Genre_Icon,flags/epggenreicons/,.png]</texture> 
+							<visible>true</visible>
 						</control>
 						<control type="image"> 
 							<right>20</right>

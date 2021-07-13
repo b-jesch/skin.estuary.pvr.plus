@@ -60,6 +60,12 @@
 						<onclick>Skin.ToggleSetting(enable_scrollingtext)</onclick>
 						<selected>!Skin.HasSetting(enable_scrollingtext)</selected>
 					</control>
+					<control type="radiobutton" id="50013">
+						<label>Use coloured equalizer on OSD</label>
+						<include>DialogSettingButton</include>
+						<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
+						<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
+					</control>
 					<control type="button" id="5004">
 						<width>800</width>
 						<include>DialogSettingButton</include>

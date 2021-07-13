@@ -405,6 +405,14 @@
 				</itemlayout>
 				<focusedlayout height="264" width="495" condition="Container.Content(movies) | Container.Content(tvshows)">
 					<control type="image">
+						<left>11</left>
+						<top>21</top>
+						<width>431</width>
+						<height>232</height>
+						<texture fallback="DefaultVideo.png"  background="true" diffuse="episodematte.png">$VAR[WidgetThumbViewVar]</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="image">
 						<left>-10</left>
 						<top>0</top>
                         <width>475</width>
@@ -417,34 +425,26 @@
 						<top>21</top>
 						<width>431</width>
 						<height>232</height>
-						<texture fallback="DefaultVideo.png"  background="true" diffuse="episodematte.png">$VAR[WidgetThumbViewVar]</texture>
-						<aspectratio>stretch</aspectratio>
-					</control>
-				<control type="image">
-						<left>11</left>
-						<top>21</top>
-						<width>431</width>
-						<height>232</height>
 						<texture fallback="DefaultVideo.png"  background="true" diffuse="episodematte.png">$INFO[ListItem.Art(fanart)]</texture>
 						<aspectratio>stretch</aspectratio>
 						<visible>String.IsEmpty(ListItem.Art(season.landscape)) + String.IsEmpty(ListItem.Art(tvshow.landscape)) + String.IsEmpty(ListItem.Art(landscape))</visible>
 						<visible>!ListItem.IsParentFolder</visible>
-				</control>
-				<control type="image">
+					</control>
+					<control type="image">
 						<left>13</left>
 						<top>185</top>
 						<width>70</width>
 						<height>70</height>
 						<texture>overlays/overlay-bg.png</texture>
 						<visible>ListItem.IsResumable | Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
-				</control>
-				<control type="image">
+					</control>
+					<control type="image">
 						<left>10</left>
 						<top>230</top>
 						<width>28</width>
 						<height>28</height>
 						<texture>$VAR[WallWatchedIconVar]</texture>
-				</control>
+					</control>
 				</focusedlayout>
 			</control>
 	</control>

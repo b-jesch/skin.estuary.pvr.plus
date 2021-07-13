@@ -51,7 +51,7 @@
 						<control type="image">
 							<left>0</left>
 							<width>780</width>
-							<bottom>0</bottom>
+							<bottom>-2</bottom>
 							<texture colordiffuse="button_focus">lists/focus.png</texture>
 							<visible>Control.HasFocus(11)</visible>
 							<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
@@ -59,9 +59,18 @@
 						<control type="label">
 							<left>20</left>
 							<width>150</width>
-							<bottom>0</bottom>
+							<bottom>-2</bottom>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.StartTime]</label>
+						</control>
+						<control type="image"> 
+							<left>730</left>
+							<bottom>58</bottom>
+							<width>30</width>
+							<height>30</height>
+							<align>right</align>
+							<texture >$VAR[EPG_Genre_Icon,flags/epggenreicons/,.png]</texture> 
+							<visible>true</visible>
 						</control>
 						<control type="label">
 							<left>150</left>
@@ -89,11 +98,19 @@
 								<aspectratio align="center" aligny="center">keep</aspectratio>
 								<texture fallback="DefaultTVShows.png" >$INFO[Listitem.Icon]</texture>
 							</control>
-							<control type="textbox">
-								<left>1135</left>
+							<control type="image">
+								<left>1240</left>
 								<top>-70</top>
+								<width>500</width>
+								<height>35</height>
+								<texture>$VAR[OSD_Channel_Guide_Day_Var,windows/pvr/day/,.png]</texture>
+							</control>
+							<control type="textbox">
+								<left>1115</left>
+								<top>-30</top>
 								<width>760</width>
-								<height>290</height>
+								<height>255</height>
+								<align>center</align>
 								<label>$INFO[ListItem.Plot]</label>
 								<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
 							</control>

@@ -930,7 +930,15 @@
 		<value condition="String.StartsWith(ListItem.Genre,Movie)">Movie</value>
 		<value condition="String.StartsWith(ListItem.Genre,Film)">Movie</value>
 	</variable>
-	
+	<variable name="OSD_Channel_Guide_Day_Var">
+		<value condition="String.StartsWith(ListItem.StartDate,Monday)">Monday</value>
+		<value condition="String.StartsWith(ListItem.StartDate,Tuesday)">Tuesday</value>
+		<value condition="String.StartsWith(ListItem.StartDate,Wednesday)">Wednesday</value>
+		<value condition="String.StartsWith(ListItem.StartDate,Thursday)">Thursday</value>
+		<value condition="String.StartsWith(ListItem.StartDate,Friday)">Friday</value>
+		<value condition="String.StartsWith(ListItem.StartDate,Saturday)">Saturday</value>
+		<value condition="String.StartsWith(ListItem.StartDate,Sunday)">Sunday</value>
+	</variable>
 	<variable name="ItemDurationVar">
         <value condition="Integer.IsGreater(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0) + Integer.IsGreater(ListItem.Duration(ss),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31221]], $INFO[ListItem.Duration(ss),, $LOCALIZE[32047]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0) + Integer.IsGreater(ListItem.Duration(ss),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31221]], $INFO[ListItem.Duration(ss),, $LOCALIZE[32047]]</value>
@@ -945,7 +953,10 @@
         <value condition="Integer.IsEqual(ListItem.Duration(h),1) + Integer.IsEqual(ListItem.Duration(m),1)">$INFO[ListItem.Duration(h),,$LOCALIZE[31224]] $INFO[ListItem.Duration(m),,$LOCALIZE[31225]]</value>
     </variable>
 	
+	
+	
 	<variable name="MusicPlayerCover">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.Art(poster))">$INFO[VideoPlayer.Art(poster)]</value>
 	</variable>
 </includes>
