@@ -78,7 +78,7 @@
 					<wrapmultiline>true</wrapmultiline>
 					<animation effect="fade" time="200">VisibleChange</animation>
 					<label>$VAR[NowPlayingElapsedTimeVar,[COLOR button_focus]$LOCALIZE[31171][CR][/COLOR]] Hrs/Min</label> 
-					<visible>!VideoPlayer.Content(LiveTV)</visible>
+					<visible>!VideoPlayer.Content(LiveTV) + !VideoPlayer.Content(LiveTV)</visible>
 			</control>
 			<control type="label">
 				<centerleft>58%</centerleft>
@@ -93,8 +93,24 @@
 				<shadowcolor>black</shadowcolor>
 				<visible>!Player.ChannelPreviewActive</visible>
 				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation> 
-				<visible>!VideoPlayer.Content(LiveTV)</visible>
+				<visible>!VideoPlayer.Content(LiveTV) + !VideoPlayer.Content(musicvideos)</visible>
 			</control>
+			<control type="label">
+				<centerleft>58%</centerleft>
+				<top>150</top>
+				<width>50%</width>
+				<height>75</height>
+				<align>center</align>
+				<aligny>bottom</aligny>
+				<animation delay="0" effect="slide" time="120" start="0,0" end="0,-20" tween="sine" easing="inout" condition="!String.IsEmpty(Control.GetLabel(40000))">Conditional</animation>
+				<label>[COLOR button_focus]$LOCALIZE[31173]:[/COLOR] $INFO[VideoPlayer.Duration(m),,m,] $INFO[VideoPlayer.Duration(ss),,secs,,]</label>
+				<font>font12</font>
+				<shadowcolor>black</shadowcolor>
+				<visible>!Player.ChannelPreviewActive</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation> 
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+			</control>
+			
 			<control type="label">
 				<top>132</top>
 				<right>45</right>
@@ -728,7 +744,7 @@
 					<top>-25</top>
 					<width>1040</width>
 					<font>font12</font>
-					<label>[B][COLOR grey]Album:[/COLOR][COLOR button_focus] $INFO[VideoPlayer.Album, ] $INFO[VideoPlayer.Year,(,)][/COLOR][/B]</label>
+					<label>[B][COLOR grey]Album:[/COLOR][COLOR button_focus] $INFO[VideoPlayer.Album, ] [/COLOR][COLOR grey]$INFO[VideoPlayer.Year,(,)][/COLOR][/B]</label>
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
@@ -736,7 +752,7 @@
 				</control>
 				
 				
-		<!-- OSD Settings For Streamed Content, Music Videos and LiveTV Recordings -->
+		<!-- OSD Settings For Streamed Content and LiveTV Recordings -->
 					<control type="image"> 
 						<depth>DepthOSD+</depth>
 						<left>10</left>

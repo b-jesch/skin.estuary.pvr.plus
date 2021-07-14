@@ -307,6 +307,14 @@
 					<onclick>PlayerControl(Rewind)</onclick>
 					<visible>![VideoPlayer.Content(livetv) + !PVR.IsTimeShift]</visible>
 					</control>
+					<control type="radiobutton" id="80051">
+					<include content="OSDButton">
+						<param name="texture" value="osd/fullscreen/buttons/playlist.png"/>
+					</include>
+					<onclick>Dialog.Close(all, true)</onclick>
+					<onclick>ActivateWindow(videoplaylist)</onclick>
+					<visible>Integer.IsGreater(Playlist.Length(video),0) + VideoPlayer.Content(musicvideos)</visible>
+					</control>
 					<control type="radiobutton" id="70043">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/information.png"/>

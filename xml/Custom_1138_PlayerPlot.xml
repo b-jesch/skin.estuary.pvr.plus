@@ -170,7 +170,7 @@
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<include>OpenClose_Left</include>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio + !VideoPlayer.Content(musicvideos)</visible>
 					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 				</control>
 				<control type="label">
@@ -184,7 +184,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-					<visible>VideoPlayer.Content(movies)</visible>					
+					<visible>VideoPlayer.Content(movies) + !VideoPlayer.Content(musicvideos)</visible>					
 				</control>
 				<control type="label">
 					<left>420</left>
@@ -197,7 +197,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-					<visible>VideoPlayer.Content(episodes)</visible>					
+					<visible>VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>					
 				</control>
 				<control type="label">
 					<left>645</left>
@@ -209,7 +209,7 @@
 					<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
+					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !VideoPlayer.Content(musicvideos)</visible>
 				</control>
 				<control type="image">
 					<left>420</left>
@@ -218,7 +218,7 @@
 					<height>50</height>
 					<aspectratio>keep</aspectratio>
 					<texture>ratings/imdb/imdb.png</texture>
-					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
+					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !VideoPlayer.Content(musicvideos)</visible>
 				</control>
 				<control type="image">
 					<left>505</left>
@@ -226,7 +226,7 @@
 					<width>120</width>
 					<height>30</height>
 					<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[VideoPlayer.Rating,ratings/imdb/,.png]</texture>
-					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
+					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !VideoPlayer.Content(musicvideos)</visible>
 				</control>
 				<control type="image">
 					<top>-70</top>
@@ -234,7 +234,7 @@
 					<width>40</width>
 					<height>37</height>
 					<texture>icons/pvr/mpaa.png</texture>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio + !VideoPlayer.Content(musicvideos)</visible>
 				</control>
 				<control type="image">
 					<top>-73</top>
@@ -242,7 +242,7 @@
 					<width>45</width>
 					<height>45</height>
 					<texture fallback="flags/mpaa/rated1.png">$VAR[Mpaa_flags_Var,flags/mpaa/,.png]</texture>
-					<visible>!VideoPlayer.Content(livetv)</visible>
+					<visible>!VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos)</visible>
 				</control>
 				<control type="label">
 					<top>-70</top>
@@ -252,7 +252,7 @@
 					<font>font_flag</font>
 					<textcolor>white</textcolor>
 					<label>[B]$LOCALIZE[31173]:[/B]</label>
-					<visible>!VideoPlayer.Content(livetv)</visible>
+					<visible>!VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos)</visible>
 					<visible>true</visible>
 				</control>
 				<control type="label">
@@ -263,10 +263,86 @@
 					<font>font_flag</font>
 					<textcolor>white</textcolor>
 					<label>[B][COLOR button_focus] $INFO[VideoPlayer.Duration(h),,h,] $INFO[VideoPlayer.Duration(mm),,m,][/COLOR][/B]</label>
-					<visible>!VideoPlayer.Content(livetv)</visible>
+					<visible>!VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos)</visible>
 					<visible>true</visible>
-				
 				</control>
+			<!-- OSD Settings For Music Videos -->
+				<control type="image"> 
+					<depth>DepthOSD+</depth>
+					<left>15</left>
+					<bottom>5</bottom>
+					<width>405</width>
+					<height>405</height>
+					<aspectratio aligny="bottom" align="center">keep</aspectratio>
+					<texture background="true" fallback="DefaultAudio.png">$VAR[NowPlayingPosterVar]</texture> 
+					<bordersize>20</bordersize>
+					<include>OpenClose_Left</include>
+					<visible> VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>
+					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+				</control>
+				<control type="label">
+					<left>410</left>
+					<top>-80</top>
+					<right>80</right>
+					<height>290</height>
+					<width>1000</width>
+					<font>font37</font>
+					<label>[B][COLOR grey]$INFO[VideoPlayer.Artist , ]  •[/COLOR][COLOR button_focus]$INFO[VideoPlayer.Title, ][/COLOR][/B]</label>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					<visible>VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>					
+				</control>
+				<control type="label">
+					<left>415</left>
+					<top>-25</top>
+					<width>1040</width>
+					<font>font12</font>
+					<label>[B][COLOR grey]Album:[/COLOR][COLOR button_focus] $INFO[VideoPlayer.Album, ] [/COLOR][COLOR grey]$INFO[VideoPlayer.Year,(,)][/COLOR][/B]</label>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					<visible>VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>	
+				</control>
+				<control type="image">
+					<left>420</left>
+					<top>-25</top>
+					<width>150</width>
+					<height>50</height>
+					<aspectratio>keep</aspectratio>
+					<texture>ratings/imdb/imdb.png</texture>
+					<visible>VideoPlayer.Content(musicvideos) + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
+				</control>
+				<control type="image">
+					<left>505</left>
+					<top>-15</top>
+					<width>120</width>
+					<height>30</height>
+					<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[VideoPlayer.Rating,ratings/imdb/,.png]</texture>
+					<visible>VideoPlayer.Content(musicvideos) + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)]</visible>
+				</control>
+				<control type="label">
+					<top>-70</top>
+					<right>70</right>
+					<align>right</align>
+					<width>450</width>
+					<font>font_flag</font>
+					<textcolor>white</textcolor>
+					<label>[B]$LOCALIZE[31173]:[/B]</label>
+					<visible>VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(livetv)</visible>
+					<visible>true</visible>
+				</control>
+				<control type="label">
+					<top>-50</top>
+					<right>-105</right>
+					<align>center</align>
+					<width>450</width>
+					<font>font_flag</font>
+					<textcolor>white</textcolor>
+					<label>[B][COLOR button_focus] $INFO[VideoPlayer.Duration(m),,m,] $INFO[VideoPlayer.Duration(ss),,secs,][/COLOR][/B]</label>
+					<visible>VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(livetv)</visible>
+					<visible>true</visible>
+				</control>	
 			<!-- OSD Settings For Streamed Content, Music Videos and LiveTV Recordings -->
 				<control type="image">
 					<depth>DepthOSD+</depth> 
@@ -278,7 +354,7 @@
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<include>OpenClose_Left</include>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>
 					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 				</control>
 				<control type="label">
@@ -292,7 +368,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>					
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>					
 				</control>
 				<control type="image">
 					<left>415</left>
@@ -301,7 +377,7 @@
 					<height>50</height>
 					<aspectratio>keep</aspectratio>
 					<texture>ratings/imdb/imdb.png</texture>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>	
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>	
 				</control>
 				<control type="image">
 					<left>500</left>
@@ -309,7 +385,7 @@
 					<width>120</width>
 					<height>30</height>
 					<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>	
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>	
 				</control>
 				<control type="label">
 					<left>640</left>
@@ -322,7 +398,7 @@
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>
 				</control>
 				</control>
 				
