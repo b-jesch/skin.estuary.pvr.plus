@@ -666,13 +666,13 @@
 					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !VideoPlayer.Content(musicvideos)</visible>
 				</control>
 				<control type="image">
-					<right>40</right>
-					<bottom>330</bottom>
-					<width>500</width>
-					<height>281</height>
-					<texture background="true">$VAR[PlayerInfoClearLogoVar]</texture>
-					<aspectratio align="center" aligny="bottom">keep</aspectratio>
-					<visible>!Skin.HasSetting(enable_clearlogo) + [Window.IsVisible(MusicVisualisation.xml) | Pvr.IsPlayingRadio]</visible>
+						<right>40</right>
+						<bottom>320</bottom>
+						<width>500</width>
+						<height>281</height>
+						<texture background="true">$VAR[PlayerClearArtVar]</texture>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						<visible>!Skin.HasSetting(enable_clearart) + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + [!VideoPlayer.Content(LiveTV) | !Pvr.IsPlayingRadio]</visible>
 				</control>
 				<control type="image">
 					<right>40</right>
@@ -723,7 +723,7 @@
 					<texture background="true" fallback="DefaultAudio.png">$VAR[NowPlayingPosterVar]</texture> 
 					<bordersize>20</bordersize>
 					<include>OpenClose_Left</include>
-					<visible> VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>
+					<visible>VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes)</visible>
 					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 				</control>
 				<control type="label">
@@ -733,7 +733,7 @@
 					<height>290</height>
 					<width>1000</width>
 					<font>font37</font>
-					<label>[B][COLOR grey]$INFO[VideoPlayer.Artist , ]  •[/COLOR][COLOR button_focus]$INFO[VideoPlayer.Title, ][/COLOR][/B]</label>
+					<label>[B][COLOR grey]$INFO[VideoPlayer.Artist , ]  • [/COLOR][COLOR button_focus]$INFO[VideoPlayer.Title, ][/COLOR][/B]</label>
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
@@ -939,6 +939,15 @@
                 	<height>20</height>
 					<texture colordiffuse="red">flags/playback/Paused.png</texture>
 					<visible>Player.HasAudio + !VideoPlayer.Content(livetv) + !Player.IsInternetStream + Player.Paused</visible>
+				</control>
+				<control type="image">
+						<right>40</right>
+						<bottom>320</bottom>
+						<width>500</width>
+						<height>281</height>
+						<texture background="true">$VAR[PlayerInfoClearLogoVar]</texture>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						<visible>!Skin.HasSetting(enable_clearlogo) + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(LiveTV) + Pvr.IsPlayingRadio]</visible>
 				</control>
 				<control type="label">
 					<top>120</top>

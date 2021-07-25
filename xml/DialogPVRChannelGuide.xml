@@ -90,13 +90,34 @@
 								<height>350</height>
 								<texture border="40">buttons/dialogbutton-nofo.png</texture>
 							</control>
-							<control type="image">
-								<left>805</left>
-								<top>-65</top>
-								<width>320</width>
-								<height>280</height>
+							<control type="image" id="8876"> 
+								<depth>DepthOSD+</depth>
+								<left>800</left>
+								<top>-85</top>
+								<width>230</width>
+								<height>320</height>
 								<aspectratio align="center" aligny="center">keep</aspectratio>
-								<texture fallback="DefaultTVShows.png" >$INFO[Listitem.Icon]</texture>
+								<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_Local_Artwork_Var]</texture>
+								<bordertexture border="21">overlays/shadow.png</bordertexture>
+								<bordersize>20</bordersize>
+								<include>OpenClose_Left</include>
+								<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+								<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+							</control>
+							
+							<control type="image"> 
+								<depth>DepthOSD+</depth>
+								<left>800</left>
+								<top>-85</top>
+								<width>230</width>
+								<height>320</height>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture background="true">$VAR[NowPVRPoster_Backend_Var]</texture>
+								<bordertexture border="21">overlays/shadow.png</bordertexture>
+								<bordersize>20</bordersize>
+								<include>OpenClose_Left</include>
+								<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+								<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 							</control>
 							<control type="image">
 								<left>1240</left>

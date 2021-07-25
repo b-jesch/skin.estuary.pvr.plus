@@ -748,11 +748,12 @@
 		<value condition="Control.HasFocus(912)">$LOCALIZE[31208]</value>
 		<value condition="Control.HasFocus(913)">$LOCALIZE[31209]</value>
 	</variable>
+	<variable name="PlayerClearArtVar">
+		<value condition="!String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
+	</variable>
 	<variable name="PlayerInfoClearLogoVar">
-		<value condition="!String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
-		<value condition="!String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(Player.Art(artist.clearlogo))">$INFO[Player.Art(artist.clearlogo)]</value>
-		
 	</variable>
 	<variable name="PlayerInfoDiscArtVar">
         <value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
@@ -861,9 +862,11 @@
 	</variable>
 	<variable name="PVRPoster_ListItem_Local_Artwork_Var">
 		<value condition="!String.IsEmpty(ListItem.EpgEventTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.EpgEventTitle,,/poster.jpg]</value>
+		<value condition="!String.IsEmpty(ListItem.Label) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Label,,/poster.jpg]</value>
 	</variable>
 	<variable name="PVRPoster(ListItem-Title)Local_ArtworkVar"> 
 		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.jpg]</value>
+		<value condition="!String.IsEmpty(ListItem.Label) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Label,,/poster.jpg]</value>
 	</variable>
 	<variable name="PVRPoster_ListItem_SkinHelper_Var">
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Poster)]</value>
@@ -952,11 +955,27 @@
         <value condition="Integer.IsEqual(ListItem.Duration(h),1) + Integer.IsGreater(ListItem.Duration(m),1)">$INFO[ListItem.Duration(h),,$LOCALIZE[31224]] $INFO[ListItem.Duration(m),,$LOCALIZE[31225]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(h),1) + Integer.IsEqual(ListItem.Duration(m),1)">$INFO[ListItem.Duration(h),,$LOCALIZE[31224]] $INFO[ListItem.Duration(m),,$LOCALIZE[31225]]</value>
     </variable>
+	<variable name="NowPlayingDurationVar">
+        <value condition="Integer.IsGreater(VideoPlayer.Duration(h),1) + String.IsEqual(VideoPlayer.Duration(m),0) + Integer.IsGreater(VideoPlayer.Duration(ss),0)">$INFO[VideoPlayer.Duration(h),, $LOCALIZE[31221]], $INFO[VideoPlayer.Duration(ss),, $LOCALIZE[32047]]</value>
+        <value condition="Integer.IsEqual(VideoPlayer.Duration(h),1) + String.IsEqual(VideoPlayer.Duration(m),0) + Integer.IsGreater(VideoPlayer.Duration(ss),0)">$INFO[VideoPlayer.Duration(h),, $LOCALIZE[31221]], $INFO[VideoPlayer.Duration(ss),, $LOCALIZE[32047]]</value>
+        <value condition="Integer.IsEqual(VideoPlayer.Duration(mins),60)">$INFO[VideoPlayer.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
+        <value condition="Integer.IsEqual(VideoPlayer.Duration(mins),120) | Integer.IsEqual(VideoPlayer.Duration(mins),180) | Integer.IsEqual(VideoPlayer.Duration(mins),240) | Integer.IsEqual(VideoPlayer.Duration(mins),300) | Integer.IsEqual(VideoPlayer.Duration(mins),360) | Integer.IsEqual(VideoPlayer.Duration(mins),420) | Integer.IsEqual(VideoPlayer.Duration(mins),480) | Integer.IsEqual(VideoPlayer.Duration(mins),540) | Integer.IsEqual(VideoPlayer.Duration(mins),600)">$INFO[VideoPlayer.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
+        <value condition="Integer.Isequal(VideoPlayer.Duration(mins),1)">$INFO[VideoPlayer.Duration(m),, $LOCALIZE[31222]]</value>
+        <value condition="Integer.IsLess(VideoPlayer.Duration(mins),60) + Integer.IsGreater(VideoPlayer.Duration(mins),1)">$INFO[VideoPlayer.Duration(m),,$LOCALIZE[31222]]</value>
+        <value condition="Integer.IsLess(VideoPlayer.Duration(mins),1)">$INFO[VideoPlayer.Duration(ss),,$LOCALIZE[32047]]</value>
+        <value condition="Integer.IsGreater(VideoPlayer.Duration(h),1) + Integer.IsGreater(VideoPlayer.Duration(m),1)">$INFO[VideoPlayer.Duration(h),,$LOCALIZE[31224]] $INFO[VideoPlayer.Duration(m),,$LOCALIZE[31225]]</value>
+        <value condition="Integer.IsGreater(VideoPlayer.Duration(h),1) + Integer.IsEqual(VideoPlayer.Duration(m),1)">$INFO[VideoPlayer.Duration(h),,$LOCALIZE[31224]] $INFO[VideoPlayer.Duration(m),,$LOCALIZE[31225]]</value>
+        <value condition="Integer.IsEqual(VideoPlayer.Duration(h),1) + Integer.IsGreater(VideoPlayer.Duration(m),1)">$INFO[VideoPlayer.Duration(h),,$LOCALIZE[31224]] $INFO[VideoPlayer.Duration(m),,$LOCALIZE[31225]]</value>
+        <value condition="Integer.IsEqual(VideoPlayer.Duration(h),1) + Integer.IsEqual(VideoPlayer.Duration(m),1)">$INFO[VideoPlayer.Duration(h),,$LOCALIZE[31224]] $INFO[VideoPlayer.Duration(m),,$LOCALIZE[31225]]</value>
+    </variable>
 	
 	
 	
 	<variable name="MusicPlayerCover">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Art(poster))">$INFO[VideoPlayer.Art(poster)]</value>
+	</variable>
+	<variable name="Now_Playing_Music_Video_Artist_Thumb_Var">
+		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>		
 	</variable>
 </includes>
