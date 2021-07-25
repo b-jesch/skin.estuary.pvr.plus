@@ -1,4 +1,11 @@
-B]0.1.3[/B]
+[B]0.1.4[/B]
+• New Recommended Songs Widget added to Music Home Screen.
+• Layout tweaks to PlayerPlot.xml file.
+• Layout and Poster tweaks to DialogPVRChannelGuide.xml file.
+• Layout tweaks to DialogSeekBar.xml file.
+• New setting added to OSD Settings to display clearart for Movies and TVshows only.
+
+[B]0.1.3[/B]
 • Duration list item label for PVR windows updated to new variable.
 • Increased new PVR recording icon slightly.
 
