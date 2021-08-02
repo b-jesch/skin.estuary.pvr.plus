@@ -67,12 +67,6 @@
 					<onclick>Skin.ToggleSetting(show_mediaendtimeflag)</onclick>
 					<selected>!Skin.HasSetting(show_mediaendtimeflag)</selected>
 				</control>
-				<control type="radiobutton" id="707">
-					<label>Use coloured equalizer on music OSD</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
-					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
-				</control>
 				<control type="button" id="708">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
@@ -198,6 +192,18 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
 					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
+				</control>
+				<control type="radiobutton" id="6068">
+					<label>Display clearart above OSD for movies and TV shows</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(enable_clearart)</onclick>
+					<selected>!Skin.HasSetting(enable_clearart)</selected>
+				</control>
+				<control type="radiobutton" id="6069">
+					<label>Display coloured equalizer on music OSD instead of white one</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
+					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
 				</control>
 			</control>
 			<control type="grouplist" id="610">
