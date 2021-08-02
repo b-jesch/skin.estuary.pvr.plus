@@ -982,7 +982,7 @@
 						</item>
 						<item>
 							<label>$LOCALIZE[2]</label>
-							<onclick>ActivateWindow(Music,root,return)</onclick>
+							<onclick>ActivateWindow(music,musicdb://artists/,return)</onclick>
 							<property name="menu_id">$NUMBER[7000]</property>
 							<thumb>icons/sidemenu/music.png</thumb>
 							<property name="id">music</property>
@@ -999,7 +999,7 @@
 						<item>
 							<label>$LOCALIZE[20389]</label>
 							<property name="menu_id">$NUMBER[16000]</property>
-							<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
+							<onclick>ActivateWindow(Videos,MusicVideoArtists,return)</onclick>
 							<thumb>icons/sidemenu/musicvideos.png</thumb>
 							<property name="id">musicvideos</property>
 							<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>

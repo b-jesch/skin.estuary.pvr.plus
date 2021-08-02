@@ -630,7 +630,7 @@
 					<height>290</height>
 					<width>1000</width>
 					<font>font37</font>
-					<label>[B][COLOR button_focus]$INFO[VideoPlayer.TVShowTitle] -$INFO[VideoPlayer.Season, S,x]E$INFO[VideoPlayer.Episode,,]  •  $INFO[VideoPlayer.Title, ][/COLOR][/B]</label>
+					<label>[B][COLOR button_focus]$INFO[VideoPlayer.TVShowTitle][/COLOR][COLOR grey]$INFO[VideoPlayer.Season,  •  S,x]E$INFO[VideoPlayer.Episode,,]  •[/COLOR][COLOR button_focus]  $INFO[VideoPlayer.Title,][/COLOR][/B]</label>
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
@@ -852,7 +852,7 @@
 					<top>-77</top>
 					<right>80</right>
 					<height>290</height>
-					<width>1000</width>
+					<width>850</width>
 					<font>font37</font>
 					<label>[B][COLOR grey]$INFO[MusicPlayer.Artist , ]  •[/COLOR][COLOR button_focus]  $INFO[MusicPlayer.Title  , ][/COLOR][/B]</label>
 					<shadowcolor>black</shadowcolor>
