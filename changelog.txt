@@ -1,3 +1,7 @@
+[B]0.1.5[/B]
+• New radiobutton option added to Skin Settings Window to Enable/Disable clearart above OSD for movies and TV shows.
+• All files in contained media folder compiled into new Texture.xbt file.
+
 [B]0.1.4[/B]
 • New Recommended Songs Widget added to Music Home Screen.
 • Layout tweaks to PlayerPlot.xml file.
