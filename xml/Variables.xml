@@ -777,37 +777,6 @@
 		<value condition="VideoPlayer.Content(episodes)">plugin://script.skin.helper.service/?action=getcast&amp;tvshow=$INFO[VideoPlayer.TvShowTitle]</value>
 		<value condition="VideoPlayer.Content(livetv)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[VideoPlayer.Title]</value>
 	</variable>
-	<variable name="Addon_Name_Var">
-		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/addon/Netflix.png</value>
-		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/addon/Amazon.png</value>
-		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/addon/iplayer.png</value>
-		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/addon/youtube.png</value>
-		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/addon/emby.png</value>
-		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/addon/netflix.png</value>
-		<value condition="string.Contains(ListItem.Path,amazon)">primevid.png</value>
-		<value condition="string.Contains(ListItem.Path,emby)">icons/source/addon/emby.png</value>
-		<value condition="string.Contains(ListItem.Path,recordings)">tv-rec1.png</value>
-		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/addon/kodilogo.png</value>
-		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/addon/kodilogo.png</value>
-	</variable>
-		<variable name="Kodi_Library_Type_Var">
-		<value condition="VideoPlayer.Content(movies)">icons/source/addon/kodilogo.png</value>
-		<value condition="VideoPlayer.Content(episodes)">icons/source/addon/kodilogo.png</value>
-	</variable>
-	<variable name="Content_Type_Var">
-		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/content_type/strm.png</value>
-		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/content_type/strm.png</value>
-		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/content_type/strm.png</value>
-		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/content_type/strm.png</value>
-		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/content_type/strm.png</value>
-		<value condition="VideoPlayer.Content(movies)">icons/source/content_type/Local_Library.png</value>
-		<value condition="VideoPlayer.Content(episodes)">icons/source/content_type/Local_Library.png</value>
-		<value condition="string.Contains(ListItem.Path,netflix)">strm.png</value>
-		<value condition="string.Contains(ListItem.Path,amazon)">strm.png</value>
-		<value condition="string.Contains(ListItem.Path,emby)">strm.png</value>
-		<value condition="String.IsEqual(ListItem.DbType,movie)">local.png</value>
-		<value condition="String.IsEqual(ListItem.DbType,tvshow)">local.png</value>
-	</variable>
 	<variable name="PVR_HDTV_Var">
 		<value condition="String.EndsWith(ListItem.ChannelName,UHD)">uhd</value>
 		<value condition="String.EndsWith(ListItem.ChannelName,HD)">hdtv</value>
@@ -920,8 +889,10 @@
 		<value condition="!String.IsEmpty(Listitem.Art(landscape))">$INFO[Listitem.Art(landscape)]</value>
 	</variable>
 	<variable name="PremieredFlags">
-		<value condition="ListItem.IsLive">live</value>
-		<value condition="ListItem.IsNew">new</value>
+		<value condition="ListItem.IsLive">icons/pvr/live.png</value>
+		<value condition="ListItem.IsNew">icons/pvr/new.png</value>
+		<value condition="ListItem.IsNew">icons/pvr/finale.png</value>
+		<value condition="ListItem.IsNew">icons/pvr/premier.png</value>
 	</variable>
 	<variable name="FlagLabel_TVGuide">
 		<value condition="ListItem.IsPremiere">[B][COLOR pink][$LOCALIZE[838]] [/COLOR][/B]</value>

@@ -123,8 +123,13 @@
 					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
 				</control>
-				
 				<control type="radiobutton" id="807">
+					<include>DefaultSettingButton</include>
+					<label>Display premiered flags on EPG Screen instead of using '*'</label>
+					<selected>!Skin.HasSetting(Display_Premiered_Flags)</selected>
+					<onclick>Skin.ToggleSetting(Display_Premiered_Flags)</onclick> 
+				</control>
+				<control type="radiobutton" id="808"> 
 					<include>DefaultSettingButton</include>
 					<label>Enable 'Next-Up' Dialog when current programme is about to end</label>
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>

@@ -1629,12 +1629,23 @@
 					</control>
 					<control type="image">
 						<visible>ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive</visible>
+						<left>-4</left>
+						<top>2</top>
+						<width>60</width>
+						<height>50</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[PremieredFlags]</texture>
+						<visible>!Skin.HasSetting(Display_Premiered_Flags)</visible>
+					</control>
+					<control type="image">
+						<visible>ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive</visible>
 						<left>6</left>
 						<top>32</top>
 						<width>20</width>
 						<height>20</height>
 						<aspectratio>keep</aspectratio>
 						<texture colordiffuse="button_focus">icons/pvr/premiere.png</texture>
+						<visible>Skin.HasSetting(Display_Premiered_Flags)</visible>
 					</control>
 					<control type="image">
 						<left>6</left>
@@ -1687,12 +1698,23 @@
 					</control>
 					<control type="image">
 						<visible>ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive</visible>
+						<left>-2</left>
+						<top>4</top>
+						<width>60</width>
+						<height>55</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[PremieredFlags]</texture>
+						<visible>!Skin.HasSetting(Display_Premiered_Flags)</visible>
+					</control>
+					<control type="image">
+						<visible>ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive</visible>
 						<left>6</left>
-						<top>31</top>
+						<top>32</top>
 						<width>20</width>
 						<height>20</height>
 						<aspectratio>keep</aspectratio>
 						<texture colordiffuse="white70">icons/pvr/premiere.png</texture>
+						<visible>Skin.HasSetting(Display_Premiered_Flags)</visible>
 					</control>
 					<control type="image">
 						<left>6</left>
