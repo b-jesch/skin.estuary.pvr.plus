@@ -324,7 +324,7 @@
 				<width>400</width>
 				<height>600</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture fallback="defaultpvrposter.png" background="true">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture>
+				<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 				<include>OpenClose_Left</include>
@@ -470,7 +470,7 @@
 				<width>350</width>
 				<height>350</height>
 				<aspectratio aligny="bottom" align="center">keep</aspectratio>
-				<texture>default_radio.png</texture>
+				<texture>DefaultRadio.png</texture>
 				<include>OpenClose_Left</include>
 				<visible>Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>

@@ -320,7 +320,7 @@
 		<param name="main_label">$INFO[ListItem.Label]</param>
 		<param name="sub_label">$INFO[ListItem.ChannelName]</param>
 		<param name="thumb_label">$INFO[ListItem.Season,S,,x]$INFO[ListItem.Episode,E]</param>
-		<param name="fallback_image">defaultpvrrecording.png</param>
+		<param name="fallback_image">DefaultPVRRecording.png</param>
 		<param name="focused">false</param>
 		<definition>
 			<control type="image">

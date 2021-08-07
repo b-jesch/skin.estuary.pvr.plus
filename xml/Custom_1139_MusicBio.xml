@@ -31,7 +31,7 @@
 						<left>411</left>
 						<width>45</width>
 						<height>45</height>
-						<texture>defaultartist.png</texture>
+						<texture>DefaultArtist.png</texture>
 					</control>
 					<control type="label"> 
 						<left>460</left>
@@ -51,7 +51,7 @@
 						<left>420</left>
 						<width>30</width>
 						<height>30</height>
-						<texture>defaultdrama.png</texture>
+						<texture>DefaultDrama.png</texture>
 					</control>
 					<control type="label">
 						<left>455</left> 
