@@ -891,8 +891,8 @@
 	<variable name="PremieredFlags">
 		<value condition="ListItem.IsLive">icons/pvr/live.png</value>
 		<value condition="ListItem.IsNew">icons/pvr/new.png</value>
-		<value condition="ListItem.IsNew">icons/pvr/finale.png</value>
-		<value condition="ListItem.IsNew">icons/pvr/premier.png</value>
+		<value condition="ListItem.IsFinale">icons/pvr/finale.png</value>
+		<value condition="ListItem.IsPremiere">icons/pvr/premier.png</value>
 	</variable>
 	<variable name="FlagLabel_TVGuide">
 		<value condition="ListItem.IsPremiere">[B][COLOR pink][$LOCALIZE[838]] [/COLOR][/B]</value>
