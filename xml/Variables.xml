@@ -700,7 +700,7 @@
 	<variable name="Addon_Name_Var">
 		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/addon/Netflix.png</value>
 		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/addon/Amazon.png</value>
-		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/addon/iplayer.png</value>
+		<value condition="string.Contains(Player.Folderpath,iplayer) + !Player.HasAudio">icons/source/addon/iplayer.png</value>
 		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/addon/youtube.png</value>
 		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/addon/emby.png</value>
 		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/addon/netflix.png</value>
@@ -717,7 +717,7 @@
 	<variable name="Content_Type_Var">
 		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/content_type/strm.png</value>
-		<value condition="string.Contains(Player.Folderpath,iplayer)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,iplayer) + !Player.HasAudio">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/content_type/strm.png</value>
 		<value condition="VideoPlayer.Content(movies)">icons/source/content_type/Local.png</value>
@@ -761,14 +761,14 @@
     </variable>
 	<variable name="MusicPlayerDiscTitleVar">
 		<value condition="Pvr.IsPlayingRadio">$INFO[VideoPlayer.ChannelName]</value>
-		<value condition="Player.IsInternetStream">$INFO[MusicPlayer.Title]</value>
+		<value condition="Player.IsInternetStream">$INFO[MusicPlayer.Artist]</value>
 		<value condition="!String.IsEmpty(MusicPlayer.Artist)">$INFO[MusicPlayer.Artist]</value>
 		<value>$INFO[MusicPlayer.Title]</value>
 	</variable>
 	<variable name="MusicPlayerDiscAlbumVar">
 		<value condition="Pvr.IsPlayingRadio">$INFO[MusicPlayer.Title]</value>
-		<value condition="Player.IsInternetStream">$INFO[Window(Home).Property(SkinHelper.Player.Album)]</value>
-		<value>$INFO[MusicPlayer.Album]</value>
+		<value condition="Player.IsInternetStream">$INFO[MusicPlayer.Title]</value>
+		<value>$INFO[MusicPlayer.Album]</value> 
 	</variable>
 	<variable name="OSDCastVar">
 		<value condition="!String.IsEmpty(Window(home).Property(NextUpNotification.NowPlaying.Type)) + String.IsEqual(Window(home).Property(NextUpNotification.NowPlaying.Type),movie) + Integer.IsGreater(Window(home).Property(NextUpNotification.NowPlaying.DBID),-1)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[Window(home).Property(NextUpNotification.NowPlaying.DBID)]</value>
@@ -945,6 +945,8 @@
 	<variable name="MusicPlayerCover">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Art(poster))">$INFO[VideoPlayer.Art(poster)]</value>
+		<value condition="Player.IsInternetStream">$INFO[Player.Art(artist.thumb)]</value>
+		<value condition="Pvr.IsPlayingRadio">$INFO[Player.Art(artist.thumb)]</value>
 	</variable>
 	<variable name="Now_Playing_Music_Video_Artist_Thumb_Var">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>		
