@@ -93,7 +93,7 @@
 				<shadowcolor>black</shadowcolor>
 				<visible>!Player.ChannelPreviewActive</visible>
 				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation> 
-				<visible>!VideoPlayer.Content(LiveTV) + !VideoPlayer.Content(musicvideos)</visible>
+				<visible>!VideoPlayer.Content(LiveTV) + !VideoPlayer.Content(musicvideos) + !string.Contains(Player.Folderpath,radio_de)</visible>
 			</control>
 			<control type="label">
 				<centerleft>58%</centerleft>
@@ -123,7 +123,7 @@
 				<wrapmultiline>true</wrapmultiline>
 				<animation effect="fade" time="200">VisibleChange</animation>
 				<label>$VAR[NowPlayingTimeRemainingVar,[COLOR button_focus]$LOCALIZE[31172][CR][/COLOR]] Hrs/Min</label>
-				<visible>!VideoPlayer.Content(LiveTV)</visible>
+				<visible>!VideoPlayer.Content(LiveTV) + !string.Contains(Player.Folderpath,radio_de)</visible>
 			</control>
 			<control type="label" id="40000">
 				<left>715</left>
@@ -271,6 +271,7 @@
 					<textcolor>white</textcolor>
 					<wrapmultiline>true</wrapmultiline>
 					<visible>String.IsEqual(Control.GetLabel(88888),cd/cd2.png)</visible>
+					<visible>Player.HasAudio | Player.IsInternetStream</visible>
 				</control>
 				<control type="label">
 					<left>70</left>
@@ -470,7 +471,7 @@
 				<width>350</width>
 				<height>350</height>
 				<aspectratio aligny="bottom" align="center">keep</aspectratio>
-				<texture>DefaultRadio.png</texture>
+				<texture background="true" fallback="DefaultRadio.png">$VAR[MusicPlayerCover]</texture>
 				<include>OpenClose_Left</include>
 				<visible>Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
@@ -766,6 +767,17 @@
 						<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>
 						<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 					</control>
+					<control type="image">
+						<depth>DepthOSD+</depth>
+						<left>15</left>
+						<bottom>5</bottom>
+						<width>405</width>
+						<height>405</height>
+						<aspectratio aligny="bottom" align="center">keep</aspectratio>
+						<texture background="true" fallback="DefaultRadio.png">$VAR[MusicPlayerCover]</texture> 
+						<bordersize>20</bordersize>
+						<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + Player.IsInternetStream</visible>
+					</control>
 					<control type="label">
 						<left>410</left>
 						<top>-80</top>
@@ -778,6 +790,19 @@
 						<align>left</align>
 						<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 						<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>					
+					</control>
+					<control type="label"> 
+						<left>475</left>
+						<top>-77</top>
+						<right>80</right>
+						<height>290</height>
+						<width>850</width>
+						<font>font37</font>
+						<label>[B][COLOR button_focus]$INFO[MusicPlayer.Artist,,  • ][/COLOR][COLOR grey]$INFO[Player.Title  , ][/COLOR][/B]</label>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+						<visible>Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + Player.IsInternetStream</visible>
 					</control>
 					<control type="image">
 						<left>415</left>
@@ -795,6 +820,19 @@
 						<height>30</height>
 						<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>
 						<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>	
+					</control>
+					<control type="label">
+						<left>420</left>
+						<top>-19</top>
+						<right>80</right>
+						<height>290</height>
+						<width>620</width>
+						<font>font12</font>
+						<label>[B][COLOR button_focus]Station: [/COLOR]$INFO[MusicPlayer.Station]     [COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[MusicPlayer.Genre][/B]</label>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+						<visible>Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + Player.IsInternetStream + !string.Contains(Player.Folderpath,iplayerwww)</visible>
 					</control>
 					<control type="label">
 						<left>640</left>
@@ -930,7 +968,7 @@
                 	<width>44</width>
                 	<height>20</height>
 					<texture colordiffuse="button_focus">flags/playback/Playing.png</texture>
-					<visible>Player.HasAudio + !VideoPlayer.Content(livetv) + !Player.IsInternetStream + Player.Playing</visible>
+					<visible>Player.HasAudio + !VideoPlayer.Content(livetv) + Player.Playing</visible>
 				</control>
 				<control type="image">
 					<left>423</left>
@@ -938,7 +976,7 @@
                 	<width>44</width>
                 	<height>20</height>
 					<texture colordiffuse="red">flags/playback/Paused.png</texture>
-					<visible>Player.HasAudio + !VideoPlayer.Content(livetv) + !Player.IsInternetStream + Player.Paused</visible>
+					<visible>Player.HasAudio + !VideoPlayer.Content(livetv) + Player.Paused</visible>
 				</control>
 				<control type="image">
 						<right>40</right>
