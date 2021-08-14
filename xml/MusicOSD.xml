@@ -129,7 +129,7 @@
                     </include>
 					<onclick>Close</onclick>
 					<onclick>ActivateWindow(1139)</onclick> 
-					<visible>!String.IsEmpty(MusicPlayer.Artist) + !string.Contains(Player.Folderpath,radio_de)</visible>
+					<visible>!String.IsEmpty(MusicPlayer.Artist)</visible>
 				</control>
 				<control type="radiobutton" id="70040">
 					<include content="OSDButton">
