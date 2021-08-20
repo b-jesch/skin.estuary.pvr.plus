@@ -393,7 +393,7 @@
 						<width>70</width>
 						<height>70</height>
 						<texture>overlays/overlay-bg.png</texture>
-						<visible>ListItem.IsResumable | Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+						<visible>ListItem.IsResumable | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
 					</control>
 					<control type="image">
 						<left>10</left>
@@ -436,7 +436,7 @@
 						<width>70</width>
 						<height>70</height>
 						<texture>overlays/overlay-bg.png</texture>
-						<visible>ListItem.IsResumable | Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+						<visible>ListItem.IsResumable | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
 					</control>
 					<control type="image">
 						<left>10</left>

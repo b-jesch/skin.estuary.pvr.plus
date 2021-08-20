@@ -1648,12 +1648,22 @@
 						<visible>Skin.HasSetting(Display_Premiered_Flags)</visible>
 					</control>
 					<control type="image">
+						<visible>!ListItem.IsNew</visible>
+						<left>-4</left>
+						<top>2</top>
+						<width>60</width>
+						<height>50</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[Text_Based_Premiere_Flags]</texture>
+						<visible>!Skin.HasSetting(Display_Premiered_Flags)</visible>
+					</control>
+					<control type="image">
 						<left>6</left>
 						<top>32</top>
 						<width>19</width>
 						<height>19</height>
 						<texture>$VAR[PVRTimerIcon]</texture>
-						<animation effect="slide" start="0,0" end="22,0" condition="ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive">Conditional</animation>
+						<animation effect="slide" start="0,0" end="22,0" condition="ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive | string.EndsWith(ListItem.Plot,S1 Ep1)">Conditional</animation>
 					</control>
 				</itemlayout>
 				<focusedlayout height="62" width="60">
@@ -1717,12 +1727,22 @@
 						<visible>Skin.HasSetting(Display_Premiered_Flags)</visible>
 					</control>
 					<control type="image">
+						<visible>!ListItem.IsNew</visible>
+						<left>-2</left>
+						<top>4</top>
+						<width>60</width>
+						<height>55</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[Text_Based_Premiere_Flags]</texture>
+						<visible>!Skin.HasSetting(Display_Premiered_Flags)</visible>
+					</control>
+					<control type="image">
 						<left>6</left>
 						<top>32</top>
 						<width>19</width>
 						<height>19</height>
 						<texture>$VAR[PVRTimerIcon]</texture>
-						<animation effect="slide" start="0,0" end="22,0" condition="ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive">Conditional</animation>
+						<animation effect="slide" start="0,0" end="22,0" condition="ListItem.IsNew | ListItem.IsPremiere | ListItem.IsFinale | ListItem.IsLive | string.EndsWith(ListItem.Plot,S1 Ep1)">Conditional</animation>
 					</control>
 				</focusedlayout>
 			</control>

@@ -253,7 +253,7 @@
 			<left>-0</left>
 			<right>0</right>
 			<top>420</top>
-			<animation effect="slide" end=",-10" time="0" condition="Container.Content(images) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
+			<animation effect="slide" end=",-10" time="0" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
 			<control type="panel" id="510">
 				<width>100%</width>
 				<top>20</top>
@@ -268,8 +268,8 @@
 				<pagecontrol>60</pagecontrol>
 				<orientation>horizontal</orientation>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
-				<visible>Container.Content(images) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)</visible>
-				<itemlayout height="500" width="330" condition="Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)">
+				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<itemlayout height="500" width="330" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)">
 					<control type="image">
 						<left>10</left>
 						<top>100</top>
@@ -286,7 +286,7 @@
 						<width>70</width>
 						<height>70</height>
 						<texture>overlays/overlay-bg.png</texture>
-						<visible>ListItem.IsResumable | Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+						<visible>ListItem.IsResumable | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
 					</control>
 					<control type="image">
 						<left>30</left>
@@ -333,7 +333,7 @@
 						<width>70</width>
 						<height>70</height>
 						<texture>overlays/overlay-bg.png</texture>
-						<visible>ListItem.IsResumable | Listitem.IsCollection | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
+						<visible>ListItem.IsResumable | ListItem.IsPlaying | Integer.IsGreater(ListItem.Playcount,0)</visible>
 					</control>
 					<control type="image">
 						<left>30</left>

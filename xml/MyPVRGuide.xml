@@ -138,7 +138,7 @@
 						<left>70</left>
 						<width>170</width>
 						<height>245</height>
-						<texture fallback="defaultpvrposter.png">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
+						<texture fallback="DefaultPVRPoster.png">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
 						<visible>String.IsEmpty(Control.GetLabel(9885))</visible>
 					</control> 
 					<control type="image"> 
@@ -211,7 +211,7 @@
 						<top>100</top>
 						<width>1550</width>
 						<height>130</height>
-						<label>$VAR[FlagLabel_TVGuide]$INFO[ListItem.Plot]</label>
+						<label>$VAR[FlagLabel_TVGuide]$VAR[Text_Based_Premiere_Flags_TVGuide]$INFO[ListItem.Plot]</label>
 						<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
 					

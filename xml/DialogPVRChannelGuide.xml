@@ -97,7 +97,7 @@
 								<width>230</width>
 								<height>320</height>
 								<aspectratio align="center" aligny="center">keep</aspectratio>
-								<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_Local_Artwork_Var]</texture>
+								<texture fallback="DefaultPVRPoster.png" background="true">$VAR[PVRPoster_ListItem_Local_Artwork_Var]</texture>
 								<bordertexture border="21">overlays/shadow.png</bordertexture>
 								<bordersize>20</bordersize>
 								<include>OpenClose_Left</include>

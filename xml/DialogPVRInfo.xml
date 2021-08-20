@@ -39,7 +39,7 @@
 					<width>526</width>
 					<height>801</height>
 					<aspectratio>scale</aspectratio>
-					<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
+					<texture fallback="DefaultPVRPoster.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
 					 <visible>String.IsEmpty(Control.GetLabel(9876))</visible>
 				</control>
 				<control type="image">

@@ -247,7 +247,7 @@
 					<bottom>220</bottom>
 					<width>345</width>
 					<height>345</height> 
-					<visible>Window.IsVisible(MusicVisualisation.xml) + !Skin.HasSetting(show_disc) + !Window.IsVisible(1139) + !Pvr.IsPlayingRadio</visible>
+					<visible>Window.IsVisible(MusicVisualisation.xml) + !Skin.HasSetting(show_disc) + !Window.IsVisible(1139) + !Pvr.IsPlayingRadio + !string.Contains(Player.Folderpath,iplayerwww)</visible>
 					<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
 				<control type="image" id="88888">
 					<left>0</left>
@@ -826,9 +826,9 @@
 						<top>-19</top>
 						<right>80</right>
 						<height>290</height>
-						<width>620</width>
+						<width>820</width>
 						<font>font12</font>
-						<label>[B][COLOR button_focus]Station: [/COLOR]$INFO[MusicPlayer.Station]     [COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[MusicPlayer.Genre][/B]</label>
+						<label>[B][COLOR button_focus]Internet Radio Station: [/COLOR]$INFO[MusicPlayer.Station]     [COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[MusicPlayer.Genre][/B]</label>
 						<shadowcolor>black</shadowcolor>
 						<align>left</align>
 						<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
@@ -858,6 +858,14 @@
 					<visible>true</visible>
 				</control>
 				<control type="image">
+					<top>50</top>
+					<right>135</right>
+					<width>160</width>
+					<height>50</height>
+					<texture>icons/source/addon/radio_de.png</texture>
+					<visible>string.Contains(Player.Folderpath,radio_de)</visible>
+				</control>
+				<control type="image">
 					<top>-75</top>
 					<right>130</right>
 					<width>40</width>
@@ -872,6 +880,14 @@
 					<height>55</height>
 					<texture>$VAR[Content_Type_Var]</texture>
 					<visible>!VideoPlayer.Content(livetv)</visible>
+				</control>
+				<control type="image">
+					<top>50</top>
+					<right>50</right>
+					<width>70</width>
+					<height>55</height>
+					<texture>icons/source/content_type/strm.png</texture>
+					<visible>!VideoPlayer.Content(livetv) + string.Contains(Player.Folderpath,radio_de)</visible>
 				</control>
 		<!-- OSD Settings For Music -->	
 				<control type="image">

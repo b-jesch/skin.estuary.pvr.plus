@@ -44,7 +44,7 @@
 				<width>400</width>
 				<height>600</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture fallback="defaultpvrposter.png" background="true">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture>
+				<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 				<include>OpenClose_Left</include>
@@ -350,7 +350,7 @@
 					<top>-380</top>
 					<width>415</width>
 					<height>600</height>
-					<texture fallback="defaultpvrposter.png" background="true">$VAR[NowPlayingPVRRecordingPosterVar]</texture>
+					<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayingPVRRecordingPosterVar]</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<include>OpenClose_Left</include>

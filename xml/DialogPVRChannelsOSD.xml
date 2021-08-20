@@ -67,7 +67,7 @@
 					<width>400</width>
 					<height>600</height>
 					<aspectratio aligny="bottom">keep</aspectratio>
-					<texture fallback="defaultpvrposter.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
+					<texture fallback="DefaultPVRPoster.png" background="true">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
 					<include>OpenClose_Left</include>

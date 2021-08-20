@@ -867,7 +867,7 @@
 	</variable>
 		
 	<variable name="PVR_NextUP_Local_Banner_Artwork_Var"> 
-		<value condition="!String.IsEmpty(VideoPlayer.NextTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$INFO[VideoPlayer.NextTitle,E:\PVR (New) Art\,\banner.jpg]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.NextTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.NextTitle,,/banner.jpg]</value>
 	</variable>
 	<variable name="PVR_NextUP_Banner_SkinHelper_Var">
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.NextPlayer.Art.Banner)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.NextPlayer.Art.Banner)]</value>
@@ -895,11 +895,36 @@
 		<value condition="ListItem.IsPremiere">icons/pvr/premier.png</value>
 	</variable>
 	<variable name="FlagLabel_TVGuide">
-		<value condition="ListItem.IsPremiere">[B][COLOR pink][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="ListItem.IsPremiere">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
 		<value condition="ListItem.IsFinale">[B][COLOR button_focus][$LOCALIZE[849]] [/COLOR][/B]</value>
 		<value condition="ListItem.IsLive">[B][COLOR FFFDA700][$LOCALIZE[839]] [/COLOR][/B]</value>
 		<value condition="ListItem.IsNew">[B][COLOR yellow][$LOCALIZE[842]][/COLOR] [/B]</value>
 	</variable>
+	<variable name="Text_Based_Premiere_Flags">
+		<value condition="String.StartsWith(ListItem.EpgEventTitle,New:)">icons/pvr/new.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S1 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S2 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S3 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S4 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S5 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S6 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S7 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S8 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S9 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S10 Ep1)">icons/pvr/premier.png</value>
+	</variable>
+	<variable name="Text_Based_Premiere_Flags_TVGuide">
+		<value condition="String.EndsWith(ListItem.Plot,S1 Ep1)">[B][COLOR red][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S2 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S3 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S4 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S5 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S6 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S7 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S8 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S9 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S10 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+	</variable>	
 	<variable name="EPG_Genre_Icon">
 		<value condition="String.StartsWith(ListItem.Genre,Movie)">Movie</value>
 		<value condition="String.StartsWith(ListItem.Genre,Film)">Movie</value>
