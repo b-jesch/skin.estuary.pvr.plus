@@ -1037,7 +1037,7 @@
 					<visible>!String.IsEmpty(MusicPlayer.offset(3).Artist) + Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
 				</control>
 					
-			<control type="grouplist">
+			<control type="grouplist"> 
 					<right>40</right>
 					<top>-80</top>
 					<width>1000</width>
@@ -1046,7 +1046,7 @@
 					<include>Animation_BottomSlide</include>
 					<orientation>horizontal</orientation>
 					<itemgap>10</itemgap>
-					<visible>Player.ShowInfo + !Player.ChannelPreviewActive + Window.IsActive(visualisation)</visible>
+					<visible>!Player.ChannelPreviewActive + Window.IsActive(visualisation)</visible>
 					<visible>Player.HasAudio | Pvr.IsPlayingRadio</visible>
 					<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
 					<control type="group">

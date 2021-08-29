@@ -970,48 +970,7 @@
 							<scroll>true</scroll>
 						</control>
 					</control>
-					<control type="group">
-						<width>600</width>
-						<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
-						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + Window.IsVisible(MyPVRChannels.xml)</visible>
-						<animation effect="fade" time="200">VisibleChange</animation>
-						<control type="grouplist">
-							<left>-110</left>
-							<orientation>horizontal</orientation>
-							<height>38</height>
-							<top>14</top>
-							
-							<width>660</width>
-							<itemgap>5</itemgap>
-							<usecontrolcoords>true</usecontrolcoords>
-							<control type="image">
-								<top>4</top>
-								<width>32</width>
-								<height>32</height>
-								<aspectratio>keep</aspectratio>
-								<texture colordiffuse="button_focus">$VAR[NowPlayingIconVar]</texture>
-							</control>
-							<control type="label">
-								<label>$INFO[Player.Title]</label>
-								<font>font27</font>
-								<shadowcolor>text_shadow</shadowcolor>
-								<height>35</height>
-								<width min="1" max="602">auto</width>
-							</control>
-						</control>
-						<control type="label" id="7700">
-							<label>$VAR[NowPlayingSublabelVar]</label>
-							<left>-74</left>
-							<top>44</top>
-							<font>font12</font>
-							<textcolor>grey</textcolor>
-							<shadowcolor>text_shadow</shadowcolor>
-							<height>25</height>
-							<width>630</width>
-							
-							<scroll>true</scroll>
-						</control>
-					</control>
+					
 					<control type="group">
 						<visible>Integer.IsGreater(System.ProfileCount,1) + !Player.HasMedia</visible>
 						<control type="image">
@@ -1046,6 +1005,58 @@
 						<label>$INFO[System.Time]</label>
 						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + ![Window.IsVisible(DialogButtonMenu.xml) + Skin.HasSetting(powermenu_list)]</visible>
 						<visible>!Control.IsVisible(52)</visible>
+					</control>
+				</control>
+				<control type="grouplist">
+					<top>0</top>
+					<align>right</align>
+					<right>205</right>
+					<height>200</height>
+					<orientation>horizontal</orientation>
+					<width>900</width>
+					<itemgap>10</itemgap>
+					<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsActive(fullscreenvideo)</visible>
+					<animation effect="fade" time="150">VisibleChange</animation>
+					<control type="group">
+						<width>600</width>
+						<visible>!Control.IsVisible(503) + Player.HasMedia + String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
+						<visible>![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + Window.IsVisible(MyPVRChannels.xml)</visible>
+						<animation effect="fade" time="200">VisibleChange</animation>
+						<control type="grouplist">
+							<left>-80</left>
+							<orientation>horizontal</orientation>
+							<height>38</height>
+							<top>14</top>
+							
+							<width>660</width>
+							<itemgap>5</itemgap>
+							<usecontrolcoords>true</usecontrolcoords>
+							<control type="image">
+								<top>4</top>
+								<width>32</width>
+								<height>32</height>
+								<aspectratio>keep</aspectratio>
+								<texture colordiffuse="button_focus">$VAR[NowPlayingIconVar]</texture>
+							</control>
+							<control type="label">
+								<label>$INFO[Player.Title]</label>
+								<font>font27</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<height>35</height>
+								<width min="1" max="602">auto</width>
+							</control>
+						</control>
+						<control type="label" id="7700">
+							<label>$VAR[NowPlayingSublabelVar]</label>
+							<left>-74</left>
+							<top>44</top>
+							<font>font12</font>
+							<textcolor>grey</textcolor>
+							<shadowcolor>text_shadow</shadowcolor>
+							<height>25</height>
+							<width>630</width>
+							<scroll>true</scroll>
+						</control>
 					</control>
 				</control>
 				<control type="grouplist">
