@@ -359,6 +359,14 @@
 		<value condition="player.chaptercount + [!VideoPlayer.Content(episodes) + !VideoPlayer.Content(LiveTV)]">$INFO[player.chapter,[COLOR button_focus]$LOCALIZE[21396]:[/COLOR] ]$INFO[Player.ChapterCount,/]$INFO[Player.ChapterName, - ]</value>
 		<value>$INFO[VideoPlayer.Genre]</value>
 	</variable>
+	<variable name="OSDSubLabelVar1">
+		<value condition="Window.IsActive(visualisation) + Integer.IsGreater(Playlist.Length(music),1) + Integer.IsGreater(Playlist.Position(music),0)">$LOCALIZE[554] $INFO[Playlist.Position] / $INFO[Playlist.Length]</value>
+		<value condition="VideoPlayer.Content(musicvideos)">$VAR[NowPlayingSublabelVar,,[CR]]$INFO[player.chapter,[COLOR button_focus]$LOCALIZE[21396]: [/COLOR]]$INFO[Player.ChapterCount,/]$INFO[Player.ChapterName, - ]</value>
+		<value condition="VideoPlayer.Content(episodes) + !player.chaptercount">$INFO[VideoPlayer.Season,[COLOR button_focus][CAPITALIZE]$LOCALIZE[36906][/CAPITALIZE]:[/COLOR] S]$INFO[VideoPlayer.Episode,E,: ]$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(episodes) + player.chaptercount">$INFO[VideoPlayer.Season,[COLOR button_focus][CAPITALIZE]$LOCALIZE[36906][/CAPITALIZE]:[/COLOR] S]$INFO[VideoPlayer.Episode,E, - ]$INFO[VideoPlayer.Title,,]</value>
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording | PVR.IsPlayingEpgTag">$INFO[VideoPlayer.ChannelNumberLabel,([COLOR button_focus],[/COLOR]) ]$INFO[VideoPlayer.ChannelName] $INFO[VideoPlayer.EpisodeName, - ]</value>
+		<value>$INFO[VideoPlayer.Genre]</value>
+	</variable>
 	<variable name="OSDNextLabelVar">
 		<value condition="Window.IsActive(visualisation)">$INFO[MusicPlayer.offset(1).Title,[COLOR button_focus]$LOCALIZE[19031]: [/COLOR]]$INFO[MusicPlayer.offset(1).Artist, - ]$INFO[MusicPlayer.offset(1).Album, - ]$INFO[MusicPlayer.offset(1).Year, (,)]</value>
 		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.offset(1).Title,[COLOR button_focus]$LOCALIZE[19031]: [/COLOR]]$INFO[VideoPlayer.offset(1).Artist, - ]$INFO[VideoPlayer.offset(1).Album, - ]$INFO[VideoPlayer.offset(1).Year, (,)]</value>
@@ -912,6 +920,7 @@
 		<value condition="String.EndsWith(ListItem.Plot,S8 Ep1)">icons/pvr/premier.png</value>
 		<value condition="String.EndsWith(ListItem.Plot,S9 Ep1)">icons/pvr/premier.png</value>
 		<value condition="String.EndsWith(ListItem.Plot,S10 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S11 Ep1)">icons/pvr/premier.png</value>
 	</variable>
 	<variable name="Text_Based_Premiere_Flags_TVGuide">
 		<value condition="String.EndsWith(ListItem.Plot,S1 Ep1)">[B][COLOR red][$LOCALIZE[838]] [/COLOR][/B]</value>
@@ -924,6 +933,8 @@
 		<value condition="String.EndsWith(ListItem.Plot,S8 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
 		<value condition="String.EndsWith(ListItem.Plot,S9 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
 		<value condition="String.EndsWith(ListItem.Plot,S10 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S11 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.StartsWith(ListItem.Plot,1/6)">[B][COLOR red][$LOCALIZE[838]] [/COLOR][/B]</value>
 	</variable>	
 	<variable name="EPG_Genre_Icon">
 		<value condition="String.StartsWith(ListItem.Genre,Movie)">Movie</value>

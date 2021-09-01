@@ -631,7 +631,7 @@
 					<height>290</height>
 					<width>1000</width>
 					<font>font37</font>
-					<label>[B][COLOR button_focus]$INFO[VideoPlayer.TVShowTitle][/COLOR][COLOR grey]$INFO[VideoPlayer.Season,  •  S,x]E$INFO[VideoPlayer.Episode,,]  •[/COLOR][COLOR button_focus]  $INFO[VideoPlayer.Title,][/COLOR][/B]</label>
+					<label>[B][COLOR button_focus]$INFO[VideoPlayer.TVShowTitle][/COLOR][/B]</label>
 					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
@@ -647,7 +647,7 @@
 					<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !VideoPlayer.Content(musicvideos)</visible>
+					<visible>[VideoPlayer.Content(episodes)] + !VideoPlayer.Content(musicvideos)</visible>
 				</control>
 				<control type="image">
 					<left>420</left>

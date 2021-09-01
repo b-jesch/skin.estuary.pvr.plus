@@ -98,7 +98,7 @@
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/information.png"/>
 						</include>
-						<onclick>Action(Close)</onclick> 
+						<onclick>Dialog.Close(VideoOSD)</onclick> 
 						<onclick>ActivateWindow(1138)</onclick>
 						<visible>!String.IsEmpty(VideoPlayer.Plot)</visible>
 					</control>
@@ -169,7 +169,7 @@
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/processinfo.png"/>
 					</include>
-					
+					<onclick>Dialog.Close(VideoOSD)</onclick>
 					<onclick>ActivateWindow(playerprocessinfo)</onclick>
 					</control>
 					<control type="radiobutton" id="912">
@@ -319,7 +319,7 @@
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/information.png"/>
 						</include>
-						<onclick>Action(Close)</onclick> 
+						<onclick>Dialog.Close(VideoOSD)</onclick>
 						<onclick>ActivateWindow(1138)</onclick>
 						<visible>!String.IsEmpty(VideoPlayer.Plot)</visible>
 					</control>
@@ -393,6 +393,7 @@
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/actors.png"/>
 					</include>
+					<onclick>Dialog.Close(VideoOSD)</onclick>
 					<onclick>ActivateWindow(1122)</onclick>
 					<visible>!VideoPlayer.Content(livetv) + ![VideoPlayer.HasMenu + System.HasMediaDVD]  + !VideoPlayer.Content(musicvideos) + !String.Contains(Player.Art(thumb),ytimg) + !VideoPlayer.Content(files)</visible>
 					</control>
@@ -400,6 +401,7 @@
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/bookmarks.png"/>
 					</include>
+					<onclick>Dialog.Close(VideoOSD)</onclick>
 					<onclick>ActivateWindow(videobookmarks)</onclick>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 					</control>
@@ -414,7 +416,7 @@
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/processinfo.png"/>
 					</include>
-					
+					<onclick>Dialog.Close(VideoOSD)</onclick>
 					<onclick>ActivateWindow(playerprocessinfo)</onclick>
 					</control>
 					<control type="radiobutton" id="6255">

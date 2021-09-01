@@ -236,8 +236,9 @@
 			</control>
 			<control type="image">
 				<right>30</right>
-				<top>0</top>
-				<width>32</width>
+				<top>25</top>
+				<width>40</width>
+				<height>40</height>
 				<aligny>center</aligny>
 				<aspectratio align="center">keep</aspectratio>
 				<texture>$VAR[PVRStatusImageVar]</texture>

@@ -127,7 +127,7 @@
                     <include content="OSDButton">
                        <param name="texture" value="osd/fullscreen/buttons/information.png"/>
                     </include>
-					<onclick>Close</onclick>
+					<onclick>Dialog.Close(MusicOSD)</onclick>
 					<onclick>ActivateWindow(1139)</onclick> 
 					<visible>!String.IsEmpty(MusicPlayer.Artist) + !string.Contains(Player.Folderpath,radio_de)</visible>
 				</control>

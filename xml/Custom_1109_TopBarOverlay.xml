@@ -157,6 +157,18 @@
 				<height>170</height>
 				<texture>frame/osdfade.png</texture>
 			</control>
+			<control type="label">
+				<visible>!String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(clearlogo))</visible>
+				<top>65</top>
+				<left>20</left>
+				<height>100</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font13</font>
+				<label>$VAR[OSDSubLabelVar1]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+				<scroll>true</scroll>
+			</control>
 			<control type="group">
 				<animation effect="slide" end="90,0" time="0" condition="Skin.HasSetting(touchmode)">conditional</animation>
 				<control type="grouplist">
@@ -164,7 +176,7 @@
 					<top>10</top>
 					<left>20</left>
 					<right>400</right>
-					<height>100</height>
+					<height>80</height>
 					<itemgap>10</itemgap>
 					<orientation>horizontal</orientation>
 					<control type="image">
@@ -179,6 +191,7 @@
 						<label>$VAR[OSDSubLabelVar]</label>
 						<shadowcolor>text_shadow</shadowcolor>
 						<scroll>true</scroll>
+						<visible>false</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -209,7 +222,7 @@
 				<control type="label">
 					<font>font_clock</font>
 					<shadowcolor>text_shadow</shadowcolor>
-					<top>0</top>
+					<top>-2</top>
 					<right>20</right>
 					<height>200</height>
 					<width>600</width>
@@ -218,7 +231,7 @@
 				</control>
 				<control type="label">
 						<right>24</right>
-						<top>74</top>
+						<top>69</top>
 						<align>right</align>
 						<itemgap>5</itemgap>
 						<orientation>horizontal</orientation>
@@ -230,7 +243,7 @@
 				</control>
 				<control type="grouplist">
 					<right>24</right>
-					<top>105</top>
+					<top>100</top>
 					<width>800</width>
 					<height>100</height>
 					<align>right</align>
