@@ -709,29 +709,43 @@
 		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/addon/netflix.png</value>
 		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/addon/amazon.png</value>
 		<value condition="string.Contains(Player.Folderpath,iplayer) + !Player.HasAudio">icons/source/addon/iplayer.png</value>
+		<value condition="string.Contains(Player.Folderpath,tidal)">icons/source/addon/tidal.png</value>
+		<value condition="string.Contains(Player.Folderpath,radio_de)">icons/source/addon/radio_de.png</value>
+		<value condition="string.Contains(Player.Folderpath,discovery)">icons/source/addon/discovery.png</value>
 		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/addon/youtube.png</value>
 		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/addon/emby.png</value>
 		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/addon/netflix.png</value>
 		<value condition="string.Contains(ListItem.Path,amazon)">icons/source/addon/amazon.png</value>
+		<value condition="string.Contains(ListItem.Path,tidal)">icons/source/addon/tidal.png</value>
+		<value condition="string.Contains(ListItem.Path,discovery)">icons/source/addon/discovery.png</value>
 		<value condition="string.Contains(ListItem.Path,emby)">icons/source/addon/emby.png</value>
 		<value condition="string.Contains(ListItem.Path,recordings)">tv-rec1.png</value>
-		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/addon/kodilogo.png</value>
-		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/addon/kodilogo.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/addon/kodi.png</value>
+		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/addon/kodi.png</value>
 	</variable>
 	<variable name="Kodi_Library_Type_Var">
-		<value condition="VideoPlayer.Content(movies)">icons/source/addon/kodilogo.png</value>
-		<value condition="VideoPlayer.Content(episodes)">icons/source/addon/kodilogo.png</value>
+		<value condition="VideoPlayer.Content(movies)">icons/source/addon/kodi.png</value>
+		<value condition="VideoPlayer.Content(episodes)">icons/source/addon/kodi.png</value>
+		<value condition="VideoPlayer.Content(musicvideos)">icons/source/addon/kodi.png</value>
+		<value condition="MusicPlayer.Content(files) + !string.Contains(Player.Folderpath,tidal) + !string.Contains(Player.Folderpath,radio_de)">icons/source/addon/kodi.png</value> 
 	</variable>
 	<variable name="Content_Type_Var">
 		<value condition="string.Contains(Player.Folderpath,netflix)">icons/source/content_type/strm.png</value>
-		<value condition="string.Contains(Player.Folderpath,Amazon)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,amazon)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(Player.Folderpath,iplayer) + !Player.HasAudio">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(Player.Folderpath,youtube)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,tidal)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,radio_de)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(Player.Folderpath,discovery)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(Player.Folderpath,emby)">icons/source/content_type/strm.png</value>
 		<value condition="VideoPlayer.Content(movies)">icons/source/content_type/Local.png</value>
 		<value condition="VideoPlayer.Content(episodes)">icons/source/content_type/Local.png</value>
+		<value condition="VideoPlayer.Content(musicvideos)">icons/source/content_type/Local.png</value>
+		<value condition="MusicPlayer.Content(files) + !string.Contains(Player.Folderpath,tidal) + !string.Contains(Player.Folderpath,radio_de)">icons/source/content_type/Local.png</value>
 		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(ListItem.Path,amazon)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(ListItem.Path,tidal)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(ListItem.Path,discovery)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(ListItem.Path,emby)">icons/source/content_type/strm.png</value>
 		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/content_type/Local.png</value>
 		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/content_type/Local.png</value>
@@ -950,7 +964,7 @@
 		<value condition="String.StartsWith(ListItem.StartDate,Sunday)">Sunday</value>
 	</variable>
 	<variable name="ItemDurationVar">
-        <value condition="Integer.IsGreater(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0) + Integer.IsGreater(ListItem.Duration(ss),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31221]], $INFO[ListItem.Duration(ss),, $LOCALIZE[32047]]</value>
+        <value condition="Integer.IsGreater(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0)">$INFO[ListItem.Duration(h),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0) + Integer.IsGreater(ListItem.Duration(ss),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31221]], $INFO[ListItem.Duration(ss),, $LOCALIZE[32047]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(mins),60)">$INFO[ListItem.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(mins),120) | Integer.IsEqual(ListItem.Duration(mins),180) | Integer.IsEqual(ListItem.Duration(mins),240) | Integer.IsEqual(ListItem.Duration(mins),300) | Integer.IsEqual(ListItem.Duration(mins),360) | Integer.IsEqual(ListItem.Duration(mins),420) | Integer.IsEqual(ListItem.Duration(mins),480) | Integer.IsEqual(ListItem.Duration(mins),540) | Integer.IsEqual(ListItem.Duration(mins),600)">$INFO[ListItem.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>

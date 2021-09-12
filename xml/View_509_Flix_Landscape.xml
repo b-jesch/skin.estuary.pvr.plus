@@ -164,24 +164,24 @@
 				
 			</control>
 			<control type="image">
-				<left>554</left>
+				<left>551</left>
 				<top>239</top>
-				<width>65</width>
+				<width>75</width>
 				<height>35</height>
 				<texture>$VAR[Addon_Name_Var]</texture>
 				<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
 			</control>
 			<control type="image">
-				<left>625</left>
+				<left>634</left>
 				<top>230</top>
 				<width>70</width>
 				<height>55</height>
 				<texture>$VAR[Content_Type_Var]</texture>
-				
+				<visible>Container.Content(movies)</visible>
 			</control>
 			
 			<control type="image">
-				<left>625</left>
+				<left>634</left>
 				<top>230</top>
 				<width>70</width>
 				<height>55</height>

@@ -401,7 +401,7 @@
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/bookmarks.png"/>
 					</include>
-					<onclick>Dialog.Close(VideoOSD)</onclick>
+					<onclick>Dialog.Close</onclick>
 					<onclick>ActivateWindow(videobookmarks)</onclick>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 					</control>
