@@ -105,10 +105,10 @@
 			</control>
 			<control type="image">
 				<left>304</left>
-				<top>200</top>
+				<top>205</top>
 				<width>40</width>
-				<height>40</height>
-				<texture>ratings/metacritic/metacritic.png</texture>
+				<height>30</height>
+				<texture>ratings/tmdb/tmdb.png</texture>
 			</control>
 			<control type="image">
 				<left>364</left>

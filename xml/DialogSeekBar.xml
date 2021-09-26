@@ -3,13 +3,13 @@
 	<visible>Player.Seeking | [Player.Paused + !Player.Caching] | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(fullscreeninfo) | Player.ShowTime | Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo) | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput)</visible>
 	<visible>![Window.IsActive(sliderdialog) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide) | Window.IsActive(pvrguideinfo) | Window.IsActive(1110)]</visible>
 	<visible>Window.IsActive(fullscreenvideo) | Window.IsActive(visualisation)</visible>
-	<include>Animation_BottomSlide</include>
+	<include>Animation_OSD_BottomSlide</include>
 	<depth>DepthOSD</depth>
 	<zorder>0</zorder>
 	<controls>
 		<include>PVRChannelNumberInput</include>
 		<control type="group">
-			<animation effect="slide" start="0,200" end="0,0" time="300" tween="cubic" easing="out">VisibleChange</animation>
+			<animation effect="slide" start="0,600" end="0,0" time="300" tween="cubic" easing="out">VisibleChange</animation> 
 			<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | Player.ShowTime | Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide) | ![!String.IsEmpty(Player.SeekNumeric) | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.Paused]</visible>
 			<visible>!Player.HasGame</visible>
 			<bottom>0</bottom>
@@ -23,49 +23,7 @@
 				<bordertexture colordiffuse="silver" border="8">osd/osdborder.png</bordertexture>
 				<bordersize>9</bordersize>
 			</control>
-			<control type="group">
-				<visible>!Window.IsVisible(videoosd) + !Window.IsVisible(musicosd)</visible>
-				<animation effect="fade" time="200">VisibleChange</animation>
-				<control type="grouplist">
-					<visible>[PVR.IsRecordingPlayingChannel + !Player.ChannelPreviewActive] | PVR.IsPlayingActiveRecording</visible>
-					<left>20</left>
-					<centertop>125</centertop>
-					<height>60</height>
-					<align>left</align>
-					<orientation>horizontal</orientation>
-					<itemgap>-5</itemgap>
-					<control type="image">
-						<top>100</top>
-						<left>20</left>
-						<width>60</width>
-						<height>60</height>
-						<aligny>center</aligny>
-						<texture>osd/fullscreen/buttons/record.png</texture>
-					</control>
-					<control type="label">
-						<top>110</top>
-						<left>90</left>
-						<width>400</width>
-						<height>60</height>
-						<aligny>center</aligny>
-						<font>font25_title</font>
-						<label>[COLOR red][B]$LOCALIZE[19158][/B][/COLOR]</label>
-					</control>
-				</control>
-			</control>
-			<control type="label">
-				<centerleft>50%</centerleft>
-				<centertop>125</centertop>
-				<width>50%</width>
-				<height>60</height>
-				<align>center</align>
-				<aligny>top</aligny>
-				<label>$VAR[SeekTimeLabelVar]</label>
-				<font>font45</font>
-				<shadowcolor>black</shadowcolor>
-				<visible>!Player.ChannelPreviewActive | VideoPlayer.HasEpg</visible>
-				<visible>false</visible>
-			</control>
+						
 			<control type="label">
 				<top>122</top>
 				<left>420</left>
@@ -104,7 +62,7 @@
 				<align>center</align>
 				<aligny>bottom</aligny>
 				<animation delay="0" effect="slide" time="120" start="0,0" end="0,-20" tween="sine" easing="inout" condition="!String.IsEmpty(Control.GetLabel(40000))">Conditional</animation>
-				<label>[COLOR button_focus]$LOCALIZE[31173]:[/COLOR] $INFO[VideoPlayer.Duration(h),,h] $INFO[VideoPlayer.Duration(mm),,m]</label>
+				<label>[COLOR button_focus]$LOCALIZE[31173]:[/COLOR] $VAR[NowPlayingDurVar]</label>
 				<font>font12</font>
 				<shadowcolor>black</shadowcolor>
 				<visible>!Player.ChannelPreviewActive</visible>
@@ -881,7 +839,7 @@
 		
 		<!--Skin Settings for Content Type on OSD (Amazon, Netflix, Emby, iplayer, you tube and Kodi)-->
 				<control type="image">
-					<top>-70</top>
+					<top>-65</top>
 					<right>130</right>
 					<width>100</width>
 					<height>35</height>
@@ -889,7 +847,7 @@
 					<visible>true</visible>
 				</control>
 				<control type="image">
-					<top>-70</top>
+					<top>-65</top>
 					<right>130</right>
 					<width>100</width>
 					<height>35</height>
@@ -897,7 +855,7 @@
 					<visible>!VideoPlayer.Content(livetv) + !Player.IsInternetStream</visible>
 				</control>
 				<control type="image">
-					<top>-80</top>
+					<top>-75</top>
 					<right>50</right>
 					<width>70</width>
 					<height>55</height>
@@ -921,7 +879,7 @@
 					<top>-77</top>
 					<right>80</right>
 					<height>290</height>
-					<width>1350</width>
+					<width>1200</width>
 					<font>font37</font>
 					<label>[B][COLOR grey]$INFO[MusicPlayer.Artist , ]  •[/COLOR][COLOR button_focus]  $INFO[MusicPlayer.Title  , ][/COLOR][/B]</label>
 					<shadowcolor>black</shadowcolor>

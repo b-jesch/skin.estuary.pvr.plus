@@ -244,7 +244,7 @@
 				<font>font20_title</font>
 				<textcolor>limegreen</textcolor>
 				<height>30</height>
-				<width>480</width>
+				<width>500</width>
 				<label>$VAR[OSDHelpTextVar]</label>
 				<shadowcolor>black</shadowcolor>
 			</control>

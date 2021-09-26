@@ -662,7 +662,7 @@
 		<value condition="String.IsEqual(ListItem.Mpaa,BBFC-12)">BBFC_12_Certificate_UK</value>
 		<value condition="String.IsEqual(ListItem.Mpaa,BBFC-12A)">BBFC_12A_Certificate_UK</value>
 		<value condition="String.IsEqual(ListItem.Mpaa,BBFC-15)">BBFC_15_Certificate_UK</value>
-		<value condition="String.IsEqual(ListItem.Mpaa,U)">BBFC_U_Certificate_UK</value>
+		<value condition="String.IsEqual(ListItem.Mpaa,U)">BBFC_U_Cer	tificate_UK</value>
 		<value condition="String.IsEqual(ListItem.Mpaa,PG)">BBFC_PG_Certificate_UK</value>
 		<value condition="String.IsEqual(ListItem.Mpaa,12)">BBFC_12_Certificate_UK</value>
 		<value condition="String.IsEqual(ListItem.Mpaa,12A)">BBFC_12A_Certificate_UK</value>
@@ -717,7 +717,7 @@
 		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/addon/netflix.png</value>
 		<value condition="string.Contains(ListItem.Path,amazon)">icons/source/addon/amazon.png</value>
 		<value condition="string.Contains(ListItem.Path,tidal)">icons/source/addon/tidal.png</value>
-		<value condition="string.Contains(ListItem.Path,discovery)">icons/source/addon/discovery.png</value>
+		<value condition="string.Contains(ListItem.Path,discovery) + !string.Contains(ListItem.Title,discovery)">icons/source/addon/discovery.png</value>
 		<value condition="string.Contains(ListItem.Path,emby)">icons/source/addon/emby.png</value>
 		<value condition="string.Contains(ListItem.Path,recordings)">tv-rec1.png</value>
 		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/addon/kodi.png</value>
@@ -745,7 +745,7 @@
 		<value condition="string.Contains(ListItem.Path,netflix)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(ListItem.Path,amazon)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(ListItem.Path,tidal)">icons/source/content_type/strm.png</value>
-		<value condition="string.Contains(ListItem.Path,discovery)">icons/source/content_type/strm.png</value>
+		<value condition="string.Contains(ListItem.Path,discovery) + !string.Contains(ListItem.Title,discovery)">icons/source/content_type/strm.png</value>
 		<value condition="string.Contains(ListItem.Path,emby)">icons/source/content_type/strm.png</value>
 		<value condition="String.IsEqual(ListItem.DbType,movie)">icons/source/content_type/Local.png</value>
 		<value condition="String.IsEqual(ListItem.DbType,tvshow)">icons/source/content_type/Local.png</value>
@@ -924,7 +924,7 @@
 	</variable>
 	<variable name="Text_Based_Premiere_Flags">
 		<value condition="String.StartsWith(ListItem.EpgEventTitle,New:)">icons/pvr/new.png</value>
-		<value condition="String.EndsWith(ListItem.Plot,S1 Ep1)">icons/pvr/premier.png</value>
+		<value condition="String.EndsWith(ListItem.Plot,S1 Ep1)">icons/pvr/tvpremier.png</value>
 		<value condition="String.EndsWith(ListItem.Plot,S2 Ep1)">icons/pvr/premier.png</value>
 		<value condition="String.EndsWith(ListItem.Plot,S3 Ep1)">icons/pvr/premier.png</value>
 		<value condition="String.EndsWith(ListItem.Plot,S4 Ep1)">icons/pvr/premier.png</value>
@@ -937,18 +937,18 @@
 		<value condition="String.EndsWith(ListItem.Plot,S11 Ep1)">icons/pvr/premier.png</value>
 	</variable>
 	<variable name="Text_Based_Premiere_Flags_TVGuide">
-		<value condition="String.EndsWith(ListItem.Plot,S1 Ep1)">[B][COLOR red][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S2 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S3 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S4 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S5 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S6 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S7 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S8 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S9 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S10 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.EndsWith(ListItem.Plot,S11 Ep1)">[B][COLOR green][$LOCALIZE[838]] [/COLOR][/B]</value>
-		<value condition="String.StartsWith(ListItem.Plot,1/6)">[B][COLOR red][$LOCALIZE[838]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S1 Ep1)">[B][COLOR ffe00a0a][[/COLOR][COLOR white]$LOCALIZE[31227][/COLOR][COLOR ffe00a0a] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S2 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S3 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S4 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S5 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S6 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S7 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S8 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S9 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S10 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.EndsWith(ListItem.Plot,S11 Ep1)">[B][COLOR green][[/COLOR][COLOR yellow]$LOCALIZE[31228][/COLOR][COLOR green] $LOCALIZE[31229]] [/COLOR][/B]</value>
+		<value condition="String.StartsWith(ListItem.Plot,1/6)">[B][COLOR ffe00a0a][[/COLOR][COLOR white]$LOCALIZE[31227][/COLOR][COLOR ffe00a0a] $LOCALIZE[31229]] [/COLOR][/B]</value>
 	</variable>	
 	<variable name="EPG_Genre_Icon">
 		<value condition="String.StartsWith(ListItem.Genre,Movie)">Movie</value>
@@ -965,7 +965,7 @@
 	</variable>
 	<variable name="ItemDurationVar">
         <value condition="Integer.IsGreater(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0)">$INFO[ListItem.Duration(h),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
-        <value condition="Integer.IsEqual(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0) + Integer.IsGreater(ListItem.Duration(ss),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31221]], $INFO[ListItem.Duration(ss),, $LOCALIZE[32047]]</value>
+        <value condition="Integer.IsEqual(ListItem.Duration(h),1) + String.IsEqual(ListItem.Duration(m),0) + Integer.IsGreater(ListItem.Duration(ss),0)">$INFO[ListItem.Duration(h),, $LOCALIZE[31221]], $INFO[ListItem.Duration(ss),, $LOCALIZE[31230]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(mins),60)">$INFO[ListItem.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(mins),120) | Integer.IsEqual(ListItem.Duration(mins),180) | Integer.IsEqual(ListItem.Duration(mins),240) | Integer.IsEqual(ListItem.Duration(mins),300) | Integer.IsEqual(ListItem.Duration(mins),360) | Integer.IsEqual(ListItem.Duration(mins),420) | Integer.IsEqual(ListItem.Duration(mins),480) | Integer.IsEqual(ListItem.Duration(mins),540) | Integer.IsEqual(ListItem.Duration(mins),600)">$INFO[ListItem.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
         <value condition="Integer.Isequal(ListItem.Duration(mins),1)">$INFO[ListItem.Duration(m),, $LOCALIZE[31222]]</value>
@@ -976,14 +976,14 @@
         <value condition="Integer.IsEqual(ListItem.Duration(h),1) + Integer.IsGreater(ListItem.Duration(m),1)">$INFO[ListItem.Duration(h),,$LOCALIZE[31224]] $INFO[ListItem.Duration(m),,$LOCALIZE[31225]]</value>
         <value condition="Integer.IsEqual(ListItem.Duration(h),1) + Integer.IsEqual(ListItem.Duration(m),1)">$INFO[ListItem.Duration(h),,$LOCALIZE[31224]] $INFO[ListItem.Duration(m),,$LOCALIZE[31225]]</value>
     </variable>
-	<variable name="NowPlayingDurationVar">
-        <value condition="Integer.IsGreater(VideoPlayer.Duration(h),1) + String.IsEqual(VideoPlayer.Duration(m),0) + Integer.IsGreater(VideoPlayer.Duration(ss),0)">$INFO[VideoPlayer.Duration(h),, $LOCALIZE[31221]], $INFO[VideoPlayer.Duration(ss),, $LOCALIZE[32047]]</value>
-        <value condition="Integer.IsEqual(VideoPlayer.Duration(h),1) + String.IsEqual(VideoPlayer.Duration(m),0) + Integer.IsGreater(VideoPlayer.Duration(ss),0)">$INFO[VideoPlayer.Duration(h),, $LOCALIZE[31221]], $INFO[VideoPlayer.Duration(ss),, $LOCALIZE[32047]]</value>
+	<variable name="NowPlayingDurVar">
+        <value condition="Integer.IsGreater(VideoPlayer.Duration(h),1) + String.IsEqual(VideoPlayer.Duration(m),0) + Integer.IsGreater(VideoPlayer.Duration(ss),0)">$INFO[VideoPlayer.Duration(h),, $LOCALIZE[31221]], $INFO[VideoPlayer.Duration(ss),, $LOCALIZE[31230]]</value>
+        <value condition="Integer.IsEqual(VideoPlayer.Duration(h),1) + String.IsEqual(VideoPlayer.Duration(m),0) + Integer.IsGreater(VideoPlayer.Duration(ss),0)">$INFO[VideoPlayer.Duration(h),, $LOCALIZE[31221]], $INFO[VideoPlayer.Duration(ss),, $LOCALIZE[31230]]</value>
         <value condition="Integer.IsEqual(VideoPlayer.Duration(mins),60)">$INFO[VideoPlayer.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
         <value condition="Integer.IsEqual(VideoPlayer.Duration(mins),120) | Integer.IsEqual(VideoPlayer.Duration(mins),180) | Integer.IsEqual(VideoPlayer.Duration(mins),240) | Integer.IsEqual(VideoPlayer.Duration(mins),300) | Integer.IsEqual(VideoPlayer.Duration(mins),360) | Integer.IsEqual(VideoPlayer.Duration(mins),420) | Integer.IsEqual(VideoPlayer.Duration(mins),480) | Integer.IsEqual(VideoPlayer.Duration(mins),540) | Integer.IsEqual(VideoPlayer.Duration(mins),600)">$INFO[VideoPlayer.Duration(hours),,$LOCALIZE[31224] $LOCALIZE[31226]$LOCALIZE[31225]]</value>
         <value condition="Integer.Isequal(VideoPlayer.Duration(mins),1)">$INFO[VideoPlayer.Duration(m),, $LOCALIZE[31222]]</value>
         <value condition="Integer.IsLess(VideoPlayer.Duration(mins),60) + Integer.IsGreater(VideoPlayer.Duration(mins),1)">$INFO[VideoPlayer.Duration(m),,$LOCALIZE[31222]]</value>
-        <value condition="Integer.IsLess(VideoPlayer.Duration(mins),1)">$INFO[VideoPlayer.Duration(ss),,$LOCALIZE[32047]]</value>
+        <value condition="Integer.IsLess(VideoPlayer.Duration(mins),1)">$INFO[VideoPlayer.Duration(ss),,$LOCALIZE[31230]]</value>
         <value condition="Integer.IsGreater(VideoPlayer.Duration(h),1) + Integer.IsGreater(VideoPlayer.Duration(m),1)">$INFO[VideoPlayer.Duration(h),,$LOCALIZE[31224]] $INFO[VideoPlayer.Duration(m),,$LOCALIZE[31225]]</value>
         <value condition="Integer.IsGreater(VideoPlayer.Duration(h),1) + Integer.IsEqual(VideoPlayer.Duration(m),1)">$INFO[VideoPlayer.Duration(h),,$LOCALIZE[31224]] $INFO[VideoPlayer.Duration(m),,$LOCALIZE[31225]]</value>
         <value condition="Integer.IsEqual(VideoPlayer.Duration(h),1) + Integer.IsGreater(VideoPlayer.Duration(m),1)">$INFO[VideoPlayer.Duration(h),,$LOCALIZE[31224]] $INFO[VideoPlayer.Duration(m),,$LOCALIZE[31225]]</value>

@@ -101,10 +101,10 @@
 			</control>
 			<control type="image">
 				<left>300</left>
-				<top>240</top>
+				<top>245</top>
 				<width>40</width>
-				<height>40</height>
-				<texture>ratings/metacritic/metacritic.png</texture>
+				<height>30</height>
+				<texture>ratings/tmdb/tmdb.png</texture>
 			</control>
 			<control type="image">
 				<left>360</left>

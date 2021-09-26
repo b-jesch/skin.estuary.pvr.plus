@@ -997,7 +997,7 @@ msgctxt "#31220"
 msgid "Writer"
 msgstr ""
 
-msgctxt "#31221"
+msgctxt "#31221" 
 msgid "Hrs"
 msgstr ""
 
@@ -1019,5 +1019,21 @@ msgstr ""
 
 msgctxt "#31226"
 msgid "00"
+msgstr ""
+
+msgctxt "#31227"
+msgid "TV"
+msgstr ""
+
+msgctxt "#31228"
+msgid "Season"
+msgstr ""
+
+msgctxt "#31229"
+msgid "Première"
+msgstr ""
+
+msgctxt "#31230"
+msgid "Secs"
 msgstr ""
 

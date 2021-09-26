@@ -92,26 +92,15 @@
 					<top>-80</top>
 					<right>80</right>
 					<height>290</height>
-					<width>955</width>
+					<width>1100</width>
 					<scroll>true</scroll>
 					<font>font37</font>
-					<label>[COLOR grey]Ch$INFO[VideoPlayer.ChannelNumberLabel][/COLOR]: [B][COLOR button_focus]$INFO[VideoPlayer.Title][/COLOR][/B]</label>
+					<label>[COLOR grey]Ch$INFO[VideoPlayer.ChannelNumberLabel][/COLOR]: [B][COLOR button_focus]$INFO[VideoPlayer.Title][/COLOR][COLOR grey]$INFO[VideoPlayer.StartTime,  •  ]$INFO[VideoPlayer.EndTime, - ][/COLOR][/B]</label>
 					<align>left</align>
 					<shadowcolor>black</shadowcolor>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 					<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
-				</control>
-				<control type="label">
-					<right>50</right>
-					<width>800</width>
-					<top>-65</top>
-					<height>25</height>
-					<font>font12</font>
-					<align>right</align>
-					<aligny>center</aligny>
-					<label>[COLOR grey]Airing Now: $INFO[VideoPlayer.StartTime]-$INFO[VideoPlayer.EndTime][/COLOR]</label>
-					<visible>VideoPlayer.HasEpg</visible>
 				</control>
 				<control type="label">
 					<left>770</left>
@@ -235,14 +224,16 @@
 					<height>37</height>
 					<texture>icons/pvr/mpaa.png</texture>
 					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio + !VideoPlayer.Content(musicvideos)</visible>
+					<visible>false</visible>
 				</control>
 				<control type="image">
 					<top>-73</top>
-					<right>50</right>
+					<right>200</right>
 					<width>45</width>
 					<height>45</height>
 					<texture fallback="flags/mpaa/rated1.png">$VAR[Mpaa_flags_Var,flags/mpaa/,.png]</texture>
 					<visible>!VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos)</visible>
+					<visible>false</visible>
 				</control>
 				<control type="label">
 					<top>-70</top>
@@ -253,16 +244,27 @@
 					<textcolor>white</textcolor>
 					<label>[B]$LOCALIZE[31173]:[/B]</label>
 					<visible>!VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos)</visible>
+					<visible>false</visible>
+				</control>
+				<control type="image">
+					<top>-70</top>
+					<right>50</right>
+					<align>right</align>
+					<height>70</height>
+					<width>110</width>
+					<textcolor>white</textcolor>
+					<texture>flags/runtime/duration.png</texture>
+					<visible>!VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos)</visible>
 					<visible>true</visible>
 				</control>
 				<control type="label">
 					<top>-50</top>
-					<right>0</right>
+					<right>-120</right>
 					<align>center</align>
 					<width>450</width>
 					<font>font_flag</font>
 					<textcolor>white</textcolor>
-					<label>[B][COLOR button_focus] $INFO[VideoPlayer.Duration(h),,h,] $INFO[VideoPlayer.Duration(mm),,m,][/COLOR][/B]</label>
+					<label>[B][COLOR button_focus] $VAR[NowPlayingDurVar][/COLOR][/B]</label>
 					<visible>!VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos)</visible>
 					<visible>true</visible>
 				</control>
@@ -329,6 +331,17 @@
 					<font>font_flag</font>
 					<textcolor>white</textcolor>
 					<label>[B]$LOCALIZE[31173]:[/B]</label>
+					<visible>VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(livetv)</visible>
+					<visible>false</visible>
+				</control>
+				<control type="image">
+					<top>-70</top>
+					<right>70</right>
+					<align>right</align>
+					<height>70</height>
+					<width>110</width>
+					<textcolor>white</textcolor>
+					<texture>flags/runtime/duration.png</texture>
 					<visible>VideoPlayer.Content(musicvideos) + !VideoPlayer.Content(livetv)</visible>
 					<visible>true</visible>
 				</control>
