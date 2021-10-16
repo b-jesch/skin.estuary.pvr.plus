@@ -160,9 +160,9 @@
 			<control type="label">
 				<visible>!String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(clearlogo))</visible>
 				<top>65</top>
-				<left>20</left>
+				<right>1575</right>
 				<height>100</height>
-				<align>left</align>
+				<align>center</align>
 				<aligny>center</aligny>
 				<font>font13</font>
 				<label>$VAR[OSDSubLabelVar1]</label>
