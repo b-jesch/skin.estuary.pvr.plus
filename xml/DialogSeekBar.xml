@@ -296,10 +296,10 @@
 			<control type="image" id="9876"> 
 				<depth>DepthOSD+</depth>
 				<left>20</left>
-				<top>-285</top>
+				<top>-235</top>
 				<width>400</width>
-				<height>600</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
+				<height>550</height>
+				
 				<texture background="true">$VAR[NowPlaying_PVRPoster_Local_Artwork_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
@@ -310,10 +310,10 @@
 			<control type="image" id="9877">
 				<depth>DepthOSD+</depth>
 				<left>20</left>
-				<top>-285</top>
+				<top>-235</top>
 				<width>400</width>
-				<height>600</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
+				<height>550</height>
+				
 				<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
@@ -324,10 +324,10 @@
 			<control type="image"> 
 				<depth>DepthOSD+</depth>
 				<left>20</left>
-				<top>-285</top>
+				<top>-235</top>
 				<width>400</width>
-				<height>600</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
+				<height>550</height>
+				
 				<texture background="true">$VAR[NowPlayingPVRPoster_Backend_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
@@ -453,14 +453,30 @@
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
 		<!-- OSD Settings For Live Radio -->
-			<control type="image">
+			<control type="image" id="9876"> 
 				<depth>DepthOSD+</depth>
-				<left>40</left>
-				<bottom>35</bottom>
-				<width>350</width>
-				<height>350</height>
-				<aspectratio aligny="bottom" align="center">keep</aspectratio>
-				<texture background="true" fallback="DefaultRadio.png">$VAR[MusicPlayerCover]</texture>
+				<left>20</left>
+				<top>-235</top>
+				<width>400</width>
+				<height>550</height>
+				
+				<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlaying_PVRPoster_Local_Artwork_Var]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<include>OpenClose_Left</include>
+				<visible>Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
+			<control type="image"> 
+				<depth>DepthOSD+</depth>
+				<left>20</left>
+				<top>-235</top>
+				<width>400</width>
+				<height>550</height>
+				
+				<texture background="true">$VAR[NowPlayingPVRPoster_Backend_Var]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
 				<include>OpenClose_Left</include>
 				<visible>Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
@@ -578,7 +594,7 @@
 				<top>80</top>
 				<width>120</width>
 				<height>30</height>
-				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>
+				<texture fallback="flags/starrating/0.png" colordiffuse="yellow">$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
 				<visible>Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>	
@@ -589,10 +605,10 @@
 			<control type="image">
 					<depth>DepthOSD+</depth>
 					<left>20</left>
-					<top>-380</top>
+					<top>-330</top>
 					<width>400</width>
-					<height>600</height>
-					<aspectratio aligny="bottom">keep</aspectratio>
+					<height>550</height>
+					
 					<texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
