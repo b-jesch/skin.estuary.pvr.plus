@@ -32,7 +32,7 @@
 				<font>font20_title</font>
 				<textcolor>limegreen</textcolor>
 				<height>30</height>
-				<width>500</width> 
+				<width>500</width>
 				<label>$VAR[PVR_OSDHelpTextVar]</label>
 			</control>
 			
