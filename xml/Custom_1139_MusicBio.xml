@@ -104,7 +104,7 @@
 				<height>1</height>
 				<onfocus>Action(Close)</onfocus>
 				<onfocus>ActivateWindow(musicosd)</onfocus>
-				<onfocus>SetFocus(8005)</onfocus>
+				<onfocus>SetFocus(705)</onfocus>
 			</control>
 			<control type="grouplist" id="9001">
 				<orientation>horizontal</orientation>

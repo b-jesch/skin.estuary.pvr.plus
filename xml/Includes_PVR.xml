@@ -698,7 +698,7 @@
 	</include>
 	<include name="PVRInfoPanel">
 		<control type="group">
-			<visible>!ListItem.IsFolder + !String.IsEmpty(ListItem.Label) + !String.Contains(ListItem.Label,add timer) + !String.Contains(ListItem.Label,search)</visible>
+			<visible>!ListItem.IsFolder + !String.IsEmpty(ListItem.Label) + !String.Contains(ListItem.Label,...)</visible>
 			<control type="image">
 				<top>95</top>
 				<left>0</left>

@@ -26,10 +26,10 @@
 				<control type="image" id="9876">
 				<depth>DepthOSD+</depth>
 				<left>20</left>
-				<top>-330</top>
+				<top>-380</top>
 				<width>400</width>
-				<height>550</height>
-				
+				<height>600</height>
+				<aspectratio aligny="bottom">keep</aspectratio> 
 				<texture background="true">$VAR[NowPlaying_PVRPoster_Local_Artwork_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
@@ -40,10 +40,10 @@
 			<control type="image" id="9877">
 				<depth>DepthOSD+</depth>
 				<left>20</left>
-				<top>-330</top>
+				<top>-380</top>
 				<width>400</width>
-				<height>550</height>
-				
+				<height>600</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
@@ -54,10 +54,10 @@
 			<control type="image"> 
 				<depth>DepthOSD+</depth>
 				<left>20</left>
-				<top>-330</top>
+				<top>-380</top>
 				<width>400</width>
-				<height>550</height>
-				
+				<height>600</height>
+				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture background="true">$VAR[NowPlayingPVRPoster_Backend_Var]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
@@ -151,10 +151,10 @@
 				<control type="image">
 					<depth>DepthOSD+</depth>
 					<left>20</left>
-					<top>-330</top>
+					<top>-380</top>
 					<width>400</width>
-					<height>550</height>
-				
+					<height>600</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
 					<texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
