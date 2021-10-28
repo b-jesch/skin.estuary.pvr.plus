@@ -340,6 +340,7 @@
 							<onright>603</onright>
 							<onup>87</onup>
 							<ondown>noop</ondown>
+							<include condition="Skin.HasSetting(AutoClose.VideoOSD) + !Skin.HasSetting(AutoClose.withInfoService)">OSDButtonOnFocus</include>
 							<onclick>PlayerControl(Play)</onclick>
 						</control>
 						<control type="image">
