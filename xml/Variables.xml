@@ -1001,4 +1001,12 @@
 	<variable name="Now_Playing_Music_Video_Artist_Thumb_Var">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>		
 	</variable>
+	<variable name="AutoCloseVideoOSDSettingLabel2Var">
+		
+		<value condition="Skin.HasSetting(3_seconds)">3 Seconds</value>
+		<value condition="Skin.HasSetting(5_seconds)">5 Seconds</value>
+		<value condition="Skin.HasSetting(10_seconds)">10 Seconds</value>
+		<value condition="Skin.HasSetting(30_seconds)">30 Seconds</value>
+		<value>$LOCALIZE[31231]</value>
+	</variable>
 </includes>

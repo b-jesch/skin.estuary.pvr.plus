@@ -869,7 +869,7 @@
 				<left>55</left>
 				<width>730</width>
 				<bottom>80</bottom>
-				<label>$VAR[FlagLabel]</label>
+				<label>$VAR[FlagLabel] $VAR[Text_Based_Premiere_Flags_TVGuide]</label>
 			</control>
 			<control type="image">
 				<top>670</top>
@@ -1155,8 +1155,7 @@
 				<left>60</left>
 				<width>300</width>
 				<height>35</height>
-				
-				<label>$VAR[FlagLabel]</label>
+				<label>$VAR[FlagLabel] $VAR[Text_Based_Premiere_Flags_TVGuide]</label>
 			</control>
 			<control type="image">
 				<top>410</top>

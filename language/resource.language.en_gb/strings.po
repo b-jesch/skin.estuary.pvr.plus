@@ -1037,3 +1037,27 @@ msgctxt "#31230"
 msgid "Secs"
 msgstr ""
 
+msgctxt "#31231"
+msgid "Skin Default"
+msgstr ""
+
+msgctxt "#31232"
+msgid "3 Seconds"
+msgstr ""
+
+msgctxt "#31233"
+msgid "5 Seconds"
+msgstr ""
+
+msgctxt "#31234"
+msgid "10 Seconds"
+msgstr ""
+
+msgctxt "#31235"
+msgid "30 Seconds"
+msgstr ""
+
+msgctxt "#31236"
+msgid "Select Time Required to Auto Close Video OSD" 
+msgstr ""
+

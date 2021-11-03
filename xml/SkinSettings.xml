@@ -73,6 +73,13 @@
 					<onclick>Skin.SelectBool($LOCALIZE[31024], 38018|circle_userrating, 563|circle_rating, 16018|)</onclick>
 					<label2>$VAR[RatingSettingLabel2Var]</label2>
 				</control>
+				<control type="button" id="709">
+					<label>Set Time to Auto Close Video OSD</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.SelectBool($LOCALIZE[31236], 31232|3_seconds, 31233|5_seconds, 31234|10_seconds, 31235|30_seconds, 31231|)</onclick>
+					<label2>$VAR[AutoCloseVideoOSDSettingLabel2Var]</label2>
+				</control>
+				
 			</control>
 			
 			<control type="grouplist" id="800">
