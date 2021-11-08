@@ -70,17 +70,21 @@ This work has been released under GNU General Public License (GPL), Version 2.0
 
 # PVR Artwork
 
-Traditionally, PVR artwork is normally provided by a PVR backend server or guide data that is capable of passing artwork images to Kodi. This is normally achieved by storing artwork images on the server side or individual guide data entries pointing to a URL that provides the artwork image.[CR]
-However, based on my own personal experiences of using artwork provided by a PVR backend can often lead to incorrectly matched artwork for programme items. Often, I've found it not easy to fix artwork mis-matches.[CR] Also, users are normally limited to one artwork type only, eg (Poster or Fanart) when using a backend server that is capable of providing artwork images.[CR]
-EstuaryPVR+ attempts to improve upon the existing PVR Artwork methods by allowing users to define how they actually wish to fetch PVR artwork via the new 'PVR settings' option which can be found under the 'Skin Settings'.[CR]
-There are 3 Artwork options available, which can be used individually or in combination with each other:-[CR]
-1) Back-End Artwork[CR]
-2) Skin Helper Script Artwork[CR]
+Traditionally, PVR artwork is normally provided by a PVR backend server or guide data that is capable of passing artwork images to Kodi. This is normally achieved by storing artwork images on the server side or individual guide data entries pointing to a URL that provides the artwork image.
+
+However, based on my own personal experiences of using artwork provided by a PVR backend can often lead to incorrectly matched artwork for programme items. Often, I've found it not easy to fix artwork mis-matches. 
+Also, users are normally limited to one artwork type only, eg (Poster or Fanart) when using a backend server that is capable of providing artwork images.
+
+EstuaryPVR+ attempts to improve upon the existing PVR Artwork methods by allowing users to now define how they actually wish to fetch PVR artwork via a new 'PVR settings' option which can be found under the 'Skin Settings'.
+There are 3 Artwork options available, which can be used individually or in combination with each other:-
+1) Back-End Artwork
+2) Skin Helper Script Artwork
 3) Local Artwork 
 
 ### PVR Artwork Settings
 
-Backend Artwork[CR] 
+Backend Artwork
+
 Users can set these new PVR artwork settings individually or use them together.
 
 # Screenshots
