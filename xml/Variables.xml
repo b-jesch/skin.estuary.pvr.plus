@@ -1002,7 +1002,6 @@
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>		
 	</variable>
 	<variable name="AutoCloseVideoOSDSettingLabel2Var">
-		
 		<value condition="Skin.HasSetting(3_seconds)">3 Seconds</value>
 		<value condition="Skin.HasSetting(5_seconds)">5 Seconds</value>
 		<value condition="Skin.HasSetting(10_seconds)">10 Seconds</value>

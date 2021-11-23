@@ -57,6 +57,15 @@
 					</control>
 					<control type="textbox">
 						<left>30</left>
+						<top>240</top>
+						<width>525</width>
+						<bottom>100</bottom>
+						<visible>String.IsEqual(ListItem.DBtype,album) + !String.IsEmpty(ListItem.Property(album_description))</visible>
+						<label>$INFO[ListItem.Artist,[I],[/I][CR][CR]]$INFO[ListItem.Property(album_description)][CR][CR]</label>
+						<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
+					</control>
+					<control type="textbox">
+						<left>30</left>
 						<top>360</top>
 						<width>530</width>
 						<height>413</height>
@@ -65,7 +74,7 @@
 						<font>font27</font>
 						<textcolor>80FFFFFF</textcolor>
 						<label>$LOCALIZE[19055]</label>
-						<visible>String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder</visible>
+						<visible>!String.IsEqual(ListItem.DBtype,album) + String.IsEmpty(Listitem.Plot) + String.IsEmpty(Listitem.Tagline) + !ListItem.IsCollection + !ListItem.IsParentFolder</visible>
 					</control>
 					<control type="group">
 						<left>20</left>
