@@ -217,6 +217,12 @@
 					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
 					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
 				</control>
+				<control type="radiobutton" id="6070">
+					<label>Display smaller sized movie & TV show posters on home page</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(home_screen_poster_size)</onclick>
+					<selected>Skin.HasSetting(home_screen_poster_size)</selected>
+				</control>
 			</control>
 			<control type="grouplist" id="610">
 				<top>160</top>

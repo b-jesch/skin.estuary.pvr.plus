@@ -168,6 +168,7 @@
 				<label>$VAR[OSDSubLabelVar1]</label>
 				<shadowcolor>text_shadow</shadowcolor>
 				<scroll>true</scroll>
+				<visible>false</visible>
 			</control>
 			<control type="group">
 				<animation effect="slide" end="90,0" time="0" condition="Skin.HasSetting(touchmode)">conditional</animation>
@@ -191,7 +192,6 @@
 						<label>$VAR[OSDSubLabelVar]</label>
 						<shadowcolor>text_shadow</shadowcolor>
 						<scroll>true</scroll>
-						<visible>false</visible>
 					</control>
 				</control>
 				<control type="group">

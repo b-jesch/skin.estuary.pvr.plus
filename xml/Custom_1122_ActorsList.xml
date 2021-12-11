@@ -10,11 +10,12 @@
 				<left>1</left>
 				<width>99.9%</width>
 				<height>325</height>
-				<texture>osd/osdpanel.png</texture>
+				<texture flipy="true">osd/osdpanel.png</texture>
 				<colordiffuse>osdpanel</colordiffuse>
 				<bordertexture colordiffuse="silver" border="8">osd/osdborder.png</bordertexture>
 				<bordersize>9</bordersize>
 			</control>
+			
 			
 			<control type="textbox">
 				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">

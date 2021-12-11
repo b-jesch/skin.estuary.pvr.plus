@@ -440,7 +440,7 @@
 				<height>50</height>
 				<aspectratio>keep</aspectratio>
 				<texture>ratings/imdb/imdb.png</texture>
-				<visible>VideoPlayer.Content(LiveTV)</visible>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
 			<control type="image">
@@ -449,7 +449,7 @@
 				<width>120</width>
 				<height>30</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>
-				<visible>VideoPlayer.Content(LiveTV)</visible>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
 		<!-- OSD Settings For Live Radio -->
@@ -579,21 +579,24 @@
 				<visible>Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
-			<control type="image"> 
+			<control type="label">
 				<left>545</left>
-				<top>70</top>
+				<top>75</top>
 				<width>150</width>
-				<height>50</height>
-				<aspectratio>keep</aspectratio>
-				<texture>ratings/imdb/imdb.png</texture>
+				<height>290</height>
+				<font>font12</font>
+				<label>[B][COLOR button_focus]Rating:[/COLOR][/B]</label>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 				<visible>Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
 			<control type="image">
-				<left>630</left>
-				<top>80</top>
+				<left>635</left>
+				<top>75</top>
 				<width>120</width>
-				<height>30</height>
+				<height>35</height>
 				<texture fallback="flags/starrating/0.png" colordiffuse="yellow">$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
 				<visible>Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
@@ -1073,10 +1076,10 @@
 						</include>
 				</control>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[MusicPlayer.Codec,flags/audiocodec/,.png]" />
+					<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
+					<param name="texture" value="$INFO[MusicPlayer.Codec,flags/audiocodec/,.png]" />
 				</include>
 			</control>		
 			<control type="grouplist">
