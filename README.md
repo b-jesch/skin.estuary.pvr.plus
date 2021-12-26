@@ -70,31 +70,35 @@ This work has been released under GNU General Public License (GPL), Version 2.0
 
 # PVR Artwork
 
-PVR Artwork was an area I specifically wanted to try and improve upon for this skinning project. EstuaryPVR+ lets users decide how they wish to fetch the PVR Artwork for their Live TV Set-up with the following 3 options:-
+PVR Artwork was an area I specifically wanted to try and improve upon for this skinning project and EstuaryPVR+ lets users decide how they want to fetch the PVR Artwork for their Live TV Set-up.
+The following 3 options are available:-
 
 1) Use 'Backend' for PVR Artwork.
 2) Use 'Skin Helper Script'  
 3) Use 'Local PVR Artwork'
 
-These options can be found under the new 'PVR Settings' heading of the Skin settings option and can used individually or in combination with each other. 'Backend' artwork always takes precedence over the 'Skin Helper Script' and 'Local Artwork' option unless it has been disabled.
-If your backend server already provides PVR Artwork, you might not want to use options 2 or 3, but bear in mind the Skin Helper Script also displays other PVR info as well, such as 'First Aired Date/Movie Premiered Date', 'IMDB Star Ratings' and 'Movie/TV Show classification rating'. By using local artwork, you will get additional features such as 'Next' programme poster artwork on the 'Now/Next view', Poster and Landscape artwork for TV Recordings and also 'Next-Up' banner artwork appearing shortly before the next Live TV show begins.
+These options can be found under the new 'PVR Settings' heading of the Skin settings option and can be used individually or in combination with each other.
+Artwork provided by a 'Backend' server always takes precedence over the 'Skin Helper Script' and 'Local Artwork', unless this option has been disabled.
+If your backend server already provides PVR Artwork, you might not want to use options 2 or 3, but bear in mind the Skin Helper Script also displays other PVR info as well, such as 'First Aired Date/Movie Premiered Date', 'IMDB Star Ratings' and 'Movie/TV Show classification rating'. 
+By using local artwork, you will get additional features such as 'Next' programme poster artwork on the 'Now/Next view', Poster and Landscape artwork for TV Recordings and also 'Next-Up' banner artwork appearing shortly before the next Live TV show begins.
+Disabling all 3 options will result in the default poster artwork being displayed. 
 
-# PREMIERE FLAGS ON THE EPG SCREEN
-
-There is option available on the new 'PVR Settings' heading of the Skin settings to display actual premiere flags on the EPG instead of a '*'.
-The flags shown are as follows:-
-- 'Live' - A Orange coloured flag represents a Live TV Broadcast such as sport or news event.
-- 'New' - A Yellow coloured flag represents a 'New' Episode or TV Show has been identified using the Guide Data.
-- 'Prem' - A Red Coloured 'Prem' Flag represents 'TV Premiere' where the Season and Episode number are equal to 'S01E01' *
-- 'Prem' - A Green Coloured 'Prem' Flag represents 'Season Premiere' where the Episode number is equal to E01 and the season number is higher than season S01, eg 'S02E01'
-- 'Fin' - A Blue coloured flag represent season finale.
-* The TV Premiere flag is not completely bulletproof, as sometimes S01E01 could be a repeat and therefore might not be true TV Premiere, ie something never broadcast before.
-
-### PVR Artwork Settings
+### PVR Settings
 
 Backend Artwork
 
 Users can set these new PVR artwork settings individually or use them together.
+
+# PREMIERE FLAGS ON THE EPG SCREEN
+
+The new 'PVR Settings' heading on the Skin settings has an option to display actual premiere flags on the EPG screen instead of using an '*'.
+The flags shown are as follows:-
+- 'Live' 	- A Orange coloured flag represents a Live TV Broadcast such as sport or news event.
+- 'New' 	- A Yellow coloured flag represents a 'New' Episode or TV Show has been identified using the Guide Data.
+- 'Prem' 	- A Red Coloured 'Prem' Flag represents 'TV Premiere' where the Season and Episode number are equal to 'S01E01' *
+- 'Prem' 	- A Green Coloured 'Prem' Flag represents 'Season Premiere' where the Episode number is equal to E01 and the season number is higher than season S01, eg 'S02E01'
+- 'Fin' 	- A Blue coloured flag represent season finale.
+* The TV Premiere flag is not completely bulletproof, as sometimes S01E01 could be a repeat and therefore might not be true TV Premiere, ie something never broadcast before.
 
 # Screenshots
 
