@@ -1,7 +1,7 @@
 # Skin.Estuary.PVR.plus
 
 EstuaryPVR+ is a modification of the default Estuary skin, originally written by Phil65 and now maintained by Team Kodi.
-The skin aims to offer users some additional PVR features that are not currently available on the default version of Estuary and to have a more detailed OSD, whilst remaining a very light weight and easy-to-use skin.
+The skin aims to offer users some additional PVR features and views that are not currently available on the default version of Estuary. It also offers a more detailed OSD, whilst remaining a very light weight and easy-to-use skin.
  
 ### Dependencies
 
@@ -70,16 +70,25 @@ This work has been released under GNU General Public License (GPL), Version 2.0
 
 # PVR Artwork
 
-Traditionally, PVR artwork is normally provided by a PVR backend server or guide data that is capable of passing artwork images to Kodi. This is normally achieved by storing artwork images on the server side or individual guide data entries pointing to a URL that provides the artwork image.
+PVR Artwork was an area I specifically wanted to try and improve upon for this skinning project. EstuaryPVR+ lets users decide how they wish to fetch the PVR Artwork for their Live TV Set-up with the following 3 options:-
 
-However, based on my own personal experiences of using artwork provided by a PVR backend can often lead to incorrectly matched artwork for programme items. Often, I've found it not easy to fix artwork mis-matches. 
-Also, users are normally limited to one artwork type only, eg (Poster or Fanart) when using a backend server that is capable of providing artwork images.
+1) Use 'Backend' for PVR Artwork.
+2) Use 'Skin Helper Script'  
+3) Use 'Local PVR Artwork'
 
-EstuaryPVR+ attempts to improve upon the existing PVR Artwork methods by allowing users to now define how they actually wish to fetch PVR artwork via a new 'PVR settings' option which can be found under the 'Skin Settings'.
-There are 3 Artwork options available, which can be used individually or in combination with each other:-
-1) Back-End Artwork
-2) Skin Helper Script Artwork
-3) Local Artwork 
+These options can be found under the new 'PVR Settings' heading of the Skin settings option and can used individually or in combination with each other. 'Backend' artwork always takes precedence over the 'Skin Helper Script' and 'Local Artwork' option unless it has been disabled.
+If your backend server already provides PVR Artwork, you might not want to use options 2 or 3, but bear in mind the Skin Helper Script also displays other PVR info as well, such as 'First Aired Date/Movie Premiered Date', 'IMDB Star Ratings' and 'Movie/TV Show classification rating'. By using local artwork, you will get additional features such as 'Next' programme poster artwork on the 'Now/Next view', Poster and Landscape artwork for TV Recordings and also 'Next-Up' banner artwork appearing shortly before the next Live TV show begins.
+
+# PREMIERE FLAGS ON THE EPG SCREEN
+
+There is option available on the new 'PVR Settings' heading of the Skin settings to display actual premiere flags on the EPG instead of a '*'.
+The flags shown are as follows:-
+- 'Live' - A Orange coloured flag represents a Live TV Broadcast such as sport or news event.
+- 'New' - A Yellow coloured flag represents a 'New' Episode or TV Show has been identified using the Guide Data.
+- 'Prem' - A Red Coloured 'Prem' Flag represents 'TV Premiere' where the Season and Episode number are equal to 'S01E01' *
+- 'Prem' - A Green Coloured 'Prem' Flag represents 'Season Premiere' where the Episode number is equal to E01 and the season number is higher than season S01, eg 'S02E01'
+- 'Fin' - A Blue coloured flag represent season finale.
+* The TV Premiere flag is not completely bulletproof, as sometimes S01E01 could be a repeat and therefore might not be true TV Premiere, ie something never broadcast before.
 
 ### PVR Artwork Settings
 
