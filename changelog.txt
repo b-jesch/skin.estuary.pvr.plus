@@ -1,3 +1,10 @@
+[B]0.1.7[/B]
+• New Artwork setting added to Skin Settings to allow users to switch from the default large Movie/TV Show posters on the Home Screen to smaller sized posters. 
+
+[B]0.1.6[/B]
+• Minor Tweak to Music OSD.
+• Layout of Live Radio Channels OSD changed to match the same OSD layout as Live TV Channels.
+
 [B]0.1.5[/B]
 • New radiobutton option added to Skin Settings Window to Enable/Disable clearart above OSD for movies and TV shows.
 • All files in contained media folder compiled into new Texture.xbt file.
