@@ -83,11 +83,9 @@ If your backend server already provides PVR Artwork, you might not want to use o
 By using local artwork, you will get additional features such as 'Next' programme poster artwork on the 'Now/Next view', Poster and Landscape artwork for TV Recordings and also 'Next-Up' banner artwork appearing shortly before the next Live TV show begins.
 Disabling all 3 options will result in the default poster artwork being displayed. 
 
-### PVR Settings
+### PVR Settings Screen
 
-Backend Artwork
-
-Users can set these new PVR artwork settings individually or use them together.
+[![New PVR Settings Screen which can be found under the 'Skin Settings' option.](./resources/screenshot-19.jpg)](https://github.com/SplitEnz/skin.estuary.pvr.plus/blob/master/resources/screenshot-19.jpg)
 
 # PREMIERE FLAGS ON THE EPG SCREEN
 
