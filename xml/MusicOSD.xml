@@ -102,7 +102,7 @@
                     </include>
 					<onclick>Dialog.Close(MusicOSD)</onclick>
 					<onclick>ActivateWindow(1137)</onclick> 
-					<visible>!string.Contains(Player.Folderpath,radio_de)</visible>
+					<visible>!string.Contains(Player.Folderpath,radio_de) + !string.Contains(Player.Folderpath,iplayerwww)</visible>
 				</control>
 				<control type="group" id="698">
 					<width>56</width>
@@ -453,7 +453,7 @@
                     </include>
 					<onclick>Dialog.Close(MusicOSD)</onclick>
 					<onclick>ActivateWindow(1139)</onclick> 
-					<visible>!string.Contains(Player.Folderpath,radio_de)</visible>
+					<visible>!string.Contains(Player.Folderpath,radio_de) + !string.Contains(Player.Folderpath,iplayerwww)</visible>
 				</control>
 				<control type="radiobutton" id="80051">
 					<include content="OSDButton">
