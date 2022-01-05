@@ -494,12 +494,21 @@
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="list_id" value="12900"/>
 						</include>
-						<include content="WidgetPVRRecordingsLandscape" condition="System.HasPVRAddon">
+						<include content="WidgetPVRRecordingsLandscapeArtwork" condition="System.HasPVRAddon + Skin.HasSetting(Display_TV_Recording_Image)">
 							<param name="content_path" value="pvr://recordings/tv/active?view=flat"/>
 							<param name="sortby" value="date"/>
 							<param name="sortorder" value="descending"/>
 							<param name="widget_header" value="$LOCALIZE[31015]"/>
 							<param name="list_id" value="12300"/>
+							<param name="label" value="$INFO[ListItem.ChannelName]"/>
+							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
+						</include>
+						<include content="WidgetPVRRecordingsFanartArtwork" condition="System.HasPVRAddon + !Skin.HasSetting(Display_TV_Recording_Image)">
+							<param name="content_path" value="pvr://recordings/tv/active?view=flat"/>
+							<param name="sortby" value="date"/>
+							<param name="sortorder" value="descending"/>
+							<param name="widget_header" value="$LOCALIZE[31015]"/>
+							<param name="list_id" value="12301"/>
 							<param name="label" value="$INFO[ListItem.ChannelName]"/>
 							<param name="label2" value="$INFO[ListItem.Title]$INFO[ListItem.EpisodeName, (,)]"/>
 						</include>

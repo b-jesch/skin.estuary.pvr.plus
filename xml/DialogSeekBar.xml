@@ -615,8 +615,8 @@
 					<texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<include>OpenClose_Left</include>
-					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio + !VideoPlayer.Content(musicvideos)</visible>
+					<include>OpenClose_Left</include> 
+					<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio + !Pvr.IsPlayingRecording + !Player.HasAudio + !VideoPlayer.Content(musicvideos)</visible>
 					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 				</control>
 				<control type="label">
@@ -764,10 +764,10 @@
 		<!-- OSD Settings For Streamed Content and LiveTV Recordings -->
 					<control type="image"> 
 						<depth>DepthOSD+</depth>
-						<left>10</left>
-						<top>-380</top>
-						<width>415</width>
-						<height>600</height>
+						<left>20</left>
+						<top>-330</top>
+						<width>400</width>
+						<height>550</height>
 						<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPlayingPVRRecordingPosterVar]</texture>  
 						<bordertexture border="21">overlays/shadow.png</bordertexture>
 						<bordersize>20</bordersize>

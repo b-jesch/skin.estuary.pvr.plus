@@ -118,25 +118,31 @@
 					<selected>!Skin.HasSetting(Local.PVR.Artwork)</selected>
 					<onclick>Skin.SetPath(Local.PVR.Artwork)</onclick>
 				</control>
-				<control type="radiobutton" id="805">
+					<control type="radiobutton" id="805">
 					<include>DefaultSettingButton</include>
-					<label>Display Channel Groups on EPG Screen</label>
-					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
-					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
+					<label>Display fanart image for TV recordings on Home Screen instead of landscape image</label>
+					<selected>!Skin.HasSetting(Display_TV_Recording_Image)</selected>
+					<onclick>Skin.ToggleSetting(Display_TV_Recording_Image)</onclick> 
 				</control>
 				<control type="radiobutton" id="806">
-					<include>DefaultSettingButton</include>
-					<label>Display Genre Colours on EPG Screen</label>
-					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
-					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
-				</control>
-				<control type="radiobutton" id="807">
 					<include>DefaultSettingButton</include>
 					<label>Display premiered flags on EPG Screen instead of using '*'</label>
 					<selected>!Skin.HasSetting(Display_Premiered_Flags)</selected>
 					<onclick>Skin.ToggleSetting(Display_Premiered_Flags)</onclick> 
 				</control>
-				<control type="radiobutton" id="808"> 
+				<control type="radiobutton" id="807">
+					<include>DefaultSettingButton</include>
+					<label>Display Channel Groups on EPG Screen</label>
+					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
+					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
+				</control>
+				<control type="radiobutton" id="808">
+					<include>DefaultSettingButton</include>
+					<label>Display Genre Colours on EPG Screen</label>
+					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
+					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
+				</control>
+				<control type="radiobutton" id="809"> 
 					<include>DefaultSettingButton</include>
 					<label>Enable 'Next-Up' Dialog when current programme is about to end</label>
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
@@ -200,28 +206,28 @@
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreFanart&amp;type=resource.images.moviegenrefanart)</onclick>
 				</control>
 				<control type="radiobutton" id="6067">
+					<label>Display smaller sized movie & TV show posters on home page</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(home_screen_poster_size)</onclick>
+					<selected>Skin.HasSetting(home_screen_poster_size)</selected>
+				</control>
+				<control type="radiobutton" id="6068">
 					<label>$LOCALIZE[31168]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
 					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
 				</control>
-				<control type="radiobutton" id="6068">
+				<control type="radiobutton" id="6069">
 					<label>Display clearart above OSD for movies and TV shows</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(enable_clearart)</onclick>
 					<selected>!Skin.HasSetting(enable_clearart)</selected>
 				</control>
-				<control type="radiobutton" id="6069">
+				<control type="radiobutton" id="6070">
 					<label>Display coloured equalizer on music OSD instead of white one</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
 					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
-				</control>
-				<control type="radiobutton" id="6070">
-					<label>Display smaller sized movie & TV show posters on home page</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(home_screen_poster_size)</onclick>
-					<selected>Skin.HasSetting(home_screen_poster_size)</selected>
 				</control>
 			</control>
 			<control type="grouplist" id="610">
