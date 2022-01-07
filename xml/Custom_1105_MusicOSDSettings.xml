@@ -39,7 +39,7 @@
 					</control>
 					<control type="radiobutton" id="50011">
 						<width>800</width>
-						<label>Show album CDArt</label>
+						<label>Show album disc art</label>
 						<include>DialogSettingButton</include>
 						<selected>!Skin.HasSetting(show_disc)</selected>
 						<onclick>Skin.ToggleSetting(show_disc)</onclick>
