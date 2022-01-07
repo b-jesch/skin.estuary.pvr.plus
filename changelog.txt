@@ -1,3 +1,6 @@
+[B]0.1.8[/B]
+• New PVR setting added to Skin Settings to allow users to switch from landscape images for TV Recordings on the Home Screen to fanart images. 
+
 [B]0.1.7[/B]
 • New Artwork setting added to Skin Settings to allow users to switch from the default large Movie/TV Show posters on the Home Screen to smaller sized posters. 
 
