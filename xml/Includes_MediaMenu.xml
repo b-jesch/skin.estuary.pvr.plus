@@ -140,28 +140,28 @@
 				<control type="radiobutton" id="6064">
 					<include>MediaMenuItemsCommon</include>
 					<font>font12</font>
-					<label>$VAR[Backend_PVR_Artwork_var]</label>
+					<label>Use Backend Artwork</label>
 					<selected>Skin.HasSetting(Backend.PVR.Artwork)</selected>
 					<onclick>Skin.ToggleSetting(Backend.PVR.Artwork)</onclick>
 				</control>
 				<control type="radiobutton" id="9231">
 					<include>MediaMenuItemsCommon</include>
 					<font>font12</font>
-					<label>$VAR[PVR_Artwork_Switch_Label_Var]</label>
+					<label>Use Skin Helper Artwork</label>
 					<selected>Skin.HasSetting(SkinHelper.EnablePVRThumbs)</selected>
 					<onclick>Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onclick>
 				</control>
 				<control type="radiobutton" id="6065">
 					<include>MediaMenuItemsCommon</include>
 					<font>font12</font>
-					<label>$VAR[Local_PVR_Artwork_Var]</label>
+					<label>Use Local PVR Artwork</label>
 					<selected>Skin.HasSetting(Enable.Local.PVR.Artwork)</selected>
 					<onclick>Skin.ToggleSetting(Enable.Local.PVR.Artwork)</onclick>
 				</control>
 				<control type="radiobutton" id="6063">
 					<include>MediaMenuItemsCommon</include>
 					<font>font12</font>
-					<label>$VAR[PVR_Show_ChannelGroup_Label_Var]</label>
+					<label>Display Channel Groups</label>
 					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
 					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
 					<visible>Window.IsActive(MyPVRGuide.xml)</visible>
@@ -169,7 +169,7 @@
 				<control type="radiobutton" id="6060">
 					<include>MediaMenuItemsCommon</include>
 					<font>font12</font>
-					<label>$VAR[Enable_Kodi_PVR_Genre_Label_Var]</label>
+					<label>Display PVR Genre Colours</label>
 					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
 					<visible>Window.IsActive(MyPVRGuide.xml)</visible>
@@ -177,7 +177,7 @@
 				<control type="radiobutton" id="6062">
 					<include>MediaMenuItemsCommon</include>
 					<font>font12</font>
-					<label>$VAR[PVR_Next-Up_TV_Label_Var]</label>
+					<label>Enable 'Next-Up' TV Banner</label> 
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
 					<onclick>Skin.ToggleSetting(disable_PVRNextUp)</onclick>
 					<visible>Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml)</visible>

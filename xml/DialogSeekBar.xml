@@ -772,7 +772,7 @@
 						<bordertexture border="21">overlays/shadow.png</bordertexture>
 						<bordersize>20</bordersize>
 						<include>OpenClose_Left</include>
-						<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio  +  !Player.HasAudio  +  !VideoPlayer.Content(movies)  +  !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>
+						<visible>!VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio + !Player.HasAudio + !VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(musicvideos)</visible>
 						<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 					</control>
 					<control type="image">

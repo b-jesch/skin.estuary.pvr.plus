@@ -1061,3 +1061,27 @@ msgctxt "#31236"
 msgid "Select Time Required to Auto Close Video OSD" 
 msgstr ""
 
+msgctxt "#31237"
+msgid "Use Backend Artwork" 
+msgstr ""
+
+msgctxt "#31238"
+msgid "Use Skin Helper Artwork" 
+msgstr ""
+
+msgctxt "#31239"
+msgid "Use Local PVR Artwork" 
+msgstr ""
+
+msgctxt "#31240"
+msgid "Display Channel Groups" 
+msgstr ""
+
+msgctxt "#31241"
+msgid "Display PVR Genre Colours" 
+msgstr ""
+
+msgctxt "#31242"
+msgid "Enable 'Next-Up' TV Banner" 
+msgstr "" 
+
