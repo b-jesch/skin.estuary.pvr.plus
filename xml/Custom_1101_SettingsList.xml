@@ -57,7 +57,7 @@
 						<include>DialogSettingButton</include>
 						<label>Show Clear Art</label>
 						<selected>Skin.HasSetting(enable_clearart)</selected>
-						<onclick>!Skin.ToggleSetting(enable_clearart)</onclick>
+						<onclick>Skin.ToggleSetting(enable_clearart)</onclick>
 						<visible>!Pvr.IsPlayingRadio + !VideoPlayer.Content(LiveTV) + !VideoPlayer.Content(musicvideos) + !Player.IsInternetStream</visible>
 					
 					</control>
