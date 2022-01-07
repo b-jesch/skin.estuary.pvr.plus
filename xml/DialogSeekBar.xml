@@ -681,7 +681,7 @@
 						<height>281</height>
 						<texture background="true">$VAR[PlayerClearArtVar]</texture>
 						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<visible>!Skin.HasSetting(enable_clearart) + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + [!VideoPlayer.Content(LiveTV) | !Pvr.IsPlayingRadio]</visible>
+						<visible>Skin.HasSetting(enable_clearart) + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + [!VideoPlayer.Content(LiveTV) | !Pvr.IsPlayingRadio]</visible>
 				</control>
 				<control type="image">
 					<right>40</right>
