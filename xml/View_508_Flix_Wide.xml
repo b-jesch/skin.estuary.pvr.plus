@@ -18,7 +18,7 @@
 				<aspectratio>scale</aspectratio>
 				<include>FullScreenDimensions</include>
 				<depth>DepthBackground</depth>
-				<texture colordiffuse="primary_background">overlays/NetFlixOverlay3.png</texture>
+				<texture colordiffuse="primary_background">overlays/netflixoverlay3.png</texture>
 				
 			</control>
 
