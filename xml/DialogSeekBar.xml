@@ -335,6 +335,21 @@
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 			</control>
+			<control type="image"> 
+				<depth>DepthOSD+</depth>
+				<left>20</left>
+				<top>-235</top>
+				<width>400</width>
+				<height>550</height>
+				
+				<texture background="true">$VAR[NowPlaying_Animated_PVRPoster_Local_Artwork_Var]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<include>OpenClose_Left</include>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+				<visible>Skin.HasSetting(Disable.Local.Animated.PVR.Artwork) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)</visible>
+			</control>
 			<control type="image">
 				<left>420</left>
 				<top>20</top>

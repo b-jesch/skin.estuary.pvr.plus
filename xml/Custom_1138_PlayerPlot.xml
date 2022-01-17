@@ -15,7 +15,7 @@
 				<bordertexture colordiffuse="silver" border="8">osd/osdborder.png</bordertexture>
 				<bordersize>9</bordersize>
 			</control>
-			<!-- PVR OSD Settings -->
+			<!-- PVR Live TV OSD Settings -->
 			<control type="group"> 
 			<bottom>0</bottom>
 			<height>230</height>
@@ -64,6 +64,21 @@
 				<include>OpenClose_Left</include>
 				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+			</control>
+			<control type="image"> 
+				<depth>DepthOSD+</depth>
+				<left>20</left>
+				<top>-330</top>
+				<width>400</width>
+				<height>550</height>
+				
+				<texture background="true">$VAR[NowPlaying_Animated_PVRPoster_Local_Artwork_Var]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<include>OpenClose_Left</include>
+				<visible>VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio</visible>
+				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+				<visible>Skin.HasSetting(Disable.Local.Animated.PVR.Artwork)</visible>
 			</control>
 			<control type="group">
 				<include>OpenClose_Right</include>

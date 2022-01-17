@@ -108,9 +108,8 @@
 					<include>DefaultSettingButton</include>
 					<label>Use Local PVR Artwork</label>
 					<selected>Skin.HasSetting(Enable.Local.PVR.Artwork)</selected>
-					<onclick>Skin.ToggleSetting(Enable.Local.PVR.Artwork)</onclick>
+					<onclick>Skin.ToggleSetting(Enable.Local.PVR.Artwork)</onclick>Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)
 				</control>
-				
 				<control type="button" id="804">
 					<label>Set Path For Local PVR Artwork</label>
 					<label2>$VAR[PVR_Local_path]</label2>
@@ -118,31 +117,45 @@
 					<selected>!Skin.HasSetting(Local.PVR.Artwork)</selected>
 					<onclick>Skin.SetPath(Local.PVR.Artwork)</onclick>
 				</control>
-					<control type="radiobutton" id="805">
+				<control type="radiobutton" id="805">
+					<include>DefaultSettingButton</include>
+					<label>Enable Local Animated PVR Artwork</label>
+					<selected>Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)</selected>
+					<onclick>Skin.ToggleSetting(Enable.Local.Animated.PVR.Artwork)</onclick>
+					<visible>false</visible>
+				</control>
+				<control type="radiobutton" id="806">
+					<include>DefaultSettingButton</include>
+					<label>Display Local Animated PVR Artwork on OSD</label>
+					<selected>Skin.HasSetting(Disable.Local.Animated.PVR.Artwork) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)</selected>
+					<onclick>Skin.ToggleSetting(Disable.Local.Animated.PVR.Artwork)</onclick>
+					<visible>false</visible>
+				</control>
+				<control type="radiobutton" id="807">
 					<include>DefaultSettingButton</include>
 					<label>Display fanart image for TV recordings on Home Screen instead of landscape image</label>
 					<selected>!Skin.HasSetting(Display_TV_Recording_Image)</selected>
 					<onclick>Skin.ToggleSetting(Display_TV_Recording_Image)</onclick> 
 				</control>
-				<control type="radiobutton" id="806">
+				<control type="radiobutton" id="808">
 					<include>DefaultSettingButton</include>
 					<label>Display premiered flags on EPG Screen instead of using '*'</label>
 					<selected>!Skin.HasSetting(Display_Premiered_Flags)</selected>
 					<onclick>Skin.ToggleSetting(Display_Premiered_Flags)</onclick> 
 				</control>
-				<control type="radiobutton" id="807">
+				<control type="radiobutton" id="809">
 					<include>DefaultSettingButton</include>
 					<label>Display Channel Groups on EPG Screen</label>
 					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
 					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
 				</control>
-				<control type="radiobutton" id="808">
+				<control type="radiobutton" id="810">
 					<include>DefaultSettingButton</include>
 					<label>Display Genre Colours on EPG Screen</label>
 					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
 				</control>
-				<control type="radiobutton" id="809"> 
+				<control type="radiobutton" id="811"> 
 					<include>DefaultSettingButton</include>
 					<label>Enable 'Next-Up' Dialog when current programme is about to end</label>
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>

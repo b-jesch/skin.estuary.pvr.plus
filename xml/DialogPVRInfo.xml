@@ -51,6 +51,15 @@
 					<aspectratio>scale</aspectratio>
 					<texture>$VAR[NowPVRPoster_Backend_Var]</texture>
 				</control>
+				<control type="image"> 
+					<depth>DepthContentPopout</depth>
+					<left>4</left>
+					<top>4</top>
+					<width>526</width>
+					<height>801</height>
+					<aspectratio>scale</aspectratio>
+					<texture>$VAR[Animated_PVRPoster(ListItem-Title)Local_ArtworkVar]</texture>
+				</control>
 			</control>
 			<control type="group">
 				<include>OpenClose_Right</include>

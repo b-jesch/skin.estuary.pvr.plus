@@ -149,6 +149,13 @@
 						<texture>$VAR[NowPVRPoster_Backend_Var]</texture>
 					</control> 
 					<control type="image">
+						<top>-15</top>
+						<left>70</left>
+						<width>170</width>
+						<height>245</height>
+						<texture>$VAR[Animated_PVRPoster_ListItem_Local_Artwork_Var]</texture>
+					</control>
+					<control type="image">
 						<top>0</top>
 						<left>270</left>
 						<width>95</width>
