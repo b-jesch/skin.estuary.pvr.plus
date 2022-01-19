@@ -122,14 +122,12 @@
 					<label>Enable Local Animated PVR Artwork</label>
 					<selected>Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)</selected>
 					<onclick>Skin.ToggleSetting(Enable.Local.Animated.PVR.Artwork)</onclick>
-					<visible>false</visible>
 				</control>
 				<control type="radiobutton" id="806">
 					<include>DefaultSettingButton</include>
 					<label>Display Local Animated PVR Artwork on OSD</label>
 					<selected>Skin.HasSetting(Disable.Local.Animated.PVR.Artwork) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)</selected>
 					<onclick>Skin.ToggleSetting(Disable.Local.Animated.PVR.Artwork)</onclick>
-					<visible>false</visible>
 				</control>
 				<control type="radiobutton" id="807">
 					<include>DefaultSettingButton</include>
