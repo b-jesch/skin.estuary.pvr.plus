@@ -131,7 +131,7 @@
 				</control>
 				<control type="radiobutton" id="807">
 					<include>DefaultSettingButton</include>
-					<label>Display fanart image for TV recordings on Home Screen instead of landscape image</label>
+					<label>Display landscape image for TV recordings on Home Screen instead of default Estuary setting</label>
 					<selected>!Skin.HasSetting(Display_TV_Recording_Image)</selected>
 					<onclick>Skin.ToggleSetting(Display_TV_Recording_Image)</onclick> 
 				</control>
