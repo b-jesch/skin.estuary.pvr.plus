@@ -856,7 +856,10 @@
 		<value condition="!Skin.HasSetting(Enable_Kodi_PVR_Genres)">$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/,.png]</value>
 		<value>$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/0_Genre.png]</value>  
 	</variable>
-	
+	<variable name="Enable_Default_PVR_Genre_Colours_Var"> 
+		<value condition="!Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</value>
+		<value>$INFO[ListItem.Property(GenreType),windows/pvr/epg-genre/0_Genre.png]</value>  
+	</variable> 
 	
 	
 	

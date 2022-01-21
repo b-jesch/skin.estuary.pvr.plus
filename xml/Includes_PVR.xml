@@ -1641,12 +1641,19 @@
 						<height>58</height>
 						<texture border="3" fallback="windows/pvr/kodi_epg_strip_genre/0_Genre.png">$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/0_Genre.png]</texture>
 						<colordiffuse>0_Genre</colordiffuse>
+						<visible>Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>
 					</control>
 					<control type="image" id="2">
 						<width>58</width>
 						<height>63</height>
 						<texture border="3">$VAR[Enable_Kodi_PVR_Genre_Colours_Var]</texture>
-						<visible>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</visible>
+						<visible>!Skin.HasSetting(Enable_Kodi_PVR_Genres) + Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>
+					</control>
+					<control type="image" id="3">
+						<width>58</width>
+						<height>63</height>
+						<texture border="3">$VAR[Enable_Default_PVR_Genre_Colours_Var]</texture>
+						<visible>!Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>
 					</control>
 					<control type="label" id="1">
 						<left>6</left>
@@ -1708,6 +1715,7 @@
 						<width>58</width>
 						<height>58</height>
 						<texture border="8" colordiffuse="button_focus">buttons/thumbnail_focused.png</texture>
+						<visible>!Control.HasFocus($PARAM[control_id]) + Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>
 					</control>
 					<control type="image" id="2">
 						<width>58</width>
@@ -1715,7 +1723,7 @@
 						<top>0</top>
 						<texture border="3" fallback="windows/pvr/kodi_epg_strip_genre/0_Genre.png">$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/0_Genre.png]</texture>
 						<colordiffuse>0_Genre</colordiffuse>
-						<visible>!Control.HasFocus($PARAM[control_id])</visible>
+						<visible>!Control.HasFocus($PARAM[control_id]) + Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>
 					</control>
 					<control type="image" id="2"> 
 						<width>58</width>
@@ -1725,7 +1733,13 @@
 							<effect type="zoom" start="100" end="112" time="200" tween="sine" easing="inout" center="150,10" />
 						</animation>
 						<texture border="3">$VAR[Enable_Kodi_PVR_Genre_Colours_Var]</texture>
-						<visible>!Control.HasFocus($PARAM[control_id]) + !Skin.HasSetting(Enable_Kodi_PVR_Genres)</visible>	
+						<visible>!Control.HasFocus($PARAM[control_id]) + !Skin.HasSetting(Enable_Kodi_PVR_Genres) + Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>	
+					</control>
+					<control type="image" id="3">
+						<width>58</width>
+						<height>63</height>
+						<texture border="3">$VAR[Enable_Default_PVR_Genre_Colours_Var]</texture>
+						<visible>!Control.HasFocus($PARAM[control_id]) + !Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>
 					</control>
 					<control type="label" id="1">
 						<left>6</left>

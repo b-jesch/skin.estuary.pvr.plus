@@ -149,11 +149,18 @@
 				</control>
 				<control type="radiobutton" id="810">
 					<include>DefaultSettingButton</include>
+					<label>Display Standard Block Genre Colours on EPG Screen Instead of Strip Genre Colours</label>
+					<selected>!Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</selected>
+					<onclick>Skin.ToggleSetting(Enable_Estuary_Default_PVR_Genres)</onclick> 
+				</control>
+				<control type="radiobutton" id="811">
+					<include>DefaultSettingButton</include>
 					<label>Display Genre Colours on EPG Screen</label>
 					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
+					<visible>false</visible>
 				</control>
-				<control type="radiobutton" id="811"> 
+				<control type="radiobutton" id="812"> 
 					<include>DefaultSettingButton</include>
 					<label>Enable 'Next-Up' Dialog when current programme is about to end</label>
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
