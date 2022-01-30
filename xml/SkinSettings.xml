@@ -137,30 +137,49 @@
 				</control>
 				<control type="radiobutton" id="808">
 					<include>DefaultSettingButton</include>
+					<label>Display fanart image for Last Channel Played on Home Screen instead of channel icon</label>
+					<selected>Skin.HasSetting(Display_Last_Channel_Artwork)</selected>
+					<onclick>Skin.ToggleSetting(Display_Last_Channel_Artwork)</onclick> 
+				</control>
+			
+			</control>
+			
+			<control type="grouplist" id="850">
+				<top>160</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>850</onup>
+				<ondown>850</ondown>
+				<visible>Container(9000).HasFocus(5)</visible>
+				<control type="radiobutton" id="809">
+					<include>DefaultSettingButton</include>
 					<label>Display premiered flags on EPG Screen instead of using '*'</label>
 					<selected>!Skin.HasSetting(Display_Premiered_Flags)</selected>
 					<onclick>Skin.ToggleSetting(Display_Premiered_Flags)</onclick> 
 				</control>
-				<control type="radiobutton" id="809">
+				<control type="radiobutton" id="810">
 					<include>DefaultSettingButton</include>
 					<label>Display Channel Groups on EPG Screen</label>
 					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
 					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
 				</control>
-				<control type="radiobutton" id="810">
+				<control type="radiobutton" id="811">
 					<include>DefaultSettingButton</include>
 					<label>Display Standard Block Genre Colours on EPG Screen Instead of Strip Genre Colours</label>
 					<selected>!Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Estuary_Default_PVR_Genres)</onclick> 
 				</control>
-				<control type="radiobutton" id="811">
+				<control type="radiobutton" id="812">
 					<include>DefaultSettingButton</include>
 					<label>Display Genre Colours on EPG Screen</label>
 					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
 					<visible>false</visible>
 				</control>
-				<control type="radiobutton" id="812"> 
+				<control type="radiobutton" id="813"> 
 					<include>DefaultSettingButton</include>
 					<label>Enable 'Next-Up' Dialog when current programme is about to end</label>
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
@@ -425,19 +444,23 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<label>$LOCALIZE[31061]</label>
+						<label>Main Menu Items</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
-						<label>$LOCALIZE[128]</label>
+						<label>General Settings</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="3">
-						<label>$LOCALIZE[31159]</label>
+						<label>Artwork Settings</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="4">
-						<label>PVR Settings</label>
+						<label>PVR Artwork Settings</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="5">
+						<label>General PVR Settings</label>
 						<onclick>noop</onclick>
 					</item>
 				</content>

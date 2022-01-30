@@ -428,12 +428,12 @@
 		</definition>
 	</include>
 	
-	<include name="InfoWallLiveTVRecordingsFanartLayout">
+	<include name="InfoWallLiveTVLastChannelArtworkLayout">
 		<param name="main_label">$INFO[ListItem.Label]</param>
 		<param name="sub_label">$INFO[ListItem.ChannelName]</param>
 		<param name="thumb_label">$INFO[ListItem.Season,S,,x]$INFO[ListItem.Episode,E]</param>
-		<param name="tv_recording_fanart_image">$VAR[PVRFanartArtworkVar]</param>
-		<param name="fallback_image">DefaultPVRRecording.png</param>
+		<param name="tv_last_channel_artwork_image">$VAR[PVRLastChannel_LocalArtworkVar]</param>
+		<param name="fallback_image">defaultpvrlastplayedchannel.png</param>
 		<param name="focused">false</param>
 		<definition>
 			<control type="image">
@@ -460,7 +460,7 @@
 				<top>10</top>
 				<width>316</width>
 				<height>218</height>
-				<texture fallback="$PARAM[fallback_image]" background="true">$PARAM[tv_recording_fanart_image]</texture>
+				<texture fallback="$PARAM[fallback_image]" background="true">$PARAM[tv_last_channel_artwork_image]</texture>
 				<aspectratio>scale</aspectratio>
 				<bordersize>20</bordersize>
 			</control>
@@ -529,8 +529,8 @@
 				<height>1</height>
 				<texturebg></texturebg>
 				<midtexture colordiffuse="button_focus" border="3">progress/texturebg_alt_white.png</midtexture>
-				<info>ListItem.PercentPlayed</info>
-				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+				<visible>ListItem.HasEpg</visible>
+				<info>ListItem.Progress</info>
 			</control>
 			<control type="group">
 				<left>134</left>

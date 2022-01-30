@@ -315,10 +315,11 @@
 		<value condition="Control.HasFocus(80055)">$LOCALIZE[24013]</value>
 	</variable>
 	<variable name="SkinSettingsHelpTextVar">
-		<value condition="Container(9000).HasFocus(1)">$LOCALIZE[31129]</value>
-		<value condition="Container(9000).HasFocus(2)">$LOCALIZE[31130]</value>
+		<value condition="Container(9000).HasFocus(1)">$LOCALIZE[31130]</value>
+		<value condition="Container(9000).HasFocus(2)">$LOCALIZE[31129]</value>
 		<value condition="Container(9000).HasFocus(3)">$LOCALIZE[31169]</value>
 		<value condition="Container(9000).HasFocus(4)">$LOCALIZE[31217]</value>
+		<value condition="Container(9000).HasFocus(5)">$LOCALIZE[31243]</value> 
 	</variable>
 	<variable name="VolumeIconVar">
 		<value condition="Player.Muted">dialogs/volume/mute.png</value>
@@ -927,7 +928,10 @@
 	<variable name="PVRFanartArtworkVar"> 
 		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/fanart.jpg]</value>
 	</variable>
-	
+	<variable name="PVRLastChannel_LocalArtworkVar"> 
+		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/fanart.jpg]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Landscape)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Landscape)]</value>
+	</variable>
 	<variable name="PVR_NextUP_Local_Banner_Artwork_Var"> 
 		<value condition="!String.IsEmpty(VideoPlayer.NextTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.NextTitle,,/banner.jpg]</value>
 	</variable>
