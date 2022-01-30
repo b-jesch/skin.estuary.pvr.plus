@@ -1,3 +1,9 @@
+[B]0.1.9[/B]
+• New PVR setting added to Skin Settings to allow users to switch from strip genre colour format on EPG screen to standard block genre colour format.
+• New PVR setting added to Skin Settings to allow users to switch from landscape images for TV Recordings on the Home Screen to fanart images removed. 
+• New PVR setting added to Skin Settings to allow users to switch from standard TV Recordings layout on the Home Screen to show artwork. 
+• New PVR setting added to Skin Settings to allow users to switch from standard 'Last Played Channel' layout on the Home Screen to display fanart images (local artwork only). 
+
 [B]0.1.8[/B]
 • New PVR setting added to Skin Settings to allow users to switch from landscape images for TV Recordings on the Home Screen to fanart images. 
 
