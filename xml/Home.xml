@@ -1130,7 +1130,7 @@
 							<property name="menu_id">$NUMBER[16400]</property>
 							<thumb>icons/sidemenu/flix.png</thumb>
 							<property name="id">Netflix</property>
-							<visible>!Skin.HasSetting(HomeMenuNoNetflixButton)</visible>
+							<visible>Skin.HasSetting(HomeMenuNoNetflixButton)</visible>
 						</item>
 						<item>
 							<label>$LOCALIZE[2]</label>

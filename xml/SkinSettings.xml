@@ -313,7 +313,7 @@
 				<control type="radiobutton" id="624">
 					<label>Netflix</label>
 					<include>DefaultSettingButton</include>
-					<selected>Skin.HasSetting(HomeMenuNoNetflixButton)</selected> 
+					<selected>Skin.HasSetting(HomeMenuNoNetflixButton)</selected>  
 					<onclick>Skin.ToggleSetting(HomeMenuNoNetflixButton)</onclick>
 				</control>
 				<control type="button" id="6124">
