@@ -1,3 +1,8 @@
+[B]0.2.0[/B]
+• Main menu item added for Netflix addon.
+• Support added for custom Netflix Category widgets to be created.
+• Various widgets added to Netflix Home Page for items that have been exported from Netflix addon to Kodi libraries.
+
 [B]0.1.9[/B]
 • New PVR setting added to Skin Settings to allow users to switch from strip genre colour format on EPG screen to standard block genre colour format.
 • New PVR setting added to Skin Settings to allow users to switch from landscape images for TV Recordings on the Home Screen to fanart images removed. 
