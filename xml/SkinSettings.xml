@@ -321,7 +321,7 @@
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
 					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
-					<enable>!Skin.HasSetting(HomeMenuNoEmbyMoviesButton)</enable>
+					<enable>Skin.HasSetting(HomeMenuNoEmbyMoviesButton)</enable>
 				</control>
 				<control type="radiobutton" id="623">
 					<label>EmbyCon TV Shows</label>
@@ -334,7 +334,7 @@
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(plugin.library.node.editor)">ActivateWindow(programs,plugin://plugin.library.node.editor/?ltype=video,return)</onclick>
 					<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
-					<enable>!Skin.HasSetting(HomeMenuNoEmbyTVButton)</enable>
+					<enable>Skin.HasSetting(HomeMenuNoEmbyTVButton)</enable>
 				</control>
 				<control type="radiobutton" id="624">
 					<label>Netflix</label>
