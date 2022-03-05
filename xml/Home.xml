@@ -1216,7 +1216,7 @@
 							<property name="menu_id">$NUMBER[3000]</property>
 							<thumb>icons/sidemenu/movies.png</thumb>
 							<property name="id">emby_movies</property>
-							<visible>!Skin.HasSetting(HomeMenuNoEmbyMoviesButton)</visible>
+							<visible>Skin.HasSetting(HomeMenuNoEmbyMoviesButton)</visible>
 						</item>
 						<item>
 							<label>Emby TV Shows</label>
@@ -1226,7 +1226,7 @@
 							<property name="menu_id">$NUMBER[4000]</property>
 							<thumb>icons/sidemenu/tv.png</thumb>
 							<property name="id">emby_tvshows</property>
-							<visible>!Skin.HasSetting(HomeMenuNoEmbyTVButton)</visible>
+							<visible>Skin.HasSetting(HomeMenuNoEmbyTVButton)</visible>
 						</item>
                         <!-- End Emby Menu Items -->
 						<item>
