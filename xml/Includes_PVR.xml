@@ -1655,12 +1655,12 @@
 						<texture border="3">$VAR[Enable_Default_PVR_Genre_Colours_Var]</texture>
 						<visible>!Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>
 					</control>
+					<!-- Trial of font change from font 13 to default font -->
 					<control type="label" id="1">
 						<left>6</left>
 						<top>-3</top>
 						<height>36</height>
 						<aligny>center</aligny>
-						<font>font13</font>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">
@@ -1741,12 +1741,12 @@
 						<texture border="3">$VAR[Enable_Default_PVR_Genre_Colours_Var]</texture>
 						<visible>!Control.HasFocus($PARAM[control_id]) + !Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</visible>
 					</control>
+					<!-- Trial of font change from font 13 to default font -->
 					<control type="label" id="1">
 						<left>6</left>
 						<top>-3</top>
 						<height>36</height>
 						<aligny>center</aligny>
-						<font>font13</font>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">

@@ -58,23 +58,41 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="3005"/>
 						</include>
-						<include content="WidgetListPoster" condition="true">
+						<include content="WidgetListPoster" condition="true + Skin.HasSetting(home_screen_poster_size)">
 							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-embycon_widget_reload)]"/>
 							<param name="widget_header" value="Continue Watching"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="3900"/>
 						</include>
-						<include content="WidgetListPoster" condition="true">
+						<include content="WidgetListPosterLarge" condition="true + !Skin.HasSetting(home_screen_poster_size)">
+							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=inprogress_movies&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-embycon_widget_reload)]"/>
+							<param name="widget_header" value="Continue Watching"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="3901"/>
+						</include>
+						<include content="WidgetListPoster" condition="true + Skin.HasSetting(home_screen_poster_size)">
 							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=recent_movies&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-embycon_widget_reload)]"/>
 							<param name="widget_header" value="Recently Added"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="3800"/>
 						</include>
-						<include content="WidgetListPoster" condition="true">
+						<include content="WidgetListPosterLarge" condition="true + !Skin.HasSetting(home_screen_poster_size)">
+							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=recent_movies&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-embycon_widget_reload)]"/>
+							<param name="widget_header" value="Recently Added"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="3801"/>
+						</include>
+						<include content="WidgetListPoster" condition="true + Skin.HasSetting(home_screen_poster_size)">
 							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=random_movies&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-random-movies-changed)]"/>
 							<param name="widget_header" value="Random"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="3100"/>
+						</include>
+						<include content="WidgetListPosterLarge" condition="true + !Skin.HasSetting(home_screen_poster_size)">
+							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=random_movies&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-random-movies-changed)]"/>
+							<param name="widget_header" value="Random"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="3101"/>
 						</include>
 					
 					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
@@ -96,11 +114,17 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="4005"/>
 						</include>
-						<include content="WidgetListPoster" condition="true">
+						<include content="WidgetListPoster" condition="true + Skin.HasSetting(home_screen_poster_size)">
 							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=recent_tvshows&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-embycon_widget_reload)]"/>
 							<param name="widget_header" value="Recently Added TV Shows"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="4300"/>
+						</include>
+						<include content="WidgetListPosterLarge" condition="true + !Skin.HasSetting(home_screen_poster_size)">
+							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=recent_tvshows&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-embycon_widget_reload)]"/>
+							<param name="widget_header" value="Recently Added TV Shows"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="4301"/>
 						</include>
 						<include content="WidgetListEpisodes" condition="true">
 							<param name="content_path" value="plugin://plugin.video.embycon?mode=WIDGET_CONTENT&amp;type=inprogress_episodes&amp;reload=$INFO[Window(Home).Property(plugin.video.embycon-embycon_widget_reload)]"/>
@@ -960,76 +984,6 @@
 						<param name="scrollbar_id" value="16010"/>
 					</include>
 				</control>
-				<control type="group" id="16400">
-					<visible>String.IsEqual(Container(9000).ListItem.Property(id),netflix)</visible>
-					<include content="Visible_Right_Delayed">
-						<param name="id" value="netflix"/>
-					</include>
-					<control type="grouplist" id="16500">
-						<include>WidgetGroupListCommon</include> 
-						<pagecontrol>16010</pagecontrol>
-						<include content="NetflixWidgetCategories" condition="System.HasAddon(plugin.video.netflix) + Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget">
-							<param name="content_path" value="library://video/netflix/"/>
-							<param name="widget_header" value="$LOCALIZE[31148]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="16501"/>
-						</include>
-						<include content="WidgetListPoster" condition="true">
-							<param name="content_path" value="special://skin/playlists/netflix/Recent Unwatched Netflix Movies.xsp"/>
-							<param name="widget_header" value="Netflix Movies Exported to Kodi Library in the Last 30 Days"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="16502"/>
-						</include>
-						<include content="WidgetListEpisodes" condition="Library.HasContent(tvshows)">
-							<param name="content_path" value="special://skin/playlists/netflix/Unwatched Netflix Episodes.xsp"/>
-							<param name="widget_header" value="Netflix Episodes Recently Exported to Kodi Library"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="16503"/>
-						</include>
-						<include content="WidgetListEpisodes" condition="Library.HasContent(tvshows)">
-							<param name="content_path" value="special://skin/playlists/netflix/Netflix In Progress Episodes.xsp"/>
-							<param name="widget_header" value="Continue Watching Netflix Episodes Recently Added to Kodi Library"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="16512"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="special://skin/playlists/netflix/Netflix_Unwatched_Movies.xsp"/>
-							<param name="widget_header" value="Unwatched Netflix Movies Exported to Kodi Library"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="16505"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="special://skin/playlists/netflix/Netflix Action Movies.xsp"/>
-							<param name="sortorder" value="random"/>
-							<param name="widget_header" value="Netflix Action Movies Exported to Kodi Library"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="16506"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="special://skin/playlists/netflix/Netflix Crime.xsp"/>
-							<param name="widget_header" value="Netflix Crime Movies Exported to Kodi Library"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="16507"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(movies)">
-							<param name="content_path" value="special://skin/playlists/netflix/Netflix_Random_Movies.xsp"/>
-							<param name="widget_header" value="Random Netflix Movies Exported to Kodi Library"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="16509"/>
-						</include>
-						
-					</control>
-					<include content="ImageWidget" condition="!Library.HasContent(movies)">
-						<param name="text_label" value="$LOCALIZE[31104]" />
-						<param name="button_label" value="$LOCALIZE[31110]" />
-						<param name="button_onclick" value="ActivateWindow(videos,files,return)"/>
-						<param name="button_id" value="16503"/>
-						<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMovieButton)"/>
-					</include>
-					<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
-						<param name="scrollbar_id" value="16510"/>
-					</include>
-				</control>
 				<control type="group" id="4000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
 					<include content="Visible_Right_Delayed">
@@ -1229,14 +1183,6 @@
 							<visible>Skin.HasSetting(HomeMenuNoEmbyTVButton)</visible>
 						</item>
                         <!-- End Emby Menu Items -->
-						<item>
-							<label>Netflix</label>
-							<onclick>RunAddon(plugin.video.netflix)</onclick>
-							<property name="menu_id">$NUMBER[16400]</property>
-							<thumb>icons/sidemenu/flix.png</thumb>
-							<property name="id">Netflix</property>
-							<visible>Skin.HasSetting(HomeMenuNoNetflixButton)</visible>
-						</item>
 						<item>
 							<label>$LOCALIZE[2]</label>
 							<onclick>ActivateWindow(Music,Artists,return)</onclick>
