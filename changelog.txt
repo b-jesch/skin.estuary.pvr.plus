@@ -1,3 +1,9 @@
+[B]0.2.2[/B]
+• Complete re-design of OSD and OSD Info Panels to make the 'look & feel' more aligned with the default Estuary Skin.
+• Removal of addon icons and content type from OSD.
+• Removal of Black Colour theme.
+
+
 [B]0.2.1[/B]
 • Main menu items added for EmbyCon Movies and TV Shows.
 • Ability to enable to EmbyCon main menu items added to skin settings.
