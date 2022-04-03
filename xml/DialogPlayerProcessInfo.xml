@@ -8,20 +8,31 @@
 		<control type="group">
 			<bottom>0</bottom>
 			<height>325</height>
-			
 			<control type="image">
-				<left>1</left>
-				<top>1</top>
-				<width>99.9%</width>
-				<height>325</height>
-				<texture>osd/osdpanel.png</texture>
+				<left>375</left>
+				<width>1550</width>
+				<height>340</height>
+				<bottom>170</bottom>
+				<texture flipy="true">osd/osdpanel_transparent.png</texture>
 				<colordiffuse>osdpanel</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdborder.png</bordertexture>
+				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
 				<bordersize>9</bordersize>
+				<visible>!Skin.HasSetting(osd_type)</visible>
+			</control>
+			<control type="image">
+				<left>375</left>
+				<width>1550</width>
+				<height>340</height>
+				<bottom>170</bottom>
+				<texture flipy="true">osd/osdpanel_transparent.png</texture>
+				<colordiffuse>black</colordiffuse>
+				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
+				<bordersize>9</bordersize>
+				<visible>Skin.HasSetting(osd_type)</visible>
 			</control>
 			<control type="grouplist">
-				<left>52</left>
-				<top>10</top>
+				<left>420</left>
+				<top>-170</top>
 				<visible>Control.HasFocus(5551)</visible>
 				<control type="label">
 					<width>1200</width>
@@ -74,7 +85,7 @@
 			</control>
 			<control type="grouplist">
 				<left>1250</left>
-				<top>10</top>
+				<top>-170</top>
 				<visible>Control.HasFocus(5551)</visible>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="label">
@@ -132,8 +143,8 @@
 				</control>
 			</control>
 			<control type="grouplist">
-				<left>52</left>
-				<top>10</top>
+				<left>420</left>
+				<top>-170</top>
 				<visible>Control.HasFocus(5552)</visible>
 				<control type="label">
 					<width>1600</width>
@@ -190,7 +201,7 @@
 			</control>
 			<control type="grouplist" id="5550">
 				<right>15</right>
-				<top>-80</top>
+				<top>-265</top>
 				<width>1000</width>
 				<height>100</height>
 				<align>right</align>

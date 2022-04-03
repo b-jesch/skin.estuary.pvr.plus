@@ -527,7 +527,7 @@
 				<visible>Player.SeekEnabled | VideoPlayer.HasEPG</visible>
 				<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | Player.ShowTime | Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo) | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide)</visible>
 				<control type="label">
-					<top>22</top>
+					<top>102</top>
 					<right>20</right>
 					<width>400</width>
 					<height>50</height>
@@ -538,7 +538,7 @@
 					<visible>false</visible>
 				</control>
 				<control type="label">
-					<top>22</top>
+					<top>102</top>
 					<left>20</left>
 					<width>400</width>
 					<height>50</height>
@@ -549,8 +549,8 @@
 					<visible>false</visible>
 				</control>
 				<control type="label">
-					<centerleft>40%</centerleft>
-					<top>210</top>
+					<centerleft>29%</centerleft>
+					<top>100</top>
 					<height>50</height>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -568,14 +568,14 @@
 					<height>$PARAM[epg_bar_height]</height>
 					<info2>PVR.TimeshiftProgressEpgStart</info2>
 					<info>PVR.TimeshiftProgressPlayPos</info>
-					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
+					<texturebg border="1" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
 					<midtexture colordiffuse="button_focus">windows/pvr/osd-genre/osd_genre.png</midtexture>
 				</control>
 				<control type="progress">
 					<left>425</left>
-					<top>$PARAM[epg_bar_top]</top>
+					<top>84</top>
 					<width>720</width>
-					<height>$PARAM[epg_bar_height]</height>
+					<height>2</height>
 					<info2>PVR.TimeshiftProgressPlayPos</info2>
 					<info>PVR.TimeshiftProgressEpgEnd</info>
 					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg> 
@@ -599,7 +599,7 @@
 			<visible>Player.ChannelPreviewActive</visible>
 			<control type="progress">
 				<left>425</left>
-				<top>195</top>
+				<top>96</top>
 				<width>40%</width>
 				<height>4</height>
 				<info>PVR.EpgEventProgress</info>
@@ -695,6 +695,75 @@
 				<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
 			</control>
 		</control>
+	</include>
+	<include name="PVRInfoPanelFurniture">
+			<control type="image">
+				<left>410</left>
+				<top>-25</top>
+				<width>94</width>
+				<height>94</height>
+				<aspectratio aligny="center">keep</aspectratio> 
+				<texture fallback="DefaultTVShows.png">$INFO[Player.Art(icon)]</texture>
+			</control>
+			<control type="label">
+				<left>530</left>
+				<top>-30</top>
+				<right>80</right>
+				<height>290</height>
+				<width>805</width>
+				<scroll>true</scroll>
+				<font>font37</font>
+				<label>[COLOR grey]Ch$INFO[VideoPlayer.ChannelNumberLabel][/COLOR]: [B][COLOR button_focus]$INFO[VideoPlayer.ChannelName][/COLOR][/B]</label>
+				<align>left</align>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+			</control>
+			<control type="image"> 
+				<left>530</left>
+				<top>20</top>
+				<width>150</width>
+				<height>50</height>
+				<aspectratio>keep</aspectratio>
+				<texture>ratings/imdb/imdb.png</texture>
+			</control>
+			<control type="image">
+				<left>615</left>
+				<top>30</top>
+				<width>120</width>
+				<height>30</height>
+				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>
+			</control>
+			<control type="label">
+				<left>755</left>
+				<top>25</top>
+				<right>80</right>
+				<height>290</height>
+				<width>1375</width>
+				<font>font12</font>
+				<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
+				<align>left</align>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+			</control>
+			<control type="textbox">
+				<left>405</left>
+				<top>70</top>
+				<right>20</right>
+				<height>130</height>
+				<label fallback="19055">$INFO[VideoPlayer.Plot]</label>
+				<align>justify</align>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>String.IsEmpty(PVR.EpgEventIcon)</visible>
+			</control>
+			<control type="textbox">
+				<left>405</left>
+				<top>70</top>
+				<right>30</right>
+				<height>130</height>
+				<label fallback="19055">$INFO[VideoPlayer.Plot]</label>
+				<align>justify</align>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>!String.IsEmpty(PVR.EpgEventIcon)</visible>
+			</control>
 	</include>
 	<include name="PVRInfoPanel">
 		<control type="group">
@@ -830,7 +899,6 @@
 				<width>150</width>
 				<height>50</height>
 				<texture>ratings/imdb/imdb.png</texture>
-				
 			</control>
 			<control type="image">
 				<left>420</left>
@@ -838,7 +906,6 @@
 				<width>120</width>
 				<height>35</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.ListItem.Rating),ratings/imdb/,.png]</texture>
-				
 			</control>
 			<control type="image">
 				<left>595</left>
@@ -855,7 +922,6 @@
 				<font>font27</font>
 				<textcolor>button_focus</textcolor>
 				<label>[B]$VAR[ItemDurationVar][/B]</label>
-				
 			</control>
 			<control type="image">
 				<top>590</top>
@@ -1177,9 +1243,7 @@
 				<height>40</height>
 				<width>780</width>
 				<align>left</align>
-				
-				
-			<label fallback="Genre not listed">$INFO[ListItem.Genre]</label> 
+				<label fallback="Genre not listed">$INFO[ListItem.Genre]</label> 
 			</control>
 			<control type="image">
 				<top>445</top>
@@ -1192,8 +1256,6 @@
 				<left>60</left>
 				<height>40</height>
 				<width>780</width>
-			
-				
 				<label fallback="Director not listed">$INFO[Window(Home).Property(SkinHelper.ListItem.Director)]</label>
 			</control>
 			<control type="image">
@@ -1208,27 +1270,7 @@
                 <width>780</width>
                 <height>85</height>
                 <label fallback="Writer not listed">$INFO[Window(Home).Property(SkinHelper.ListItem.Writer)]</label>
-               
-                
             </control>
-			<control type="button" id="85">
-				<top>810</top>
-				<left>10</left>
-				<width>175</width>
-				<height>80</height>
-				<align>center</align>
-				<label>TV Later</label>
-				<font>Font_Reg25</font>
-				<textcolor>grey</textcolor>
-				<focusedcolor>white</focusedcolor>
-				<texture colordiffuse="epg_button_focus" border="20">epgtopbutton/button-fo.png</texture>
-				<texture colordiffuse="epg_button_nofocus" border="20">epgtopbutton/button-nofo.png</texture>
-				<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(1133)</onclick>
-                <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(1133)</onclick>
-				<onleft>50</onleft>
-				<onright>50</onright>
-				<visible>false</visible>
-			</control>
 			<control type="label">
                 <top>720</top>
 				<left>0</left>

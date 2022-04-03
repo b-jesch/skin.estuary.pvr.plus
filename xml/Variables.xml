@@ -33,10 +33,10 @@
 		<value condition="Player.Paused">icons/now-playing/pause.png</value>
 		<value>icons/now-playing/play.png</value>
 	</variable>
-	<variable name="NowPlayingPosterVar">
+	<variable name="NowPlayingPosterVar"> 
 		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
-		
+		<value condition="!String.IsEmpty(VideoPlayer.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
 	</variable>
 	<variable name="ShiftThumbVar">
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[Listitem.Art(poster)]</value>
@@ -268,27 +268,24 @@
 		<value condition="Control.HasFocus(603)">Stop Playback</value>
 		<value condition="Control.HasFocus(80603)">Stop Playback</value>
 		<value condition="Control.HasFocus(606)">Fast Forward</value>
-		<value condition="Control.HasFocus(80606)">Fast Forward</value>
-		<value condition="Control.HasFocus(607)">Fast Forward</value>
+		<value condition="Control.HasFocus(607)">Skip Forward</value>
 		<value condition="Control.HasFocus(80607)">Fast Forward</value>
 		<value condition="Control.HasFocus(80608)">$LOCALIZE[264]</value>
-		<value condition="Control.HasFocus(608)">$LOCALIZE[31200]</value>
-		<value condition="Control.HasFocus(705)">$LOCALIZE[31201]</value>
-		<value condition="Control.HasFocus(8005)">$LOCALIZE[31214]</value>
+		<value condition="Control.HasFocus(608)">$LOCALIZE[31196]</value>
+		<value condition="Control.HasFocus(705)">$LOCALIZE[31214]</value>
 		<value condition="Control.HasFocus(6600)">Skip Back</value>
 		<value condition="Control.HasFocus(6011)">Skip Back</value>
 		<value condition="Control.HasFocus(6601)">Rewind</value>
 		<value condition="Control.HasFocus(6604)">Fast Forward</value>
-		<value condition="Control.HasFocus(6051)">Skip Forward</value>
-		<value condition="Control.HasFocus(6605)">Skip Forward</value>
-		<value condition="Control.HasFocus(60014)">$LOCALIZE[31212]</value>
+		<value condition="Control.HasFocus(605)">Skip Forward</value>
 		<value condition="Control.HasFocus(6700)">$LOCALIZE[31213]</value>
 		<value condition="Control.HasFocus(6704)">$LOCALIZE[31205]</value>
-		<value condition="Control.HasFocus(60011)">$LOCALIZE[31207]</value>
+		<value condition="Control.HasFocus(911)">$LOCALIZE[31212]</value>
 		<value condition="Control.HasFocus(6255)">$LOCALIZE[31208]</value>
 		<value condition="Control.HasFocus(60043)">$LOCALIZE[31209]</value>
 		<value condition="Control.HasFocus(80902)">$LOCALIZE[31199]</value>
 		<value condition="Control.HasFocus(908)">$LOCALIZE[31202]</value>
+		<value condition="Control.HasFocus(60014)">$LOCALIZE[31195]</value>
 		
 		<value condition="Control.HasFocus(70040)">$LOCALIZE[31197]</value>
 		<value condition="Control.HasFocus(70041)">$LOCALIZE[31198]</value>
@@ -299,6 +296,7 @@
 		<value condition="Control.HasFocus(70046)">$LOCALIZE[24012]</value>
 		<value condition="Control.HasFocus(70047)">$LOCALIZE[36501]</value>
 		<value condition="Control.HasFocus(70048)">$LOCALIZE[5]</value>
+		<value condition="Control.HasFocus(70049)">$LOCALIZE[31212]</value>
 		<value condition="Control.HasFocus(80048)">$LOCALIZE[5]</value>
 		<value condition="Control.HasFocus(70050)">$LOCALIZE[29900]</value>
 		<value condition="Control.HasFocus(70051)">$LOCALIZE[31066]</value>
@@ -317,9 +315,10 @@
 	<variable name="SkinSettingsHelpTextVar">
 		<value condition="Container(9000).HasFocus(1)">$LOCALIZE[31130]</value>
 		<value condition="Container(9000).HasFocus(2)">$LOCALIZE[31129]</value>
-		<value condition="Container(9000).HasFocus(3)">$LOCALIZE[31169]</value>
-		<value condition="Container(9000).HasFocus(4)">$LOCALIZE[31217]</value>
-		<value condition="Container(9000).HasFocus(5)">$LOCALIZE[31243]</value> 
+		<value condition="Container(9000).HasFocus(3)">$LOCALIZE[31244]</value>
+		<value condition="Container(9000).HasFocus(4)">$LOCALIZE[31169]</value>
+		<value condition="Container(9000).HasFocus(5)">$LOCALIZE[31217]</value>
+		<value condition="Container(9000).HasFocus(6)">$LOCALIZE[31243]</value> 
 	</variable>
 	<variable name="VolumeIconVar">
 		<value condition="Player.Muted">dialogs/volume/mute.png</value>
@@ -771,26 +770,26 @@
 	<variable name="PVR_OSDHelpTextVar">
 		<value condition="Control.HasFocus(87) + !Player.Paused">$LOCALIZE[31054]</value>
 		<value condition="Control.HasFocus(87) + [Player.Paused + Window.IsVisible(videoosd)]">$LOCALIZE[31055]</value>
-		<value condition="Control.HasFocus(602)">$LOCALIZE[19070]</value>
-		<value condition="Control.HasFocus(900)">$LOCALIZE[31197]</value>
-		<value condition="Control.HasFocus(901)">$LOCALIZE[31198]</value>
+		<value condition="Control.HasFocus(602)">$LOCALIZE[31208]</value>
+		<value condition="Control.HasFocus(70041)">$LOCALIZE[31197]</value>
+		<value condition="Control.HasFocus(70040)">$LOCALIZE[31198]</value>
 		<value condition="Control.HasFocus(902)">$LOCALIZE[31199]</value>
-		<value condition="Control.HasFocus(903)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
+		<value condition="Control.HasFocus(608)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
+		<value condition="Control.HasFocus(608)">$LOCALIZE[31196]</value>
 		<value condition="Control.HasFocus(903)">$LOCALIZE[31200]</value>
-		<value condition="Control.HasFocus(904)">$LOCALIZE[31201]</value>
+		<value condition="Control.HasFocus(70043)">$LOCALIZE[31201]</value>
 		
-		<value condition="Control.HasFocus(906)">$LOCALIZE[31202]</value>
+		<value condition="Control.HasFocus(603)">$LOCALIZE[31202]</value>
 		<value condition="Control.HasFocus(907)">$LOCALIZE[31203]</value>
 		<value condition="Control.HasFocus(908)">$LOCALIZE[31204]</value>
-		<value condition="Control.HasFocus(909)">$LOCALIZE[31205]</value>
-		<value condition="Control.HasFocus(910)">$LOCALIZE[31206]</value>
+		<value condition="Control.HasFocus(70046)">$LOCALIZE[31205]</value>
+		<value condition="Control.HasFocus(70045)">$LOCALIZE[31206]</value>
 		<value condition="Control.HasFocus(911)">$LOCALIZE[31207]</value>
-		<value condition="Control.HasFocus(912)">$LOCALIZE[31208]</value>
-		<value condition="Control.HasFocus(913)">$LOCALIZE[31209]</value>
+		<value condition="Control.HasFocus(70048)">$LOCALIZE[31209]</value>
 	</variable>
 	<variable name="PlayerClearArtVar">
-		<value condition="!String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
-		<value condition="!String.IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.clearart)) + !Player.ShowInfo + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(10125)  + !Window.IsVisible(1122)">$INFO[Player.Art(tvshow.clearart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(clearart)) + !Player.ShowInfo + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(10125)  + !Window.IsVisible(1122)">$INFO[Player.Art(clearart)]</value>
 	</variable>
 	<variable name="PlayerInfoClearLogoVar">
 		<value condition="!String.IsEmpty(Player.Art(artist.clearlogo))">$INFO[Player.Art(artist.clearlogo)]</value>
@@ -829,30 +828,7 @@
 	<variable name="PVR_Timer_Enabled_Comment_Var">
 		<value condition="String.IsEqual(ListItem.Comment,Enabled)">Enabled</value>	
 	</variable>
-	<variable name="PVR_Show_ChannelGroup_Label_Var">
-		<value condition="!Skin.HasSetting(ShowPVRGroups)">Display Channel Groups [B][COLOR limegreen](ON)[/COLOR][/B]</value>
-		<value condition="Skin.HasSetting(ShowPVRGroups)">Disable Channel Groups [B][COLOR red](OFF)[/COLOR][/B]</value>
-	</variable>
-	<variable name="Backend_PVR_Artwork_var">
-		<value condition="Skin.HasSetting(Backend.PVR.Artwork)">Use Backend Artwork [B][COLOR limegreen](ON)[/COLOR][/B]</value>
-		<value condition="!Skin.HasSetting(Backend.PVR.Artwork)">Disable Backend Artwork [B][COLOR red](OFF)[/COLOR][/B]</value>
-	</variable>
-	<variable name="PVR_Artwork_Switch_Label_Var">
-		<value condition="Skin.HasSetting(SkinHelper.EnablePVRThumbs)">Use Skin Helper Art [B][COLOR limegreen](ON)[/COLOR][/B]</value>
-		<value condition="!Skin.HasSetting(SkinHelper.EnablePVRThumbs)">Disable Skin Helper Art [B][COLOR red](OFF)[/COLOR][/B]</value>
-	</variable>
-	<variable name="Local_PVR_Artwork_Var">
-		<value condition="Skin.HasSetting(Enable.Local.PVR.Artwork)">Use Local PVR Artwork [B][COLOR limegreen](ON)[/COLOR][/B]</value>
-		<value condition="!Skin.HasSetting(Enable.Local.PVR.Artwork)">Disable Local PVR Artwork [B][COLOR red](OFF)[/COLOR][/B]</value>
-	</variable>
-	<variable name="PVR_Next-Up_TV_Label_Var">
-		<value condition="!Skin.HasSetting(disable_PVRNextUp)">Enable Next Up TV [B][COLOR limegreen](ON)[/COLOR][/B]</value>
-		<value condition="Skin.HasSetting(disable_PVRNextUp)">Disable Next Up TV [B][COLOR red](OFF)[/COLOR][/B]</value>
-	</variable>
-	<variable name="Enable_Kodi_PVR_Genre_Label_Var">
-		<value condition="!Skin.HasSetting(Enable_Kodi_PVR_Genres)">Enable PVR Genres [B][COLOR limegreen](ON)[/COLOR][/B]</value>
-		<value condition="Skin.HasSetting(Enable_Kodi_PVR_Genres)">Disable PVR Genres [B][COLOR red](OFF)[/COLOR][/B]</value>
-	</variable>
+	
 	<variable name="Enable_Kodi_PVR_Genre_Colours_Var">
 		<value condition="!Skin.HasSetting(Enable_Kodi_PVR_Genres)">$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/,.png]</value>
 		<value>$INFO[ListItem.Property(GenreType),windows/pvr/kodi_epg_strip_genre/0_Genre.png]</value>  
@@ -861,9 +837,12 @@
 		<value condition="!Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</value>
 		<value>$INFO[ListItem.Property(GenreType),windows/pvr/epg-genre/0_Genre.png]</value>  
 	</variable> 
-	
-	
-	
+	<variable name="PVR_Now_Playing_Poster_Var"> 
+		<value condition="!String.IsEmpty(PVR.EpgEventIcon) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[PVR.EpgEventIcon]</value> 
+		<value condition="!String.IsEmpty(VideoPlayer.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.Player.Art.Poster)]</value>
+		<value>DefaultPVRPoster.png</value> 
+	</variable>
 	<variable name="PVR_Local_path">
     <value condition="!String.IsEmpty(Skin.String(Local.PVR.Artwork)) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$INFO[Skin.String(Local.PVR.Artwork)]</value>
     <value>special://skin/PVR_Artwork/</value>

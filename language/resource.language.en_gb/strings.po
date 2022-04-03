@@ -894,11 +894,11 @@ msgid "Show Plot"
 msgstr ""
 
 msgctxt "#31195"
-msgid "Show Cast"
+msgid "Display Actors"
 msgstr ""
 
 msgctxt "#31196"
-msgid "Show Cast"
+msgid "Press OK to Start Instant Record"
 msgstr ""
 
 msgctxt "#31197"
@@ -914,11 +914,11 @@ msgid "Switch Back to Last Channel"
 msgstr ""
 
 msgctxt "#31200"
-msgid "Press OK to start instant record"
+msgid "Press OK to Stop Instant Record" 
 msgstr ""
 
 msgctxt "#31201"
-msgid "Display Programme Information"
+msgid "Display TV Guide Information"
 msgstr ""
 
 msgctxt "#31202"
@@ -942,15 +942,15 @@ msgid "Teletext"
 msgstr ""
 
 msgctxt "#31207"
-msgid "Display Processinfo"
+msgid "Display PVR Info & Processinfo"
 msgstr ""
 
 msgctxt "#31208"
-msgid "Enable Stereoscopic Mode"
+msgid "Play/Pause Current Programme"
 msgstr ""
 
 msgctxt "#31209"
-msgid "Enable Settings"
+msgid "Enable PVR Settings"
 msgstr ""
 
 msgctxt "#31210"
@@ -962,7 +962,7 @@ msgid "Pause/Play"
 msgstr ""
 
 msgctxt "#31212"
-msgid "Display Actors"
+msgid "Processinfo"
 msgstr ""
 
 msgctxt "#31213"
@@ -970,7 +970,7 @@ msgid "Display Bookmarks"
 msgstr ""
 
 msgctxt "#31214"
-msgid "Display Artist Biography and Info"
+msgid "Display Artist Biography"
 msgstr ""
 
 msgctxt "#31215"
@@ -1087,6 +1087,10 @@ msgstr ""
 
 msgctxt "#31243"
 msgid "General PVR settings exclusive to the EstuaryPVR+ Skin"
+msgstr "" 
+
+msgctxt "#31244"
+msgid "OSD related settings"
 msgstr "" 
 
 

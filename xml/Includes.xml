@@ -1650,6 +1650,74 @@
 				</control>
 			</control> 
 		</focusedlayout>
-	</include> 
-	
+	</include>
+	<include name="VideoInfoPanelFurniture">
+			<control type="image">
+				<top>-1</top>
+				<left>410</left>
+				<height>70</height>
+				<width>110</width>
+				<textcolor>white</textcolor>
+				<texture>flags/runtime/duration.png</texture>
+			</control>
+			<control type="label">
+				<top>17</top>
+				<left>340</left>
+				<align>center</align>
+				<width>250</width>
+				<font>font_flag</font>
+				<textcolor>white</textcolor>
+				<label>[B][COLOR grey] $VAR[NowPlayingDurVar][/COLOR][/B]</label>
+			</control>
+			<control type="image">
+				<left>525</left>
+				<top>-3</top>
+				<width>150</width>
+				<height>50</height>
+				<aspectratio>keep</aspectratio>
+				<texture>ratings/imdb/imdb.png</texture>
+				<visible>!String.IsEmpty(VideoPlayer.Rating)</visible>
+			</control>
+			<control type="image">
+				<left>615</left>
+				<top>4</top>
+				<width>120</width>
+				<height>30</height>
+				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[VideoPlayer.Rating,ratings/imdb/,.png]</texture>
+				<visible>!String.IsEmpty(VideoPlayer.Rating)</visible>
+			</control>
+			<control type="image">
+				<left>750</left>
+				<top>-7</top>
+				<right>200</right>
+				<width>45</width>
+				<height>45</height>
+				<texture fallback="flags/mpaa/rated1.png">$VAR[Mpaa_flags_Var,flags/mpaa/,.png]</texture>
+				<animation effect="slide" start="0,0" end="-225,0" condition="String.IsEmpty(VideoPlayer.Rating)">Conditional</animation>
+			</control>
+			<control type="image">
+				<right>40</right>
+				<top>-2</top>
+				<width>170</width>
+				<height>50</height>
+				<texture>lists/airdate.png</texture>
+			</control>
+			<control type="label">
+				<right>55</right>
+				<align>right</align>
+				<top>17</top>
+				<width>200</width>
+				<height>50</height>
+				<font>font_flag</font>
+				<label fallback="Not Listed">$INFO[VideoPlayer.Premiered]</label>
+			</control>
+			<control type="label">
+				<left>420</left>
+				<top>40</top>
+				<width>1475</width>
+				<label>[B][COLOR button_focus]$INFO[VideoPlayer.Genre][/COLOR][/B]</label>
+				<align>left</align>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+			</control>
+	</include>
 </includes>

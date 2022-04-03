@@ -73,13 +73,42 @@
 					<onclick>Skin.SelectBool($LOCALIZE[31024], 38018|circle_userrating, 563|circle_rating, 16018|)</onclick>
 					<label2>$VAR[RatingSettingLabel2Var]</label2>
 				</control>
-				<control type="button" id="709">
+			</control>
+			
+			<control type="grouplist" id="750">
+				<top>160</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>750</onup>
+				<ondown>750</ondown>
+				<visible>Container(9000).HasFocus(3)</visible>
+				<control type="radiobutton" id="751">
+					<label>Display colourised OSD and Info Panel</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(osd_type)</onclick>
+					<selected>!Skin.HasSetting(osd_type)</selected> 
+				</control>
+				<control type="radiobutton" id="752">
+					<label>Display clearart above OSD for movies and TV shows</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(enable_clearart)</onclick>
+					<selected>Skin.HasSetting(enable_clearart)</selected>
+				</control>
+				<control type="radiobutton" id="753">
+					<label>Display coloured equalizer on music OSD instead of white one</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
+					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
+				</control>
+				<control type="button" id="754">
 					<label>Set Time to Auto Close Video OSD</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool($LOCALIZE[31236], 31232|3_seconds, 31233|5_seconds, 31234|10_seconds, 31235|30_seconds, 31231|)</onclick>
 					<label2>$VAR[AutoCloseVideoOSDSettingLabel2Var]</label2>
 				</control>
-				
 			</control>
 			
 			<control type="grouplist" id="800">
@@ -91,7 +120,7 @@
 				<onright>60</onright>
 				<onup>800</onup>
 				<ondown>800</ondown>
-				<visible>Container(9000).HasFocus(4)</visible>
+				<visible>Container(9000).HasFocus(5)</visible>
 				<control type="radiobutton" id="801">
 					<include>DefaultSettingButton</include>
 					<label>Use 'Backend' for PVR Artwork</label>
@@ -141,7 +170,6 @@
 					<selected>Skin.HasSetting(Display_Last_Channel_Artwork)</selected>
 					<onclick>Skin.ToggleSetting(Display_Last_Channel_Artwork)</onclick> 
 				</control>
-			
 			</control>
 			
 			<control type="grouplist" id="850">
@@ -153,7 +181,7 @@
 				<onright>60</onright>
 				<onup>850</onup>
 				<ondown>850</ondown>
-				<visible>Container(9000).HasFocus(5)</visible>
+				<visible>Container(9000).HasFocus(6)</visible>
 				<control type="radiobutton" id="809">
 					<include>DefaultSettingButton</include>
 					<label>Display premiered flags on EPG Screen instead of using '*'</label>
@@ -185,8 +213,6 @@
 					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
 					<onclick>Skin.ToggleSetting(disable_PVRNextUp)</onclick>
 				</control>
-				
-				
 			</control>
 			
 			<control type="grouplist" id="600">
@@ -198,7 +224,7 @@
 				<onright>60</onright>
 				<onup>600</onup>
 				<ondown>600</ondown>
-				<visible>Container(9000).HasFocus(3)</visible>
+				<visible>Container(9000).HasFocus(4)</visible>
 				<control type="radiobutton" id="605">
 					<label>$LOCALIZE[31002]</label>
 					<include>DefaultSettingButton</include>
@@ -253,18 +279,6 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
 					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
-				</control>
-				<control type="radiobutton" id="6069">
-					<label>Display clearart above OSD for movies and TV shows</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(enable_clearart)</onclick>
-					<selected>!Skin.HasSetting(enable_clearart)</selected>
-				</control>
-				<control type="radiobutton" id="6070">
-					<label>Display coloured equalizer on music OSD instead of white one</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
-					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
 				</control>
 			</control>
 			<control type="grouplist" id="610">
@@ -449,14 +463,18 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="3">
-						<label>Artwork Settings</label>
+						<label>OSD Settings</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="4">
-						<label>PVR Artwork Settings</label>
+						<label>Artwork Settings</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="5">
+						<label>PVR Artwork Settings</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="6">
 						<label>General PVR Settings</label>
 						<onclick>noop</onclick>
 					</item>

@@ -3,100 +3,100 @@
 	<defaultcontrol always="true">1</defaultcontrol>
 	
 	<controls>
+		<visible>Player.HasAudio</visible>
 		<control type="group">
-			<bottom>0</bottom>
-			<height>325</height>
+			<bottom>38</bottom>
+			<height>460</height>
 			<control type="image">
-				<left>1</left>
-				<width>99.9%</width>
-				<height>325</height>
-				<texture>osd/osdpanel.png</texture>
+				<left>410</left>
+				<width>1515</width>
+				<height>365</height>
+				 <top>-37</top>
+				<texture flipy="true">osd/osdpanel_transparent.png</texture>
 				<colordiffuse>osdpanel</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdborder.png</bordertexture>
+				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
 				<bordersize>9</bordersize>
+				<visible>!Skin.HasSetting(osd_type)</visible>
 			</control>
-					<control type="image">
-						<depth>DepthOSD+</depth>
-						<left>15</left>
-						<bottom>5</bottom>
-						<width>405</width>
-						<height>405</height>
-						<aspectratio aligny="bottom" align="center">keep</aspectratio>
-						<texture background="true" fallback="DefaultAudio.png">$INFO[Player.Art(artist.thumb)]</texture> 
-						<bordersize>20</bordersize>
-						<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
-					</control>
-					<control type="image">
-						<top>13</top>
-						<left>411</left>
-						<width>45</width>
-						<height>45</height>
-						<texture>DefaultArtist.png</texture>
-					</control>
-					<control type="label"> 
-						<left>460</left>
-						<top>10</top>
-						
-						<height>290</height>
-						<width>1000</width>
-						<font>font37</font>
-						<label>[B][COLOR button_focus]$INFO[MusicPlayer.Artist,][/COLOR][/B]</label>
-						<shadowcolor>black</shadowcolor>
-						
-						<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-						<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>	
-					</control>
-					<control type="image">
-						<top>58</top>
-						<left>420</left>
-						<width>30</width>
-						<height>30</height>
-						<texture>DefaultDrama.png</texture>
-					</control>
-					<control type="label">
-						<left>455</left> 
-						<top>55</top>
-						
-						<height>290</height>
-						<font>font12</font>
-						<label>[B][COLOR button_focus] $INFO[MusicPlayer.Genre][/COLOR][/B]</label>
-						<shadowcolor>black</shadowcolor>
-						
-						<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-						<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>	
-					</control>
-					
-					<control type="label">
-						<top>20</top>
-						<right>30</right>
-						<align>right</align>
-						<height>40</height>
-						<font>font12</font>
-						<label>[COLOR grey]$INFO[MusicPlayer.Property(Artist_Formed, [COLOR button_focus]Formed: [/COLOR]] [COLOR grey]$INFO[MusicPlayer.Property(Artist_Born,[COLOR button_focus]Born: [/COLOR]][/COLOR] [COLOR grey]$INFO[MusicPlayer.Property(Artist_Died,[COLOR button_focus]Died: [/COLOR]][/COLOR]</label>
-						<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
-						
-					</control>
-					<control type="label">
-						<top>55</top>
-						<right>30</right>
-						<align>right</align>
-						<height>40</height>
-						<font>font12</font>
-						<label>[COLOR grey]$INFO[MusicPlayer.Property(Artist_YearsActive,[COLOR button_focus]Years Active: [/COLOR]]  [COLOR grey]$INFO[MusicPlayer.Property(Artist_Disbanded,[COLOR button_focus]Disbanded: [/COLOR]][/COLOR]</label> 
-						<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
-					</control>
-					<control type="textbox">
-						<left>415</left>
-						<top>105</top>
-						<right>30</right>
-						<height>165</height>
-						<align>justify</align>
-						<font>fontplot</font>
-						<label>$INFO[MusicPlayer.Property(Artist_Description)]</label>
-						<autoscroll delay="3000" time="5000" repeat="8000">true</autoscroll>
-						<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive">Conditional</animation>
-						<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
-					</control>
+			<control type="image">
+				<left>410</left>
+				<width>1515</width>
+				<height>365</height>
+				 <top>-37</top>
+				<texture flipy="true">osd/osdpanel_transparent.png</texture>
+				<colordiffuse>black</colordiffuse>
+				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
+				<bordersize>9</bordersize>
+				<visible>Skin.HasSetting(osd_type)</visible>
+			</control>
+			<control type="image">
+				<top>-20</top>
+				<left>435</left>
+				<width>60</width>
+				<height>60</height>
+				<texture>DefaultArtist.png</texture>
+			</control>
+			<control type="label"> 
+				<left>495</left>
+				<top>-20</top>
+				<height>290</height>
+				<width>1000</width>
+				<font>font45</font>
+				<label>[B][COLOR button_focus]$INFO[MusicPlayer.Artist,][/COLOR][/B]</label>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>	
+			</control>
+			<control type="image">
+				<top>15</top>
+				<left>435</left>
+				<width>30</width>
+				<height>30</height>
+				<texture>DefaultDrama.png</texture>
+				<visible>false</visible>
+			</control>
+			<control type="label">
+				<left>495</left> 
+				<top>35</top>
+				<height>290</height>
+				<font>font12</font>
+			<label>[B][COLOR button_focus] $INFO[MusicPlayer.Genre][/COLOR][/B]</label>
+			<shadowcolor>black</shadowcolor>
+			<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+			<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+			<visible>false</visible>
+			</control>
+			<control type="label">
+				<top>-10</top>
+				<right>30</right>
+				<align>right</align>
+				<height>40</height>
+				<font>font12</font>
+				<label>[COLOR grey]$INFO[MusicPlayer.Property(Artist_Formed, [COLOR button_focus]Formed: [/COLOR]] [COLOR grey]$INFO[MusicPlayer.Property(Artist_Born,[COLOR button_focus]Born: [/COLOR]][/COLOR] [COLOR grey]$INFO[MusicPlayer.Property(Artist_Died,[COLOR button_focus]Died: [/COLOR]][/COLOR]</label>
+				<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+			</control>
+			<control type="label">
+				<top>25</top>
+				<right>30</right>
+				<align>right</align>
+				<height>40</height>
+				<font>font12</font>
+				<label>[COLOR grey]$INFO[MusicPlayer.Property(Artist_YearsActive,[COLOR button_focus]Years Active: [/COLOR]]  [COLOR grey]$INFO[MusicPlayer.Property(Artist_Disbanded,[COLOR button_focus]Disbanded: [/COLOR]][/COLOR]</label> 
+				<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+			</control>
+			<control type="textbox">
+				<left>440</left>
+				<top>65</top>
+				<right>30</right>
+				<height>245</height>
+				<width>1460</width>
+				<align>justify</align>
+				<font>fontplot</font>
+				<label>$INFO[MusicPlayer.Property(Artist_Description)]</label>
+				<autoscroll delay="3000" time="5000" repeat="8000">true</autoscroll>
+				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive">Conditional</animation>
+				<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
+			</control>
 			
 			<control type="button" id="800">
 				<left>-10000</left>
@@ -104,12 +104,12 @@
 				<height>1</height>
 				<onfocus>Action(Close)</onfocus>
 				<onfocus>ActivateWindow(musicosd)</onfocus>
-				<onfocus>SetFocus(8005)</onfocus>
+				<onfocus>SetFocus(698)</onfocus>
 			</control>
 			<control type="grouplist" id="9001">
 				<orientation>horizontal</orientation>
 				<left>400</left>
-				<bottom>305</bottom>
+				<bottom>485</bottom>
 				<width>1000</width>
 				<height>100</height>
 				<align>left</align>

@@ -37,48 +37,50 @@
 			<include>ColoredBackgroundImages</include>
 		</control>
 		<control type="group">
-			<visible>[!Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)</visible>
-			<visible>false</visible>
+			<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)</visible>
 			<height>460</height>
 			<include>OpenClose_Left</include>
 			<include>Visible_Left</include>
-			<bottom>0</bottom>
-			<control type="image">
-				<left>0</left>
-				<width>120%</width>
-				<height>280</height>
-				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
-			</control>
-			<control type="image">
-				<left>20</left>
-				<top>-140</top>
-				<include>Visible_Left</include>
-				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)</visible>
-				<width>400</width>
-				<height>400</height>
-				<fadetime>400</fadetime>
-				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture fallback="DefaultAlbumCover.png" border="2">$INFO[MusicPlayer.Cover]</texture>
-				<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
-				<bordersize>4</bordersize>
-			</control>
+			<bottom>38</bottom>
+			
 			<control type="group">
-				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + ![Window.IsActive(playerprocessinfo) | MusicPlayer.Content(livetv)]</visible>
-				<include>Visible_Left</include>
-				<left>440</left>
-				<top>10</top>
+				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + ![Window.IsActive(playerprocessinfo) | MusicPlayer.Content(livetv) | Window.IsActive(1139)]</visible>
+				
+				<left>510</left>
+				<top>-20</top>
+			<control type="image">
+				<left>-510</left>
+				<width>140%</width>
+				<height>245</height>
+				 <top>100</top>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+				<colordiffuse>osdpanel</colordiffuse>
+			
+				<visible>!Skin.HasSetting(osd_type)</visible>
+			</control>
+			<control type="image">
+				<left>-105</left>
+				<width>1515</width>
+				<height>245</height>
+				 <top>100</top>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+				
+				<visible>Skin.HasSetting(osd_type)</visible>
+			</control>
 				<control type="label">
-					<top>10</top>
+					<left>-20</left>
+					<top>103</top>
 					<width>1450</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<label>[B]$INFO[MusicPlayer.TrackNumber,,. ]$INFO[Player.Title][/B]</label>
+					<label>[B]$INFO[Player.Title][/B]</label>
 					<font>font45</font>
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
 				<control type="label">
-					<top>65</top>
+					<left>-20</left>
+					<top>158</top>
 					<width>1450</width>
 					<height>50</height>
 					<aligny>center</aligny>
@@ -87,23 +89,25 @@
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 				</control>
+				<control type="label">
+					<left>-80</left>
+					<top>212</top>
+					<width>1450</width>
+					<height>40</height>
+					<aligny>center</aligny>
+					<label>$INFO[MusicPlayer.Album]$VAR[MultiDiscVar] $INFO[MusicPlayer.Year, (,)]</label>
+					<font>font37</font>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+				</control>
 				<control type="grouplist">
-					<top>120</top>
+					<left>-80</left>
+					<top>255</top>
 					<width>1450</width>
 					<height>40</height>
 					<align>left</align>
 					<orientation>horizontal</orientation>
 					<itemgap>20</itemgap>
-					<control type="label">
-						<width>100</width>
-						<height>40</height>
-						<label>$INFO[MusicPlayer.Year]</label>
-						<font>font37</font>
-						<shadowcolor>black</shadowcolor>
-						<aligny>center</aligny>
-						<align>left</align>
-						<visible>!String.IsEmpty(MusicPlayer.Year)</visible>
-					</control>
 					<control type="label">
 						<width min="0" max="1130">auto</width>
 						<height>40</height>
@@ -118,31 +122,62 @@
 					<control type="image">
 						<width>190</width>
 						<height>40</height>
-						<texture fallback="flags/starrating/0.png">$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
+						<texture fallback="flags/starrating/0.png" colordiffuse="yellow">$INFO[MusicPlayer.UserRating,flags/starrating/,.png]</texture>
 						<aspectratio>keep</aspectratio>
 						<aligny>center</aligny>
 						<align>left</align>
 					</control>
 				</control>
 				<control type="label">
-					<top>165</top>
+					<left>-80</left>
+					<top>297</top>
 					<width>1450</width>
 					<height>40</height>
 					<aligny>center</aligny>
-					<label>$INFO[MusicPlayer.Album]$VAR[MultiDiscVar]</label>
-					<font>font37</font>
-					<shadowcolor>black</shadowcolor>
-					<scroll>true</scroll>
-				</control>
-				<control type="label">
-					<top>210</top>
-					<width>1450</width>
-					<height>40</height>
-					<aligny>center</aligny>
-					<label>$VAR[OSDNextLabelVar]</label>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(1).Artist,[COLOR white][B]Next Up:[/B][/COLOR]  ][/COLOR][COLOR grey]$INFO[MusicPlayer.offset(1).Title,  •  ][/COLOR]</label>
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				
+				<control type="image">
+					<left>-85</left>
+					<top>152</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>DefaultArtist.png</texture>
+					<visible>!String.IsEmpty(MusicPlayer.Artist)</visible> 
+				</control>
+				<control type="multiimage">
+                	<left>-75</left>
+					<top>113</top>
+                	<imagepath>icons/equalizer_colour</imagepath>
+                	<width>40</width>
+                	<height>35</height>
+                	<fadetime>50</fadetime>
+                	<timeperimage>50</timeperimage>
+                	<randomize>true</randomize>
+                	<visible>!Skin.HasSetting(music_equalizer(coloured))</visible>
+				</control>
+				<control type="multiimage">
+                	<left>-75</left>
+					<top>113</top>
+                	<imagepath colordiffuse="white">icons/equalizer</imagepath>
+                	<width>40</width>
+                	<height>35</height>
+                	<fadetime>50</fadetime>
+                	<timeperimage>50</timeperimage>
+                	<randomize>true</randomize>
+                	<visible>Skin.HasSetting(music_equalizer(coloured))</visible>
+				</control>
+				<control type="image">
+					<left>-100</left>
+					<bottom>395</bottom>
+					<width>500</width>
+					<height>281</height>
+					<texture background="true">$VAR[PlayerInfoClearLogoVar]</texture>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<visible>!Skin.HasSetting(enable_clearlogo) + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(LiveTV) + Pvr.IsPlayingRadio]</visible>
 				</control>
 			</control>
 		</control>

@@ -7,24 +7,41 @@
 			<bottom>0</bottom>
 			<height>325</height>
 			<control type="image">
-				<left>1</left>
-				<width>99.9%</width>
-				<height>325</height>
-				<texture flipy="true">osd/osdpanel.png</texture>
+				<left>375</left>
+				<width>1550</width>
+				<height>340</height>
+				<bottom>170</bottom>
+				<texture flipy="true">osd/osdpanel_transparent.png</texture>
 				<colordiffuse>osdpanel</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdborder.png</bordertexture>
+				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
 				<bordersize>9</bordersize>
+				<visible>!Skin.HasSetting(osd_type)</visible>
+			</control>
+				<control type="image">
+				<left>375</left>
+				<width>1550</width>
+				<height>340</height>
+				<bottom>170</bottom>
+				<texture flipy="true">osd/osdpanel_transparent.png</texture>
+				<colordiffuse>black</colordiffuse>
+				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
+				<bordersize>9</bordersize>
+				<visible>Skin.HasSetting(osd_type)</visible>
 			</control>
 			
 			
 			<control type="textbox">
-				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+				<include content="ItemLeft" condition="![Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="430"/>
 				</include>
-				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+				<include content="ItemLeft" condition="[Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="0"/>
 				</include>
-				<right>-140</right>
+				<right>-150</right>
 				<top>8</top>
 				<height>350</height>
 				<align>center</align>
@@ -35,25 +52,25 @@
 			</control>
 			<control type="group">
 				<height>410</height>
-				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+				<include content="ItemLeft" condition="![Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="460"/>
 				</include>
-				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+				<include content="ItemLeft" condition="[Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="30"/>
 				</include>
 				<right>30</right>
 				<visible>Container(11).IsUpdating + !Integer.IsGreater(Container(11).NumItems,0)</visible>
 				<control type="image">
-					<top>110</top>
-					<centerleft>50%</centerleft>
+					<top>-90</top>
+					<centerleft>55%</centerleft>
 					<width>100</width>
 					<height>100</height>
 					<aspectratio aligny="center">keep</aspectratio>
 					<texture colordiffuse="black">dialogs/extendedprogress/loading-back.png</texture>
 				</control>
 				<control type="image">
-					<top>110</top>
-					<centerleft>50%</centerleft>
+					<top>-90</top>
+					<centerleft>55%</centerleft>
 					<width>100</width>
 					<height>100</height>
 					<aspectratio aligny="center">keep</aspectratio>
@@ -71,8 +88,8 @@
 			</control>
 			<control type="grouplist" id="9001">
 				<orientation>horizontal</orientation>
-				<left>400</left>
-				<bottom>305</bottom>
+				<left>835</left>
+				<bottom>495</bottom>
 				<width>1000</width>
 				<height>100</height>
 				<align>left</align>
@@ -81,7 +98,7 @@
 				<onup>11</onup>
 				<ondown>11</ondown>
 				<usecontrolcoords>true</usecontrolcoords>
-				<animation effect="slide" end="-430,0" time="0" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<animation effect="slide" end="-430,0" time="0" condition="[Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
 				<control type="button" id="1">
 					<width>auto</width>
 					<height>100</height>
@@ -100,7 +117,7 @@
 				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="0"/>
 				</include>
-				<top>35</top>
+				<top>-130</top>
 				<right>50</right>
 				<height>350</height>
 				<onup>9001</onup>
@@ -162,12 +179,12 @@
 			</control>
 			<control type="image">
 				<depth>DepthOSD+</depth>
-				<left>20</left>
-				<top>-285</top>
-				<width>400</width>
-				<height>600</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture>$VAR[NowPlayingPosterVar]</texture>
+				<left>0</left>
+				<bottom>0</bottom>
+				<width>390</width>
+				<height>555</height>
+				
+				<texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
 				<bordersize>20</bordersize>
 				<include>OpenClose_Left</include>
@@ -175,14 +192,14 @@
 				<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks)</visible>
 			</control>
 			<control type="label">
-				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+				<include content="ItemLeft" condition="![Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="460"/>
 				</include>
-				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+				<include content="ItemLeft" condition="[Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="30"/>
 				</include>
-				<top>260</top>
-				<right>-150</right>
+				<top>95</top>
+				<right>-275</right>
 				<align>center</align>
 				<height>41</height>
 				<font>font12</font>
