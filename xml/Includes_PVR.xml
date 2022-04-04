@@ -725,6 +725,7 @@
 				<height>50</height>
 				<aspectratio>keep</aspectratio>
 				<texture>ratings/imdb/imdb.png</texture>
+				<visible>!Pvr.IsPlayingRadio</visible>	
 			</control>
 			<control type="image">
 				<left>615</left>
@@ -732,6 +733,7 @@
 				<width>120</width>
 				<height>30</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>
+				<visible>!Pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="label">
 				<left>755</left>
@@ -743,6 +745,19 @@
 				<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
 				<align>left</align>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>!Pvr.IsPlayingRadio</visible>
+			</control>
+			<control type="label">
+				<left>525</left>
+				<top>25</top>
+				<right>80</right>
+				<height>290</height>
+				<width>1375</width>
+				<font>font12</font>
+				<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
+				<align>left</align>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>Pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="textbox">
 				<left>405</left>

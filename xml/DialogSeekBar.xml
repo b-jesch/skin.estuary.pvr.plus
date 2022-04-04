@@ -586,7 +586,7 @@
 		<!-- OSD Info Panel for Live TV) -->
 		<control type="group">
 			<visible>!Window.IsVisible(playerprocessinfo)</visible>
-			<visible>[Player.ShowInfo | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV) + MusicPlayer.Content(livetv)</visible>
+			<visible>[Player.ShowInfo | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV)</visible>
 			<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | !Player.Seeking | !Player.DisplayAfterSeek | !Player.Forwarding | !Player.Rewinding | !Player.Paused</visible>
 			<animation effect="fade" start="0" end="100" time="300" delay="250">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="100">Hidden</animation>
@@ -617,8 +617,8 @@
 			</control>
 			<include>PVRInfoPanelFurniture</include>
 			<control type="label">
-				<left>240</left>
-				<top>180</top>
+				<left>405</left>
+				<top>170</top>
 				<height>25</height>
 				<label>[COLOR grey]$LOCALIZE[14304]: [/COLOR]$INFO[RDS.GetLine(0)]</label>
 				<visible>RDS.HasRadioText</visible>
