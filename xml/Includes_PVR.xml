@@ -748,26 +748,71 @@
 				<visible>!Pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="label">
-				<left>525</left>
+				<left>530</left>
 				<top>25</top>
 				<right>80</right>
 				<height>290</height>
 				<width>1375</width>
 				<font>font12</font>
-				<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
+				<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[MusicPlayer.Genre][/B]</label> 
 				<align>left</align>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 				<visible>Pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="textbox">
-				<left>405</left>
+				<left>485</left>
 				<top>70</top>
 				<right>20</right>
 				<height>130</height>
+				<label>[B]$INFO[RDS.Artist] [CR]$INFO[MusicPlayer.Title][/B]</label>
+				<align>justify</align>
+				<visible>Player.HasAudio + RDS.HasRds + !String.IsEmpty(RDS.Artist)</visible>
+			</control>
+			
+			<control type="image">
+				<left>405</left>
+				<top>65</top>
+				<width>50</width>
+				<height>50</height>
+				<texture>DefaultArtist.png</texture>
+				<visible>Player.HasAudio + RDS.HasRds + !String.IsEmpty(RDS.Artist)</visible>
+			</control>	
+			<control type="multiimage">
+                <left>410</left>
+				<top>115</top>
+                <imagepath>icons/equalizer_colour</imagepath>
+                <width>40</width>
+                <height>30</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>50</fadetime>
+                <timeperimage>50</timeperimage>
+                <randomize>true</randomize>
+                <visible>!Skin.HasSetting(music_equalizer(coloured))</visible>
+				<visible>Player.HasAudio + RDS.HasRds + !String.IsEmpty(RDS.Artist)</visible>
+			</control>
+			<control type="multiimage">
+                <left>410</left>
+				<top>115</top>
+                <imagepath colordiffuse="white">icons/equalizer</imagepath>
+                <width>40</width>
+                <height>30</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>50</fadetime>
+                <timeperimage>50</timeperimage>
+                <randomize>true</randomize>
+                <visible>Skin.HasSetting(music_equalizer(coloured))</visible>
+				<visible>Player.HasAudio + RDS.HasRds + !String.IsEmpty(RDS.Artist)</visible>
+			</control>
+			
+			<control type="textbox">
+				<left>405</left>
+				<top>70</top>
+				<right>30</right>
+				<height>90</height>
 				<label fallback="19055">$INFO[VideoPlayer.Plot]</label>
 				<align>justify</align>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-				<visible>String.IsEmpty(PVR.EpgEventIcon)</visible>
+				<visible>Player.HasAudio + RDS.HasRds + String.IsEmpty(RDS.Artist)</visible>
 			</control>
 			<control type="textbox">
 				<left>405</left>
@@ -777,7 +822,7 @@
 				<label fallback="19055">$INFO[VideoPlayer.Plot]</label>
 				<align>justify</align>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-				<visible>!String.IsEmpty(PVR.EpgEventIcon)</visible>
+				<visible>Pvr.IsPlayingTv | Player.HasAudio + !RDS.HasRds</visible>
 			</control>
 	</include>
 	<include name="PVRInfoPanel">
