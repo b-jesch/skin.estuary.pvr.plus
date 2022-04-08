@@ -837,16 +837,22 @@
 		<value condition="!Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</value>
 		<value>$INFO[ListItem.Property(GenreType),windows/pvr/epg-genre/0_Genre.png]</value>  
 	</variable> 
+	
+	<variable name="PVR_Local_path">
+    <value condition="!String.IsEmpty(Skin.String(Local.PVR.Artwork)) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$INFO[Skin.String(Local.PVR.Artwork)]</value>
+    <value>special://skin/PVR_Artwork/</value>
+	</variable>
+	<!-- PVR Artwork (Now Playing) -->
 	<variable name="PVR_Now_Playing_Poster_Var"> 
 		<value condition="!String.IsEmpty(PVR.EpgEventIcon) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[PVR.EpgEventIcon]</value> 
 		<value condition="!String.IsEmpty(VideoPlayer.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.jpg]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.Player.Art.Poster)]</value>
 		<value>DefaultPVRPoster.png</value> 
 	</variable>
-	<variable name="PVR_Local_path">
-    <value condition="!String.IsEmpty(Skin.String(Local.PVR.Artwork)) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$INFO[Skin.String(Local.PVR.Artwork)]</value>
-    <value>special://skin/PVR_Artwork/</value>
-	</variable>
+	<variable name="NowPlayling_PVRPoster_SkinHelper_Var">
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.Player.Art.Poster)]</value>
+    </variable>
+	<!-- PVR Artwork (List Item) -->
 	<variable name="NowPVRPoster_Backend_Var"> 
 		<value condition="!String.IsEmpty(Listitem.EpgEventIcon) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[ListItem.EpgEventIcon]</value> 
 		<value condition="!String.IsEmpty(Listitem.Art(Icon) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[ListItem.Art(Icon)]</value> 
@@ -855,21 +861,23 @@
 		<value condition="!String.IsEmpty(ListItem.EpgEventTitle) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.EpgEventTitle,,/poster.jpg]</value>
 		<value condition="!String.IsEmpty(ListItem.Label) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Label,,/poster.jpg]</value>
 	</variable>
+	<variable name="PVRPoster_ListItem_SkinHelper_Var">
+        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Poster)]</value>
+    </variable>
+	
+	
 	<variable name="Animated_PVRPoster_ListItem_Local_Artwork_Var">
 		<value condition="!String.IsEmpty(ListItem.EpgEventTitle) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.EpgEventTitle,,/poster.gif]</value>
+		<value condition="!String.IsEmpty(ListItem.Label) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Label,,/poster.gif]</value>
+	</variable>
+	<variable name="Animated_PVRPoster(ListItem-Title)Local_ArtworkVar"> 
+		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.gif]</value>
 		<value condition="!String.IsEmpty(ListItem.Label) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Label,,/poster.gif]</value>
 	</variable>
 	<variable name="PVRPoster(ListItem-Title)Local_ArtworkVar"> 
 		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.jpg]</value>
 		<value condition="!String.IsEmpty(ListItem.Label) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Label,,/poster.jpg]</value>
 	</variable>
-	<variable name="Animated_PVRPoster(ListItem-Title)Local_ArtworkVar"> 
-		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.gif]</value>
-		<value condition="!String.IsEmpty(ListItem.Label) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Label,,/poster.gif]</value>
-	</variable>
-	<variable name="PVRPoster_ListItem_SkinHelper_Var">
-        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.ListItem.Art.Poster)]</value>
-    </variable>
 	
 	<variable name="NowPlayingPVRPoster_Backend_Var">
 		<value condition="!String.IsEmpty(PVR.EpgEventIcon) + VideoPlayer.Content(livetv) + Skin.HasSetting(Backend.PVR.Artwork)">$INFO[PVR.EpgEventIcon]</value>
@@ -880,9 +888,7 @@
 	<variable name="NowPlaying_Animated_PVRPoster_Local_Artwork_Var">
    	<value condition="!String.IsEmpty(VideoPlayer.Title) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[VideoPlayer.Title,,/poster.gif]</value>
 	</variable> 	
-	<variable name="NowPlayling_PVRPoster_SkinHelper_Var">
-        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster)) + Skin.HasSetting(SkinHelper.EnablePVRThumbs)">$INFO[Window(Home).Property(SkinHelper.Player.Art.Poster)]</value>
-    </variable>
+	
 	
 	<variable name="PVRRecording_Timer_ArtworkVar"> 
 		<value condition="!String.IsEmpty(ListItem.Title) + Skin.HasSetting(Enable.Local.PVR.Artwork)">$VAR[PVR_Local_path]$INFO[ListItem.Title,,/poster.jpg]</value>

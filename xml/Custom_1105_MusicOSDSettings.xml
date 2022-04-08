@@ -37,9 +37,16 @@
 						<onclick>Skin.ToggleSetting(animate_background_fanart)</onclick>
 						<selected>Skin.HasSetting(animate_background_fanart)</selected>
 					</control>
+					<control type="radiobutton" id="50015">
+						<label>Display 'Up-Next' Mini Playlist</label>
+						<include>DialogSettingButton</include>
+						<onclick>Skin.ToggleSetting(show_mini_music_playlist)</onclick>
+						<selected>Skin.HasSetting(show_mini_music_playlist)</selected>
+						<visible>!Pvr.IsPlayingRadio</visible>
+					</control>
 					<control type="radiobutton" id="50011">
 						<width>800</width>
-						<label>Show album disc art</label>
+						<label>Show Album Disc Art</label>
 						<include>DialogSettingButton</include>
 						<selected>!Skin.HasSetting(show_disc)</selected>
 						<onclick>Skin.ToggleSetting(show_disc)</onclick>
@@ -56,13 +63,13 @@
 					<control type="radiobutton" id="50014">
 						<width>800</width>
 						<include>DialogSettingButton</include>
-						<label>Enable scrolling text</label>
+						<label>Enable Scrolling Text</label>
 						<onclick>Skin.ToggleSetting(enable_scrollingtext)</onclick>
 						<selected>!Skin.HasSetting(enable_scrollingtext)</selected>
 						<visible>!string.Contains(Player.Folderpath,iplayerwww)</visible>
 					</control>
 					<control type="radiobutton" id="50013">
-						<label>Use coloured equalizer on OSD</label>
+						<label>Display Coloured Equalizer on OSD</label>
 						<include>DialogSettingButton</include>
 						<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
 						<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>

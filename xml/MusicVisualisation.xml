@@ -138,6 +138,7 @@
 					<shadowcolor>black</shadowcolor>
 					<scroll>true</scroll>
 					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+					<visible>!Skin.HasSetting(show_mini_music_playlist)</visible>
 				</control>
 				
 				<control type="image">
@@ -258,7 +259,172 @@
                 <scrollspeed>80</scrollspeed>
                 <visible>Pvr.IsPlayingRadio</visible>
             </control>
-        </control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Player.HasAudio + Skin.HasSetting(show_mini_music_playlist)</visible>
+			<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + !MusicPlayer.Content(livetv)</visible>
+			<top>0</top>
+			<height>662</height>
+			<include>OpenClose_Left</include>
+			<include>Visible_Left</include>
+			<control type="image">
+				<right>0</right>
+				<width>140%</width>
+				<height>100%</height>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+				<colordiffuse>osdpanel</colordiffuse>
+				<visible>!Skin.HasSetting(osd_type)</visible>
+			</control>
+			<control type="image">
+				<right>0</right>
+				<width>140%</width>
+				<height>100%</height>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+				<visible>Skin.HasSetting(osd_type)</visible>
+			</control>
+			
+			<control type="group">
+				<visible>[Player.ShowInfo | Window.IsActive(musicosd)] + ![Window.IsActive(playerprocessinfo) | MusicPlayer.Content(livetv) | Window.IsActive(1139)]</visible>
+				<right>0</right>
+				<top>135</top>
+			
+				<control type="label">
+					<right>30</right>
+					<top>5</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font45</font>
+					<label>Up Next:</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+					<visible>!String.IsEmpty(MusicPlayer.offset(1).Artist)</visible> 
+					
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>60</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(1).Artist,[COLOR white](1) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(1).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>105</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(2).Artist,[COLOR white](2) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(2).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>150</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(3).Artist,[COLOR white](3) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(3).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>195</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(4).Artist,[COLOR white](4) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(4).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>240</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(5).Artist,[COLOR white](5) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(5).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>285</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(6).Artist,[COLOR white](6) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(6).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>330</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(7).Artist,[COLOR white](7) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(7).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>375</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(8).Artist,[COLOR white](8) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(8).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>420</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(9).Artist,[COLOR white](9) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(9).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+				<control type="label">
+					<right>30</right>
+					<top>465</top>
+					<width>65%</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[COLOR button_focus]$INFO[MusicPlayer.offset(10).Artist,[COLOR white](10) [/COLOR]][/COLOR][COLOR white]$INFO[MusicPlayer.offset(10).Title,  •  ][/COLOR]</label>
+					<shadowcolor>black</shadowcolor>
+					<scroll>true</scroll>
+					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
+				</control>
+			</control>
 		</control>
 	</controls>
 </window>
