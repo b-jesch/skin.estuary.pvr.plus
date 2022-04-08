@@ -1,8 +1,13 @@
+[B]0.2.3[/B]
+• New option added to Music OSD settings Dialog to display Next 10 tracks above Music OSD.
+• Tweak of OSD to properly show Artist and Song for RDS Radio Broadcasts.
+• New RDS media flag added.
+
 [B]0.2.2[/B]
 • Complete re-design of OSD and OSD Info Panels to make the 'look & feel' more aligned with the default Estuary Skin.
 • Removal of addon icons and content type from OSD.
 • Removal of Black Colour theme.
-
+• Removal of EmbyCon Main Menu Items for Movies and TV Shows.
 
 [B]0.2.1[/B]
 • Main menu items added for EmbyCon Movies and TV Shows.
