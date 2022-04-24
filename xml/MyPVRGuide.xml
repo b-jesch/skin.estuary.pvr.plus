@@ -131,14 +131,14 @@
 						<left>70</left>
 						<width>170</width>
 						<height>245</height>
-						<texture>$VAR[PVRPoster_ListItem_Local_Artwork_Var]</texture>
+						<texture>$VAR[NowPVRPoster_Backend_Var]</texture>
 					</control>
 					<control type="image" id="9886"> 
 						<top>-15</top>
 						<left>70</left>
 						<width>170</width>
 						<height>245</height>
-						<texture fallback="DefaultPVRPoster.png">$VAR[PVRPoster_ListItem_SkinHelper_Var]</texture>
+						<texture fallback="DefaultPVRPoster.png">$VAR[NowPVRPoster_SkinHelper_Var]</texture>
 						<visible>String.IsEmpty(Control.GetLabel(9885))</visible>
 					</control> 
 					<control type="image"> 
@@ -146,15 +146,8 @@
 						<left>70</left>
 						<width>170</width>
 						<height>245</height>
-						<texture>$VAR[NowPVRPoster_Backend_Var]</texture>
+						<texture>$VAR[NowPVRPoster_Local_Artwork_Var]</texture>
 					</control> 
-					<control type="image">
-						<top>-15</top>
-						<left>70</left>
-						<width>170</width>
-						<height>245</height>
-						<texture>$VAR[Animated_PVRPoster_ListItem_Local_Artwork_Var]</texture>
-					</control>
 					<control type="image">
 						<top>0</top>
 						<left>270</left>

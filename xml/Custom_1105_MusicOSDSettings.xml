@@ -42,7 +42,7 @@
 						<include>DialogSettingButton</include>
 						<onclick>Skin.ToggleSetting(show_mini_music_playlist)</onclick>
 						<selected>Skin.HasSetting(show_mini_music_playlist)</selected>
-						<visible>!Pvr.IsPlayingRadio</visible>
+						<visible>!Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
 					</control>
 					<control type="radiobutton" id="50011">
 						<width>800</width>
@@ -58,7 +58,7 @@
 						<include>DialogSettingButton</include>
 						<selected>!Skin.HasSetting(enable_clearlogo)</selected>
 						<onclick>Skin.ToggleSetting(enable_clearlogo)</onclick>
-						<visible>!Pvr.IsPlayingRadio + !string.Contains(Player.Folderpath,iplayerwww)</visible>
+						<visible>!Pvr.IsPlayingRadio  + !Player.IsInternetStream</visible>
 					</control>
 					<control type="radiobutton" id="50014">
 						<width>800</width>

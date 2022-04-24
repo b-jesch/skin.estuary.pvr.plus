@@ -41,8 +41,8 @@
 				<include content="ItemLeft" condition="[Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="0"/>
 				</include>
-				<right>-150</right>
-				<top>8</top>
+				<right>-300</right>
+				<top>-200</top>
 				<height>350</height>
 				<align>center</align>
 				<aligny>center</aligny>

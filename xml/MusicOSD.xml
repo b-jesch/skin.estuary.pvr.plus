@@ -95,7 +95,7 @@
                        <param name="texture" value="osd/fullscreen/buttons/information.png"/> 
                     </include>
 					<onclick>ActivateWindow(1139)</onclick> 
-					<visible>!MusicPlayer.Content(livetv) + !string.Contains(Player.Folderpath,radio_de) + !string.Contains(Player.Folderpath,iplayerwww) + !Pvr.IsPlayingRecording</visible>
+					<visible>!MusicPlayer.Content(livetv) + !Player.IsInternetStream + !Pvr.IsPlayingRecording</visible>
 				</control>
 				<control type="radiobutton" id="606">
 					<include content="OSDButton">

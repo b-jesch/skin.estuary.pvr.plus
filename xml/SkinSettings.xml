@@ -106,8 +106,8 @@
 				<control type="button" id="754">
 					<label>Set Time to Auto Close Video OSD</label>
 					<include>DefaultSettingButton</include>
-					<onclick>Skin.SelectBool($LOCALIZE[31236], 31232|3_seconds, 31233|5_seconds, 31234|10_seconds, 31235|30_seconds, 31231|)</onclick>
-					<label2>$VAR[AutoCloseVideoOSDSettingLabel2Var]</label2>
+					<onclick>Skin.SelectBool($LOCALIZE[31236], 31232|3_seconds, 31233|10_seconds, 31234|15_seconds, 31235|30_seconds, 31231|5_seconds)</onclick>
+					<label2>$VAR[AutoCloseOSDSettingsLabelVar]</label2>
 				</control>
 			</control>
 			
@@ -145,18 +145,6 @@
 					<include>DefaultSettingButton</include>
 					<selected>!Skin.HasSetting(Local.PVR.Artwork)</selected>
 					<onclick>Skin.SetPath(Local.PVR.Artwork)</onclick>
-				</control>
-				<control type="radiobutton" id="805">
-					<include>DefaultSettingButton</include>
-					<label>Enable Local Animated PVR Artwork</label>
-					<selected>Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)</selected>
-					<onclick>Skin.ToggleSetting(Enable.Local.Animated.PVR.Artwork)</onclick>
-				</control>
-				<control type="radiobutton" id="806">
-					<include>DefaultSettingButton</include>
-					<label>Display Local Animated PVR Artwork on OSD</label>
-					<selected>Skin.HasSetting(Disable.Local.Animated.PVR.Artwork) + Skin.HasSetting(Enable.Local.Animated.PVR.Artwork)</selected>
-					<onclick>Skin.ToggleSetting(Disable.Local.Animated.PVR.Artwork)</onclick>
 				</control>
 				<control type="radiobutton" id="807">
 					<include>DefaultSettingButton</include>
@@ -210,8 +198,8 @@
 				<control type="radiobutton" id="813"> 
 					<include>DefaultSettingButton</include>
 					<label>Enable 'Next-Up' Dialog when current programme is about to end</label>
-					<selected>!Skin.HasSetting(disable_PVRNextUp)</selected>
-					<onclick>Skin.ToggleSetting(disable_PVRNextUp)</onclick>
+					<selected>!Skin.HasSetting(Show_NextUp_TV)</selected>
+					<onclick>Skin.ToggleSetting(Show_NextUp_TV)</onclick>
 				</control>
 			</control>
 			

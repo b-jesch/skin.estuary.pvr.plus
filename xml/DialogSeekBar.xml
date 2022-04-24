@@ -10,7 +10,7 @@
 		<include>PVRChannelNumberInput</include>
 		<control type="group">
 			<animation effect="slide" start="0,200" end="0,0" time="300" tween="cubic" easing="out">VisibleChange</animation>
-			<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | Player.ShowTime | Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide) | ![!String.IsEmpty(Player.SeekNumeric) | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.Paused]</visible>
+			<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | Player.ShowTime |  Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide) | ![!String.IsEmpty(Player.SeekNumeric) | Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding | Player.Paused]</visible>
 			<visible>!Player.HasGame</visible>
 			<bottom>0</bottom> 
 			<height>180</height>
@@ -303,18 +303,19 @@
 				<width>350</width>
 				<height>575</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture>$VAR[PVR_Now_Playing_Poster_Var]</texture> 
-				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV) + MusicPlayer.Content(livetv)</visible>
+				<texture fallback="DefaultPVRPoster.png">$VAR[PVR_Now_Playing_Poster_Var]</texture> 
+				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV) + MusicPlayer.Content(livetv) + String.IsEmpty(Control.GetLabel(9878))</visible>
 				<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | !Player.Seeking | !Player.DisplayAfterSeek | !Player.Forwarding | !Player.Rewinding | !Player.Paused</visible>
 			</control>
-			<control type="image" id="9877"> 
+			
+			<control type="image" id="9878"> 
 				<left>20</left>
 				<bottom>20</bottom>
 				<width>350</width>
 				<height>575</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture fallback="DefaultPVRPoster.png">$VAR[NowPlayling_PVRPoster_SkinHelper_Var]</texture> 
-				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV) + String.IsEmpty(Control.GetLabel(9876)) + MusicPlayer.Content(livetv)</visible>
+				<texture>$VAR[NowPlaying_PVRPoster_Local_Artwork_Var]</texture> 
+				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV) + MusicPlayer.Content(livetv)</visible>
 				<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | !Player.Seeking | !Player.DisplayAfterSeek | !Player.Forwarding | !Player.Rewinding | !Player.Paused</visible>
 			</control>
 		<!-- Start of PVR OSD -->
@@ -438,7 +439,7 @@
 			<!-- Fix is required for disabling clearart when default OSD is enabled - Done! -->
 			<control type="image">
 				<right>40</right>
-				<bottom>185</bottom>
+				<bottom>175</bottom>
 				<width>500</width>
 				<height>281</height>
 				<texture background="true">$VAR[PlayerClearArtVar]</texture>
@@ -578,7 +579,7 @@
 				<height>400</height>
 				<fadetime>400</fadetime>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture>$INFO[MusicPlayer.Cover]</texture>
+				<texture>$VAR[MusicPlayerCoverVar]</texture>
 				<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
 				<bordersize>4</bordersize>
 			</control>
@@ -674,6 +675,7 @@
 					<height>50</height>
 					<label>$VAR[OSDNextLabelVar]</label>
 					<visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
+					<visible>false</visible>
 				</control>
 			</control>
 		</control>

@@ -274,6 +274,14 @@
 							<param name="list_id" value="7100"/>
 							<param name="fallback_icon" value="DefaultMusicAlbums.png"/>
 						</include>
+						<include content="WidgetListCustomCategories" condition="Library.HasContent(music)">
+							<param name="content_path" value="special://musicplaylists/"/>
+							<param name="widget_header" value="My Playlists"/>
+							<param name="widget_target" value="music"/>
+							<param name="list_id" value="7150"/>
+							<param name="icon" value="special://skin/extras/icons/music/musicplaylist.png"/> 
+							<param name="icon_height" value="55"/>
+						</include>
 						<include content="WidgetMusicSongSquare" condition="Library.HasContent(music)">
 							<param name="content_path" value="special://skin/playlists/music/Recommended Songs.xsp"/>
 							<param name="widget_header" value="Recommended Songs"/>

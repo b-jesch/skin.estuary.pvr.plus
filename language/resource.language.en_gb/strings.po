@@ -1038,7 +1038,7 @@ msgid "Secs"
 msgstr ""
 
 msgctxt "#31231"
-msgid "Skin Default"
+msgid "Skin Default (5 Seconds)"
 msgstr ""
 
 msgctxt "#31232"
@@ -1046,11 +1046,11 @@ msgid "3 Seconds"
 msgstr ""
 
 msgctxt "#31233"
-msgid "5 Seconds"
+msgid "10 Seconds"
 msgstr ""
 
 msgctxt "#31234"
-msgid "10 Seconds"
+msgid "15 Seconds"
 msgstr ""
 
 msgctxt "#31235"
