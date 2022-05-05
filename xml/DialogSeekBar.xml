@@ -303,7 +303,7 @@
 				<width>350</width>
 				<height>575</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
-				<texture fallback="DefaultPVRPoster.png">$VAR[PVR_Now_Playing_Poster_Var]</texture> 
+				<texture fallback="DefaultPVRPoster.png">$VAR[PVR_Now_Playing_Poster_Var]</texture>  
 				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV) + MusicPlayer.Content(livetv) + String.IsEmpty(Control.GetLabel(9878))</visible>
 				<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | !Player.Seeking | !Player.DisplayAfterSeek | !Player.Forwarding | !Player.Rewinding | !Player.Paused</visible>
 			</control>
@@ -597,8 +597,8 @@
 			<control type="image">
 				<left>375</left>
 				<width>1550</width>
-				<height>275</height>
-				<top>-45</top>
+				<height>310</height>
+				<top>-80</top>
 				<texture flipy="true">osd/osdpanel_transparent.png</texture>
 				<colordiffuse>osdpanel</colordiffuse>
 				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
@@ -608,8 +608,8 @@
 			<control type="image"> 
 				<left>375</left>
 				<width>1550</width>
-				<height>275</height>
-				<top>-45</top>
+				<height>310</height>
+				<top>-80</top>
 				<texture flipy="true">osd/osdpanel_transparent.png</texture>
 				<colordiffuse>black</colordiffuse>
 				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>

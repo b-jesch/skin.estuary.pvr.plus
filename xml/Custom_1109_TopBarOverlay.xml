@@ -195,7 +195,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>!Window.IsActive(pvrosdchannels) + !Window.IsActive(pvrchannelguide)</visible>
+					<visible>!Window.IsActive(pvrosdchannels) + !Window.IsActive(pvrchannelguide) + !VideoPlayer.Content(LiveTV)</visible>
 					<visible>String.IsEmpty(Player.Art(clearlogo))</visible>
 					<visible>String.IsEmpty(Player.Art(tvshow.clearlogo))</visible>
 					<animation effect="fade" time="150">VisibleChange</animation>
@@ -211,6 +211,36 @@
 					<control type="label">
 						<top>60</top>
 						<label>$VAR[OSDSubLabelVar]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<height>60</height>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!Window.IsActive(pvrosdchannels) + !Window.IsActive(pvrchannelguide) + VideoPlayer.Content(LiveTV)</visible>
+					<visible>String.IsEmpty(Player.Art(clearlogo))</visible>
+					<visible>String.IsEmpty(Player.Art(tvshow.clearlogo))</visible>
+					<animation effect="fade" time="150">VisibleChange</animation>
+					<left>20</left>
+					<right>400</right>
+					<control type="image">
+						<top>20</top>
+						<width>85</width>
+						<height>85</height>
+						<aspectratio aligny="center">keep</aspectratio> 
+						<texture fallback="DefaultTVShows.png">$INFO[Player.Art(icon)]</texture>
+					</control>
+					<control type="label">
+						<label>$VAR[LiveTV_NowPlayingBreadcrumbsVar]</label>
+						<font>font45</font>
+						<shadowcolor>text_shadow</shadowcolor>
+						<left>100</left>
+						<top>7</top>
+						<height>50</height>
+					</control>
+					<control type="label">
+						<left>100</left>
+						<top>60</top>
+						<label>$VAR[LiveTV_OSDSubLabelVar]</label>
 						<shadowcolor>text_shadow</shadowcolor>
 						<height>60</height>
 					</control>

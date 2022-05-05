@@ -359,8 +359,6 @@
 		<value>$INFO[ListItem.PictureDateTime]</value>
 	</variable>
 	<variable name="NowPlayingBreadcrumbsVar">
-		<value condition="MusicPlayer.Content(livetv) + Player.HasAudio">$INFO[MusicPlayer.Artist,, - ]$INFO[MusicPlayer.Title]</value>
-		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Title]</value>
 		<value condition="VideoPlayer.Content(episodes) + Window.IsActive(fullscreenvideo)">$INFO[VideoPlayer.TVShowTitle]$INFO[VideoPlayer.Year, (,)]</value>
 		<value condition="!VideoPlayer.Content(episodes) + Window.IsActive(fullscreenvideo)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
 		<value condition="MusicPartyMode.Enabled">$LOCALIZE[589]</value>
@@ -372,7 +370,6 @@
 		<value condition="VideoPlayer.Content(musicvideos)">$VAR[NowPlayingSublabelVar,,[CR]]$INFO[player.chapter,[COLOR button_focus]$LOCALIZE[21396]: [/COLOR]]$INFO[Player.ChapterCount,/]$INFO[Player.ChapterName, - ]</value>
 		<value condition="VideoPlayer.Content(episodes) + !player.chaptercount">$INFO[VideoPlayer.Season,[COLOR button_focus][CAPITALIZE]$LOCALIZE[36906][/CAPITALIZE]:[/COLOR] S]$INFO[VideoPlayer.Episode,E,: ]$INFO[VideoPlayer.Title]</value>
 		<value condition="VideoPlayer.Content(episodes) + player.chaptercount">$INFO[VideoPlayer.Season,[COLOR button_focus][CAPITALIZE]$LOCALIZE[36906][/CAPITALIZE]:[/COLOR] S]$INFO[VideoPlayer.Episode,E, - ]$INFO[VideoPlayer.Title,,[CR]]$INFO[player.chapter,[COLOR button_focus]$LOCALIZE[21396]:[/COLOR] ]$INFO[Player.ChapterCount,/]$INFO[Player.ChapterName, - ]</value>
-		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording | PVR.IsPlayingEpgTag">$INFO[VideoPlayer.ChannelNumberLabel,([COLOR button_focus],[/COLOR]) ]$INFO[VideoPlayer.ChannelName] $INFO[VideoPlayer.EpisodeName, - ]</value>
 		<value condition="player.chaptercount + [!VideoPlayer.Content(episodes) + !VideoPlayer.Content(LiveTV)]">$INFO[player.chapter,[COLOR button_focus]$LOCALIZE[21396]:[/COLOR] ]$INFO[Player.ChapterCount,/]$INFO[Player.ChapterName, - ]</value>
 		<value>$INFO[VideoPlayer.Genre]</value>
 	</variable>
@@ -964,8 +961,26 @@
 		<value condition="String.StartsWith(ListItem.Plot,1/6)">[B][COLOR ffe00a0a][[/COLOR][COLOR white]$LOCALIZE[31227][/COLOR][COLOR ffe00a0a] $LOCALIZE[31229]] [/COLOR][/B]</value>
 	</variable>	
 	<variable name="EPG_Genre_Icon">
-		<value condition="String.StartsWith(ListItem.Genre,Movie)">Movie</value>
+		<value condition="String.StartsWith(ListItem.Genre,Movie) + !String.Contains(ListItem.Genre,Science Fiction)">Movie</value>
 		<value condition="String.StartsWith(ListItem.Genre,Film)">Movie</value>
+		<value condition="String.Contains(ListItem.Genre,News)">News & Documentaries - News</value>
+		
+		<value condition="String.Contains(ListItem.Genre,Football) | String.Contains(ListItem.Genre,Soccer)">sports - Football</value>
+		<value condition="String.Contains(ListItem.Genre,Boxing)">Sports - Boxing</value>
+		<value condition="String.Contains(ListItem.Genre,Rugby)">Sports - Rugby</value>
+		<value condition="String.Contains(ListItem.Genre,Snooker)">Sports - Snooker</value>
+		<value condition="String.Contains(ListItem.Genre,Cycling)">Sports - Cycling</value>
+		<value condition="String.Contains(ListItem.Genre,Cricket)">Sports - Cricket</value>
+		<value condition="String.Contains(ListItem.Genre,Tennis)">Sports - Tennis</value>
+		<value condition="String.Contains(ListItem.Genre,Darts)">Sports - Darts</value>
+		<value condition="String.Contains(ListItem.Genre,Horse Racing)">Sports - Horse Racing</value>
+		<value condition="String.Contains(ListItem.Genre,Wrestling)">Sports - Wrestling</value>
+		<value condition="String.Contains(ListItem.Genre,Motorcycle Racing)">Sports - Motorcycle Racing</value> 
+		<value condition="String.Contains(ListItem.Genre,Motorsport) | String.Contains(ListItem.Genre,Auto Racing)">Sports - Motor Sport</value>
+		<value condition="String.Contains(ListItem.Genre,Drama) + !String.Contains(ListItem.Genre,Movie) + !String.Contains(ListItem.Genre,Science Fiction)">Entertainment - Drama</value>
+		<value condition="String.Contains(ListItem.Genre,Documentary)">Documentary</value>
+		<value condition="String.Contains(ListItem.Genre,Game Show) + !String.Contains(ListItem.Genre,Darts)">Game Show</value>
+		<value condition="String.Contains(ListItem.Genre,Science Fiction) | String.IsEqual(ListItem.Genre,Series / Science Fiction / Fanatasy / Adventure / Drama)">Entertainment - Science Fiction</value>
 	</variable>
 	<variable name="OSD_Channel_Guide_Day_Var">
 		<value condition="String.StartsWith(ListItem.StartDate,Monday)">Monday</value>
@@ -1034,5 +1049,22 @@
 		<value condition="Skin.HasSetting(15_seconds)">15 Seconds</value>
 		<value condition="Skin.HasSetting(30_seconds)">30 Seconds</value>
 		
+	</variable>
+	<variable name="MusicWideListLabelVar">
+		<value>$VAR[MusicTrackInfo,,] $INFO[listitem.Artist,- ]</value>
+	</variable>
+	<variable name="LiveTV_NowPlayingBreadcrumbsVar">
+		<value condition="MusicPlayer.Content(livetv) + Player.HasAudio">$INFO[MusicPlayer.Artist,, - ]$INFO[MusicPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Title]</value>
+		<value>$LOCALIZE[31000]...</value>
+	</variable>
+	<variable name="LiveTV_OSDSubLabelVar"> 
+		<value condition="VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording | PVR.IsPlayingEpgTag">$INFO[VideoPlayer.ChannelNumberLabel,([COLOR button_focus],[/COLOR]) ]$INFO[VideoPlayer.ChannelName]</value>
+	</variable>
+	<variable name="LiveTV_SeasonVar"> 
+		<value condition="!String.IsEmpty(ListItem.Season)">$INFO[ListItem.Season]</value>
+	</variable>
+	<variable name="LiveTV_EpisodeVar"> 
+		<value condition="!String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode]</value>
 	</variable>
 </includes>

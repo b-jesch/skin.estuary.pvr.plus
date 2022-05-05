@@ -204,19 +204,23 @@
 						<height>30</height>
 						<textcolor>button_focus</textcolor>
 						<label>[COLOR grey]$INFO[ListItem.Genre][/COLOR]</label>
-						<animation effect="slide" start="0,0" end="47,0" condition="String.StartsWith(ListItem.Genre,Movie)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="47,0" condition="String.StartsWith(ListItem.Genre,Movie) + !String.Contains(ListItem.Genre,Science Fiction)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="47,0" condition="String.Contains(ListItem.Genre,News) | String.Contains(ListItem.Genre,Documentary) | String.Contains(ListItem.Genre,Game Show) + !String.Contains(ListItem.Genre,Darts)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="47,0" condition="String.Contains(ListItem.Genre,Football) | String.Contains(ListItem.Genre,Soccer) | String.Contains(ListItem.Genre,Rugby) | String.Contains(ListItem.Genre,Snooker) | String.Contains(ListItem.Genre,Cycling) | String.Contains(ListItem.Genre,Cricket) | String.Contains(ListItem.Genre,Darts) | String.Contains(ListItem.Genre,Motorsport) | String.Contains(ListItem.Genre,Auto Racing) | String.Contains(ListItem.Genre,Tennis) | String.Contains(ListItem.Genre,Wrestling) | String.Contains(ListItem.Genre,Motorcycle Racing) | String.Contains(ListItem.Genre,Horse Racing) | String.Contains(ListItem.Genre,Boxing)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="47,0" condition="String.Contains(ListItem.Genre,Drama) + !String.Contains(ListItem.Genre,Movie) + !String.Contains(ListItem.Genre,Science Fiction)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="47,0" condition="String.Contains(ListItem.Genre,Science Fiction) | String.IsEqual(ListItem.Genre,Series / Science Fiction / Fanatasy / Adventure / Drama)">Conditional</animation>
 					</control>
 					<control type="textbox">
 						<left>270</left>
 						<top>100</top>
 						<width>1550</width>
 						<height>130</height>
-						<label>$VAR[FlagLabel_TVGuide]$VAR[Text_Based_Premiere_Flags_TVGuide]$INFO[ListItem.Plot]</label>
+						<label>$VAR[FlagLabel_TVGuide]$VAR[Text_Based_Premiere_Flags_TVGuide]$INFO[ListItem.Season,Season ,  ]$INFO[ListItem.Episode,Episode ,. ]$INFO[ListItem.Plot]</label>
 						<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 					</control>
 					
 
-				</control>
+				</control>	
 				<control type="image">
 						<left>375</left>
 						<top>123</top>

@@ -704,22 +704,37 @@
 				<height>94</height>
 				<aspectratio aligny="center">keep</aspectratio> 
 				<texture fallback="DefaultTVShows.png">$INFO[Player.Art(icon)]</texture>
+				<visible>false</visible>
 			</control>
 			<control type="label">
-				<left>530</left>
-				<top>-30</top>
+				<left>410</left>
+				<top>-65</top>
 				<right>80</right>
 				<height>290</height>
 				<width>805</width>
 				<scroll>true</scroll>
 				<font>font37</font>
-				<label>[COLOR grey]Ch$INFO[VideoPlayer.ChannelNumberLabel][/COLOR]: [B][COLOR button_focus]$INFO[VideoPlayer.ChannelName][/COLOR][/B]</label>
+				<label>[B][COLOR button_focus]$INFO[VideoPlayer.Title][/COLOR][/B]</label>
 				<align>left</align>
 				<shadowcolor>black</shadowcolor>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<animation effect="slide" start="0,0" end="0,15" condition="String.IsEmpty(VideoPlayer.Season)">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>410</left>
+				<top>-20</top>
+				<right>80</right>
+				<height>290</height>
+				<width>805</width>
+				<scroll>true</scroll>
+				<label>[B][COLOR button_focus]$INFO[VideoPlayer.Season,[COLOR grey]Season [/COLOR]][COLOR grey],[/COLOR][/COLOR] [COLOR button_focus]$INFO[VideoPlayer.Episode,[COLOR grey] Episode [/COLOR]][/COLOR] [COLOR grey] $INFO[VideoPlayer.EpisodeName,(,)][/COLOR][/B]</label>
+				<align>left</align>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + String.Contains(,)</visible>
 			</control>
 			<control type="image"> 
-				<left>530</left>
+				<left>410</left>
 				<top>20</top>
 				<width>150</width>
 				<height>50</height>
@@ -728,7 +743,7 @@
 				<visible>!Pvr.IsPlayingRadio</visible>	
 			</control>
 			<control type="image">
-				<left>615</left>
+				<left>505</left>
 				<top>30</top>
 				<width>120</width>
 				<height>30</height>
@@ -736,19 +751,19 @@
 				<visible>!Pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="label">
-				<left>755</left>
+				<left>650</left>
 				<top>25</top>
 				<right>80</right>
 				<height>290</height>
 				<width>1375</width>
 				<font>font12</font>
-				<label>[B][COLOR button_focus]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
+				<label>[B][COLOR grey]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
 				<align>left</align>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 				<visible>!Pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="label">
-				<left>530</left>
+				<left>410</left>
 				<top>25</top>
 				<right>80</right>
 				<height>290</height>
@@ -1216,7 +1231,7 @@
 				<top>0</top>
 				<width>245</width>
 				<height>345</height>
-				<texture>$VAR[NowPVRPoster_Local_Artwork_Var]</texture>
+				<texture>$VAR[NowPVRPoster_Local_Artwork_Var]</texture> 
 			</control>
 			<control type="textbox">
 				<top>50</top>

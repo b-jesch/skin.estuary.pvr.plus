@@ -211,41 +211,46 @@
 			<control type="label">
 				<left>35</left>
 				<height>80</height>
+				<width>1120</width>
 				<right>40</right>
 				<aligny>center</aligny>
 				<scroll>true</scroll>
-				<label>$VAR[ListLabelVar]</label>
+				<label>$VAR[MusicWideListLabelVar] $VAR[ListLabel2Var,(,)]</label>
 				<shadowcolor>text_shadow</shadowcolor>
 			</control>
-			<control type="label">
-				<left>35</left>
-				<height>80</height>
-				<right>40</right>
+			<control type="image">
+				<left>1150</left>
+				<height>32</height>
+				<right>20</right>
+				<top>24</top>
 				<align>right</align>
 				<aligny>center</aligny>
-				<label>$VAR[ListLabel2Var]</label>
-				<shadowcolor>text_shadow</shadowcolor>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="flags/starrating/0.png">$INFO[ListItem.UserRating,flags/starrating/,.png]</texture>
 			</control>
+			
 		</focusedlayout>
 		<itemlayout height="80" condition="Container.Content(songs)">
 			<control type="label">
 				<left>35</left>
 				<height>80</height>
+				<width>1120</width>
 				<right>40</right>
 				<aligny>center</aligny>
-				<label>$VAR[ListLabelVar]</label>
+				<label>$VAR[MusicWideListLabelVar] $VAR[ListLabel2Var,(,)]</label>
 				<shadowcolor>text_shadow</shadowcolor>
 			</control>
-			<control type="label">
-				<left>35</left>
-				<height>80</height>
-				<right>40</right>
+			<control type="image">
+				<left>1150</left>
+				<height>32</height>
+				<right>20</right>
+				<top>24</top>
 				<align>right</align>
 				<aligny>center</aligny>
-				<label>$VAR[ListLabel2Var]</label>
-				<textcolor>grey</textcolor>
-				<shadowcolor>text_shadow</shadowcolor>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="flags/starrating/0.png">$INFO[ListItem.UserRating,flags/starrating/,.png]</texture>
 			</control>
+			
 		</itemlayout>
 	</include>
 	<include name="AddonsListLayout">
