@@ -1,3 +1,10 @@
+[B]0.2.5[/B]
+• Removal of channel logo, channel number and channel name from OSD info panel.
+• Season and episode numbers added to EPG plot and OSD info panel.
+• Various new genre icons added to EPG screen.
+• Channel logo added to TopBar Overlay.
+• New music song layout that includes user star rating.
+
 [B]0.2.4[/B]
 • New priority order set for PVR Artwork.
 • New music playlist widget added to Music Home Screen.
