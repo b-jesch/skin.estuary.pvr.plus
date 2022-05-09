@@ -1025,7 +1025,10 @@
 		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.offset(1).Artist]</value>
 		
 	</variable>
-	
+	<variable name="OSD_NextUP_Music_Video_Artist_Var">
+		<value condition="VideoPlayer.Content(musicvideos) + !String.IsEmpty(VideoPlayer.offset(1).Artist)">$INFO[VideoPlayer.offset(1).Artist,C:\Users\Mini-Pc\Documents\Kodi Music\Music Vid - July 2021\,\poster.jpg]</value>
+		<value condition="VideoPlayer.Content(musicvideos) + !String.IsEmpty(VideoPlayer.offset(1).Artist)">$INFO[VideoPlayer.offset(1).Artist,C:\Users\Mini-Pc\Documents\Kodi Music\Music Vid - July 2021\,\poster.jpeg]</value>
+	</variable>
 	<variable name="MusicPlayerCover">
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(VideoPlayer.Art(poster))">$INFO[VideoPlayer.Art(poster)]</value>

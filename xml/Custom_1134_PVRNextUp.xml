@@ -121,7 +121,7 @@
 		</control>
 		<control type="group">
 			<visible>!Window.IsVisible(videoosd) + Window.IsVisible(fullscreenvideo) + [String.IsEqual(Player.TimeRemaining,00:25) | String.IsEqual(Player.TimeRemaining,00:24) | String.IsEqual(Player.TimeRemaining,00:23) | String.IsEqual(Player.TimeRemaining,00:22) | String.IsEqual(Player.TimeRemaining,00:21) | String.IsEqual(Player.TimeRemaining,00:20) | String.IsEqual(Player.TimeRemaining,00:19) | String.IsEqual(Player.TimeRemaining,00:18) | String.IsEqual(Player.TimeRemaining,00:17) | String.IsEqual(Player.TimeRemaining,00:16) | String.IsEqual(Player.TimeRemaining,00:15) | String.IsEqual(Player.TimeRemaining,00:14) | String.IsEqual(Player.TimeRemaining,00:13) | String.IsEqual(Player.TimeRemaining,00:12) | String.IsEqual(Player.TimeRemaining,00:11) | String.IsEqual(Player.TimeRemaining,00:10) | String.IsEqual(Player.TimeRemaining,00:09) | String.IsEqual(Player.TimeRemaining,00:08) | String.IsEqual(Player.TimeRemaining,00:07) | String.IsEqual(Player.TimeRemaining,00:06) | String.IsEqual(Player.TimeRemaining,00:05)| String.IsEqual(Player.TimeRemaining,00:04) | String.IsEqual(Player.TimeRemaining,00:03) | String.IsEqual(Player.TimeRemaining,00:02) | String.IsEqual(Player.TimeRemaining,00:01)]</visible>
-			<visible>VideoPlayer.Content(musicvideos) + !Skin.HasSetting(Show_NextUp_MusicVideo)</visible>
+			<visible>VideoPlayer.Content(musicvideos) + !Skin.HasSetting(Show_NextUp_Music_Vids)</visible>
 			<right>10</right>
 			<top>40</top>
 			<width>830</width> 
@@ -140,7 +140,7 @@
 				<width>210</width>
 				<height>210</height>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
-				<texture>$VAR[NowPlayingPosterVar]</texture> 
+				<texture>$VAR[OSD_NextUP_Music_Video_Artist_Var]</texture> 
 			</control>
 			<control type="image" id="6991">
 				<top>65</top>
@@ -150,6 +150,7 @@
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<texture fallback="DefaultPVRBanner.png">$VAR[NowPlayingPosterVar]</texture>
 				<visible>String.IsEmpty(Control.GetLabel(6990))</visible>
+				<visible>false</visible>
 			</control>
 			<control type="image">
 				<top>30</top>
