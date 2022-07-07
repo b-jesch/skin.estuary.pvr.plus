@@ -1093,5 +1093,34 @@ msgctxt "#31244"
 msgid "OSD related settings"
 msgstr "" 
 
+msgctxt "#40377"
+msgid "Close Video OSD automatically after"
+msgstr ""
+
+msgctxt "#40378"
+msgid "Disabled"
+msgstr ""
+
+msgctxt "#40380"
+msgid "3 Seconds"
+msgstr ""
+
+msgctxt "#40381"
+msgid "5 Seconds"
+msgstr ""
+
+msgctxt "#40382"
+msgid "7 Seconds"
+msgstr ""
+
+msgctxt "#40383"
+msgid "10 Seconds"
+msgstr ""
+
+msgctxt "#40384"
+msgid "15 Seconds"
+msgstr ""
+
+
 
 

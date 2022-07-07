@@ -104,10 +104,18 @@
 					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
 				</control>
 				<control type="button" id="754">
-					<label>Set Time to Auto Close Video OSD</label>
+					<label>$LOCALIZE[40377]</label>
+					<label2>$INFO[Skin.String(autoclose_osd)]</label2>
 					<include>DefaultSettingButton</include>
-					<onclick>Skin.SelectBool($LOCALIZE[31236], 31232|3_seconds, 31233|10_seconds, 31234|15_seconds, 31235|30_seconds, 31231|5_seconds)</onclick>
-					<label2>$VAR[AutoCloseOSDSettingsLabelVar]</label2>
+					<description>autoclose OSD menu</description>
+					<onclick condition="String.IsEmpty(Skin.String(autoclose_osd))">Skin.SetString(autoclose_osd,$LOCALIZE[40378])</onclick>
+					<onclick condition="String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40384])">Skin.SetString(autoclose_osd,$LOCALIZE[40378])</onclick>
+					<onclick condition="String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40383])">Skin.SetString(autoclose_osd,$LOCALIZE[40384])</onclick>
+					<onclick condition="String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40382])">Skin.SetString(autoclose_osd,$LOCALIZE[40383])</onclick>
+					<onclick condition="String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40381])">Skin.SetString(autoclose_osd,$LOCALIZE[40382])</onclick>
+					<onclick condition="String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40380])">Skin.SetString(autoclose_osd,$LOCALIZE[40381])</onclick>
+					<onclick condition="String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40378])">Skin.SetString(autoclose_osd,$LOCALIZE[40380])</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(autoclose_osd)) + !String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40378]) + !String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40380]) + !String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40381]) + !String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40382]) + !String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40383]) + !String.IsEqual(Skin.String(autoclose_osd),$LOCALIZE[40384])">Skin.SetString(autoclose_osd,$LOCALIZE[40378])</onclick>
 				</control>
 			</control>
 			
