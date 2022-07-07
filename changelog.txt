@@ -1,3 +1,6 @@
+[B]0.2.6[/B]
+• OSD Auto-Hide feature added. Different times can bt set via skin settings. (many thanks to _BJ1) 
+
 [B]0.2.5[/B]
 • Removal of channel logo, channel number and channel name from OSD info panel.
 • Season and episode numbers added to EPG plot and OSD info panel.
