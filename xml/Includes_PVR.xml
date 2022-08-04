@@ -1899,5 +1899,5 @@
 				<visible>Control.IsVisible($PARAM[control_id])</visible>
 			</control>
 		</definition>
-	</include>
+	</include> 
 </includes>

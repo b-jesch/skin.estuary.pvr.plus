@@ -1038,7 +1038,8 @@
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>		
 	</variable>
 	<variable name="MusicWideListLabelVar">
-		<value>$VAR[MusicTrackInfo,,] $INFO[listitem.Artist,- ]</value>
+		<value>$INFO[listitem.Artist,,] $VAR[MusicTrackInfo,- ]</value>
+		
 	</variable>
 	<variable name="LiveTV_NowPlayingBreadcrumbsVar">
 		<value condition="MusicPlayer.Content(livetv) + Player.HasAudio">$INFO[MusicPlayer.Artist,, - ]$INFO[MusicPlayer.Title]</value>
