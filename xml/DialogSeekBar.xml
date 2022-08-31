@@ -657,19 +657,68 @@
 				<visible>Skin.HasSetting(osd_type)</visible>
 			</control>
 			<include>VideoInfoPanelFurniture</include>
-			<control type="grouplist">
-				<left>420</left>
-				<top>80</top>
+			<control type="group">
+				<left>415</left>
+				<top>40</top>
 				<right>20</right>
-				<height>260</height>
+				<height>175</height>
 				<align>left</align>
 				<orientation>vertical</orientation>
 				<itemgap>10</itemgap>
 				<control type="textbox">
-					<height>210</height>
+					<height>170</height>
 					<label fallback="10005">$INFO[VideoPlayer.Plot]</label>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					<visible>!Player.IsInternetStream</visible>
+				</control>
+				<control type="textbox">
+					<height>170</height>
+					<label>Direct Stream</label>
+					<align>left</align>
+					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					<visible>Player.IsInternetStream</visible>
+					<visible>!String.Contains(Player.Folderpath,emby)</visible>
+				</control>
+				<control type="textbox">
+					<top>35</top>
+					<height>170</height>
+					<label fallback="10005">$INFO[VideoPlayer.Plot]</label>
+					<align>left</align>
+					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+					<visible>Player.IsInternetStream</visible>
+					<visible>!String.Contains(Player.Folderpath,emby)</visible>
+				</control>
+				<control type="textbox">
+					<height>240</height>
+					<label fallback="10005">$INFO[VideoPlayer.Plot]</label>
+					<align>left</align>
+					<visible>Player.IsInternetStream</visible>
+					<visible>String.Contains(Player.Folderpath,emby)</visible>
+				</control>
+				<control type="image">
+					<left>195</left>
+					<top>2</top>
+					<width>75</width>
+					<height>37</height>
+				<texture>$VAR[Addon_Name_Var]</texture>
+				<visible>Player.IsInternetStream</visible>
+				</control>
+				<control type="image">
+					<left>190</left>
+					<top>-17</top>
+					<width>70</width>
+					<height>65</height>
+				<texture>$VAR[Catch_UP_TV_Addon_Var]</texture>
+				<visible>Player.IsInternetStream</visible>
+				</control>
+				<control type="image">
+					<left>190</left>
+					<top>3</top>
+					<width>120</width>
+					<height>40</height>
+				<texture>$VAR[Discovery_Plus_TV_Addon_Var]</texture>
+				<visible>Player.IsInternetStream</visible>
 				</control>
 				<control type="label">
 					<height>50</height>
