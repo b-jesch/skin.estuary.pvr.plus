@@ -119,6 +119,7 @@
 					<visible>false</visible>
 				</control>
 		</control>
+		<!-- WIP Next-Up Panel for Music Videos) -->
 		<control type="group">
 			<visible>!Window.IsVisible(videoosd) + Window.IsVisible(fullscreenvideo) + [String.IsEqual(Player.TimeRemaining,00:25) | String.IsEqual(Player.TimeRemaining,00:24) | String.IsEqual(Player.TimeRemaining,00:23) | String.IsEqual(Player.TimeRemaining,00:22) | String.IsEqual(Player.TimeRemaining,00:21) | String.IsEqual(Player.TimeRemaining,00:20) | String.IsEqual(Player.TimeRemaining,00:19) | String.IsEqual(Player.TimeRemaining,00:18) | String.IsEqual(Player.TimeRemaining,00:17) | String.IsEqual(Player.TimeRemaining,00:16) | String.IsEqual(Player.TimeRemaining,00:15) | String.IsEqual(Player.TimeRemaining,00:14) | String.IsEqual(Player.TimeRemaining,00:13) | String.IsEqual(Player.TimeRemaining,00:12) | String.IsEqual(Player.TimeRemaining,00:11) | String.IsEqual(Player.TimeRemaining,00:10) | String.IsEqual(Player.TimeRemaining,00:09) | String.IsEqual(Player.TimeRemaining,00:08) | String.IsEqual(Player.TimeRemaining,00:07) | String.IsEqual(Player.TimeRemaining,00:06) | String.IsEqual(Player.TimeRemaining,00:05)| String.IsEqual(Player.TimeRemaining,00:04) | String.IsEqual(Player.TimeRemaining,00:03) | String.IsEqual(Player.TimeRemaining,00:02) | String.IsEqual(Player.TimeRemaining,00:01)]</visible>
 			<visible>VideoPlayer.Content(musicvideos) + !Skin.HasSetting(Show_NextUp_Music_Vids)</visible>
@@ -287,6 +288,7 @@
                     <texturenofocus colordiffuse="FF3D69BA">dialogs/nextup/nextupstop.png</texturenofocus>
 					<visible>false</visible>
 				</control>
+				<visible>false</visible>
 		</control>
 		
 	</controls>

@@ -92,33 +92,41 @@
 								<height>350</height>
 								<texture border="40">buttons/dialogbutton-nofo.png</texture>
 							</control>
-							<control type="image" id="8876"> 
+							<control type="image" id="9880"> 
 								<depth>DepthOSD+</depth>
 								<left>800</left>
 								<top>-85</top>
 								<width>230</width>
 								<height>320</height>
-								<aspectratio align="center" aligny="center">keep</aspectratio>
-								<texture fallback="DefaultPVRPoster.png" background="true">$VAR[PVRPoster_ListItem_Local_Artwork_Var]</texture>
+								<texture background="true">$VAR[NowPVRPoster_Backend_Var]</texture>
 								<bordertexture border="21">overlays/shadow.png</bordertexture>
 								<bordersize>20</bordersize>
 								<include>OpenClose_Left</include>
-								<visible>VideoPlayer.Content(LiveTV) | Pvr.IsPlayingRadio</visible>
 								<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 							</control>
-							
+							<control type="image" id="9881"> 
+								<depth>DepthOSD+</depth>
+								<left>800</left>
+								<top>-85</top>
+								<width>230</width>
+								<height>320</height>
+								<bordertexture border="21">overlays/shadow.png</bordertexture>
+								<bordersize>20</bordersize>
+								<texture fallback="DefaultPVRPoster.png" background="true">$VAR[NowPVRPoster_SkinHelper_Var]</texture>
+								<include>OpenClose_Left</include>
+								<visible>String.IsEmpty(Control.GetLabel(9880))</visible>
+								<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
+							</control>
 							<control type="image"> 
 								<depth>DepthOSD+</depth>
 								<left>800</left>
 								<top>-85</top>
 								<width>230</width>
 								<height>320</height>
-								<aspectratio align="center" aligny="center">keep</aspectratio>
-								<texture background="true">$VAR[NowPVRPoster_Backend_Var]</texture>
+								<texture background="true">$VAR[NowPVRPoster_Local_Artwork_Var]</texture>
 								<bordertexture border="21">overlays/shadow.png</bordertexture>
 								<bordersize>20</bordersize>
 								<include>OpenClose_Left</include>
-								<visible>VideoPlayer.Content(LiveTV) + Pvr.IsPlayingRadio</visible>
 								<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122)</visible>
 							</control>
 							<control type="image">
