@@ -1,3 +1,9 @@
+[B]0.2.7[/B]
+• PVR Artwork visibility fixed on PVR OSD Guide and Channel Dialogs.
+• New widget added to TV Show Home Screen for 'Continue Watching (Episodes)'
+• Existing TV Show widgets re-ordered.
+
+
 [B]0.2.6[/B]
 • OSD Auto-Hide feature added. Different times can bt set via skin settings. (many thanks to _BJ1) 
 
