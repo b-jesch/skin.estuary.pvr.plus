@@ -1,8 +1,14 @@
+[B]0.2.8[/B]
+• More refinements to OSD, most notably the introduction of transparent panels for OSD info panel, Actor panel, Bookmark panel, Player Process panel and Artist Bio panel instead of previous colourised panels.
+• Season, Episode and Episode Title added to info panel for TV Shows.
+• Genre added to info panel for Movie and Music Video titles.
+• New setting added to skin general settings to disable 'Top Left-Handside Breadcrumb labels' during playback if desired.
+• New 'Iolite' (Dark Blue) colour theme added.
+
 [B]0.2.7[/B]
 • PVR Artwork visibility fixed on PVR OSD Guide and Channel Dialogs.
 • New widget added to TV Show Home Screen for 'Continue Watching (Episodes)'
 • Existing TV Show widgets re-ordered.
-
 
 [B]0.2.6[/B]
 • OSD Auto-Hide feature added. Different times can bt set via skin settings. (many thanks to _BJ1) 
