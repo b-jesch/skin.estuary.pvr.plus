@@ -1682,47 +1682,50 @@
 			
 			<control type="image">
 				<left>410</left>
-				<top>-8</top>
+				<top>-33</top>
 				<width>150</width>
 				<height>50</height>
 				<aspectratio>keep</aspectratio>
 				<texture>ratings/imdb/imdb.png</texture>
+				<visible>!VideoPlayer.Content(musicvideos)</visible>
 			</control>
 			<control type="image">
 				<left>500</left>
-				<top>0</top>
+				<top>-25</top>
 				<width>120</width>
 				<height>30</height>
-				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$VAR[IMDB_Rating_VAR]</texture>  
+				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$VAR[IMDB_Rating_VAR]</texture>
+				<visible>!VideoPlayer.Content(musicvideos)</visible>
 			</control>
 			<control type="image">
 				<left>632</left>
-				<top>-1</top>
+				<top>-26</top>
 				<width>40</width>
 				<height>30</height>
 				<texture>ratings/tmdb/tmdb.png</texture>
+				<visible>!VideoPlayer.Content(musicvideos)</visible>
 			</control>
 			<control type="image">
 				<left>690</left>
-				<top>-5</top>
+				<top>-30</top>
 				<width>37</width>
 				<height>37</height>
 				<texture fallback="ratings/tmdb/0.0.png">$VAR[TMDB_Rating_VAR]</texture>
+				<visible>!VideoPlayer.Content(musicvideos)</visible>
 			</control>
 			
 			
 			<control type="image">
 				<left>750</left>
-				<top>-8</top>
+				<top>-33</top>
 				<right>200</right>
 				<width>45</width>
 				<height>45</height>
 				<texture fallback="flags/mpaa/rated1.png">$VAR[Mpaa_flags_Var,flags/mpaa/,.png]</texture>
-				<animation effect="slide" start="0,0" end="-340,0" condition="String.IsEmpty(VideoPlayer.Rating)">Conditional</animation>
 			</control>
 			<control type="image">
 				<right>40</right>
-				<top>-4</top>
+				<top>-29</top>
 				<width>170</width>
 				<height>50</height>
 				<texture>lists/airdate.png</texture>
@@ -1730,14 +1733,14 @@
 			<control type="label">
 				<right>55</right>
 				<align>right</align>
-				<top>15</top>
+				<top>-10</top>
 				<width>200</width>
 				<height>50</height>
 				<font>font_flag</font>
 				<label fallback="Not Listed">$INFO[VideoPlayer.Premiered]</label>
 			</control>
 			<control type="image">
-				<top>-5</top>
+				<top>-30</top>
 				<right>225</right>
 				<height>70</height>
 				<width>110</width>
@@ -1745,7 +1748,7 @@
 				<texture>flags/runtime/duration.png</texture>
 			</control>
 			<control type="label">
-				<top>13</top>
+				<top>-12</top>
 				<right>155</right>
 				<align>center</align>
 				<width>250</width>
@@ -1755,13 +1758,56 @@
 			</control>
 			
 			<control type="label">
-				<left>420</left>
-				<top>-8</top>
-				<width>1475</width>
-				<label>[B][COLOR button_focus]$INFO[VideoPlayer.Title][/COLOR][/B]</label>
+				<left>410</left>
+				<top>10</top>
+				<right>80</right>
+				<height>290</height>
+				<width>1500</width>
+				<scroll>true</scroll>
+				<label>[B][COLOR button_focus]$INFO[VideoPlayer.Season,[COLOR white]Season [/COLOR]][COLOR white],[/COLOR][/COLOR] [COLOR button_focus]$INFO[VideoPlayer.Episode,[COLOR white] Episode [/COLOR]][/COLOR]  •  [COLOR white]$INFO[VideoPlayer.Title,(,)][/COLOR][/B]</label>
 				<align>left</align>
+				<shadowcolor>black</shadowcolor>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-				<visible>false</visible>
+				<visible>!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + String.Contains(,)</visible>
+			</control>
+			<control type="label">
+				<left>410</left>
+				<top>10</top>
+				<right>80</right>
+				<height>290</height>
+				<width>1500</width>
+				<scroll>true</scroll>
+				<label>[B]$INFO[VideoPlayer.Genre][/B]</label>
+				<align>left</align>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | Pvr.IsPlayingRecording + !MusicPlayer.Content(livetv) + String.IsEmpty(VideoPlayer.Season)</visible>
+				
+				<animation effect="slide" start="0,0" end="0,-40" condition="VideoPlayer.Content(musicvideos)">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>400</left>
+				<top>5</top>
+				<right>80</right>
+				<height>50</height>
+				<width>50</width>
+				<texture>icons/pvr/director.png</texture>
+				<align>left</align>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
+				<visible>!String.IsEmpty(VideoPlayer.Director)</visible>
+			</control>
+			<control type="label">
+				<left>455</left>
+				<top>10</top>
+				<right>80</right>
+				<height>290</height>
+				<width>1500</width>
+				<scroll>true</scroll>
+				<label>[B]$INFO[VideoPlayer.Director][/B]</label>
+				<align>left</align>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>VideoPlayer.Content(musicvideos)</visible>
 			</control>
 	</include>
 </includes>

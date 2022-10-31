@@ -55,18 +55,10 @@
 				 <top>100</top>
 				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 				<colordiffuse>osdpanel</colordiffuse>
-			
-				<visible>!Skin.HasSetting(osd_type)</visible>
-			</control>
-			<control type="image">
-				<left>-105</left>
-				<width>1515</width>
-				<height>245</height>
-				 <top>100</top>
-				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 				
-				<visible>Skin.HasSetting(osd_type)</visible>
+			
 			</control>
+			
 				<control type="label">
 					<left>-20</left>
 					<top>103</top>
@@ -261,6 +253,7 @@
 				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 				<colordiffuse>osdpanel</colordiffuse>
 				<visible>!Skin.HasSetting(osd_type)</visible>
+				<visible>!Window.IsVisible(1139)</visible>
 			</control>
 			<control type="image">
 				<right>0</right>

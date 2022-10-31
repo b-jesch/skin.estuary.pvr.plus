@@ -38,10 +38,10 @@
 			</control>
 			<control type="label">
 				<animation effect="slide" end="0,-20" time="150" condition="!VideoPlayer.Content(LiveTV)">conditional</animation>
-				<right>45</right>
-				<bottom>30</bottom>
-				<align>right</align>
-				<aligny>bottom</aligny>
+				<centerleft>60%</centerleft>
+				<centertop>90</centertop>
+				<align>center</align>
+				<aligny>top</aligny>
 				<font>font20_title</font>
 				<textcolor>limegreen</textcolor>
 				<height>30</height>

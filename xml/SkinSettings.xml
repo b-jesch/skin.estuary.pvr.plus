@@ -49,19 +49,25 @@
 					<selected>Skin.HasSetting(touchmode)</selected>
 				</control>
 				<control type="radiobutton" id="704">
-					<label>$LOCALIZE[31093]</label>
+					<label>$LOCALIZE[40386]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(Enable_Top_Bar_Breadcrumbs)</onclick>
+					<selected>!Skin.HasSetting(Enable_Top_Bar_Breadcrumbs)</selected> 
+				</control>
+				<control type="radiobutton" id="705">
+					<label>$LOCALIZE[40387]</label>
 					<include>DefaultSettingButton</include>
 					<onclick condition="!String.IsEmpty(Weather.Plugin)">Skin.ToggleSetting(show_weatherinfo)</onclick>
 					<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
 					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
 				</control>
-				<control type="radiobutton" id="705">
-					<label>$LOCALIZE[31160]</label>
+				<control type="radiobutton" id="706">
+					<label>$LOCALIZE[40388]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
 				</control>
-				<control type="radiobutton" id="706">
+				<control type="radiobutton" id="707">
 					<label>$LOCALIZE[31218]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(show_mediaendtimeflag)</onclick>
@@ -86,7 +92,7 @@
 				<ondown>750</ondown>
 				<visible>Container(9000).HasFocus(3)</visible>
 				<control type="radiobutton" id="751">
-					<label>Display colourised OSD and Info Panel</label>
+					<label>Display colourised OSD Info Panel</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(osd_type)</onclick>
 					<selected>!Skin.HasSetting(osd_type)</selected> 
@@ -103,7 +109,7 @@
 					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
 					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
 				</control>
-				<control type="button" id="754">
+				<control type="button" id="755">
 					<label>$LOCALIZE[40377]</label>
 					<label2>$INFO[Skin.String(autoclose_osd)]</label2>
 					<include>DefaultSettingButton</include>

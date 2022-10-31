@@ -349,7 +349,7 @@
 				<width>316</width>
 				<height>218</height>
 				<texture fallback="$PARAM[fallback_image]" background="true">$PARAM[tv_recording_landscape_image]</texture>
-				<aspectratio>scale</aspectratio>
+				
 				<bordersize>20</bordersize>
 			</control>
 			<control type="image">
@@ -461,7 +461,7 @@
 				<width>316</width>
 				<height>218</height>
 				<texture fallback="$PARAM[fallback_image]" background="true">$PARAM[tv_last_channel_artwork_image]</texture>
-				<aspectratio>scale</aspectratio>
+				
 				<bordersize>20</bordersize>
 			</control>
 			<control type="image">

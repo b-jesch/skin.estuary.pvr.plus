@@ -246,7 +246,7 @@
 			</control>
 			<control type="label" id="40000">
 				<centerleft>60%</centerleft>
-				<centertop>70</centertop>
+				<centertop>40</centertop> 
 				<width>50%</width>
 				<height>50</height>
 				<align>center</align>
@@ -301,8 +301,7 @@
 				<left>20</left>
 				<bottom>20</bottom>
 				<width>350</width>
-				<height>575</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
+				<height>495</height>
 				<texture fallback="DefaultPVRPoster.png">$VAR[PVR_Now_Playing_Poster_Var]</texture>  
 				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV) + MusicPlayer.Content(livetv) + String.IsEmpty(Control.GetLabel(9878))</visible>
 				<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | !Player.Seeking | !Player.DisplayAfterSeek | !Player.Forwarding | !Player.Rewinding | !Player.Paused</visible>
@@ -312,8 +311,7 @@
 				<left>20</left>
 				<bottom>20</bottom>
 				<width>350</width>
-				<height>575</height>
-				<aspectratio aligny="bottom">keep</aspectratio>
+				<height>495</height>
 				<texture>$VAR[NowPlaying_PVRPoster_Local_Artwork_Var]</texture> 
 				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + VideoPlayer.Content(LiveTV) + MusicPlayer.Content(livetv)</visible>
 				<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | !Player.Seeking | !Player.DisplayAfterSeek | !Player.Forwarding | !Player.Rewinding | !Player.Paused</visible>
@@ -429,20 +427,30 @@
 				<left>20</left>
 				<bottom>20</bottom>
 				<width>350</width>
+				<height>495</height>
+				<texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
+				<bordertexture border="21">overlays/shadow.png</bordertexture>
+				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + !VideoPlayer.Content(LiveTV) + !Player.HasAudio + !Window.IsVisible(1122) + !VideoPlayer.Content(musicvideos)</visible>
+				<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | !Player.Seeking | !Player.DisplayAfterSeek | !Player.Forwarding | !Player.Rewinding | !Player.Paused</visible>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<bottom>20</bottom>
+				<width>350</width>
 				<height>575</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
-				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + !VideoPlayer.Content(LiveTV) + !Player.HasAudio + !Window.IsVisible(1122)</visible>
+				<visible>[Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo)] + !VideoPlayer.Content(LiveTV) + !Player.HasAudio + !Window.IsVisible(1122) + VideoPlayer.Content(musicvideos)</visible>
 				<visible>Player.ShowInfo | Window.IsActive(fullscreeninfo) | !Player.Seeking | !Player.DisplayAfterSeek | !Player.Forwarding | !Player.Rewinding | !Player.Paused</visible>
 			</control>
 			<!-- Fix is required for disabling clearart when default OSD is enabled - Done! -->
-			<control type="image">
+			<control type="image"> 
 				<right>40</right>
 				<bottom>175</bottom>
 				<width>500</width>
 				<height>281</height>
-				<texture background="true">$VAR[PlayerClearArtVar]</texture>
+				<texture background="true">$VAR[PlayerClearArtVar]</texture> 
 				<aspectratio align="center" aligny="bottom">keep</aspectratio>
 				<visible>Skin.HasSetting(enable_clearart) + !Player.HasAudio + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + ![VideoPlayer.Content(LiveTV) | Pvr.IsPlayingRadio]</visible>
 			</control>
@@ -595,26 +603,11 @@
 			<bottom>0</bottom>
 			<height>380</height>
 			<control type="image">
-				<left>375</left>
+				<left>370</left>
 				<width>1550</width>
-				<height>310</height>
-				<top>-80</top>
-				<texture flipy="true">osd/osdpanel_transparent.png</texture>
-				<colordiffuse>osdpanel</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
-				<bordersize>9</bordersize>
-				<visible>!Skin.HasSetting(osd_type)</visible>
-			</control>
-			<control type="image"> 
-				<left>375</left>
-				<width>1550</width>
-				<height>310</height>
-				<top>-80</top>
-				<texture flipy="true">osd/osdpanel_transparent.png</texture>
-				<colordiffuse>black</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
-				<bordersize>9</bordersize>				
-				<visible>Skin.HasSetting(osd_type)</visible>
+				<height>339</height>
+				<top>-114</top>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 			</control>
 			<include>PVRInfoPanelFurniture</include>
 			<control type="label">
@@ -635,42 +628,28 @@
 			<bottom>0</bottom>
 			<height>470</height>
 			<control type="image">
-				<left>375</left>
+				<left>370</left>
 				<width>1550</width>
-				<height>330</height>
-				<top>-30</top>
-				<texture flipy="true">osd/osdpanel_transparent.png</texture>
-				<colordiffuse>osdpanel</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
-				<bordersize>9</bordersize>
-				<visible>!Skin.HasSetting(osd_type)</visible>
-			</control>
-			<control type="image"> 
-				<left>375</left>
-				<width>1550</width>
-				<height>330</height>
-				<top>-30</top>
-				<texture flipy="true">osd/osdpanel_transparent.png</texture>
-				<colordiffuse>black</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
-				<bordersize>9</bordersize>				
-				<visible>Skin.HasSetting(osd_type)</visible>
+				<height>343</height>
+				<top>-45</top>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 			</control>
 			<include>VideoInfoPanelFurniture</include>
 			<control type="group">
-				<left>415</left>
-				<top>40</top>
+				<left>410</left>
+				<top>50</top>
 				<right>20</right>
 				<height>175</height>
 				<align>left</align>
 				<orientation>vertical</orientation>
 				<itemgap>10</itemgap>
 				<control type="textbox">
-					<height>170</height>
+					<height>245</height>
 					<label fallback="10005">$INFO[VideoPlayer.Plot]</label>
 					<align>left</align>
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 					<visible>!Player.IsInternetStream</visible>
+					<animation effect="slide" start="0,0" end="0,-40" condition="VideoPlayer.Content(musicvideos) + String.IsEmpty(VideoPlayer.Director)">Conditional</animation>
 				</control>
 				<control type="textbox">
 					<height>170</height>
@@ -679,6 +658,8 @@
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 					<visible>Player.IsInternetStream</visible>
 					<visible>!String.Contains(Player.Folderpath,emby)</visible>
+					<animation effect="slide" start="0,0" end="0,-40" condition="string.Contains(Player.Folderpath,iplayer) + !Player.HasAudio">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-40" condition="string.Contains(Player.Folderpath,catchup)">Conditional</animation>
 				</control>
 				<control type="textbox">
 					<top>35</top>
@@ -688,6 +669,8 @@
 					<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 					<visible>Player.IsInternetStream</visible>
 					<visible>!String.Contains(Player.Folderpath,emby)</visible>
+					<animation effect="slide" start="0,0" end="0,-40" condition="string.Contains(Player.Folderpath,iplayer) + !Player.HasAudio">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-40" condition="string.Contains(Player.Folderpath,catchup)">Conditional</animation>
 				</control>
 				<control type="textbox">
 					<height>240</height>
@@ -703,6 +686,7 @@
 					<height>37</height>
 				<texture>$VAR[Addon_Name_Var]</texture>
 				<visible>Player.IsInternetStream</visible>
+				<animation effect="slide" start="0,0" end="0,-40" condition="string.Contains(Player.Folderpath,iplayer) + !Player.HasAudio">Conditional</animation>
 				</control>
 				<control type="image">
 					<left>190</left>
@@ -711,6 +695,7 @@
 					<height>65</height>
 				<texture>$VAR[Catch_UP_TV_Addon_Var]</texture>
 				<visible>Player.IsInternetStream</visible>
+				<animation effect="slide" start="0,0" end="0,-40" condition="string.Contains(Player.Folderpath,catchup)">Conditional</animation>
 				</control>
 				<control type="image">
 					<left>190</left>

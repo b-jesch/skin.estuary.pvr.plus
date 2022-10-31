@@ -721,22 +721,9 @@
 				<animation effect="slide" start="0,0" end="0,15" condition="String.IsEmpty(VideoPlayer.Season)">Conditional</animation>
 				<visible>false</visible>
 			</control>
-			<control type="label">
-				<left>410</left>
-				<top>-20</top>
-				<right>80</right>
-				<height>290</height>
-				<width>805</width>
-				<scroll>true</scroll>
-				<label>[B][COLOR button_focus]$INFO[VideoPlayer.Season,[COLOR grey]Season [/COLOR]][COLOR grey],[/COLOR][/COLOR] [COLOR button_focus]$INFO[VideoPlayer.Episode,[COLOR grey] Episode [/COLOR]][/COLOR] [COLOR grey] $INFO[VideoPlayer.EpisodeName,(,)][/COLOR][/B]</label>
-				<align>left</align>
-				<shadowcolor>black</shadowcolor>
-				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
-				<visible>!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + String.Contains(,)</visible>
-			</control>
 			<control type="image"> 
 				<left>410</left>
-				<top>-65</top>
+				<top>-105</top>
 				<width>150</width>
 				<height>50</height>
 				<aspectratio>keep</aspectratio>
@@ -744,23 +731,87 @@
 				<visible>!Pvr.IsPlayingRadio</visible>	
 			</control>
 			<control type="image">
-				<left>505</left>
-				<top>-55</top>
+				<left>500</left>
+				<top>-98</top>
 				<width>120</width>
 				<height>30</height>
 				<texture fallback="ratings/imdb/0.0.png" colordiffuse="yellow">$INFO[Window(Home).Property(SkinHelper.Player.Rating),ratings/imdb/,.png]</texture>
 				<visible>!Pvr.IsPlayingRadio</visible>
 			</control>
+			<control type="image"> 
+				<left>635</left>
+				<top>-99</top>
+				<width>40</width>
+				<height>30</height>
+				<texture fallback="flags/videoresolution/sd.png">$VAR[PVR_OSD_HDTV_Flag_Var,flags/hdtv/,.png]</texture>
+				<visible>!Pvr.IsPlayingRadio</visible>
+			</control>
+			<control type="image">
+				<top>-104</top>
+				<left>690</left>
+				<height>70</height>
+				<width>110</width>
+				<textcolor>white</textcolor>
+				<texture>flags/runtime/duration.png</texture>
+				<visible>!Pvr.IsPlayingRadio</visible>
+			</control>
 			<control type="label">
-				<left>650</left>
-				<top>-60</top>
-				<right>80</right>
+				<top>-86</top>
+				<left>620</left>
+				<align>center</align>
+				<width>250</width>
+				<font>font_flag</font>
+				<textcolor>white</textcolor>
+				<label>[B][COLOR white30] $VAR[PVR_Duration_Var] [/COLOR][/B]</label>
+				<visible>!Pvr.IsPlayingRadio</visible>
+			</control>
+			<control type="image">
+				<top>-104</top>
+				<left>410</left>
+				<height>70</height>
+				<width>110</width>
+				<textcolor>white</textcolor>
+				<texture>flags/runtime/duration.png</texture>
+				<visible>Pvr.IsPlayingRadio</visible>
+			</control>
+			<control type="label">
+				<top>-86</top>
+				<left>340</left>
+				<align>center</align>
+				<width>250</width>
+				<font>font_flag</font>
+				<textcolor>white</textcolor>
+				<label>[B][COLOR white30] $VAR[PVR_Duration_Var] [/COLOR][/B]</label>
+				<visible>Pvr.IsPlayingRadio</visible>
+			</control>
+			<control type="image"> 
+				<left>503</left>
+				<top>-61</top>
+				<width>38</width>
+				<height>38</height>
+				<texture >$VAR[PVR_INFO_PANEL_Genre_Icon_VAR,flags/epggenreicons/,.png]</texture> 
+				<visible>true</visible>
+			</control>
+			<control type="label">
+				<left>410</left>
+				<top>-55</top>
 				<height>290</height>
-				<width>1375</width>
+				<width>150</width>
 				<font>font12</font>
-				<label>[B][COLOR grey]$LOCALIZE[31170]: [/COLOR]$INFO[VideoPlayer.Genre][/B]</label> 
-				<align>left</align>
-				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<label>[B]$LOCALIZE[515]:[/B]</label> 
+				<visible>!Pvr.IsPlayingRadio</visible>
+			</control>
+			<control type="label">
+				<left>503</left>
+				<top>-55</top>
+				<height>290</height>
+				<width>800</width>
+				<font>font12</font>
+				<label>[B]$INFO[VideoPlayer.Genre][/B]</label>  
+				<animation effect="slide" start="0,0" end="47,0" condition="String.StartsWith(VideoPlayer.Genre,Movie)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="47,0" condition="String.Contains(VideoPlayer.Genre,News) | String.Contains(VideoPlayer.Genre,Documentary) | String.Contains(VideoPlayer.Genre,Game Show) + !String.Contains(VideoPlayer.Genre,Darts)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="47,0" condition="String.Contains(VideoPlayer.Genre,Football) | String.Contains(VideoPlayer.Genre,Soccer) | String.Contains(VideoPlayer.Genre,Rugby) | String.Contains(VideoPlayer.Genre,Snooker) | String.Contains(VideoPlayer.Genre,Cycling) | String.Contains(VideoPlayer.Genre,Cricket) | String.Contains(VideoPlayer.Genre,Darts) | String.Contains(VideoPlayer.Genre,Motorsport) | String.Contains(VideoPlayer.Genre,Auto Racing) | String.Contains(VideoPlayer.Genre,Tennis) | String.Contains(VideoPlayer.Genre,Wrestling) | String.Contains(VideoPlayer.Genre,Motorcycle Racing) | String.Contains(VideoPlayer.Genre,Horse Racing) | String.Contains(VideoPlayer.Genre,Boxing)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="47,0" condition="String.Contains(VideoPlayer.Genre,Drama) + !String.Contains(VideoPlayer.Genre,Movie) + !String.Contains(VideoPlayer.Genre,Science Fiction)">Conditional</animation>
 				<visible>!Pvr.IsPlayingRadio</visible>
 			</control>
 			<control type="label">
@@ -775,6 +826,7 @@
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 				<visible>Pvr.IsPlayingRadio</visible>
 			</control>
+			
 			<control type="textbox">
 				<left>485</left>
 				<top>70</top>
@@ -820,6 +872,20 @@
 				<visible>Player.HasAudio + RDS.HasRds + !String.IsEmpty(RDS.Artist)</visible>
 			</control>
 			
+			<control type="label">
+				<left>410</left>
+				<top>-20</top>
+				<right>80</right>
+				<height>290</height>
+				<width>1500</width>
+				<scroll>true</scroll>
+				<label>[B][COLOR button_focus]$INFO[VideoPlayer.Season,[COLOR white]Season [/COLOR]][COLOR white],[/COLOR][/COLOR] [COLOR button_focus]$INFO[VideoPlayer.Episode,[COLOR white] Episode [/COLOR]][/COLOR] [COLOR white] $INFO[VideoPlayer.EpisodeName,(,)][/COLOR][/B]</label>
+				<align>left</align>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
+				<visible>!String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.Episode) + String.Contains(,)</visible>
+			</control>
+			
 			<control type="textbox">
 				<left>410</left>
 				<top>20</top>
@@ -830,12 +896,13 @@
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 				<visible>Player.HasAudio + RDS.HasRds + String.IsEmpty(RDS.Artist)</visible>
 				<animation effect="slide" start="0,0" end="0,-40" condition="String.IsEmpty(VideoPlayer.Season)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-40" condition="string.Contains(Player.Folderpath,iplayer) + !Player.HasAudio">Conditional</animation>
 			</control>
 			<control type="textbox">
 				<left>410</left>
 				<top>20</top>
 				<right>30</right>
-				<height>170</height>
+				<height>240</height>
 				<label fallback="19055">$INFO[VideoPlayer.Plot]</label>
 				<align>justify</align>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>

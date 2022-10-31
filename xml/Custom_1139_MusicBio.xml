@@ -11,24 +11,10 @@
 				<left>410</left>
 				<width>1515</width>
 				<height>365</height>
-				 <top>-37</top>
-				<texture flipy="true">osd/osdpanel_transparent.png</texture>
-				<colordiffuse>osdpanel</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
-				<bordersize>9</bordersize>
-				<visible>!Skin.HasSetting(osd_type)</visible>
+				<top>-37</top>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 			</control>
-			<control type="image">
-				<left>410</left>
-				<width>1515</width>
-				<height>365</height>
-				 <top>-37</top>
-				<texture flipy="true">osd/osdpanel_transparent.png</texture>
-				<colordiffuse>black</colordiffuse>
-				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
-				<bordersize>9</bordersize>
-				<visible>Skin.HasSetting(osd_type)</visible>
-			</control>
+			
 			<control type="image">
 				<top>-20</top>
 				<left>435</left>
@@ -72,7 +58,7 @@
 				<align>right</align>
 				<height>40</height>
 				<font>font12</font>
-				<label>[COLOR grey]$INFO[MusicPlayer.Property(Artist_Formed, [COLOR button_focus]Formed: [/COLOR]] [COLOR grey]$INFO[MusicPlayer.Property(Artist_Born,[COLOR button_focus]Born: [/COLOR]][/COLOR] [COLOR grey]$INFO[MusicPlayer.Property(Artist_Died,[COLOR button_focus]Died: [/COLOR]][/COLOR]</label>
+				<label>[COLOR white]$INFO[MusicPlayer.Property(Artist_Formed, [COLOR button_focus]Formed: [/COLOR]] [COLOR white]$INFO[MusicPlayer.Property(Artist_Born,[COLOR button_focus]Born: [/COLOR]][/COLOR] [COLOR white]$INFO[MusicPlayer.Property(Artist_Died,[COLOR button_focus]Died: [/COLOR]][/COLOR]</label>
 				<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
 			</control>
 			<control type="label">
@@ -81,7 +67,7 @@
 				<align>right</align>
 				<height>40</height>
 				<font>font12</font>
-				<label>[COLOR grey]$INFO[MusicPlayer.Property(Artist_YearsActive,[COLOR button_focus]Years Active: [/COLOR]]  [COLOR grey]$INFO[MusicPlayer.Property(Artist_Disbanded,[COLOR button_focus]Disbanded: [/COLOR]][/COLOR]</label> 
+				<label>[COLOR white]$INFO[MusicPlayer.Property(Artist_YearsActive,[COLOR button_focus]Years Active: [/COLOR]]  [COLOR white]$INFO[MusicPlayer.Property(Artist_Disbanded,[COLOR button_focus]Disbanded: [/COLOR]][/COLOR]</label> 
 				<visible>Player.HasAudio + Window.IsVisible(MusicVisualisation.xml) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
 			</control>
 			<control type="textbox">

@@ -986,7 +986,7 @@ msgid "PVR Artwork related settings exclusive to the EstuaryPVR+ Skin"
 msgstr ""
 
 msgctxt "#31218"
-msgid "Show end time media flag"
+msgid "Display End Time Media Flag"
 msgstr ""
 
 msgctxt "#31219"
@@ -1123,6 +1123,18 @@ msgstr ""
 
 msgctxt "#40385"
 msgid "Continue Watching"
+msgstr ""
+
+msgctxt "#40386"
+msgid "Display Top-Bar Breadcrumb Labels (Left-Hand Side)"
+msgstr ""
+
+msgctxt "#40387"
+msgid "Display Weather Info on Top-Bar"
+msgstr ""
+
+msgctxt "#40388"
+msgid "Display Media Flags"
 msgstr ""
 
 

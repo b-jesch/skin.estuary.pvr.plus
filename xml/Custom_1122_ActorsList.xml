@@ -7,33 +7,12 @@
 			<bottom>0</bottom>
 			<height>325</height>
 			<control type="image">
-				<left>375</left>
+				<left>370</left>
 				<width>1550</width>
-				<height>340</height>
+				<height>350</height>
 				<bottom>170</bottom>
-				<texture flipy="true">osd/osdpanel_transparent.png</texture>
-				<colordiffuse>osdpanel</colordiffuse>
-				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
-				<bordersize>9</bordersize>
-				<visible>!Skin.HasSetting(osd_type)</visible>
+				<texture colordiffuse="80FFFFFF">dialogs/dialog-bg-nobo.png</texture>
 			</control>
-				<control type="image">
-				<left>375</left>
-				<width>1550</width>
-				<height>340</height>
-				<bottom>170</bottom>
-				<texture flipy="true">osd/osdpanel_transparent.png</texture>
-				<colordiffuse>black</colordiffuse>
-				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-				<bordertexture colordiffuse="silver" border="8">osd/osdinfoborder.png</bordertexture>
-				<bordersize>9</bordersize>
-				<visible>Skin.HasSetting(osd_type)</visible>
-			</control>
-			
-			
 			<control type="textbox">
 				<include content="ItemLeft" condition="![Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="430"/>
@@ -89,7 +68,7 @@
 			<control type="grouplist" id="9001">
 				<orientation>horizontal</orientation>
 				<left>835</left>
-				<bottom>495</bottom>
+				<bottom>510</bottom>
 				<width>1000</width>
 				<height>100</height>
 				<align>left</align>
@@ -182,7 +161,7 @@
 				<left>0</left>
 				<bottom>0</bottom>
 				<width>390</width>
-				<height>555</height>
+				<height>540</height>
 				
 				<texture fallback="DefaultVideo.png" background="true">$VAR[NowPlayingPosterVar]</texture>
 				<bordertexture border="21">overlays/shadow.png</bordertexture>
