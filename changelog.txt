@@ -1,3 +1,8 @@
+[B]0.2.9[/B]
+• New artwork skin setting to Enable Skin Helper Artwork. (many thanks to Fuchs2468)
+• New artwork skin setting to display online album cover, artist fanart and clearlogo when playing RDS Radio (if available). (many thanks to Fuchs2468)
+• Amount of timeshift cached during playback on the OSD now highlighted in red. 
+
 [B]0.2.8[/B]
 • More refinements to OSD, most notably the introduction of transparent panels for OSD info panel, Actor panel, Bookmark panel, Player Process panel and Artist Bio panel instead of previous colourised panels.
 • Season, Episode and Episode Title added to info panel for TV Shows.
