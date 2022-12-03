@@ -590,7 +590,7 @@
 				<info2>PVR.TimeshiftProgressBufferStart</info2>
 				<info>PVR.TimeshiftProgressBufferEnd</info>
 				<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
-				<midtexture>colors/white70.png</midtexture>
+				<midtexture colordiffuse="red">colors/white.png</midtexture>	
 				<visible>Player.SeekEnabled</visible>
 			</control>
 		</control>
@@ -908,6 +908,15 @@
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 				<visible>Pvr.IsPlayingTv | Player.HasAudio + !RDS.HasRds</visible>
 				<animation effect="slide" start="0,0" end="0,-40" condition="String.IsEmpty(VideoPlayer.Season)">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>400</left>
+				<bottom>470</bottom>
+				<width>500</width>
+				<height>281</height>
+				<texture background="true">$VAR[PlayerInfoClearLogoVar]</texture> 
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<visible>!Pvr.IsPlayingTv + !Pvr.IsPlayingRadio</visible>
 			</control>
 	</include>
 	<include name="PVRInfoPanel">

@@ -58,7 +58,7 @@
 						<include>DialogSettingButton</include>
 						<selected>!Skin.HasSetting(enable_clearlogo)</selected>
 						<onclick>Skin.ToggleSetting(enable_clearlogo)</onclick>
-						<visible>!Pvr.IsPlayingRadio  + !Player.IsInternetStream</visible>
+						<visible>Player.HasAudio</visible>
 					</control>
 					<control type="radiobutton" id="50014">
 						<width>800</width>

@@ -277,12 +277,27 @@
 					<selected>Skin.HasSetting(home_screen_poster_size)</selected>
 				</control>
 				<control type="radiobutton" id="6068">
+					<description>Enable skin helper artwork lookups</description>
+					<label>Enable Skin Helper Artwork</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(SkinHelper.EnableExtendedArt)</onclick>
+					<selected>Skin.HasSetting(SkinHelper.EnableExtendedArt)</selected>
+					<onclick>Skin.Reset(OnlineAlbum_lookup)</onclick>
+					<visible>System.HasAddon(script.skin.helper.service)</visible>
+				</control>
+				<control type="radiobutton" id="6069">
+					<label>Display online album cover, artist fanart and clearlogo for RDS Radio (If Available)</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(OnlineAlbum_lookup)</onclick>
+					<selected>Skin.HasSetting(OnlineAlbum_lookup)</selected>
+					<visible>Skin.HasSetting(SkinHelper.EnableExtendedArt)</visible>
+				</control>
+				<control type="radiobutton" id="6070">
 					<label>$LOCALIZE[31168]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
 					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
 				</control>
-				
 			</control>
 			<control type="grouplist" id="610">
 				<top>160</top>

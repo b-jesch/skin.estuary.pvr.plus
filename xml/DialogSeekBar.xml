@@ -329,11 +329,11 @@
 			<control type="group">
 				<visible>VideoPlayer.Content(LiveTV)</visible>
 				<control type="group">
-					<visible>Player.SeekEnabled + VideoPlayer.HasEPG</visible>
+					<visible>!Player.ChannelPreviewActive | [Player.SeekEnabled + VideoPlayer.HasEPG]</visible>
 					<include content="PVRProgress">
 						<param name="ts_bar_top" value="96"/>
 						<param name="epg_bar_top" value="20"/>
-						<param name="ts_bar_height" value="4"/>
+						<param name="ts_bar_height" value="5"/>
 						<param name="epg_bar_height" value="70"/>
 					</include>
 				</control>
@@ -348,7 +348,7 @@
 					<visible>!Player.SeekEnabled + VideoPlayer.HasEPG</visible>
 					<include content="PVRProgress">
 						<param name="epg_bar_top" value="96"/>
-						<param name="epg_bar_height" value="4"/>
+						<param name="epg_bar_height" value="5"/>
 					</include>
 				</control>
 				<control type="group">
