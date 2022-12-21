@@ -261,7 +261,7 @@
 				</control>
 				<control type="label">
 						<right>24</right>
-						<top>69</top>
+						<top>68</top>
 						<align>right</align>
 						<itemgap>5</itemgap>
 						<orientation>horizontal</orientation>
@@ -270,6 +270,20 @@
 						<shadowcolor>text_shadow</shadowcolor>
 						<height>100</height>
 						<width>500</width>
+						<visible>Skin.HasSetting(Display_Weatherinfo_During_Playback)</visible>
+				</control>
+				<control type="label">
+						<right>24</right>
+						<top>68</top>
+						<align>right</align>
+						<itemgap>5</itemgap>
+						<orientation>horizontal</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<label>$INFO[System.Date]$INFO[Weather.Temperature, | ]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<height>100</height>
+						<width>500</width>
+						<visible>!Skin.HasSetting(Display_Weatherinfo_During_Playback)</visible>
 				</control>
 				<control type="grouplist">
 					<right>24</right>

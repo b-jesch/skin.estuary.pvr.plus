@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<include file="TV_Highlights_Widget.xml"/>
+    <include name="GtoSubmenuItems">
+        <content>
+            <item>
+                <label>$ADDON[script.service.gto 30115]</label>
+                <onclick>RunPlugin(plugin://script.service.gto?action=change_scraper)</onclick>
+                <thumb>newspaper.png</thumb>
+                <visible>System.AddonIsEnabled(script.service.gto)</visible>
+            </item>
+        </content>
+        <content>
+            <item>
+                <label>$ADDON[script.service.gto 30116]</label>
+                <onclick>RunPlugin(plugin://script.service.gto?action=scrape)</onclick>
+                <thumb>update.png</thumb>
+                <visible>System.AddonIsEnabled(script.service.gto)</visible>
+            </item>
+        </content>
+    </include>
 	<include name="WidgetGroupListCommon">
 		<orientation>vertical</orientation>
 		<height>100%</height>
@@ -12,16 +31,44 @@
 	<include name="CategoryLabel">
 		<param name="visible">true</param>
 		<param name="item_treshold">0</param>
+		<param name="extend_label">false</param>
 		<definition>
-			<control type="label" id="$PARAM[list_id]666">
+			<control type="group" id="$PARAM[list_id]666">
 				<left>55</left>
 				<top>80</top>
-				<width>1300</width>
 				<height>90</height>
-				<label>$PARAM[label]</label>
-				<shadowcolor>text_shadow</shadowcolor>
+				<right>55</right>
+				<width>1600</width>
 				<visible>$PARAM[visible]</visible>
+				
 				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+				<control type="label">
+					<left>22</left>
+					<top>-10</top>
+					<right>2</right>
+					<height>90</height>
+					<label>$PARAM[label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>!Skin.HasSetting(HideWidgetLabels)</visible>
+				</control>
+				<control type="label">
+					<left>22</left>
+					<top>-10</top>
+					<right>2</right>
+					<height>90</height>
+					<label>$PARAM[label]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>!Control.HasFocus($PARAM[list_id]) + Skin.HasSetting(HideWidgetLabels)</visible>
+				</control>
+				<control type="label">
+					<left>22</left>
+					<top>-10</top>
+					<right>2</right>
+					<height>90</height>
+					<label>$PARAM[label]$PARAM[label_focus]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+					<visible>Control.HasFocus($PARAM[list_id]) + [Skin.HasSetting(HideWidgetLabels) | $PARAM[extend_label]]</visible>
+				</control>
 			</control>
 		</definition>
 	</include>
@@ -65,6 +112,7 @@
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
+				<param name="label_focus">$PARAM[widget_header_focus]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 			</include>
 			<include content="BusyListSpinner">
@@ -113,6 +161,7 @@
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
+				<param name="label_focus">$PARAM[widget_header_focus]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 			</include>
 			<include content="BusyListSpinner">
@@ -239,6 +288,7 @@
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
+				<param name="label_focus">$PARAM[widget_header_focus]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 			</include>
 			<include content="BusyListSpinner">
@@ -300,6 +350,7 @@
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
+				<param name="label_focus">$PARAM[widget_header_focus]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 				<param name="visible" value="$PARAM[visible]"/>
 			</include>
@@ -361,6 +412,7 @@
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
+				<param name="label_focus">$PARAM[widget_header_focus]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 				<param name="visible" value="$PARAM[visible]"/>
 			</include>
@@ -774,6 +826,7 @@
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
+				<param name="label_focus">$PARAM[widget_header_focus]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 				<param name="item_treshold" value="$PARAM[item_treshold]"/>
 			</include>
@@ -1063,6 +1116,7 @@
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
+				<param name="label_focus">$PARAM[widget_header_focus]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 			</include>
 			<include content="BusyListSpinner">
@@ -1127,6 +1181,7 @@
 		<definition>
 			<include content="CategoryLabel">
 				<param name="label">$PARAM[widget_header]</param>
+				<param name="label_focus">$PARAM[widget_header_focus]</param>
 				<param name="list_id" value="$PARAM[list_id]"/>
 			</include>
 			<include content="BusyListSpinner">
@@ -1572,7 +1627,8 @@
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<orientation>horizontal</orientation>
 		<onleft>9000</onleft>
-		<onright>noop</onright>
+		<onback>9000</onback>
+		<onright></onright>
 		<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
 		<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
 		<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>

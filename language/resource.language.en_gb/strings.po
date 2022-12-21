@@ -48,17 +48,17 @@ msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31006"
-msgid "Random movies"
+msgid "Random Movies"
 msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31007"
-msgid "Unwatched movies"
+msgid "Unwatched Movies"
 msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31008"
-msgid "Enable category widgets"
+msgid "Enable Category Widgets"
 msgstr ""
 
 #: /xml/MyVideoNav.xml
@@ -68,39 +68,39 @@ msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31010"
-msgid "In progress movies"
+msgid "Continue Watching"
 msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31011"
-msgid "Most played albums"
+msgid "Most Played Albums"
 msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31012"
-msgid "Random albums"
+msgid "Random Albums"
 msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31013"
-msgid "Random artists"
+msgid "Random Artists"
 msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31014"
-msgid "Unplayed albums"
+msgid "Unplayed Albums"
 msgstr ""
 
 #. home screen recordings widget: recent tv / radio recordings
 #: /xml/Home.xml
 msgctxt "#31015"
-msgid "Recent recordings"
+msgid "Recent Recordings"
 msgstr ""
 
 #. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
 #: /xml/Home.xml
 msgctxt "#31016"
-msgid "Recently played channels"
+msgid "Playing Now on Recently Watched Channels"
 msgstr ""
 
 #: /xml/DialogVideoInfo.xml
@@ -111,7 +111,7 @@ msgstr ""
 #. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
 #: /xml/Home.xml
 msgctxt "#31018"
-msgid "Recently played channels"
+msgid "Recently Played Radio Channels"
 msgstr ""
 
 #: /xml/Home.xml /xml/MyWeather.xml
@@ -370,7 +370,7 @@ msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31075"
-msgid "Movie sets"
+msgid "Movie Sets"
 msgstr ""
 
 #empty strings from id 31076 to 31078
@@ -559,7 +559,7 @@ msgstr ""
 
 #: /xml/DialogVideoInfo.xml
 msgctxt "#31123"
-msgid "Same director"
+msgid "Same Director"
 msgstr ""
 
 #empty string with id 31124
@@ -694,12 +694,12 @@ msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31151"
-msgid "Unwatched music videos"
+msgid "Unwatched Music Videos"
 msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31152"
-msgid "Random music videos"
+msgid "Random Music Videos"
 msgstr ""
 
 #: /xml/Includes.xml
@@ -784,7 +784,7 @@ msgstr ""
 #. Label of a setting
 #: /xml/SkinSettings.xml
 msgctxt "#31168"
-msgid "Show posters instead of thumbs for musicvideos"
+msgid "Show Posters Instead of Thumbs For Music Videos"
 msgstr ""
 
 #. Description label for skin settings area
@@ -1137,6 +1137,53 @@ msgctxt "#40388"
 msgid "Display Media Flags"
 msgstr ""
 
+msgctxt "#40389"
+msgid "TV Channel Groups"
+msgstr ""
+
+msgctxt "#40390"
+msgid "Recently Added Movies"
+msgstr ""
+
+msgctxt "#40391"
+msgid "Watched"
+msgstr ""
+
+msgctxt "#40392"
+msgid "4K Movies"
+msgstr ""
+
+msgctxt "#40393"
+msgid "My Watchlist"
+msgstr ""
+
+msgctxt "#40394"
+msgid "Recently Added Episodes"
+msgstr ""
+
+msgctxt "#40395"
+msgid "In Progress TV Shows"
+msgstr ""
+
+msgctxt "#40396"
+msgid "Unwatched Episodes Available"
+msgstr ""
+
+msgctxt "#40397"
+msgid "Recently Played Albums"
+msgstr ""
+
+msgctxt "#40398"
+msgid "Recently Added Albums"
+msgstr ""
+
+msgctxt "#40399"
+msgid "Recently Added Music Videos"
+msgstr ""
+
+msgctxt "#40400"
+msgid "Radio Channel Groups"
+msgstr ""
 
 
 

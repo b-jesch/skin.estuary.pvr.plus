@@ -152,15 +152,13 @@
                 	<randomize>true</randomize>
                 	<visible>!Skin.HasSetting(music_equalizer(coloured))</visible>
 				</control>
-				<control type="multiimage">
-                	<left>-75</left>
-					<top>113</top>
-                	<imagepath colordiffuse="white">icons/equalizer</imagepath>
-                	<width>40</width>
-                	<height>35</height>
-                	<fadetime>50</fadetime>
-                	<timeperimage>50</timeperimage>
-                	<randomize>true</randomize>
+				<control type="image">
+                	<left>-90</left>
+					<top>103</top>
+                	
+                	<width>70</width>
+					<height>60</height>
+                	<texture>DefaultMusicSongs.png</texture>
                 	<visible>Skin.HasSetting(music_equalizer(coloured))</visible>
 				</control>
 				<control type="image">

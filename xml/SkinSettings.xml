@@ -29,7 +29,7 @@
 				<onright>60</onright>
 				<onup>700</onup>
 				<ondown>700</ondown>
-				<visible>Container(9000).HasFocus(2)</visible>
+				<visible>Container(9000).HasFocus(3)</visible>
 				<control type="radiobutton" id="701">
 					<label>$LOCALIZE[31095]</label>
 					<include>DefaultSettingButton</include>
@@ -62,22 +62,58 @@
 					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
 				</control>
 				<control type="radiobutton" id="706">
+					<label>Display Weather Info on Top-Bar When OSD is Activated During Playback</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(Display_Weatherinfo_During_Playback)</onclick>
+					<selected>!Skin.HasSetting(Display_Weatherinfo_During_Playback)</selected> 
+				</control>
+				<control type="radiobutton" id="707">
 					<label>$LOCALIZE[40388]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
 				</control>
-				<control type="radiobutton" id="707">
+				<control type="radiobutton" id="708">
 					<label>$LOCALIZE[31218]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(show_mediaendtimeflag)</onclick>
 					<selected>!Skin.HasSetting(show_mediaendtimeflag)</selected>
 				</control>
-				<control type="button" id="708">
+				<control type="button" id="709">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool($LOCALIZE[31024], 38018|circle_userrating, 563|circle_rating, 16018|)</onclick>
 					<label2>$VAR[RatingSettingLabel2Var]</label2>
+				</control>
+			</control>
+			
+			<control type="grouplist" id="725">
+				<top>160</top>
+				<left>0</left>
+				<right>0</right>
+				<bottom>140</bottom>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup>850</onup>
+				<ondown>850</ondown>
+				<visible>Container(9000).HasFocus(2)</visible>
+				<control type="radiobutton" id="730">
+					<label>Display Smaller Sized Movie & TV Show Posters on Home Screen</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(home_screen_poster_size)</onclick>
+					<selected>Skin.HasSetting(home_screen_poster_size)</selected>
+				</control>
+				<control type="radiobutton" id="731">
+					<label>Display Media Title / PVR Info Labels After Widget Heading</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(HideWidgetLabels)</onclick>
+					<selected>Skin.HasSetting(HideWidgetLabels)</selected>
+				</control>
+				<control type="radiobutton" id="732">
+					<label>$LOCALIZE[31168]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
+					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
 				</control>
 			</control>
 			
@@ -90,26 +126,26 @@
 				<onright>60</onright>
 				<onup>750</onup>
 				<ondown>750</ondown>
-				<visible>Container(9000).HasFocus(3)</visible>
+				<visible>Container(9000).HasFocus(4)</visible>
 				<control type="radiobutton" id="751">
-					<label>Display colourised OSD Info Panel</label>
+					<label>Display Colourised OSD Info Panel</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(osd_type)</onclick>
 					<selected>!Skin.HasSetting(osd_type)</selected> 
 				</control>
 				<control type="radiobutton" id="752">
-					<label>Display clearart above OSD for movies and TV shows</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(enable_clearart)</onclick>
-					<selected>Skin.HasSetting(enable_clearart)</selected>
-				</control>
-				<control type="radiobutton" id="753">
-					<label>Display coloured equalizer on music OSD instead of white one</label>
+					<label>Display Coloured Equalizer Animation on Music OSD</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(music_equalizer(coloured))</onclick>
 					<selected>!Skin.HasSetting(music_equalizer(coloured))</selected>
 				</control>
-				<control type="button" id="755">
+				<control type="radiobutton" id="753">
+					<label>Display Clearart Above OSD for Movies and TV shows</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(enable_clearart)</onclick>
+					<selected>Skin.HasSetting(enable_clearart)</selected>
+				</control>
+				<control type="button" id="754">
 					<label>$LOCALIZE[40377]</label>
 					<label2>$INFO[Skin.String(autoclose_osd)]</label2>
 					<include>DefaultSettingButton</include>
@@ -134,7 +170,7 @@
 				<onright>60</onright>
 				<onup>800</onup>
 				<ondown>800</ondown>
-				<visible>Container(9000).HasFocus(5)</visible>
+				<visible>Container(9000).HasFocus(6)</visible>
 				<control type="radiobutton" id="801">
 					<include>DefaultSettingButton</include>
 					<label>Use 'Backend' for PVR Artwork</label>
@@ -143,7 +179,7 @@
 				</control>
 				<control type="radiobutton" id="802">
 					<include>DefaultSettingButton</include>
-					<label>Use Skin Helper Script to help find any missing PVR Artwork</label>
+					<label>Use Skin Helper Script to Help Find Any Missing PVR Artwork</label>
 					<selected>Skin.HasSetting(SkinHelper.EnablePVRThumbs)</selected>
 					<onclick>Skin.ToggleSetting(SkinHelper.EnablePVRThumbs)</onclick>
 				</control>
@@ -162,13 +198,13 @@
 				</control>
 				<control type="radiobutton" id="807">
 					<include>DefaultSettingButton</include>
-					<label>Display landscape image for TV recordings on Home Screen instead of default Estuary setting</label>
+					<label>Display Landscape Image for TV Recordings on Home Screen Instead of Default Estuary Setting</label>
 					<selected>!Skin.HasSetting(Display_TV_Recording_Image)</selected>
 					<onclick>Skin.ToggleSetting(Display_TV_Recording_Image)</onclick> 
 				</control>
 				<control type="radiobutton" id="808">
 					<include>DefaultSettingButton</include>
-					<label>Display fanart image for Last Channel Played on Home Screen instead of channel icon</label>
+					<label>Display Fanart Image for Last Channel Played on Home Screen Instead of Channel Icon</label>
 					<selected>Skin.HasSetting(Display_Last_Channel_Artwork)</selected>
 					<onclick>Skin.ToggleSetting(Display_Last_Channel_Artwork)</onclick> 
 				</control>
@@ -183,18 +219,18 @@
 				<onright>60</onright>
 				<onup>850</onup>
 				<ondown>850</ondown>
-				<visible>Container(9000).HasFocus(6)</visible>
+				<visible>Container(9000).HasFocus(7)</visible>
 				<control type="radiobutton" id="809">
-					<include>DefaultSettingButton</include>
-					<label>Display premiered flags on EPG Screen instead of using '*'</label>
-					<selected>!Skin.HasSetting(Display_Premiered_Flags)</selected>
-					<onclick>Skin.ToggleSetting(Display_Premiered_Flags)</onclick> 
-				</control>
-				<control type="radiobutton" id="810">
 					<include>DefaultSettingButton</include>
 					<label>Display Channel Groups on EPG Screen</label>
 					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
 					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
+				</control>
+				<control type="radiobutton" id="810">
+					<include>DefaultSettingButton</include>
+					<label>Display Premiered Flags on EPG Screen Instead of Using '*'</label>
+					<selected>!Skin.HasSetting(Display_Premiered_Flags)</selected>
+					<onclick>Skin.ToggleSetting(Display_Premiered_Flags)</onclick> 
 				</control>
 				<control type="radiobutton" id="811">
 					<include>DefaultSettingButton</include>
@@ -211,9 +247,15 @@
 				</control>
 				<control type="radiobutton" id="813"> 
 					<include>DefaultSettingButton</include>
-					<label>Enable 'Next-Up' Dialog when current programme is about to end</label>
+					<label>Enable 'Next-Up' Dialog When Current Programme is About to End</label>
 					<selected>!Skin.HasSetting(Show_NextUp_TV)</selected>
 					<onclick>Skin.ToggleSetting(Show_NextUp_TV)</onclick>
+				</control>
+				<control type="radiobutton" id="814"> 
+					<include>DefaultSettingButton</include>
+					<label>Enable TV Highlights Widget on Live TV Home Screen.</label>
+					<selected>Skin.HasSetting(Enable_TV_Highlights)</selected>
+					<onclick>Skin.ToggleSetting(Enable_TV_Highlights)</onclick>
 				</control>
 			</control>
 			
@@ -226,7 +268,7 @@
 				<onright>60</onright>
 				<onup>600</onup>
 				<ondown>600</ondown>
-				<visible>Container(9000).HasFocus(4)</visible>
+				<visible>Container(9000).HasFocus(5)</visible>
 				<control type="radiobutton" id="605">
 					<label>$LOCALIZE[31002]</label>
 					<include>DefaultSettingButton</include>
@@ -271,12 +313,6 @@
 					<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreFanart&amp;type=resource.images.moviegenrefanart)</onclick>
 				</control>
 				<control type="radiobutton" id="6067">
-					<label>Display smaller sized movie & TV show posters on home page</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(home_screen_poster_size)</onclick>
-					<selected>Skin.HasSetting(home_screen_poster_size)</selected>
-				</control>
-				<control type="radiobutton" id="6068">
 					<description>Enable skin helper artwork lookups</description>
 					<label>Enable Skin Helper Artwork</label>
 					<include>DefaultSettingButton</include>
@@ -285,20 +321,15 @@
 					<onclick>Skin.Reset(OnlineAlbum_lookup)</onclick>
 					<visible>System.HasAddon(script.skin.helper.service)</visible>
 				</control>
-				<control type="radiobutton" id="6069">
+				<control type="radiobutton" id="6068">
 					<label>Display online album cover, artist fanart and clearlogo for RDS Radio (If Available)</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(OnlineAlbum_lookup)</onclick>
 					<selected>Skin.HasSetting(OnlineAlbum_lookup)</selected>
 					<visible>Skin.HasSetting(SkinHelper.EnableExtendedArt)</visible>
 				</control>
-				<control type="radiobutton" id="6070">
-					<label>$LOCALIZE[31168]</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
-					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
-				</control>
 			</control>
+			
 			<control type="grouplist" id="610">
 				<top>160</top>
 				<left>0</left>
@@ -477,22 +508,26 @@
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
-						<label>General Settings</label>
+						<label>Home Screen</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="3">
-						<label>OSD Settings</label>
+						<label>General Settings</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="4">
-						<label>Artwork Settings</label>
+						<label>OSD Settings</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="5">
-						<label>PVR Artwork Settings</label>
+						<label>Artwork Settings</label>
 						<onclick>noop</onclick>
 					</item>
 					<item id="6">
+						<label>PVR Artwork Settings</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="7">
 						<label>General PVR Settings</label>
 						<onclick>noop</onclick>
 					</item>
