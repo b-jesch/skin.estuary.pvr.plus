@@ -1,3 +1,9 @@
+[B]0.3.0[/B]
+• New skin setting added for 'Home Screen' items.
+• Support for 'TV Highlights' Widget added to 'Live TV Home Screen' which can be enabled via Skin Settings. (Many thanks to _BJ1)
+• Animated equaliser on music OSD can now be disabled via skin settings.
+• New setting added to 'Home Screen' option on skin settings to display media title / PVR info labels after widget heading.
+
 [B]0.2.9[/B]
 • New artwork skin setting to Enable Skin Helper Artwork. (many thanks to Fuchs2468)
 • New artwork skin setting to display online album cover, artist fanart and clearlogo when playing RDS Radio (if available). (many thanks to Fuchs2468)
