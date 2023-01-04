@@ -539,6 +539,7 @@
 						<include content="WidgetListCategories" condition="System.HasPVRAddon">
 							<param name="content_path" value="pvr://tv/"/>
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
+							<param name="additional_pvr_items" value="true"/>
 							<param name="list_id" value="12900"/>
 						</include>
 						<include content="WidgetListOffers" condition="System.HasPVRAddon + System.HasAddon(script.service.gto) + Skin.HasSetting(Enable_TV_Highlights)"> 

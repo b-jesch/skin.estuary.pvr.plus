@@ -470,6 +470,7 @@
 		<param name="icon_height">120</param>
 		<param name="additional_movie_items">false</param>
 		<param name="additional_tvshow_items">false</param>
+		<param name="additional_pvr_items">false</param>
 		<param name="visible">true</param>
 		<definition>
 			<include content="CategoryLabel">
@@ -570,6 +571,7 @@
 				<content target="$PARAM[widget_target]" limit="$PARAM[item_limit]">$PARAM[content_path]</content>
 				<include condition="$PARAM[additional_movie_items]" content="MovieSubmenuItems" />
 				<include condition="$PARAM[additional_tvshow_items]" content="TVShowSubmenuItems" />
+				<include condition="$PARAM[additional_pvr_items]" content="PVRSubmenuItems"/>
 			</control>
 		</definition>
 	</include>
@@ -790,7 +792,22 @@
 			</item>
 		</content>
 	</include>
-	
+	<include name="PVRSubmenuItems">
+		<content>
+			<item>
+				<label>$LOCALIZE[31245]</label>
+				<onclick>RunPlugin(plugin://script.service.gto?action=change_scraper)</onclick>
+				<thumb>special://skin/extras/icons/pvr/newspaper.png</thumb>
+				<visible>System.AddonIsEnabled(script.service.gto)</visible>
+			</item>
+			<item>
+				<label>$LOCALIZE[31246]</label>
+				<onclick>RunPlugin(plugin://script.service.gto?action=scrape)</onclick>
+				<thumb>special://skin/extras/icons/pvr/update.png</thumb>
+				<visible>System.AddonIsEnabled(script.service.gto)</visible>
+			</item>
+		</content>
+	</include>
 	<include name="MovieSubmenuItems">
 		<content>
 			<item>

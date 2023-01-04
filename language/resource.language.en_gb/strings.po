@@ -809,7 +809,7 @@ msgctxt "#31173"
 msgid "Duration"
 msgstr ""
 
-msgctxt "#31174
+msgctxt "#31174"
 msgid "Airing Now"
 msgstr ""
 
@@ -1092,6 +1092,18 @@ msgstr ""
 msgctxt "#31244"
 msgid "OSD related settings"
 msgstr "" 
+
+# PVR category widget
+
+msgctxt "#31245"
+msgid "Change Scraper"
+msgstr ""
+
+# PVR category widget
+
+msgctxt "#31246"
+msgid "Reload Scraper"
+msgstr ""
 
 msgctxt "#40377"
 msgid "Close Video OSD automatically after"
