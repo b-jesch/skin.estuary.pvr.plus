@@ -1,3 +1,12 @@
+[B]0.3.1[/B]
+• Fixed textbox height for plot on Live TV programmes on OSD Info panel. 
+• Navigation improved when using home screen widgets. 
+• New skin setting added to display library stats on System Information window (Default setting is 'Off').
+• New skin setting that adds Context Menu Options to Choose and Update Scraper for TV Highlights Widget. (Default setting is 'Off')
+• New skin setting that displays new media flag for TV Recordings added to your Movie and TV Show Libraries (.TS Files Only) 
+• New skin setting to hide channel number on EPG Screen (Default setting is 'NOT' to hide channel number) 
+• New skin setting added that sets the number of viewable hours of guide data displayed on the EPG Screen (options available '1Hr / 1.5Hrs / 2Hrs (Default) / 2.5Hrs / 3Hrs / 4Hrs)
+
 [B]0.3.0[/B]
 • New skin setting added for 'Home Screen' items.
 • Support for 'TV Highlights' Widget added to 'Live TV Home Screen' which can be enabled via Skin Settings. (Many thanks to _BJ1)
