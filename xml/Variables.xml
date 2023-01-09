@@ -314,11 +314,12 @@
 	</variable>
 	<variable name="SkinSettingsHelpTextVar">
 		<value condition="Container(9000).HasFocus(1)">$LOCALIZE[31130]</value>
-		<value condition="Container(9000).HasFocus(2)">$LOCALIZE[31129]</value>
-		<value condition="Container(9000).HasFocus(3)">$LOCALIZE[31244]</value>
-		<value condition="Container(9000).HasFocus(4)">$LOCALIZE[31169]</value>
-		<value condition="Container(9000).HasFocus(5)">$LOCALIZE[31217]</value>
-		<value condition="Container(9000).HasFocus(6)">$LOCALIZE[31243]</value> 
+		<value condition="Container(9000).HasFocus(2)">Home Screen Settings</value>
+		<value condition="Container(9000).HasFocus(3)">$LOCALIZE[31129]</value>
+		<value condition="Container(9000).HasFocus(4)">$LOCALIZE[31244]</value>
+		<value condition="Container(9000).HasFocus(5)">$LOCALIZE[31169]</value>
+		<value condition="Container(9000).HasFocus(6)">$LOCALIZE[31217]</value>
+		<value condition="Container(9000).HasFocus(7)">$LOCALIZE[31243]</value>
 	</variable>
 	<variable name="VolumeIconVar">
 		<value condition="Player.Muted">dialogs/volume/mute.png</value>
@@ -1131,5 +1132,17 @@
 	</variable>
 	<variable name="LiveTV_EpisodeVar"> 
 		<value condition="!String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode]</value>
+	</variable>
+	<variable name="TV_Recording_Media_Flag_Var">
+		<value condition="String.EndsWith(Player.Filename,.ts)">flags/tvrecording/tv_rec.png</value>
+		<value condition="String.EndsWith(ListItem.FileName,.ts)">flags/tvrecording/tv_rec.png</value> 
+	</variable>
+	<variable name="Set_EPG_TimeBlock_Hours_Var">
+		<value condition="Skin.HasSetting(1_Hour)">1 Hour</value>
+		<value condition="Skin.HasSetting(1_5_Hours)">1.5 Hours</value>
+		<value condition="Skin.HasSetting(2_5_Hours)">2.5 Hours</value>
+		<value condition="Skin.HasSetting(3_Hours)">3 Hours</value>
+		<value condition="Skin.HasSetting(4_Hours)">4 Hours</value>
+		<value>$LOCALIZE[40404]</value>
 	</variable>
 </includes>

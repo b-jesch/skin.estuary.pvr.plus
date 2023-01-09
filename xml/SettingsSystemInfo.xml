@@ -204,6 +204,7 @@
 			</control>
 			<control type="grouplist">
 				<left>420</left>
+				<top>195</top>
 				<orientation>vertical</orientation>
 				<control type="label">
 					<description>Memory Text</description>
@@ -238,12 +239,14 @@
 					<info>System.CPUUsage</info>
 					<visible>System.SupportsCPUUsage</visible>
 				</control>
+				
+				<animation effect="slide" start="0,0" end="0,-170" condition="!Skin.HasSetting(display_library_stats)">Conditional</animation>
 			</control>
 			<control type="group">
 				<animation effect="slide" end="0,-55" time="0" condition="!System.SupportsCPUUsage">Conditional</animation>
 				<control type="label">
-					<top>155</top>
-					<left>420</left>
+					<top>215</top>
+					<left>1175</left>
 					<width>auto</width>
 					<height>50</height>
 					<aligny>bottom</aligny>
@@ -255,8 +258,8 @@
 				<control type="grouplist">
 					<description>Kodi build version</description>
 					<itemgap>10</itemgap>
-					<top>200</top>
-					<left>420</left>
+					<top>260</top>
+					<left>1175</left>
 					<width>820</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -280,8 +283,8 @@
 				<control type="grouplist">
 					<description>Git version</description>
 					<itemgap>10</itemgap>
-					<top>235</top>
-					<left>420</left>
+					<top>295</top>
+					<left>1175</left>
 					<width>820</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -305,8 +308,8 @@
 				<control type="grouplist">
 					<description>Build date</description>
 					<itemgap>10</itemgap>
-					<top>270</top>
-					<left>420</left>
+					<top>330</top>
+					<left>1175</left>
 					<width>820</width>
 					<orientation>horizontal</orientation>
 					<control type="label">
@@ -326,7 +329,95 @@
 						<shadowcolor>black</shadowcolor>
 					</control>
 				</control>
+				
+				<animation effect="slide" start="0,0" end="0,-170" condition="!Skin.HasSetting(display_library_stats)">Conditional</animation>
+			</control>
+			
+			
+		</control>
+	<control type="grouplist">
+			<orientation>horizontal</orientation>
+			<itemgap>80</itemgap>
+			<left>540</left>
+			<right>50</right>
+			<top>730</top>
+			<include>OpenClose_Right</include>
+		<control type="group">
+			<width>250</width>
+			<visible>Library.HasContent(movies)</visible>
+			<control type="image">
+			<centerleft>50%</centerleft>
+			<width>100</width>
+			<height>100</height>
+			<texture>DefaultMovies.png</texture>
+			</control>
+			<control type="label">
+			<top>80</top>
+			<label>[B]$INFO[Window(Home).Property(Movies.Count),, $LOCALIZE[36901]][CR]$INFO[Window(Home).Property(Movies.Watched),$LOCALIZE[16102] : ,][CR]$INFO[Window(Home).Property(Movies.UnWatched),$LOCALIZE[16101] : ,][/B]</label>
+			<font>font12</font>
+			<align>center</align>
+			<scroll>true</scroll>
 			</control>
 		</control>
+		<control type="group">
+			<width>250</width>
+			<visible>Library.HasContent(tvshows)</visible>
+			<control type="image">
+			<centerleft>50%</centerleft>
+			<width>100</width>
+			<height>100</height>
+			<texture>DefaultTVShows.png</texture>
+			</control>
+			<control type="label">
+			<top>80</top>
+			<label>[B]$INFO[Window(Home).Property(Episodes.Count),, $LOCALIZE[20453]][CR]$INFO[Window(Home).Property(Episodes.Watched),$LOCALIZE[16102] : ,][CR]$INFO[Window(Home).Property(Episodes.UnWatched),$LOCALIZE[16101] : ,][/B]</label>
+			<font>font12</font>
+			<align>center</align>
+			<scroll>true</scroll>
+			</control>
+		</control>
+		<control type="group">
+			<width>250</width>
+			<visible>Library.HasContent(music)</visible>
+			<control type="image">
+			<centerleft>50%</centerleft>
+			<width>100</width>
+			<height>100</height>
+			<texture>DefaultMusicSongs.png</texture>
+			</control>
+			<control type="label">
+			<top>80</top>
+			<label>[B]$INFO[Window(Home).Property(Music.SongsCount),, $LOCALIZE[36921]][CR]$INFO[Window(Home).Property(Music.AlbumsCount),, $LOCALIZE[36919]][CR]$INFO[Window(Home).Property(Music.ArtistsCount),, $LOCALIZE[36917]][/B]</label>
+			<font>font12</font>
+			<align>center</align>
+			<scroll>true</scroll>
+			</control>
+		</control>
+		<control type="group">
+			<width>250</width>
+			<visible>Library.HasContent(musicvideos)</visible>
+			<control type="image">
+			<centerleft>50%</centerleft>
+			<width>100</width>
+			<height>100</height>
+			<texture>DefaultMusicVideos.png</texture>
+			</control>
+			<control type="label">
+			<top>80</top>
+			<label>[B]$INFO[Window(Home).Property(MusicVideos.Count),, $LOCALIZE[36909]][CR]$INFO[Window(Home).Property(MusicVideos.Watched),$LOCALIZE[16102] : ,][CR]$INFO[Window(Home).Property(MusicVideos.UnWatched),$LOCALIZE[16101] : ,][/B]</label>
+			<font>font12</font>
+			<align>center</align>
+			<scroll>true</scroll>
+			</control>
+		</control>
+		<visible>Skin.HasSetting(display_library_stats)</visible>
+	</control>
+	<control type="image">
+			<left>420</left>
+			<top>930</top>
+			<right>0</right>
+			<height>3</height>
+			<texture colordiffuse="button_focus" border="2">dialogs/separator-grey.png</texture>
+	</control>
 	</controls>
 </window>

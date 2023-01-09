@@ -1197,5 +1197,37 @@ msgctxt "#40400"
 msgid "Radio Channel Groups"
 msgstr ""
 
+msgctxt "#40401"
+msgid "Skin Default (2 Hours)"
+msgstr ""
+
+msgctxt "#40402"
+msgid "1 Hour"
+msgstr ""
+
+msgctxt "#40403"
+msgid "1.5 Hours"
+msgstr ""
+
+msgctxt "#40404"
+msgid "Skin Default (2 Hours)"
+msgstr ""
+
+msgctxt "#40405"
+msgid "2.5 Hours"
+msgstr ""
+
+msgctxt "#40406"
+msgid "3 Hours"
+msgstr ""
+
+msgctxt "#40407"
+msgid "4 Hours"
+msgstr ""
+
+msgctxt "#40408"
+msgid "Set Number of Hours to Display on EPG Timeline" 
+msgstr ""
+
 
 

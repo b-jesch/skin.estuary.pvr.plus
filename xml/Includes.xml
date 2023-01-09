@@ -348,9 +348,26 @@
 			</control>
 		</definition>
 	</include>
+	<include name="TVRecordingMediaFlag">
+		<param name="width">115</param>
+		<param name="height">60</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="image">
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<fadetime>0</fadetime>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture>$PARAM[texture]</texture>
+				<visible>$PARAM[visible]</visible>
+				<visible>Skin.HasSetting(show_TV_recording_flag)</visible>
+			</control>
+		</definition>
+	</include>
 	<include name="MediaFlags">
 		<param name="infolabel_prefix"></param>
 		<param name="resolution_var">$VAR[ResolutionFlagVar]</param>
+		<param name="tvrecording_var">$VAR[TV_Recording_Media_Flag_Var]</param>
 		<definition>
 			<control type="grouplist">
 				<orientation>horizontal</orientation>
@@ -372,6 +389,11 @@
 						<param name="height" value="50" />
 					</include>
 				</control>
+				
+				<include content="TVRecordingMediaFlag">
+					<param name="texture" value="$PARAM[tvrecording_var]" />
+					<param name="visible" value="String.EndsWith(ListItem.FileName,.ts)" />
+				</include>
 				<include content="MediaFlag">
 					<param name="texture" value="$PARAM[resolution_var]" />
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoResolution)" />
@@ -1652,34 +1674,6 @@
 		</focusedlayout>
 	</include>
 	<include name="VideoInfoPanelFurniture">
-			<control type="grouplist">
-					<right>30</right>
-					<centertop>70</centertop>
-					<width>800</width>
-					<height>50</height>
-					<align>right</align>
-					<orientation>horizontal</orientation>
-					<itemgap>10</itemgap>
-					<visible>[Player.ShowInfo | Window.IsActive(fullscreeninfo)] + !Player.ChannelPreviewActive + Window.IsActive(fullscreenvideo)</visible>
-					
-					<include content="MediaFlag">
-					<param name="texture" value="$INFO[VideoPlayer.VideoResolution,flags/videoresolution/,.png]" />
-					</include>
-					<include content="MediaFlag">
-						<param name="texture" value="$INFO[VideoPlayer.AudioChannels,flags/audiochannel/,.png]" />
-					</include>
-					<include content="MediaFlag">
-						<param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]" />
-					</include>
-					<include content="MediaFlag">
-					<param name="texture" value="$INFO[VideoPlayer.VideoCodec,flags/videocodec/,.png]" />
-					</include>
-					<include content="MediaFlag">
-						<param name="texture" value="$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]" />
-					</include>
-					<visible>false</visible>
-			</control>
-			
 			<control type="image">
 				<left>410</left>
 				<top>-33</top>
@@ -1713,8 +1707,7 @@
 				<texture fallback="ratings/tmdb/0.0.png">$VAR[TMDB_Rating_VAR]</texture>
 				<visible>!VideoPlayer.Content(musicvideos)</visible>
 			</control>
-			
-			
+						
 			<control type="image">
 				<left>750</left>
 				<top>-33</top>
@@ -1782,7 +1775,6 @@
 				<shadowcolor>black</shadowcolor>
 				<autoscroll delay="5000" repeat="7500" time="5000"></autoscroll>
 				<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | Pvr.IsPlayingRecording + !MusicPlayer.Content(livetv) + String.IsEmpty(VideoPlayer.Season)</visible>
-				
 				<animation effect="slide" start="0,0" end="0,-40" condition="VideoPlayer.Content(musicvideos)">Conditional</animation>
 			</control>
 			<control type="image">
