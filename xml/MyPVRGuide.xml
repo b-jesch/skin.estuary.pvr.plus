@@ -117,7 +117,8 @@
 							<param name="has_rulerdate_layout" value="false"/>
 							<param name="ruler_width" value="1400"/>
 							<param name="ruler_label_width" value="365"/>
-							<param name="channel_width" value="350"/>
+							<param name="channel_width" value="350" condition="!Skin.HasSetting(hide_channelnumber)"/>
+							<param name="extended_channel_width" value="375" condition="Skin.HasSetting(hide_channelnumber)"/>
 							<param name="scrollbar_top" value="47"/>
 						</include>
 					</control>

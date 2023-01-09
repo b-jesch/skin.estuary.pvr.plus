@@ -79,7 +79,13 @@
 					<onclick>Skin.ToggleSetting(show_mediaendtimeflag)</onclick>
 					<selected>!Skin.HasSetting(show_mediaendtimeflag)</selected>
 				</control>
-				<control type="button" id="709">
+				<control type="radiobutton" id="709">
+					<label>Display Library Stats on System Info Window</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(display_library_stats)</onclick>
+					<selected>!Skin.HasSetting(display_library_stats)</selected>
+				</control>
+				<control type="button" id="710">
 					<label>$LOCALIZE[31024]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool($LOCALIZE[31024], 38018|circle_userrating, 563|circle_rating, 16018|)</onclick>
@@ -94,8 +100,8 @@
 				<bottom>140</bottom>
 				<onleft>9000</onleft>
 				<onright>60</onright>
-				<onup>850</onup>
-				<ondown>850</ondown>
+				<onup>725</onup>
+				<ondown>725</ondown>
 				<visible>Container(9000).HasFocus(2)</visible>
 				<control type="radiobutton" id="730">
 					<label>Display Smaller Sized Movie & TV Show Posters on Home Screen</label>
@@ -114,6 +120,18 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
 					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
+				</control>
+				<control type="radiobutton" id="733"> 
+					<include>DefaultSettingButton</include>
+					<label>Enable TV Highlights Widget on Live TV Home Screen.</label>
+					<selected>Skin.HasSetting(Enable_TV_Highlights)</selected>
+					<onclick>Skin.ToggleSetting(Enable_TV_Highlights)</onclick>
+				</control>
+				<control type="radiobutton" id="734"> 
+					<include>DefaultSettingButton</include>
+					<label>Enable Context Menu Options to Choose and Update Scraper for TV Highlights Widget.</label>
+					<selected>!Skin.HasSetting(Enable_TV_Highlights_Context_Menu)</selected>
+					<onclick>Skin.ToggleSetting(Enable_TV_Highlights_Context_Menu)</onclick>
 				</control>
 			</control>
 			
@@ -220,42 +238,54 @@
 				<onup>850</onup>
 				<ondown>850</ondown>
 				<visible>Container(9000).HasFocus(7)</visible>
-				<control type="radiobutton" id="809">
+				<control type="button" id="809">
+					<label>Set Number of Hours to Display on EPG Timeline</label> 
+					<include>DefaultSettingButton</include> 
+					<onclick>Skin.SelectBool($LOCALIZE[40408], 40402|1_Hour, 40403|1_5_Hours, 40401|, 40405|2_5_Hours, 40406|3_Hours, 40407|4_Hours)</onclick> 
+					<label2>$VAR[Set_EPG_TimeBlock_Hours_Var]</label2>
+				</control>
+				<control type="radiobutton" id="810">
+					<label>Hide Channel Number on EPG Screen</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(hide_channelnumber)</onclick>
+					<selected>Skin.HasSetting(hide_channelnumber)</selected> 
+				</control>
+				<control type="radiobutton" id="811">
 					<include>DefaultSettingButton</include>
 					<label>Display Channel Groups on EPG Screen</label>
 					<selected>!Skin.HasSetting(ShowPVRGroups)</selected>
 					<onclick>Skin.ToggleSetting(ShowPVRGroups)</onclick>
 				</control>
-				<control type="radiobutton" id="810">
+				<control type="radiobutton" id="812">
 					<include>DefaultSettingButton</include>
 					<label>Display Premiered Flags on EPG Screen Instead of Using '*'</label>
 					<selected>!Skin.HasSetting(Display_Premiered_Flags)</selected>
 					<onclick>Skin.ToggleSetting(Display_Premiered_Flags)</onclick> 
 				</control>
-				<control type="radiobutton" id="811">
+					<control type="radiobutton" id="813">
 					<include>DefaultSettingButton</include>
 					<label>Display Standard Block Genre Colours on EPG Screen Instead of Strip Genre Colours</label>
 					<selected>!Skin.HasSetting(Enable_Estuary_Default_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Estuary_Default_PVR_Genres)</onclick> 
 				</control>
-				<control type="radiobutton" id="812">
+				<control type="radiobutton" id="814">
 					<include>DefaultSettingButton</include>
 					<label>Display Genre Colours on EPG Screen</label>
 					<selected>!Skin.HasSetting(Enable_Kodi_PVR_Genres)</selected>
 					<onclick>Skin.ToggleSetting(Enable_Kodi_PVR_Genres)</onclick> 
 					<visible>false</visible>
 				</control>
-				<control type="radiobutton" id="813"> 
+				<control type="radiobutton" id="815">
+					<label>Display Media Flag for TV Recordings Added to Movie and TV Show Libraries (.TS Files Only)</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(show_TV_recording_flag)</onclick>
+					<selected>Skin.HasSetting(show_TV_recording_flag)</selected> 
+				</control>
+				<control type="radiobutton" id="816"> 
 					<include>DefaultSettingButton</include>
 					<label>Enable 'Next-Up' Dialog When Current Programme is About to End</label>
 					<selected>!Skin.HasSetting(Show_NextUp_TV)</selected>
 					<onclick>Skin.ToggleSetting(Show_NextUp_TV)</onclick>
-				</control>
-				<control type="radiobutton" id="814"> 
-					<include>DefaultSettingButton</include>
-					<label>Enable TV Highlights Widget on Live TV Home Screen.</label>
-					<selected>Skin.HasSetting(Enable_TV_Highlights)</selected>
-					<onclick>Skin.ToggleSetting(Enable_TV_Highlights)</onclick>
 				</control>
 			</control>
 			

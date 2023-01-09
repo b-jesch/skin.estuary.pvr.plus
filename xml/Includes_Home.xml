@@ -24,8 +24,8 @@
 		<height>100%</height>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<itemgap>-160</itemgap>
-		<onup>20000</onup>
-		<ondown>20001</ondown>
+		<onup></onup>
+		<ondown></ondown>
 		<usecontrolcoords>true</usecontrolcoords>
 	</include>
 	<include name="CategoryLabel">
