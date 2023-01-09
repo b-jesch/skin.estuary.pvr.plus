@@ -83,7 +83,7 @@
 					<label>Display Library Stats on System Info Window</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(display_library_stats)</onclick>
-					<selected>!Skin.HasSetting(display_library_stats)</selected>
+					<selected>Skin.HasSetting(display_library_stats)</selected>
 				</control>
 				<control type="button" id="710">
 					<label>$LOCALIZE[31024]</label>
@@ -130,7 +130,7 @@
 				<control type="radiobutton" id="734"> 
 					<include>DefaultSettingButton</include>
 					<label>Enable Context Menu Options to Choose and Update Scraper for TV Highlights Widget.</label>
-					<selected>!Skin.HasSetting(Enable_TV_Highlights_Context_Menu)</selected>
+					<selected>Skin.HasSetting(Enable_TV_Highlights_Context_Menu)</selected>
 					<onclick>Skin.ToggleSetting(Enable_TV_Highlights_Context_Menu)</onclick>
 				</control>
 			</control>
