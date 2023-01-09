@@ -240,7 +240,7 @@
 					<visible>System.SupportsCPUUsage</visible>
 				</control>
 				
-				<animation effect="slide" start="0,0" end="0,-170" condition="Skin.HasSetting(display_library_stats)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-170" condition="!Skin.HasSetting(display_library_stats)">Conditional</animation>
 			</control>
 			<control type="group">
 				<animation effect="slide" end="0,-55" time="0" condition="!System.SupportsCPUUsage">Conditional</animation>
@@ -330,7 +330,7 @@
 					</control>
 				</control>
 				
-				<animation effect="slide" start="0,0" end="0,-170" condition="Skin.HasSetting(display_library_stats)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-170" condition="!Skin.HasSetting(display_library_stats)">Conditional</animation>
 			</control>
 			
 			
@@ -410,7 +410,7 @@
 			<scroll>true</scroll>
 			</control>
 		</control>
-		<visible>!Skin.HasSetting(display_library_stats)</visible>
+		<visible>Skin.HasSetting(display_library_stats)</visible>
 	</control>
 	<control type="image">
 			<left>420</left>
